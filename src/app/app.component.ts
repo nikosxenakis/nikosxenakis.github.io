@@ -12,7 +12,7 @@ export class AppComponent {
 	linkedinPage = 'https://www.linkedin.com/in/nikos-xenakis-875811109/';
 	instagramPage = 'https://www.instagram.com/nikosxenakis/';
 
-	CVLink = 'assets/Xenakis_Nikos_CV.pdf';
+	CVLink = 'https://github.com/nikosxenakis/cv/blob/master/Xenakis_Nikos_CV.pdf';
 	imageInLexis = 'assets/ImagInLexis/ImagInLexis.zip';
-	iceEditor = 'assets/ICE_Editor/index.html';
+	iceEditor = 'https://github.com/nikosxenakis/ICE_Editor';
 }
