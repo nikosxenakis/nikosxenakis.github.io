@@ -1,16 +1,17 @@
 <header class="header">
     <div class="container"> 
         <div class="row">       
-            <img class="pull-left" src="assets/images/profile.png" alt="Xenakis Nikolaos"/>
+            <img class="pull-left" src="assets/images/profile.png" width="150px" height="150px" style="margin: 20px;" alt="Xenakis Nikolaos"/>
             <div class="profile-content pull-left">
                 <h1 class="name">Xenakis Nikolaos</h1>
-                <h2 class="desc">Computer Scientist</h2>   
+                <h2 class="desc">Software Engineer</h2>   
                 <ul class="social list-inline">
-                    <li><a href={{facebookPage}}><i class="fa fa-facebook"></i></a></li>                   
-                    <li><a href={{twitterPage}}><i class="fa fa-twitter"></i></a></li>
-                    <li><a href={{linkedinPage}}><i class="fa fa-linkedin"></i></a></li>
-                    <li class="last-item"><a href={{instagramPage}}><i class="fa fa-instagram"></i></a></li>      
-                </ul> 
+ <!--                     <li><a href={{twitterPage}}><i class="fa fa-twitter"></i></a></li>
+ -->                <li><a href={{linkedinPage}}><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/nikosxenakis"><i class="fa fa-github"></i></a></li>
+                    <li><a href={{facebookPage}}><i class="fa fa-facebook"></i></a></li>
+<!--                     <li class="last-item"><a href={{instagramPage}}><i class="fa fa-instagram"></i></a></li>      
+ -->                </ul> 
             </div>
         </div>
     </div>
@@ -25,53 +26,38 @@
                     <div class="content">
                         <p>Passion and devotion are describing the way I work. I constantly research about new products and methods to be efficient and reliable to my projects. Experienced in designing, developing, implementing and testing software. Expert in dealing with multidimensional problems using efficient methods in order to optimize the result.</p>
                     </div><!--//content-->
-                    <a class="btn btn-cta-secondary" href={{CVLink}}><i class="fa fa-download"></i> Download CV</a>
+                    <a class="btn btn-cta-secondary" href={{CVLink}}>resume</a>
                 </div><!--//section-inner-->
             </section><!--//section-->
             
             <section class="experience section">
                 <div class="section-inner">
                     <h2 class="heading">Work Experience</h2>
-						<div class="content">
+					<div class="content">
                         <div class="item">
-                        <h3 class="title">External Software Developer <span class="place"><a href="#">Wings ICT Solutions</a></span> <span class="year">(Aug 2017 – Aug 2018)</span></h3>
-                            <p>Working for Wings ICT Solutions in order to develop web services for National Bank of Greece<br>Requirements analysis, design and implementation of web API and interoperability between API and bank systems<br>Technologies: C#, ASP.NET, Angular 4.</p>
-                        </div><!--//item-->
-                    </div><!--//content--> 
-                    <div class="content">
+                            <h3 class="title">External Software Developer
+                                <span class="place"><a href="http://wings-ict-solutions.eu/}">Wings ICT Solutions</a></span> <span class="year">(Aug 2017 – Aug 2018)</span>
+                            </h3>
+                            <p>Working for Wings ICT Solutions in order to develop web services for National Bank of Greece<br>Requirements analysis, design and implementation of web API and interoperability between API and bank systems<br>Technologies: C#, ASP.NET, Angular.</p>
+                        </div>
                         <div class="item">
-                            <h3 class="title">Undergraduate Teaching Assistant <span class="place"><a href="http://www.csd.uoc.gr">Computer Science Department in UOC</a></span> <span class="year">(Sep 2015 – Jan 2016)</span></h3>
-                            <p>Undergraduate Teaching Assistant at "Introduction to Computer Science" during my fourth year at Computer Science Department of University of Crete, Heraklion (Greece)<br>Applied thanks to the program "TheProfit" which allows to the best undergraduate students of the department to help University’s academic work.</p>
-                        </div><!--//item-->
+                            <h3 class="title">Mandatory Military Service
+                                <span class="place"><a href="">Greek Military</a></span> <span class="year">(Sep 2016 – June 2017)</span>
+                            </h3>
+                            <p>Completed my military service working in the operation center of Greek army<br>
+                                Role: Providing technical support in the military information systems
+                            </p>
+                        </div>
                         <div class="item">
-                            <h3 class="title">Intership <span class="place"><a href="https://www.forth.gr/">Foundation for Research and Technology - Hellas (FORTH)</a></span> <span class="year">(Jun 2015 – Aug 2015)</span></h3>
-                            <p>Research in Big Data System Utilities. In particular, developing in Hadoop Ecosystem, HBase, Apache Phoenix, Spark. Also methods for accelerating calculations in distributed systems as Data Centers.</p>
-                        </div><!--//item-->
-                    </div><!--//content-->  
-                </div><!--//section-inner-->                 
-            </section><!--//section-->
-            
-            <section class="projects section">
-                <div class="section-inner">
-                    <h2 class="heading">Projects</h2>
-                    <div class="content">
+                            <h3 class="title">Undergraduate Teaching Assistant <span class="place"><a href="http://www.csd.uoc.gr">Computer Science Department, University of Crete</a></span> <span class="year">(Sep 2015 – Jan 2016)</span></h3>
+                            <p>Part of the program "TheProfit" which allows to the best undergraduate students of the department to aid University’s academic work<br>Role: Undergraduate Teaching Assistant at "Introduction to Computer Science" course</p>
+                        </div>
                         <div class="item">
-                            <h3 class="title">ImagInLexis</h3>
-                            <p class="summary">Employed to develop a desktop application as a part of a bachelor thesis in Logotherapy. Application's main functionality is to enrich a speech therapy intervention plan through a number of tests that the patient has to complete.</p>
-                            <p><a class="more-link" href={{imageInLexis}} download="ImagInLexis.zip" target="_blank"><i class="fa fa-external-link"></i>Download</a></p>
-
-                        </div><!--//item-->
-                        <div class="item">
-                            <h3 class="title">ICE Editor</h3>
-                            <p class="summary">The project is a website application which allows a regular user to program IOT (Internet Of Things) devices. It is an editor which prevents the user to have compile even runtime (as possible) errors. The user can drop & drop elements or edit values. It provides an abstract API to create your own program quickly via javascript command or json files. It is written basically in javascript.</p>
-                            <p><a class="more-link" href={{iceEditor}} target="_blank"><i class="fa fa-external-link"></i>See it here</a></p>
-
-                        </div><!--//item-->
-                        <!--
-                        <a class="btn btn-cta-secondary" id="moreProjects" disabled href="#">More<i class="fa fa-chevron-right"></i></a>
-                        -->
-                    </div>
-                </div>
+                            <h3 class="title">Undergraduate Trainee <span class="place"><a href="https://www.forth.gr/">Foundation for Research and Technology - Hellas (FORTH)</a></span> <span class="year">(Jun 2015 – Aug 2015)</span></h3>
+                            <p>Conducting Research in Big Data Systems using acceleration mechanisms<br>Tools: HDFS, MapReduce, HBase, Apache Phoenix, Spark, CUDA, OpenCL</p>
+                        </div>
+                    </div> 
+                </div>              
             </section>
             
             <section class="education section">
@@ -79,70 +65,79 @@
                     <h2 class="heading">Education</h2>
                     <div class="content">
                         <div class="item">
-                            <h3 class="title"> <i class="fa fa-graduation-cap"></i>Msc in High Performance Computing with Data Science (Sep 2018 – now)
-                                <a href="https://www.ed.ac.uk//" class="university">University of Edinburgh, Edinburgh (UK)</a>
+                            <h3 class="title"> <i class="fa fa-graduation-cap"></i>Msc in High Performance Computing with Data Science (Sep 2018 – Present)
+                                <a href="https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2019&id=871" class="university">University of Edinburgh, Edinburgh (UK)</a>
                             </h3>
                             <ul>
                                 <li>
-                                    School of Informatics
+                                    Awards: <a href="https://www.ed.ac.uk/student-funding/postgraduate/uk-eu/university-scholarships/sfc-hsw">Highly Skilled Workforce Scholarship</a><br>Candidates must have the international equivalent of a UK first class or 2:1 Honours degree at undergraduate level
                                 </li>
                             </ul>
                         </div>
                         <div class="item">
                             <h3 class="title"> <i class="fa fa-graduation-cap"></i>Bachelor in Computer Science (Sep 2012 – Jul 2016)
-                                <a href="https://www.forth.gr/" class="university">University of Crete, Heraklion (Greece)</a>
+                                <a href="https://www.csd.uoc.gr/" class="university">University of Crete, Heraklion (Greece)</a>
                             </h3>
                             <ul>
                                 <li>
                                     Grade: 8.4/10 
                                 </li>
                                 <li>
-                                    Thesis: <a href={{iceEditor}}>ICE Editor</a> is a <strong>visual programming language</strong> for end-user programmers for IOT devices.
+                                    Thesis: <a href={{iceEditor}}>ICE Editor</a> a visual programming language for end-user programmers for IOT devices
                                     <br><a href={{iceEditor}}>ICE Editor</a> is a web client application written in JavaScript.
                                 </li>
                                 <li>
-                                    Awards: <strong>3 years</strong> in a row awarded with the <strong>memorial scholarship "Stelios Orfanoudakis"</strong>.
+                                    Awards: <strong>3 years</strong> in a row awarded with the <strong>Memorial Scholarship Stelios Orfanoudakis</strong>.
                                     <br>This scholarship is given to the top 3 students of the Computer Science department each year.
                                 </li>
                             </ul>
                         </div>
                         <div class="item">
-                            <h3 class="title"> <i class="fa fa-graduation-cap"></i>IT Essentials: PC Hardware and Software (Aug 2011)<a class="university">Cisco Network Academy, Chania (Greece)</a></h3>
-                            <p></p>
-                        </div>
-                        <div class="item">
-                            <h3 class="title"> <i class="fa fa-graduation-cap"></i>ICT Intermediate (Sep 2010)<a class="university">ICT Europe, Chania (Greece)</a></h3>
-                            <p></p>
-                        </div>
-                        <div class="item">
-                            <h3 class="title"> <i class="fa fa-graduation-cap"></i>High School (2009 - 2012)<a class="university">Third General School Of Chania, Chania (Greece)</a></h3>
-                            <p></p>
+                            <h3 class="title"> <i class="fa fa-graduation-cap"></i>IT Essentials: PC Hardware and Software (Jun 2011 - Aug 2011)<a class="university">Cisco Network Academy, Chania (Greece)</a></h3>
+                            <p>IT Essentials covers fundamental computer skills. It includes labs that provide practical experience using simulation tools</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-        </div>
-        <div class="secondary col-md-4 col-sm-12 col-xs-12">
-            <aside class="info aside section">
+            <section class="projects section">
                 <div class="section-inner">
-                    <h2 class="heading">About Me</h2>
+                    <h2 class="heading">Projects</h2>
                     <div class="content">
-                        <ul class="list-unstyled">
-                            <li><i class="fa fa-venus-mars"></i><span class="sr-only">Sex:</span>Male</li>
-                            <li><i class="fa fa-birthday-cake"></i><span class="sr-only">Birthday:</span>18 April 1994</li>
-                            <li><i class="fa fa-flag"></i><span class="sr-only">Nationality:</span>Greek</li>
-                        </ul>
+                        <div class="item">
+                            <h3 class="title"><a href="https://georgioupolis-transfers.com/">Georgioupolis Transfers</a></h3>
+                            <p class="summary">Website for booking transfer and tours in Crete, Greece<br>Tools: HTML, Angular 4, Typescript, LESS, Node-JS</p>
+                        </div>
+
+                        <div class="item">
+                            <h3 class="title"><a href="https://github.com/nikosxenakis/ImagInLexis">ImagInLexis</a></h3>
+                            <p class="summary">Application's main functionality is to enrich a speech therapy intervention plan through a number of tests that the child (patient) has to complete<br>Tools: Java, JavaFX</p>
+                        </div>
+                        <div class="item">
+                            <h3 class="title"><a href={{iceEditor}}>ICE Editor</a></h3>
+                            <p class="summary">A website application which allows an end-user to develop simple applets in IOT devices<br>It is an editor which prevents the user to have either compile or runtime (as possible) errors allowing to drop \& drop elements or edit values<br>It provides an abstract API to create your own program with JSON files<br>Tools: HTML, Javascript, Canvas.js framewrok</p>
+                        </div>
+                        <div class="item">
+                            <h3 class="title"><a href="https://www.youtube.com/watch?v=DqQoP_M39lQ">1942</a></h3>
+                            <p class="summary">User Interfaces and Games Development course project<br>The project is a redevelopment of 1942 is a popular classic retro video game built in 1984<br>Tools: C++, SDL</p>
+                        </div>
                     </div>
                 </div>
-            </aside>
+            </section>
+            
 
+
+        </div>
+        <div class="secondary col-md-4 col-sm-12 col-xs-12">
             <aside class="info aside section">
                 <div class="section-inner">
                     <h2 class="heading">Basic Information</h2>
                     <div class="content">
                         <ul class="list-unstyled">
-                            <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span><a href="https://www.google.gr/maps/place/%CE%92%CF%81%CF%8D%CF%83%CE%B5%CF%82+730+07/@35.3748967,24.1903459,15z/data=!3m1!4b1!4m5!3m4!1s0x149b7e837371828f:0xdc8df01429f88e03!8m2!3d35.3750852!4d24.2012676">Athens,Greece</a></li>
+                            <li><i class="fa fa-venus-mars"></i><span class="sr-only">Sex:</span>Male</li>
+                            <li><i class="fa fa-birthday-cake"></i><span class="sr-only">Birthday:</span>18 April</li>
+                            <li><i class="fa fa-flag"></i><span class="sr-only">Nationality:</span>Greek</li>
+                            <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>Edinburgh, UK</li>
                             <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="#">nikosxenakis94@gmail.com</a></li>
                             <li><i class="fa fa-skype"></i><span class="sr-only">Skype:</span>xenis656</li>
                         </ul>
@@ -158,9 +153,9 @@
                         
                         <div class="skillset">
                             <div class="item">
-                                <h3 class="level-title">C/C++<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">Advanced</span></h3>
+                                <h3 class="level-title">C/C++<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">Proficient</span></h3>
                                 <div class="level-bar">
-                                    <div class="level-bar-inner" style="width:90%;">
+                                    <div class="level-bar-inner" style="width:100%;">
                                     </div>
                                 </div>
                             </div>
@@ -172,20 +167,20 @@
                                 </div><!--//level-bar-->                                 
                             </div><!--//item-->
                             <div class="item">
-                                <h3 class="level-title">JavaScript<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">Advanced</span></h3>
+                                <h3 class="level-title">Data Management (Python, MySQL)<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">Advanced</span></h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" style="width:90%;">
                                     </div>                                      
                                 </div><!--//level-bar-->                                 
                             </div><!--//item-->
                             <div class="item">
-                                <h3 class="level-title">HTML , CSS , PHP<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">Good</span></h3>
+                                <h3 class="level-title">Web Technologies (HTML, CSS, Javascript, Typescript, PHP)<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">Expert</span></h3>
                                 <div class="level-bar">
-                                    <div class="level-bar-inner" style="width:75%;">
+                                    <div class="level-bar-inner" style="width:90%;">
                                     </div>                                      
                                 </div><!--//level-bar-->                                 
                             </div><!--//item-->
-                            <p><a class="more-link" href="https://www.linkedin.com/in/nikos-xenakis-875811109/"><i class="fa fa-external-link"></i> More on Linkedin</a></p> 
+                            <p><a class="more-link" href="https://www.linkedin.com/in/nikosxenakis/"><i class="fa fa-external-link"></i> More on Linkedin</a></p> 
                         </div>              
                     </div><!--//content-->  
                 </div><!--//section-inner-->                 
@@ -214,6 +209,6 @@
 
 <footer class="footer">
     <div class="container text-right">
-            <small class="copyright">@Copyrights Nikos Xenakis</small>
+            <small class="copyright">@Copyrights Xenakis Nikolaos</small>
     </div>
 </footer>
