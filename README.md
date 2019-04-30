@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/nikosxenakis/nikosxenakis-website.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/nikosxenakis/nikosxenakis-website/context:javascript)
+
 ## Development server
 
 Run `npm install` to download dependencies
