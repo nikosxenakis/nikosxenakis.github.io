@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
 	title = 'app';
 	facebookPage = 'https://www.facebook.com/xenis656';
-	twitterPage = 'https://twitter.com/NikosXenakis1?lang=el';
-	linkedinPage = 'https://www.linkedin.com/in/nikos-xenakis-875811109/';
+	twitterPage = 'https://twitter.com/nikolaosxenakis';
+	linkedinPage = 'https://www.linkedin.com/in/nikosxenakis';
 	instagramPage = 'https://www.instagram.com/nikosxenakis/';
 
-	CVLink = 'https://github.com/nikosxenakis/resume/blob/master/Xenakis_Nikos_resume.pdf';
+	CVLink = 'https://github.com/nikosxenakis/nikosxenakis-website/blob/master/assets/resume.pdf';
 	imageInLexis = 'assets/ImagInLexis/ImagInLexis.zip';
 	iceEditor = 'https://github.com/nikosxenakis/ICE_Editor';
 }
