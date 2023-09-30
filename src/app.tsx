@@ -96,17 +96,25 @@ export default function App() {
       <header className="header">
         <Container>
           <Row>
-            <Col xs={2} className='avatar'>
-              <img src='https://avatars.githubusercontent.com/u/25032940?v=4' width="150px" height="150px" alt="Xenakis Nikolaos" />
+            <Col xs={12} sm={2} className='avatar'>
+              <img src='https://avatars.githubusercontent.com/u/25032940?v=4' alt="Xenakis Nikolaos" />
             </Col>
-            <Col xs={10}>
+            <Col xs={12} sm={10}>
               <div className="profile-content">
-                <h1 className="name">Xenakis Nikolaos</h1>
-                <h2 className="desc">Software Engineer</h2>
-                <ul className="social list-inline">
-                  <li><FontAwesomeIcon icon={faLinkedin} onClick={() => { return redirect(linkedInLink); }} /></li>
-                  <li><FontAwesomeIcon icon={faGithub} onClick={() => { return redirect(gitHubLink); }} /></li>
-                </ul>
+                <Row>
+                  <Col xs={12}>
+                    <h1 className="name">Xenakis Nikolaos</h1>
+                  </Col>
+                  <Col xs={12}>
+                    <h2 className="desc">Software Engineer</h2>
+                  </Col>
+                  <Col xs={12}>
+                    <ul className="social list-inline">
+                      <li><FontAwesomeIcon icon={faLinkedin} onClick={() => { return redirect(linkedInLink); }} /></li>
+                      <li><FontAwesomeIcon icon={faGithub} onClick={() => { return redirect(gitHubLink); }} /></li>
+                    </ul>
+                  </Col>
+                </Row>
               </div>
             </Col>
           </Row>
@@ -235,7 +243,12 @@ export default function App() {
                   <div className="skillset">
                     {skills.map((s) => (
                       <div className="item">
-                        <h3 className="level-title">{s.name}<span className="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">{s.level}</span></h3>
+                      <span className="level-title">{s.name} </span>-
+                      <span className="level-label" data-toggle="tooltip" data-placement="left" data-animation="true"> {s.level}</span>
+                        {/* <h3 className="level-title">
+                          <span>{s.name}</span>
+                          <span className="level-label" data-toggle="tooltip" data-placement="left" data-animation="true">{s.level}</span>
+                        </h3> */}
                         <div className="level-bar">
                           <div className="level-bar-inner" style={{ width: s.width }}>
                           </div>

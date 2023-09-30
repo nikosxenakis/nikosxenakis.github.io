@@ -1,4 +1,3 @@
-
 /* ======= Base ======= */
 body {
   font-family: 'Lato', arial, sans-serif;
@@ -22,10 +21,6 @@ h6 {
 
 a {
   color: #3AAA64;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
 }
 
 a:hover {
@@ -40,10 +35,6 @@ a:focus {
 
 .btn,
 a.btn {
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
   font-family: 'Montserrat', arial, sans-serif;
   padding: 8px 16px;
   font-weight: bold;
@@ -114,6 +105,12 @@ a.dotted-link:hover {
   align-items: center;
 }
 
+.header .avatar img {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+
 .header .btn {
   margin-top: 60px;
   font-weight: bold;
@@ -125,7 +122,7 @@ a.dotted-link:hover {
 
 .header .profile-content .name {
   color: #49515a;
-  font-size: 38px;
+  font-size: 32px;
   margin-bottom: 5px;
   margin-top: 30px;
 }
@@ -139,20 +136,13 @@ a.dotted-link:hover {
   margin-bottom: 15px;
 }
 
-  .header .profile-content .social svg {
-    width: 36px;
-    height: 36px;
+.header .profile-content .social svg {
+  width: 36px;
+  height: 36px;
 }
 
-.header .profile-content .social a:hover,
-  .header .profile-content .social svg:hover {
-  background: #778492;
-}
-
-.header .profile-content .social a .fa,
-  .header .profile-content .social svg .fa {
-  font-size: 20px;
-  padding-top: 8px;
+.header .profile-content .social svg:hover {
+  cursor: pointer;
 }
 
 /* ======= Sections======= */
@@ -264,20 +254,19 @@ a.dotted-link:hover {
 }
 
 .skills .skillset .level-title {
-  font-size: 16px;
+  font-size: 14px;
   position: relative;
   margin-top: 0;
-  margin-bottom: 10;
 }
 
-.skills .skillset .level-title .level-label {
+.skills .skillset .level-label {
   color: #ccd1d6;
   font-size: 14px;
   font-weight: 400;
   font-family: "Lato", arial, sans-serif;
-  position: absolute;
+  /* position: absolute;
   right: 0;
-  top: 0;
+  top: 0; */
 }
 
 .skills .skillset .level-bar {
