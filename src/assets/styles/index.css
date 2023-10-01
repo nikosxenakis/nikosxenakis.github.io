@@ -1,10 +1,10 @@
 /* ======= Base ======= */
 :root {
   --secondary-color: #778492;
-  --background-color: #e0e7da;
+  --background-color: #7b8d6c;
   --container-background-color: #f5f5f5;
-  --link-color: #3AAA64;
-  --link-hover-color: #67ca8d;
+  --link-color: #6fa542;
+  --link-hover-color: #84cb4b;
   --font-size: 16px;
   --border-radius: 4px;
 }
@@ -71,11 +71,6 @@ a:hover {
   margin: auto;
 }
 
-.header .btn {
-  margin-top: 60px;
-  font-weight: bold;
-}
-
 .header .profile-image {
   margin-right: 30px;
 }
@@ -136,6 +131,10 @@ a:hover {
   margin-bottom: 30px;
 }
 
+.section .small .item {
+  margin-bottom: 10px;
+}
+
 .section .item .title {
   font-size: 16px;
   line-height: 1.5;
@@ -175,19 +174,10 @@ a:hover {
 
 /* Work Section */
 .experience .item .title .place a:hover {
-  color: #7fdba1;
+  color: var(--link-hover-color);
 }
 
 /* Info Section */
-.info .fa {
-  margin-right: 15px;
-  color: #ccd1d6;
-}
-
-.info .fa.fa-envelope-o {
-  font-size: 14px;
-}
-
 .info ul {
   margin-bottom: 0;
 }
@@ -205,6 +195,10 @@ a:hover {
   margin-bottom: 30px;
 }
 
+.skills .small .item {
+  margin-bottom: 30px;
+}
+
 .skills .skillset .level-title {
   font-size: 14px;
   position: relative;
@@ -212,7 +206,7 @@ a:hover {
 }
 
 .skills .skillset .level-label {
-  color: #ccd1d6;
+  color: var(--background-color);
   font-size: 14px;
   font-weight: 400;
   /* position: absolute;
@@ -227,7 +221,7 @@ a:hover {
 
 .skills .skillset .level-bar-inner {
   height: 15px;
-  background: #66cb8c;
+  background: var(--link-color);
 }
 
 /* Education section */
@@ -268,10 +262,6 @@ a:hover {
 /* List section */
 .list ul li {
   margin-bottom: 10px;
-}
-
-.list ul li .fa {
-  margin-right: 5px;
 }
 
 .list ul li a {
@@ -320,6 +310,12 @@ a:hover {
     margin-bottom: 15px;
   }
 }
+
+/* @media (min-width: 1200px) {
+  .section .section-inner {
+    max-width: unset;
+  }
+} */
 
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */

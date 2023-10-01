@@ -1,7 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { redirect } from "react-router";
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faDownload, faEnvelope, faExternalLink, faFlag, faGraduationCap, faLocationDot, faStar } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,21 +18,24 @@ export default function App() {
     companyUrl: 'https://welbot.io',
     location: 'Edinburgh, UK',
     date: 'Nov 2022 – Present',
-    description: 'Designing and developing wellbeing products for enterprises. Skills: Web stack, TypeScript, ElectronJS, AWS, Terraform, GitHub CI, project management',
+    description: 'Designing and developing wellbeing products for enterprises',
+    technologies: 'Web stack, TypeScript, ElectronJS, AWS, Terraform, GitHub CI, project management',
   }, {
     role: 'Senior Software Engineer',
     company: 'SeeByte',
     companyUrl: 'http://www.seebyte.com/',
     location: 'Edinburgh, UK',
     date: 'Aug 2021 – Nov 2022',
-    description: 'Developing (full-stack) applications for SeeByte. Technologies: Java, C#, .NET, NSIS, WIX Toolset, Netbeans platform, WPF.',
+    description: 'Developing (full-stack) applications for SeeByte.',
+    technologies: 'Java, C#, .NET, NSIS, WIX Toolset, Netbeans platform, WPF.',
   }, {
     role: 'Software Engineer',
     company: 'SeeByte',
     companyUrl: 'http://www.seebyte.com/',
     location: 'Edinburgh, UK',
     date: 'Sept 2019 – Aug 2021',
-    description: 'Developing (full-stack) applications for SeeByte. Technologies: Java, C#, .NET, NSIS, WIX Toolset, Netbeans platform, WPF.',
+    description: 'Developing (full-stack) applications for SeeByte.',
+    technologies: 'Java, C#, .NET, NSIS, WIX Toolset, Netbeans platform, WPF.',
   }, {
     role: 'Software Development Intern',
     company: 'University of Edinburgh Information Services Group',
@@ -63,6 +65,33 @@ export default function App() {
     description: 'Conducting Research in Big Data Systems using acceleration mechanisms. Tools: HDFS, MapReduce, HBase, Apache Phoenix, Spark, CUDA, OpenCL'
   }];
 
+  const education = [{
+    role: 'Msc in High Performance Computing with Data Science',
+    company: 'University of Edinburgh',
+    companyUrl: 'https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2019&id=871',
+    location: 'Edinburgh, UK',
+    date: 'Sep 2018 – Aug 2019',
+    grade: '75% (Distinction)',
+    dissertation: 'Parallelisation of frame processing for Optical Coherence Tomography (85%)',
+    awards: 'Highly Skilled Workforce Scholarship, candidates must have the international equivalent of a UK first class or 2:1 Honours degree at undergraduate level. Nominated the best student award of the MSc program.',
+  }, {
+    role: 'Bachelor in Computer Science',
+    company: 'University of Crete',
+    companyUrl: 'https://www.csd.uoc.gr',
+    location: 'Heraklion, Greece',
+    date: 'Sep 2012 – Jul 2016',
+    grade: '84%',
+    dissertation: '-',
+    awards: '3 years in a row awarded with the Memorial Scholarship Stelios Orfanoudakis. This scholarship is given to the top 3 students of the Computer Science department each year.',
+  }, {
+    role: 'IT Essentials: PC Hardware and Software',
+    company: 'Cisco Network Academy',
+    location: 'Chania, Greece',
+    date: 'Jun 2011 - Aug 2011',
+    description: 'IT Essentials covers fundamental computer skills. It includes labs that provide practical experience using simulation tools',
+  }];
+
+
   const languages = [{
     name: 'Greek',
     level: 'Native Speaker',
@@ -75,6 +104,14 @@ export default function App() {
     name: 'German',
     level: 'Beginner Level',
     stars: 1,
+  }];
+
+  const interests = [{
+    name: 'Chess',
+  }, {
+    name: 'Salsa and Cretan traditional dances',
+  }, {
+    name: 'Working out',
   }];
 
   const skills = [{
@@ -108,11 +145,12 @@ export default function App() {
       <header className="header">
         <Container>
           <Row>
-            <Col xs={12} sm={2} className='avatar'>
+            <Col xs={0} sm={0} xl={3} />
+            <Col xs={12} sm={2} xl={2} className='avatar'>
               {/* <img src='https://avatars.githubusercontent.com/u/25032940?v=4' alt="Xenakis Nikolaos" /> */}
               <img src='../assets/images/avatar.png' alt="Xenakis Nikolaos" />
             </Col>
-            <Col xs={12} sm={8}>
+            <Col xs={12} sm={8} xl={4}>
               <div className="profile-content">
                 <Row>
                   <Col xs={12}>
@@ -130,16 +168,18 @@ export default function App() {
                 </Row>
               </div>
             </Col>
-            <Col xs={12} sm={2} className='resume'>
+            <Col xs={12} sm={2} xl={1} className='resume'>
               <a href={CVLink}><FontAwesomeIcon icon={faDownload} /></a>
             </Col>
+            <Col xs={0} sm={0} xl={1} />
           </Row>
         </Container>
       </header>
 
       <div className="container sections-wrapper">
         <Row>
-          <Col xs={12} sm={12} md={8}>
+          <Col xs={0} sm={0} xl={3} />
+          <Col xs={12} sm={12} md={8} xl={5}>
             <section className="about section">
               <div className="section-inner">
                 <h2 className="heading">Summary</h2>
@@ -156,7 +196,7 @@ export default function App() {
                   {work.map((w, i) => (
                     <div className="item" key={i}>
                       <h3 className="title">{w.role} <span className="place"><a href={w.companyUrl}>{w.company}</a></span> <span className="year">({w.date})</span></h3>
-                      <p className="description">{w.description}</p>
+                      <p className="description">{w.description}{w.technologies ? (<><br />Technologies: {w.technologies}</>) : ''}</p>
                     </div>
                   ))}
                 </div>
@@ -167,45 +207,25 @@ export default function App() {
               <div className="section-inner">
                 <h2 className="heading">Education <FontAwesomeIcon icon={faGraduationCap} /></h2>
                 <div className="content">
-                  <div className="item">
-                    <h3 className="title">Msc in High Performance Computing with Data Science (Sep 2018 – Aug 2019)
-                      <a href="https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2019&id=871" className="university">University of Edinburgh, Edinburgh (UK)</a>
-                    </h3>
-                    <ul>
-                      <li>
-                        Grade: 75/100 (Distinction)
-                      </li>
-                      <li>
-                        Dissertation: Parallelisation of frame processing for Optical Coherence Tomography (85/100)
-                      </li>
-                      <li>
-                        Awards: Highly Skilled Workforce Scholarship, candidates must have the international equivalent of a UK first class or 2:1 Honours degree at undergraduate level
-                        <br />Nominated the best student award of the MSc program.
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="item">
-                    <h3 className="title">Bachelor in Computer Science (Sep 2012 – Jul 2016)
-                      <a href="https://www.csd.uoc.gr/" className="university">University of Crete, Heraklion (Greece)</a>
-                    </h3>
-                    <ul>
-                      <li>
-                        Grade: 8.4/10
-                      </li>
-                      <li>
-                        {/* Thesis: <a href={{ iceEditor }}>ICE Editor</a> a visual programming language for end-user programmers for IOT devices */}
-                        {/* <br /><a href={{ iceEditor }}>ICE Editor</a> is a web client application written in JavaScript. */}
-                      </li>
-                      <li>
-                        Awards: <strong>3 years</strong> in a row awarded with the <strong>Memorial Scholarship Stelios Orfanoudakis</strong>.
-                        <br />This scholarship is given to the top 3 students of the Computer Science department each year.
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="item">
-                    <h3 className="title">IT Essentials: PC Hardware and Software (Jun 2011 - Aug 2011)<a className="university">Cisco Network Academy, Chania (Greece)</a></h3>
-                    <p>IT Essentials covers fundamental computer skills. It includes labs that provide practical experience using simulation tools</p>
-                  </div>
+                  {education.map((w, i) => (
+                    <div className="item" key={i}>
+                      <h3 className="title">{w.role} <span className="place"><a href={w.companyUrl}>{w.company}</a></span> <span className="year">({w.date})</span></h3>
+                      <ul>
+                        {w.grade && <li>
+                          Grade: {w.grade}
+                        </li>}
+                        {w.dissertation && <li>
+                          Dissertation: {w.dissertation}
+                        </li>}
+                        {w.awards && <li>
+                          Awards: {w.awards}
+                        </li>}
+                        {w.description && <li>
+                          {w.description}
+                        </li>}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
               </div>
             </section>
@@ -236,8 +256,8 @@ export default function App() {
             </section>
 
           </Col>
-          <Col xs={12} sm={12} md={4} className="secondary">
-            <aside className="info aside section">
+          <Col xs={12} sm={12} md={4} xl={3} className="secondary">
+            <aside className="info section">
               <div className="section-inner small">
                 <h2 className="heading">Basic Information</h2>
                 <div className="content">
@@ -250,7 +270,7 @@ export default function App() {
               </div>
             </aside>
 
-            <aside className="skills aside section">
+            <aside className="skills section">
               <div className="section-inner small">
                 <h2 className="heading">Skills</h2>
                 <div className="content">
@@ -275,7 +295,7 @@ export default function App() {
               </div>
             </aside>
 
-            <aside className="languages aside section">
+            <aside className="languages section">
               <div className="section-inner small">
                 <h2 className="heading">Languages</h2>
                 <div className="content">
@@ -294,7 +314,23 @@ export default function App() {
                 </div>
               </div>
             </aside>
+
+            <aside className="section">
+              <div className="section-inner small">
+                <h2 className="heading">Interests</h2>
+                <div className="content">
+                  <ul className="list-unstyled">
+                    {interests.map((l) => (
+                      <li className="item">
+                        <span className="title">{l.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </aside>
           </Col>
+          <Col xs={0} sm={0} xl={1} />
         </Row>
       </div>
 
