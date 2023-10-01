@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { redirect } from "react-router";
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faExternalLink, faFlag, faGraduationCap, faLocationDot, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faEnvelope, faExternalLink, faFlag, faGraduationCap, faLocationDot, faStar } from '@fortawesome/free-solid-svg-icons';
 
 export default function App() {
   const linkedInLink = 'https://www.linkedin.com/in/nikosxenakis';
@@ -78,16 +78,28 @@ export default function App() {
   }];
 
   const skills = [{
-    name: 'C, C++, Java',
+    name: 'C#, .NET, Java',
     level: 'Proficient',
     width: '100%',
   }, {
-    name: 'Data Management (Python, MySQL)',
+    name: 'Webstack (HTML, CSS, JS), Typescript, NodeJS, React',
+    level: 'Proficient',
+    width: '100%',
+  }, {
+    name: 'AWS, Terraform',
+    level: 'Proficient',
+    width: '100%',
+  }, {
+    name: 'Jenkins, GitHub CI',
+    level: 'Advanced',
+    width: '95%',
+  }, {
+    name: 'Data Management (PostGRE, DynamoDB)',
     level: 'Advanced',
     width: '90%',
   }, {
-    name: 'Web Technologies (HTML, CSS, Javascript, Typescript, PHP)',
-    level: 'Expert',
+    name: 'C, C++',
+    level: 'Advanced',
     width: '80%',
   }];
 
@@ -97,25 +109,29 @@ export default function App() {
         <Container>
           <Row>
             <Col xs={12} sm={2} className='avatar'>
-              <img src='https://avatars.githubusercontent.com/u/25032940?v=4' alt="Xenakis Nikolaos" />
+              {/* <img src='https://avatars.githubusercontent.com/u/25032940?v=4' alt="Xenakis Nikolaos" /> */}
+              <img src='../assets/images/avatar.png' alt="Xenakis Nikolaos" />
             </Col>
-            <Col xs={12} sm={10}>
+            <Col xs={12} sm={8}>
               <div className="profile-content">
                 <Row>
                   <Col xs={12}>
                     <h1 className="name">Xenakis Nikolaos</h1>
                   </Col>
                   <Col xs={12}>
-                    <h2 className="desc">Software Engineer</h2>
+                    <h2 className="title">Software Engineer</h2>
                   </Col>
                   <Col xs={12}>
                     <ul className="social list-inline">
-                      <li><FontAwesomeIcon icon={faLinkedin} onClick={() => { return redirect(linkedInLink); }} /></li>
-                      <li><FontAwesomeIcon icon={faGithub} onClick={() => { return redirect(gitHubLink); }} /></li>
+                      <li><a href={linkedInLink}><FontAwesomeIcon icon={faLinkedin} /></a></li>
+                      <li><a href={gitHubLink}><FontAwesomeIcon icon={faGithub} /></a></li>
                     </ul>
                   </Col>
                 </Row>
               </div>
+            </Col>
+            <Col xs={12} sm={2} className='resume'>
+              <a href={CVLink}><FontAwesomeIcon icon={faDownload} /></a>
             </Col>
           </Row>
         </Container>
@@ -130,7 +146,6 @@ export default function App() {
                 <div className="content">
                   <p>{summary}</p>
                 </div>
-                <a href={CVLink}><button className="btn btn-cta-secondary">Resume</button></a>
               </div>
             </section>
 
@@ -138,10 +153,10 @@ export default function App() {
               <div className="section-inner">
                 <h2 className="heading">Work Experience</h2>
                 <div className="content">
-                  {work.map((w) => (
-                    <div className="item">
+                  {work.map((w, i) => (
+                    <div className="item" key={i}>
                       <h3 className="title">{w.role} <span className="place"><a href={w.companyUrl}>{w.company}</a></span> <span className="year">({w.date})</span></h3>
-                      <p>{w.description}</p>
+                      <p className="description">{w.description}</p>
                     </div>
                   ))}
                 </div>
@@ -150,10 +165,10 @@ export default function App() {
 
             <section className="education section">
               <div className="section-inner">
-                <h2 className="heading">Education</h2>
+                <h2 className="heading">Education <FontAwesomeIcon icon={faGraduationCap} /></h2>
                 <div className="content">
                   <div className="item">
-                    <h3 className="title"><FontAwesomeIcon icon={faGraduationCap} /> Msc in High Performance Computing with Data Science (Sep 2018 – Aug 2019)
+                    <h3 className="title">Msc in High Performance Computing with Data Science (Sep 2018 – Aug 2019)
                       <a href="https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2019&id=871" className="university">University of Edinburgh, Edinburgh (UK)</a>
                     </h3>
                     <ul>
@@ -170,7 +185,7 @@ export default function App() {
                     </ul>
                   </div>
                   <div className="item">
-                    <h3 className="title"><FontAwesomeIcon icon={faGraduationCap} /> Bachelor in Computer Science (Sep 2012 – Jul 2016)
+                    <h3 className="title">Bachelor in Computer Science (Sep 2012 – Jul 2016)
                       <a href="https://www.csd.uoc.gr/" className="university">University of Crete, Heraklion (Greece)</a>
                     </h3>
                     <ul>
@@ -188,7 +203,7 @@ export default function App() {
                     </ul>
                   </div>
                   <div className="item">
-                    <h3 className="title"><FontAwesomeIcon icon={faGraduationCap} /> IT Essentials: PC Hardware and Software (Jun 2011 - Aug 2011)<a className="university">Cisco Network Academy, Chania (Greece)</a></h3>
+                    <h3 className="title">IT Essentials: PC Hardware and Software (Jun 2011 - Aug 2011)<a className="university">Cisco Network Academy, Chania (Greece)</a></h3>
                     <p>IT Essentials covers fundamental computer skills. It includes labs that provide practical experience using simulation tools</p>
                   </div>
                 </div>
@@ -223,28 +238,28 @@ export default function App() {
           </Col>
           <Col xs={12} sm={12} md={4} className="secondary">
             <aside className="info aside section">
-              <div className="section-inner">
+              <div className="section-inner small">
                 <h2 className="heading">Basic Information</h2>
                 <div className="content">
                   <ul className="list-unstyled">
                     <li><FontAwesomeIcon icon={faFlag} /> <span className="sr-only">Nationality:</span>Greek</li>
                     <li><FontAwesomeIcon icon={faLocationDot} /> <span className="sr-only">Location:</span>Edinburgh, UK</li>
-                    <li><FontAwesomeIcon icon={faEnvelope} /> <span className="sr-only">Email:</span>nikosxenakis94@gmail.com</li>
+                    <li><FontAwesomeIcon icon={faEnvelope} /> <span className="sr-only">Email:</span><a href='mailto:nikosxenakis94@gmail.com'>nikosxenakis94@gmail.com</a></li>
                   </ul>
                 </div>
               </div>
             </aside>
 
             <aside className="skills aside section">
-              <div className="section-inner">
+              <div className="section-inner small">
                 <h2 className="heading">Skills</h2>
                 <div className="content">
                   <p className="intro"></p>
                   <div className="skillset">
-                    {skills.map((s) => (
-                      <div className="item">
-                      <span className="level-title">{s.name} </span>-
-                      <span className="level-label" data-toggle="tooltip" data-placement="left" data-animation="true"> {s.level}</span>
+                    {skills.map((s, i) => (
+                      <div className="item" key={i}>
+                        <span className="level-title">{s.name} </span>-
+                        <span className="level-label" data-toggle="tooltip" data-placement="left" data-animation="true"> {s.level}</span>
                         {/* <h3 className="level-title">
                           <span>{s.name}</span>
                           <span className="level-label" data-toggle="tooltip" data-placement="left" data-animation="true">{s.level}</span>
@@ -257,18 +272,17 @@ export default function App() {
                     ))}
                   </div>
                 </div>
-                <p><a className="more-link" href={linkedInLink}><FontAwesomeIcon icon={faExternalLink} /> More on Linkedin</a></p>
               </div>
             </aside>
 
             <aside className="languages aside section">
-              <div className="section-inner">
+              <div className="section-inner small">
                 <h2 className="heading">Languages</h2>
                 <div className="content">
                   <ul className="list-unstyled">
                     {languages.map((l) => (
                       <li className="item">
-                        <span className="title"><strong>{l.name}:</strong></span>
+                        <span className="title"><strong>{l.name}: </strong></span>
                         <span className="level">
                           {l.level}
                           <br className="visible-sm visible-xs" />

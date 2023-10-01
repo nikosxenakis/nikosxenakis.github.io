@@ -1,8 +1,18 @@
 /* ======= Base ======= */
+:root {
+  --secondary-color: #778492;
+  --background-color: #e0e7da;
+  --container-background-color: #f5f5f5;
+  --link-color: #3AAA64;
+  --link-hover-color: #67ca8d;
+  --font-size: 16px;
+  --border-radius: 4px;
+}
+
 body {
-  font-family: 'Lato', arial, sans-serif;
-  color: #434343;
-  background: #e0e7da;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  background: var(--background-color);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,76 +24,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: #778492;
 }
 
 a {
-  color: #3AAA64;
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #5f6b77;
-  color: #2d844e;
-}
-
-a:focus {
-  text-decoration: none;
-}
-
-.btn,
-a.btn {
-  font-family: 'Montserrat', arial, sans-serif;
-  padding: 8px 16px;
-  font-weight: bold;
-}
-
-.btn .fa,
-a.btn .fa {
-  margin-right: 5px;
-}
-
-.btn:focus,
-a.btn:focus {
-  color: #fff;
-}
-
-a.btn-cta-primary,
-.btn-cta-primary,
-.btn-cta-secondary {
-  background: #7ac86b;
-  color: #fff;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-a.btn-cta-primary:hover,
-.btn-cta-primary:hover,
-.btn-cta-secondary:hover {
-  background: #49ac43;
-  color: #fff;
+  color: var(--link-hover-color);
 }
 
 .text-highlight {
   color: #32383e;
-}
-
-.label-theme {
-  background: #3AAA64;
-  font-size: 12px;
-}
-
-a.dotted-link {
-  border-bottom: 1px dotted #778492;
-  color: #778492;
-}
-
-a.dotted-link:hover {
-  text-decoration: none;
-  color: #49515a;
 }
 
 .container {
@@ -92,7 +47,7 @@ a.dotted-link:hover {
 
 /* ======= Header ======= */
 .header {
-  background: #f5f5f5;
+  background: var(--container-background-color);
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
@@ -100,14 +55,19 @@ a.dotted-link:hover {
   padding-bottom: 0px;
 }
 
-.header .avatar {
+.header .avatar,
+.header .resume {
   display: flex;
   align-items: center;
 }
 
+.header .resume {
+  justify-content: right;
+}
+
 .header .avatar img {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   margin: auto;
 }
 
@@ -121,27 +81,27 @@ a.dotted-link:hover {
 }
 
 .header .profile-content .name {
-  color: #49515a;
   font-size: 32px;
   margin-bottom: 5px;
   margin-top: 30px;
 }
 
-.header .profile-content .desc {
-  color: #778492;
-  font-family: "Lato", arial, sans-serif;
+.header .profile-content .title {
+  color: var(--secondary-color);
   font-weight: 400;
   font-size: 24px;
   margin-top: 0;
   margin-bottom: 15px;
 }
 
-.header .profile-content .social svg {
+.header .profile-content .social svg,
+.header .resume svg {
   width: 36px;
   height: 36px;
 }
 
-.header .profile-content .social svg:hover {
+.header .profile-content .social svg:hover,
+.header .resume svg:hover {
   cursor: pointer;
 }
 
@@ -158,24 +118,45 @@ a.dotted-link:hover {
 .section .section-inner {
   background: #fff;
   padding: 30px;
+  border-radius: 10px;
+  max-width: 1000px;
+  min-height: 240px;
+}
+
+.section .section-inner.small {
+  max-width: 500px;
 }
 
 .section .heading {
-  margin-top: 0;
   margin-bottom: 30px;
-  color: #545e69;
   font-size: 24px;
 }
 
-.section .content .more-link .fa {
-  margin-right: 5px;
+.section .item {
+  margin-bottom: 30px;
+}
+
+.section .item .title {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.section .item .title .place {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.section .item .description {
+  font-size: 14px;
+}
+
+.section .item .year {
+  color: var(--secondary-color);
+  font-weight: 500;
   font-size: 14px;
 }
 
 /* Projects Section */
-.projects .item {
-  margin-bottom: 30px;
-}
 
 .projects .item .title {
   font-size: 16px;
@@ -185,7 +166,7 @@ a.dotted-link:hover {
 }
 
 .projects .item .title a {
-  color: #778492;
+  color: var(--secondary-color);
 }
 
 .projects .item .title a:hover {
@@ -193,33 +174,8 @@ a.dotted-link:hover {
 }
 
 /* Work Section */
-.experience .item {
-  margin-bottom: 30px;
-}
-
-.experience .item .title {
-  font-size: 16px;
-  margin-top: 0;
-  margin-bottom: 5px;
-  line-height: 1.5;
-}
-
-.experience .item .title .place {
-  color: #999;
-  font-weight: normal;
-}
-
-.experience .item .title .place a {
-  color: #999;
-}
-
 .experience .item .title .place a:hover {
-  color: #666666;
-}
-
-.experience .item .title .year {
-  color: #999;
-  font-weight: normal;
+  color: #7fdba1;
 }
 
 /* Info Section */
@@ -249,10 +205,6 @@ a.dotted-link:hover {
   margin-bottom: 30px;
 }
 
-.skills .skillset .item {
-  margin-bottom: 30px;
-}
-
 .skills .skillset .level-title {
   font-size: 14px;
   position: relative;
@@ -263,7 +215,6 @@ a.dotted-link:hover {
   color: #ccd1d6;
   font-size: 14px;
   font-weight: 400;
-  font-family: "Lato", arial, sans-serif;
   /* position: absolute;
   right: 0;
   top: 0; */
@@ -280,10 +231,6 @@ a.dotted-link:hover {
 }
 
 /* Education section */
-.education .item {
-  margin-bottom: 30px;
-}
-
 .education .item:last-child {
   margin-bottom: 0;
 }
@@ -294,37 +241,19 @@ a.dotted-link:hover {
 }
 
 .education .item .university {
-  font-family: "Lato", arial, sans-serif;
   font-size: 13px;
   color: #999;
   font-weight: 600;
   padding-left: 25px;
 }
 
-.education .item .university .year {
-  color: #b0b7bf;
-  font-weight: 500;
-}
-
 /* Language Section */
-.languages .item {
-  margin-bottom: 15px;
-}
-
 .languages .item .title {
-  color: #778492;
+  color: var(--secondary-color);
 }
 
-.languages .item .level {
-  color: #999;
-}
-
-.languages .item:last-child {
-  margin-bottom: 0;
-}
-
-.languages .item .fa {
-  color: #79d19a;
+.languages .item .level svg {
+  color: var(--link-color);
 }
 
 .list-inline {
@@ -346,11 +275,7 @@ a.dotted-link:hover {
 }
 
 .list ul li a {
-  color: #778492;
-}
-
-.list ul li a:hover {
-  color: #49515a;
+  color: var(--secondary-color);
 }
 
 /* ======= Footer ======= */
@@ -368,10 +293,6 @@ a.dotted-link:hover {
 
 .footer a {
   color: #fff;
-}
-
-.footer .fa-heart {
-  color: #fb866a;
 }
 
 /* Extra small devices (phones, less than 768px) */
