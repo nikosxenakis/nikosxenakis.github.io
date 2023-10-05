@@ -5,21 +5,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { faCode, faDownload, faEnvelope, faFlag, faGraduationCap, faLocationDot, faStar, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import CV from './cv';
-import { CVLink, education, email, gitHubLink, interests, languages, linkedInLink, locationMaps, name, projects, skills, stackOverflowLink, summary, title, work } from './data';
+import { CVLink, education, email, gitHub, interests, languages, linkedIn, locationMaps, name, projects, skills, stackOverflowLink, summary, title, work } from './data';
 
 export default function App() {
-  const [showCV, setShowCV] = React.useState(true); // TODO: Later on, this should be false
+  const [showCV, setShowCV] = React.useState(false);
   const [shakeLinkedIn, setShakeLinkedIn] = React.useState(false);
   const [shakeGithub, setShakeGithub] = React.useState(false);
   const [shakeStackOverflow, setShakeStackOverflow] = React.useState(false);
+  const [shakeDownload, setShakeDownload] = React.useState(false);
 
   return (
     <>
-      {/* <Modal className='cvModal' show={showCV} onHide={() => { setShowCV(false); }}>
+      <Modal className='cvModal' show={showCV} onHide={() => { setShowCV(false); }}>
         <PDFViewer>
           <CV />
         </PDFViewer>
-      </Modal> */}
+      </Modal>
 
       <header className="header">
         <Container>
@@ -41,7 +42,7 @@ export default function App() {
                   <Col xs={12}>
                     <ul className="social list-inline">
                       <li>
-                        <a href={linkedInLink}>
+                        <a href={linkedIn.link}>
                           <FontAwesomeIcon
                             icon={faLinkedin}
                             shake={shakeLinkedIn}
@@ -51,7 +52,7 @@ export default function App() {
                         </a>
                       </li>
                       <li>
-                        <a href={gitHubLink}>
+                        <a href={gitHub.link}>
                           <FontAwesomeIcon
                             icon={faGithub}
                             shake={shakeGithub}
@@ -76,8 +77,15 @@ export default function App() {
               </div>
             </Col>
             <Col xs={12} sm={2} xl={1} className='resume'>
-              <a href={CVLink}><FontAwesomeIcon icon={faDownload} /></a>
-              {/* <span onClick={() => { setShowCV(true); }}><FontAwesomeIcon icon={faDownload} /> Open CV</span> */}
+              {/* <a href={CVLink}><FontAwesomeIcon icon={faDownload} /></a> */}
+              <span onClick={() => { setShowCV(true); }}>
+                <FontAwesomeIcon
+                  icon={faDownload}
+                  shake={shakeDownload}
+                  onMouseOver={() => { setShakeDownload(true) }}
+                  onMouseLeave={() => { setShakeDownload(false) }}
+                />
+              </span>
             </Col>
             <Col xs={0} sm={0} xl={1} />
           </Row>
@@ -103,7 +111,7 @@ export default function App() {
                 <div className="content">
                   {work.map((w, i) => (
                     <div className="item" key={i}>
-                      <h3 className="title">{w.role} <span className="place"><a href={w.companyUrl}>{w.company}</a></span> <span className="year">({w.date})</span></h3>
+                      <h3 className="title">{w.role} <span className="place"><a href={w.companyUrl}>{w.company}</a></span> <span className="year">{w.location} ({w.date})</span></h3>
                       <p className="description">{w.description}{w.technologies ? (
                         <span className='technologies'>
                           <br />
@@ -179,7 +187,7 @@ export default function App() {
                 <h2 className="heading">Basic Information</h2>
                 <div className="content">
                   <ul className="list-unstyled">
-                    <li><FontAwesomeIcon icon={faEnvelope} /> <span className="sr-only">Email:</span><a href={`mailto:${email}`}>{email}</a></li>
+                    <li><FontAwesomeIcon icon={faEnvelope} /> <span className="sr-only">Email:</span><a href={email.link}>{email.short}</a></li>
                     <li><FontAwesomeIcon icon={faLocationDot} /> <span className="sr-only">Location:</span><a href={locationMaps}>Edinburgh, UK</a></li>
                     <li><FontAwesomeIcon icon={faFlag} /> <span className="sr-only">Nationality:</span>Greek</li>
                   </ul>

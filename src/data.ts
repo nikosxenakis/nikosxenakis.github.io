@@ -1,8 +1,18 @@
 export const name = 'Xenakis Nikos';
 export const title = 'Senior Software Engineer';
-export const email = 'nikosxenakis94@gmail.com';
-export const linkedInLink = 'https://www.linkedin.com/in/nikosxenakis';
-export const gitHubLink = 'https://github.com/nikosxenakis';
+export const email = {
+   short: 'nikosxenakis94@gmail.com',
+   link: 'mailto:nikosxenakis94@gmail.com',
+};
+export const linkedIn = {
+   short: 'linkedin.com/in/nikosxenakis',
+   link: 'https://www.linkedin.com/in/nikosxenakis',
+};
+export const gitHub = {
+   short: 'github.com/nikosxenakis',
+   link: 'https://github.com/nikosxenakis',
+};
+
 export const stackOverflowLink = 'https://stackoverflow.com/users/8756896/nikos-xenakis';
 export const locationMaps = 'https://www.google.co.uk/maps/place/Edinburgh/@55.9412015,-3.2465378,13z/data=!3m1!4b1!4m6!3m5!1s0x4887b800a5982623:0x64f2147b7ce71727!8m2!3d55.953252!4d-3.188267!16zL20vMDJtNzc?entry=ttu';
 export const CVLink = 'https://github.com/nikosxenakis/nikosxenakis-website/blob/master/src/assets/resume.pdf';
@@ -30,17 +40,12 @@ export const work = [{
    location: 'Edinburgh, UK',
    date: 'Sept 2019 – Aug 2021',
 }, {
-   role: 'Software Development Intern',
-   company: 'University of Edinburgh Information Services Group',
+   role: 'Software Engineer Intern',
+   company: 'Information Services of UoE',
    companyUrl: 'https://www.ed.ac.uk/information-services',
    location: 'Edinburgh, UK',
    date: 'April 2019 – June 2019',
-   description: `This project aims to develop an XML-based publishing workflow that could be adopted by journals like the ones supported by the Library's journal hosting service. Responsibilities:
-  - review open-source tools for converting, editing and rendering XML files
-  - investigate how these tools could be integrated with OJS
-  - select the tools that best meet our requirements
-  - adapt the selected tools as needed
-  - combine the selected tools into a production workflow `,
+   description: `Created an XML-based publishing workflow, including tool evaluation, OJS integration, customization, and workflow establishment for academic journals.`,
 }, {
    role: 'Software Engineer',
    company: 'Wings ICT Solutions',
@@ -50,15 +55,16 @@ export const work = [{
    description: 'Working for Wings ICT Solutions in order to develop web services for National Bank of Greece. Requirements analysis, design, and implementation of user interface CRM bank systems.',
    technologies: 'HTML, Typescript, Angular, CSS, SASS, LESS, C#, .NET',
 }, {
-   role: 'Undergraduate Teaching Assistant',
+   role: 'Teaching Assistant',
    company: 'Computer Science Department, University of Crete',
+   companyShort: 'Computer Science Department, UoC',
    companyUrl: 'http://www.csd.uoc.gr',
    location: 'Heraklion, Greece',
    date: 'Sep 2015 – Jan 2016',
    description: 'Part of the program "TheProfit" which allows to the best undergraduate students of the department to aid University`s academic work. Role: Undergraduate Teaching Assistant at "Introduction to Computer Science" course'
 }, {
    role: 'Undergraduate Trainee',
-   company: 'Foundation for Research and Technology - Hellas (FORTH)',
+   company: 'FORTH (Research Center)',
    companyUrl: 'https://www.forth.gr',
    location: 'Heraklion, Greece',
    date: 'Jun 2015 – Aug 2015',
@@ -68,6 +74,7 @@ export const work = [{
 
 export const education = [{
    role: 'Msc in High Performance Computing with Data Science',
+   roleShort: 'Msc in HPC with Data Science',
    company: 'University of Edinburgh',
    companyUrl: 'https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2019&id=871',
    location: 'Edinburgh, UK',
@@ -86,6 +93,7 @@ export const education = [{
    awards: '3 years in a row awarded with the memorial scholarship "Stelios Orfanoudakis". This scholarship is given to the top 3 students of the Computer Science department each year.',
 }, {
    role: 'IT Essentials: PC Hardware and Software',
+   roleShort: 'IT Essentials',
    company: 'Cisco Network Academy',
    location: 'Chania, Greece',
    date: 'Jun 2011 - Aug 2011',
@@ -113,20 +121,21 @@ export const projects = [{
 }, {
    name: '1942',
    date: 'November 2015 - January 2016',
+   url: 'https://www.youtube.com/watch?v=kdICR49vbvg',
    description: `1942, a beloved retro video game from 1984, has been reimagined in this project. Utilizing the original sprite sheets, the game has been recreated with the C++ programming language, leveraging the SDL cross-platform software development library.`,
    technologies: 'C++, SDL',
 }];
 
 export const languages = [{
-   name: 'Greek',
+   name: '🇬🇷 Greek',
    level: 'Native Speaker',
    stars: 5,
 }, {
-   name: 'English',
+   name: '🇬🇧 English',
    level: 'Advanced Level',
    stars: 4,
 }, {
-   name: 'German',
+   name: '🇩🇪 German',
    level: 'Beginner Level',
    stars: 1,
 }];
