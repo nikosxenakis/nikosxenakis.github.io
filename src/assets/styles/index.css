@@ -9,8 +9,26 @@
   --border-radius: 4px;
 }
 
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("TrueType");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("TrueType");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Italic.ttf") format("TrueType");
+  font-style: italic;
+}
+
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: black;
   background: var(--background-color);
   font-size: 16px;
@@ -35,6 +53,22 @@ a {
 a:hover {
   text-decoration: underline;
   color: var(--link-hover-color);
+}
+
+.cvModal {
+  /* width: 90vw; */
+  /* max-width: 90vw; */
+  max-width: 90%;
+  /* height: 70%; */
+}
+
+.cvModal .modal-content {
+  width: 800px;
+  height: 1190px;
+}
+
+.cvModal .modal-content iframe {
+  height: 100%;
 }
 
 .text-highlight {
@@ -63,12 +97,14 @@ a:hover {
 
 .header .resume {
   justify-content: right;
+  margin-top: 30px;
 }
 
 .header .avatar img {
   width: 120px;
   height: 120px;
   margin: auto;
+  margin-top: 30px;
 }
 
 .header .profile-image {
@@ -84,9 +120,13 @@ a:hover {
 .header .profile-content .title {
   color: var(--secondary-color);
   font-weight: 400;
-  font-size: 24px;
+  font-size: 23px;
   margin-top: 0;
   margin-bottom: 15px;
+}
+
+.header .profile-content .social.list-inline {
+  display: inline-flex;
 }
 
 .header .profile-content .social svg,
