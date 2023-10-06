@@ -4,7 +4,7 @@ import { education, email, gitHub, interests, languages, linkedIn, name, project
 
 Font.register({ family: 'Roboto', src: '/Roboto-Regular.ttf', fontStyle: 'normal', fontWeight: 'normal' });
 Font.register({ family: 'Roboto', src: '/Roboto-Bold.ttf', fontStyle: 'normal', fontWeight: 'bold' });
-Font.register({ family: 'Roboto', src: '/Roboto-Light.ttf', fontStyle: 'normal', fontWeight: 'light' });
+Font.register({ family: 'Roboto', src: '/Roboto-Thin.ttf', fontWeight: 'thin' });
 Font.register({ family: 'Roboto', src: '/Roboto-Italic.ttf', fontStyle: 'italic', fontWeight: 'normal' });
 
 Font.registerEmojiSource({
@@ -14,7 +14,7 @@ Font.registerEmojiSource({
 
 const backgroundColor = '#E4E4E4';
 const primaryColor = '#7b8d6c';
-const secondaryColor = '#778492';
+const secondaryColor = '#6d757d';
 
 const styles = StyleSheet.create({
    page: {
@@ -29,14 +29,14 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
    },
    headerName: {
-      fontSize: 26,
+      fontSize: 28,
       color: primaryColor,
    },
    headerTitle: {
       paddingBottom: 10,
-      fontSize: 14,
+      fontSize: 18,
       color: secondaryColor,
-      // fontWeight: 'light',
+      // fontWeight: 'thin',
    },
    headerContentLeft: {
       marginLeft: 20,
@@ -71,7 +71,9 @@ const styles = StyleSheet.create({
       marginBottom: 20,
    },
    section: {
-      padding: 10,
+      paddingLeft: 10,
+      paddingRight: 10,
+      paddingBottom: 10,
       // backgroundColor: 'red',
    },
    sectionTitle: {
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
    sectionContent: {
    },
    sectionItem: {
-      marginBottom: 12,
+      marginBottom: 18,
       display: 'flex',
       justifyContent: 'space-between',
       flexDirection: 'row',
@@ -93,23 +95,20 @@ const styles = StyleSheet.create({
       fontSize: 10,
       paddingBottom: 5,
       textAlign: 'right',
-      // backgroundColor: '#236111',
    },
    sectionItemLeft: {
       // flexDirection: 'row',
       // flex: 1,
       textAlign: 'left',
-      // backgroundColor: '#531111',
-      width: '30%',
-      maxWidth: '30%',
+      width: '26%',
+      maxWidth: '26%',
    },
    sectionItemRight: {
       // flexDirection: 'row',
       // flex: 1,
       // textAlign: 'right',
-      // backgroundColor: '#534141',
-      width: '70%',
-      maxWidth: '70%',
+      width: '74%',
+      maxWidth: '74%',
    },
    sectionItemSubHeader: {
       flexDirection: 'row',
@@ -142,7 +141,6 @@ const styles = StyleSheet.create({
    },
    smallSectionGroup: {
       flexDirection: 'row',
-      // backgroundColor: '#534141',
       justifyContent: 'space-between',
    },
    smallSectionContent: {
@@ -160,14 +158,43 @@ const styles = StyleSheet.create({
       color: 'black',
    },
    technologyItem: {
-      backgroundColor: primaryColor,
-      color: backgroundColor,
+      backgroundColor: '#d6e0ce',
+      color: 'black',
       paddingTop: 2,
       paddingBottom: 2,
       paddingLeft: 4,
-      paddingRight: 4,
+      paddingRight: 7,
       borderRadius: 5,
       marginRight: 1,
+   },
+   projectItem: {
+      flexDirection: 'row',
+      marginBottom: 5,
+      // backgroundColor: '#534141',
+      width: 250,
+      borderBottom: `1px solid ${primaryColor}`,
+   },
+   projectItemContentName: {
+      fontSize: 8,
+      marginBottom: 2,
+      width: '40%',
+      maxWidth: '40%',
+   },
+   projectItemName: {
+      textDecoration: 'none',
+      color: 'black',
+   },
+   projectItemContent: {
+      flexDirection: 'row',
+      fontSize: 8,
+      width: '60%',
+      maxWidth: '60%',
+      // backgroundColor: '#236111',
+   },
+   smallSectionContentProject: {
+      flexDirection: 'column',
+      // width: '50%',
+      // maxWidth: '50%',
    },
 });
 
@@ -183,7 +210,7 @@ export default function CV() {
                <View style={styles.headerContentRight}>
                   <View style={styles.contactDetails}>
                      <View style={styles.contactDetailsItem}>
-                        <Text><Link src={email.link} style={styles.linkStyle}>📧 {email.short}</Link></Text>
+                        <Text><Link src={email.link} style={styles.linkStyle}>✉️ {email.short}</Link></Text>
                      </View>
                      <View style={styles.contactDetailsItem}>
                         <Text><Link src={linkedIn.link} style={styles.linkStyle}><Image src='./assets/images/linkedin.png' style={{ width: 10, height: 10 }} /> {linkedIn.short}</Link></Text>
@@ -198,13 +225,13 @@ export default function CV() {
                <View style={styles.section}>
                   <Text style={styles.sectionTitle}>Work experience</Text>
                   <View style={styles.sectionContent}>
-                     {work.map((x, i) => (
+                     {work.filter(x => x.forCV).map((x, i) => (
                         <View key={i} style={styles.sectionItem}>
                            <View style={styles.sectionItemLeft}>
                               <Text style={styles.sectionItemTitle}>{x.role} </Text>
                               {x.companyShort && <Text style={styles.sectionItemOrganisation}><Link src={x.companyUrl} style={styles.linkStyle}>{x.companyShort}</Link> </Text>}
                               {!x.companyShort && x.company && <Text style={styles.sectionItemOrganisation}><Link src={x.companyUrl} style={styles.linkStyle}>{x.company}</Link> </Text>}
-                              <Text style={styles.sectionItemDate}>{x.location} ({x.date})</Text>
+                              <Text style={styles.sectionItemDate}>{x.location} ({x.dateCV ? x.dateCV : x.date})</Text>
                            </View>
                            <View style={styles.sectionItemRight}>
                               <View style={styles.sectionItemContents}>
@@ -232,12 +259,12 @@ export default function CV() {
                <View style={styles.section}>
                   <Text style={styles.sectionTitle}>Education</Text>
                   <View style={styles.sectionContent}>
-                     {education.map((x, i) => (
+                     {education.filter(x => x.forCV).map((x, i) => (
                         <View key={i} style={styles.sectionItem}>
                            <View style={styles.sectionItemLeft}>
                               {x.roleShort && <Text style={styles.sectionItemTitle}>{x.roleShort} </Text>}
                               {!x.roleShort && x.role && <Text style={styles.sectionItemTitle}>{x.role} </Text>}
-                              {x.company && <Text style={styles.sectionItemOrganisation}>{x.company} </Text>}
+                              <Text style={styles.sectionItemOrganisation}><Link src={x.companyUrl ?? ''} style={styles.linkStyle}>{x.company}</Link> </Text>
                               <Text style={styles.sectionItemDate}>{x.date}</Text>
                            </View>
                            <View style={styles.sectionItemRight}>
@@ -266,9 +293,23 @@ export default function CV() {
                <View style={styles.smallSectionGroup}>
                   <View style={styles.section}>
                      <Text style={styles.sectionTitle}>Projects</Text>
-                     <View style={styles.smallSectionContent}>
+                     <View style={styles.smallSectionContentProject}>
                         {projects.map((x, i) => (
-                           <Text key={i} style={styles.smallSectionText}><Link src={x.url} style={styles.linkStyle}>{x.name}</Link> </Text>
+                           // <Text key={i} style={styles.smallSectionText}><Link src={x.url} style={styles.linkStyle}>{x.name}</Link></Text>
+
+                           <View key={i} style={styles.projectItem}>
+                              <View style={styles.projectItemContentName}>
+                                 <Link style={styles.projectItemName} src={x.url}>{x.name}</Link>
+                              </View>
+                              <View style={styles.projectItemContent}>
+                                 {x.technologies.split(',').map((y, j) => (
+                                    <View key={j} style={styles.technologyItem}>
+                                       <Text>{y}</Text>
+                                    </View>
+                                 ))}
+                              </View>
+
+                           </View>
                         ))}
                      </View>
                   </View>
@@ -276,7 +317,7 @@ export default function CV() {
                      <Text style={styles.sectionTitle}>Languages</Text>
                      <View style={styles.smallSectionContent}>
                         {languages.map((x, i) => (
-                           <Text key={i} style={styles.smallSectionText}>{x.name} - <Text style={styles.smallSectionSecondary}>{x.level}</Text></Text>
+                           <Text key={i} style={styles.smallSectionText}>{x.name} <Text style={styles.smallSectionSecondary}>{x.level}</Text></Text>
                         ))}
                      </View>
                   </View>
@@ -291,6 +332,6 @@ export default function CV() {
                </View>
             </View>
          </Page>
-      </Document>
+      </Document >
    );
 }

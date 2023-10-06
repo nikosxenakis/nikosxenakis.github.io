@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { faCode, faDownload, faEnvelope, faFlag, faGraduationCap, faLocationDot, faStar, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import CV from './cv';
-import { CVLink, education, email, gitHub, interests, languages, linkedIn, locationMaps, name, projects, skills, stackOverflowLink, summary, title, work } from './data';
+import { education, email, gitHub, interests, languages, linkedIn, locationMaps, name, projects, skills, stackOverflowLink, summary, title, work } from './data';
 
 export default function App() {
   const [showCV, setShowCV] = React.useState(false);
@@ -115,9 +115,8 @@ export default function App() {
                       <p className="description">{w.description}{w.technologies ? (
                         <span className='technologies'>
                           <br />
-                          <span className='title'>Technologies</span>
                           {w.technologies.split(',').map((t, i) => (
-                            <Badge pill bg="light" text="dark" key={i}>
+                            <Badge className='technology' pill bg="light" text="dark" key={i}>
                               {t}
                             </Badge>
                           ))}
@@ -166,9 +165,8 @@ export default function App() {
                       <p className="description">{w.description}{w.technologies ? (
                         <span className='technologies'>
                           <br />
-                          <span className='title'>Technologies</span>
                           {w.technologies.split(',').map((t, i) => (
-                            <Badge pill bg="light" text="dark" key={i}>
+                            <Badge className='technology' pill bg="light" text="dark" key={i}>
                               {t}
                             </Badge>
                           ))}
@@ -223,7 +221,7 @@ export default function App() {
                   <ul className="list-unstyled">
                     {languages.map((l, i) => (
                       <li className="item" key={i}>
-                        <span className="title"><strong>{l.name}: </strong></span>
+                        <span className="title"><strong>{l.name} </strong></span>
                         <span className="level">
                           {l.level}
                           <br className="visible-sm visible-xs" />

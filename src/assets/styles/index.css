@@ -1,10 +1,10 @@
 /* ======= Base ======= */
 :root {
-  --secondary-color: #778492;
+  --secondary-color: #6d757d;
   --background-color: #7b8d6c;
-  --container-background-color: #f5f5f5;
-  --link-color: #6fa542;
-  --link-hover-color: #84cb4b;
+  --container-background-color: #e4e4e4;
+  --link-color: #65864a;
+  --link-hover-color: #6b9a44;
   --font-size: 16px;
   --border-radius: 4px;
 }
@@ -42,7 +42,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 a {
@@ -53,6 +53,12 @@ a {
 a:hover {
   text-decoration: underline;
   color: var(--link-hover-color);
+}
+
+.technology {
+  color: white !important;
+  background-color: var(--link-color) !important;
+  margin-right: 5px;
 }
 
 .cvModal {
@@ -96,8 +102,9 @@ a:hover {
 }
 
 .header .resume {
-  justify-content: right;
+  justify-content: center;
   margin-top: 30px;
+  margin-bottom: 30px;
   color: var(--link-color);
 }
 
@@ -248,7 +255,7 @@ a:hover {
 }
 
 /* Language Section */
-.languages .item .title {
+.languages .item .level {
   color: var(--secondary-color);
 }
 

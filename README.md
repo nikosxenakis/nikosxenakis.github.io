@@ -9,6 +9,9 @@ npm run start
 npm run build
 ```
 
-TODO
-greek emoji
-links
+## Todo
+CV
+   greek emoji
+Website
+   section add right align
+   Style titles that are links
