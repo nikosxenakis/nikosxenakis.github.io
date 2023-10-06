@@ -1,6 +1,6 @@
 import React from 'react';
 import { Page, Text, Image, View, Document, StyleSheet, Font, Link, Svg, Path } from '@react-pdf/renderer';
-import { education, email, gitHub, interests, languages, linkedIn, name, projects, title, work } from './data';
+import { education, email, gitHub, interests, languages, linkedIn, name, projects, title, website, work } from './data';
 
 Font.register({ family: 'Roboto', src: '/Roboto-Regular.ttf', fontStyle: 'normal', fontWeight: 'normal' });
 Font.register({ family: 'Roboto', src: '/Roboto-Bold.ttf', fontStyle: 'normal', fontWeight: 'bold' });
@@ -74,7 +74,6 @@ const styles = StyleSheet.create({
       paddingLeft: 10,
       paddingRight: 10,
       paddingBottom: 10,
-      // backgroundColor: 'red',
    },
    sectionTitle: {
       fontSize: 16,
@@ -91,22 +90,16 @@ const styles = StyleSheet.create({
    },
    sectionItemHeader: {
       flexDirection: 'row',
-      // width: '100%',
       fontSize: 10,
       paddingBottom: 5,
       textAlign: 'right',
    },
    sectionItemLeft: {
-      // flexDirection: 'row',
-      // flex: 1,
       textAlign: 'left',
       width: '26%',
       maxWidth: '26%',
    },
    sectionItemRight: {
-      // flexDirection: 'row',
-      // flex: 1,
-      // textAlign: 'right',
       width: '74%',
       maxWidth: '74%',
    },
@@ -214,6 +207,9 @@ export default function CV() {
                      </View>
                      <View style={styles.contactDetailsItem}>
                         <Text><Link src={linkedIn.link} style={styles.linkStyle}><Image src='./assets/images/linkedin.png' style={{ width: 10, height: 10 }} /> {linkedIn.short}</Link></Text>
+                     </View>
+                     <View style={styles.contactDetailsItem}>
+                        <Text><Link src={website.link} style={styles.linkStyle}>🌐 {website.short}</Link></Text>
                      </View>
                      <View style={styles.contactDetailsItem}>
                         <Text><Link src={gitHub.link} style={styles.linkStyle}><Image src='./assets/images/github.png' style={{ width: 10, height: 10 }} /> {gitHub.short}</Link></Text>

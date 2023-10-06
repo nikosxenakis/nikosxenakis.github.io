@@ -12,6 +12,3 @@ npm run build
 ## Todo
 CV
    greek emoji
-Website
-   section add right align
-   Style titles that are links

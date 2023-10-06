@@ -13,6 +13,11 @@ export const gitHub = {
    link: 'https://github.com/nikosxenakis',
 };
 
+export const website = {
+   short: 'nikosxenakis.github.io',
+   link: 'https://nikosxenakis.github.io',
+};
+
 export const stackOverflowLink = 'https://stackoverflow.com/users/8756896/nikos-xenakis';
 export const locationMaps = 'https://www.google.co.uk/maps/place/Edinburgh/@55.9412015,-3.2465378,13z/data=!3m1!4b1!4m6!3m5!1s0x4887b800a5982623:0x64f2147b7ce71727!8m2!3d55.953252!4d-3.188267!16zL20vMDJtNzc?entry=ttu';
 export const summary = 'Passion and devotion are the cornerstones of my professional approach. I am deeply committed to staying updated, export constantly researching innovative products and cutting-edge methods to ensure that my projects not only meet but exceed expectations. With a rich background in designing, developing, and testing software, I bring a blend of technical expertise and creative problem-solving to every challenge. My goal is to deliver solutions that are not just efficient and reliable, but also future-ready. I thrive in collaborative environments and am always eager to learn and grow alongside my peers.';
@@ -81,7 +86,7 @@ export const work = [{
 
 export const education = [{
    role: 'Msc in High Performance Computing with Data Science',
-   roleShort: 'Msc in HPC with Data Science',
+   // roleShort: 'Msc in HPC with Data Science',
    company: 'University of Edinburgh',
    companyUrl: 'https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2019&id=871',
    location: 'Edinburgh, UK',

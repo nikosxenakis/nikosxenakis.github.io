@@ -111,7 +111,16 @@ export default function App() {
                 <div className="content">
                   {work.map((w, i) => (
                     <div className="item" key={i}>
-                      <h3 className="title">{w.role} <span className="place"><a href={w.companyUrl}>{w.company}</a></span> <span className="year">{w.location} ({w.date})</span></h3>
+                      <Row className="itemHeader">
+                        <Col className="itemHeaderLeft" xs={12} sm={7}>
+                          <h3 className="title">{w.role}</h3>
+                          <h6 className="company"><a href={w.companyUrl}>{w.company}</a></h6>
+                        </Col>
+                        <Col className="itemHeaderRight" xs={12} sm={5}>
+                          <h6 className="place">{w.location}</h6>
+                          <h6 className="year">{w.date}</h6>
+                        </Col>
+                      </Row>
                       <p className="description">{w.description}{w.technologies ? (
                         <span className='technologies'>
                           <br />
@@ -134,7 +143,16 @@ export default function App() {
                 <div className="content">
                   {education.map((w, i) => (
                     <div className="item" key={i}>
-                      <h3 className="title">{w.role} <span className="place"><a href={w.companyUrl}>{w.company}</a></span> <span className="year">({w.date})</span></h3>
+                    <Row className="itemHeader">
+                      <Col className="itemHeaderLeft" xs={12} sm={7}>
+                        <h3 className="title">{w.role}</h3>
+                        <h6 className="company"><a href={w.companyUrl}>{w.company}</a></h6>
+                      </Col>
+                      <Col className="itemHeaderRight" xs={12} sm={5}>
+                        <h6 className="place">{w.location}</h6>
+                        <h6 className="year">{w.date}</h6>
+                      </Col>
+                    </Row>
                       <ul>
                         {w.grade && <li>
                           Grade: {w.grade}

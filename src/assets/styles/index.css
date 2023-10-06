@@ -56,9 +56,11 @@ a:hover {
 }
 
 .technology {
-  color: white !important;
-  background-color: var(--link-color) !important;
+  color: black !important;
+  background-color: #d6e0ce !important;
   margin-right: 5px;
+  border-radius: 5px;
+  margin-right: 2px;
 }
 
 .cvModal {
@@ -179,27 +181,55 @@ a:hover {
   margin-bottom: 30px;
 }
 
-.section .small .item {
-  margin-bottom: 10px;
+.section .item .itemHeader {
+  display: inline-flex;
+  width: 100%;
+}
+
+.section .item .itemHeaderLeft {
+  min-width: 200px;
+}
+
+.section .item .itemHeaderRight {
+  min-width: 140px;
+  text-align: right;
 }
 
 .section .item .title {
   font-size: 17px;
-  line-height: 1.5;
+  margin-bottom: 0px;
 }
 
-.section .item .title .place {
+.section .item .title a {
+  color: black;
+  font-weight: bold;
+}
+
+.section .item .company {
   font-size: 15px;
   font-weight: normal;
 }
 
-.section .item .description {
-  font-size: 14px;
+.section .item .company a {
+  color: black;
+}
+
+.section .item .place {
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 0px;
 }
 
 .section .item .year {
   color: var(--secondary-color);
   font-weight: 500;
+  font-size: 14px;
+}
+
+.section .small .item {
+  margin-bottom: 10px;
+}
+.section .item .description {
   font-size: 14px;
 }
 
@@ -322,6 +352,11 @@ a:hover {
   .project-image {
     margin-bottom: 15px;
   }
+
+  .section .item .itemHeaderRight {
+    text-align: left;
+  }
+  
 }
 
 /* @media (min-width: 1200px) {
