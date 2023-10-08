@@ -99,6 +99,15 @@ module.exports = {
             },
          ],
       }),
+      new CopyPlugin({
+         patterns: [
+            {
+               context: path.join(__dirname, 'src', 'assets'),
+               from: "**/*.pdf",
+               to: "assets/[path][name][ext]",
+            },
+         ],
+      }),
       new HtmlWebpackPlugin(
          {
             title: 'personal-website',
