@@ -189,6 +189,9 @@ const styles = StyleSheet.create({
       // width: '50%',
       // maxWidth: '50%',
    },
+   visaStyle: {
+      fontSize: 10,
+   }
 });
 
 export default function CV() {
@@ -199,6 +202,7 @@ export default function CV() {
                <View style={styles.headerContentLeft}>
                   <Text style={styles.headerName}>{name}</Text>
                   <Text style={styles.headerTitle}>{title}</Text>
+                        <Text style={styles.visaStyle}>Eligible to work in the EU, no Visa required</Text>
                </View>
                <View style={styles.headerContentRight}>
                   <View style={styles.contactDetails}>

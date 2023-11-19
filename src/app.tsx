@@ -119,6 +119,7 @@ export default function App() {
                 <h2 className="heading">Summary</h2>
                 <div className="content">
                   <p>{summary}</p>
+                  <p><b>Work Authorization</b> Eligible to work in the EU, no Visa required</p>
                 </div>
               </div>
             </section>
