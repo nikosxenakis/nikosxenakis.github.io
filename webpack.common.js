@@ -67,6 +67,10 @@ module.exports = {
             },
          },
          {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: ['file-loader'],
+         },
+         {
             test: /\.(s*)css$/,
             use: [MiniCssExtractPlugin.loader, "css-loader"]
          },
@@ -112,6 +116,7 @@ module.exports = {
          {
             title: 'personal-website',
             template: path.join(__dirname, 'public', 'index.html'),
+            favicon: './src/assets/images/avatar.png',
          },
       ),
       new MiniCssExtractPlugin({ filename: "assets/styles/[name].css" }),

@@ -223,7 +223,7 @@ export default function App() {
                 <div className="content">
                   <ul className="list-unstyled">
                     <li><FontAwesomeIcon icon={faEnvelope} /> <span className="sr-only">Email:</span><a href={email.link}>{email.short}</a></li>
-                    <li><FontAwesomeIcon icon={faLocationDot} /> <span className="sr-only">Location:</span><a href={locationMaps}>Edinburgh, UK</a></li>
+                    <li><FontAwesomeIcon icon={faLocationDot} /> <span className="sr-only">Location:</span><a href={locationMaps}>Zurich, Switzerland</a></li>
                     <li><FontAwesomeIcon icon={faFlag} /> <span className="sr-only">Nationality:</span>Greek</li>
                   </ul>
                 </div>
@@ -292,7 +292,7 @@ export default function App() {
 
       <footer className="footer">
         <div className="container text-right">
-          <small className="copyright">@Copyrights Xenakis Nikos - October 2023</small>
+          <small className="copyright">@Copyrights Xenakis Nikolaos - February 2024</small>
         </div>
       </footer>
     </>

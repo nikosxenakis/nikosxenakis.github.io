@@ -19,15 +19,24 @@ export const website = {
 };
 
 export const stackOverflowLink = 'https://stackoverflow.com/users/8756896/nikos-xenakis';
-export const locationMaps = 'https://www.google.co.uk/maps/place/Edinburgh/@55.9412015,-3.2465378,13z/data=!3m1!4b1!4m6!3m5!1s0x4887b800a5982623:0x64f2147b7ce71727!8m2!3d55.953252!4d-3.188267!16zL20vMDJtNzc?entry=ttu';
+export const locationMaps = 'https://www.google.co.uk/maps/place/%CE%96%CF%85%CF%81%CE%AF%CF%87%CE%B7/@47.3774122,8.4543354,12z/data=!4m15!1m8!3m7!1s0x47900b9749bea219:0xe66e8df1e71fdc03!2zzpbPhc-Bzq_Ph863!3b1!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY!3m5!1s0x47900b9749bea219:0xe66e8df1e71fdc03!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY?entry=ttu';
 export const summary = 'Passion and devotion are the cornerstones of my professional approach. I am deeply committed to staying updated, export constantly researching innovative products and cutting-edge methods to ensure that my projects not only meet but exceed expectations. With a rich background in designing, developing, and testing software, I bring a blend of technical expertise and creative problem-solving to every challenge. My goal is to deliver solutions that are not just efficient and reliable, but also future-ready. I thrive in collaborative environments and am always eager to learn and grow alongside my peers.';
 export const work = [{
+   role: 'Specialist R&D Engineer',
+   company: 'Sphynx Technology Solutions',
+   companyUrl: 'https://www.sphynx.ch',
+   location: 'Zurich, Switzerland',
+   date: 'Fed 2024 - Present',
+   description: ``,
+   technologies: '',
+   forCV: true,
+}, {
    role: 'Senior Software Engineer',
    company: 'Welbot',
    companyUrl: 'https://welbot.io',
    location: 'Edinburgh, UK',
-   date: 'Nov 2022 - Present',
-   description: `At Welbot Ltd., I take pride in crafting state-of-the-art wellbeing products tailored for enterprises. As a Senior Software Engineer, my role goes beyond just coding; it's about understanding the unique challenges businesses face and translating those needs into innovative software solutions. I am dedicated to enhancing workplace wellbeing through cutting-edge technology and research-driven solutions.`,
+   date: 'Nov 2022 - Jan 2024',
+   description: `At Welbot Ltd., I crafted state-of-the-art well-being products tailored for enterprises, going beyond coding to understand business challenges and deliver innovative solutions. I was dedicated to enhancing workplace well-being through cutting-edge technology and research-driven solutions. Additionally,  I introduced CI/CD pipelines for all products, streamlining development and ensuring efficiency.`,
    technologies: 'HTML/CSS,TypeScript,Node.js,ElectronJS,AWS,Terraform,GitHub CI/CD',
    forCV: true,
 }, {
@@ -37,7 +46,7 @@ export const work = [{
    location: 'Edinburgh, UK',
    date: 'Aug 2021 - Nov 2022',
    dateCV: 'Sept 2019 - Nov 2022',
-   description: 'As a software engineer at the SeeTrack product, I was instrumental in producing Mission Planning, Monitoring, and Post Mission Analysis software for Unmanned Underwater Vehicles (UUVs). My dedication and performance led to my rapid promotion to the senior level within the company. Additionally, I actively participated in customer trials, representing our company and contributing to our success.',
+   description: 'I played a key role in developing Mission Planning, Monitoring, and Post Mission Analysis software for Unmanned Underwater Vehicles (UUVs). My dedication and performance led to my rapid promotion to the senior level, making me the fastest promoted engineer in the company at the time. I also actively participated in customer trials, contributing to our overall success.',
    technologies: 'C#,.NET Framework,Java,C++,NSIS,WIX Toolset,Jenkins',
    forCV: true,
 }, {
@@ -121,24 +130,28 @@ export const projects = [{
    url: 'https://georgioupolis-taxi.firebaseapp.com/',
    description: 'Website for booking transfer and tours in Crete, Greece.',
    technologies: 'Typescript,Angular,LESS,NodeJS',
+   forCV: true,
 }, {
    name: 'ImagInLexis',
    date: 'June 2016 - August 2016',
    url: 'https://github.com/nikosxenakis/ImagInLexis',
    description: `Hired to create a desktop application for a bachelor's thesis focused on Logotherapy. The application primarily enhances speech therapy intervention plans by incorporating a series of tests for patients to undertake. Designed with a gamified approach, the application caters specifically to children, making the therapeutic process engaging and interactive.`,
    technologies: 'Java,JavaFX',
+   forCV: true,
 }, {
    name: 'ICE Editor',
    date: 'March 2016 - June 2016',
    url: 'https://github.com/nikosxenakis/ICE_Editor',
    description: `A web-based platform designed for end-users to craft straightforward applets for IoT (Internet Of Things) devices. This intuitive editor minimizes both compile and runtime errors, offering a drag-and-drop interface alongside value editing capabilities. It features a versatile API, allowing users to swiftly develop programs using Javascript or by defining them in JSON files.`,
    technologies: 'Javascript,HTML,CSS,Canvas.js',
+   forCV: false,
 }, {
    name: '1942',
    date: 'November 2015 - January 2016',
    url: 'https://www.youtube.com/watch?v=kdICR49vbvg',
    description: `1942, a beloved retro video game from 1984, has been reimagined in this project. Utilizing the original sprite sheets, the game has been recreated with the C++ programming language, leveraging the SDL cross-platform software development library.`,
    technologies: 'C++,SDL',
+   forCV: false,
 }];
 
 export const languages = [{
@@ -156,13 +169,17 @@ export const languages = [{
 }];
 
 export const interests = [{
-   name: '♟️ Chess'
+   name: '♟️ Chess',
+   forCV: true,
 }, {
    name: '🕺🏽 Salsa and Cretan traditional dances',
+   forCV: true,
 }, {
    name: '🏋️ Weight lifting',
+   forCV: true,
 }, {
    name: '🚴 Cycling',
+   forCV: false,
 }];
 
 export const skills = [{

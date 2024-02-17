@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
    sectionContent: {
    },
    sectionItem: {
-      marginBottom: 18,
+      marginBottom: 17,
       display: 'flex',
       justifyContent: 'space-between',
       flexDirection: 'row',
@@ -202,7 +202,7 @@ export default function CV() {
                <View style={styles.headerContentLeft}>
                   <Text style={styles.headerName}>{name}</Text>
                   <Text style={styles.headerTitle}>{title}</Text>
-                        <Text style={styles.visaStyle}>Eligible to work in the EU, no Visa required</Text>
+                  {/* <Text style={styles.visaStyle}>Eligible to work in the EU, no Visa required</Text> */}
                </View>
                <View style={styles.headerContentRight}>
                   <View style={styles.contactDetails}>
@@ -294,7 +294,7 @@ export default function CV() {
                   <View style={styles.section}>
                      <Text style={styles.sectionTitle}>Projects</Text>
                      <View style={styles.smallSectionContentProject}>
-                        {projects.map((x, i) => (
+                        {projects.filter(x => x.forCV).map((x, i) => (
                            // <Text key={i} style={styles.smallSectionText}><Link src={x.url} style={styles.linkStyle}>{x.name}</Link></Text>
 
                            <View key={i} style={styles.projectItem}>
@@ -324,7 +324,7 @@ export default function CV() {
                   <View style={styles.section}>
                      <Text style={styles.sectionTitle}>Interests</Text>
                      <View style={styles.smallSectionContent}>
-                        {interests.map((x, i) => (
+                        {interests.filter(x => x.forCV).map((x, i) => (
                            <Text key={i} style={styles.smallSectionText}>{x.name} </Text>
                         ))}
                      </View>

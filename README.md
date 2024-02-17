@@ -10,5 +10,4 @@ npm run build
 ```
 
 ## Todo
-CV
-   greek emoji
+Fix Greek emoji in CV
