@@ -170,6 +170,16 @@ a:hover {
 
 .section {
   margin-bottom: 30px;
+  animation: fade-in 0.4s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
 }
 
 .section .section-inner {
@@ -187,6 +197,22 @@ a:hover {
 .section .heading {
   margin-bottom: 30px;
   font-size: 24px;
+  animation: slide 1s;
+}
+
+@keyframes slide {
+  from {
+    margin-left: 40px;
+    opacity: 0;
+  }
+  to {
+    margin-left: inherit;
+    opacity: 100;
+  }
+}
+
+.section .content {
+  animation: fade-in 1s;
 }
 
 .section .item {
