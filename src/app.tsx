@@ -1,39 +1,34 @@
 import React from 'react';
 import { PDFViewer } from '@react-pdf/renderer';
-import { Col, Container, Modal, Row, Badge } from 'react-bootstrap';
+import { Col, TabContainer, Modal, Row, Badge } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { faCode, faDownload, faEnvelope, faEye, faFlag, faLocationDot, faStar } from '@fortawesome/free-solid-svg-icons';
-import CV from './cv';
+import Cv from './cv';
 import { email, gitHub, interests, languages, linkedIn, locationMaps, name, projects, skills, stackOverflowLink, summary, title } from './data';
 import Education from './education';
 import Experience from './experience';
 
 export default function App() {
   const [showCV, setShowCV] = React.useState(false);
-  const [shakeLinkedIn, setShakeLinkedIn] = React.useState(false);
-  const [shakeGithub, setShakeGithub] = React.useState(false);
-  const [shakeStackOverflow, setShakeStackOverflow] = React.useState(false);
-  const [shakeDownload, setShakeDownload] = React.useState(false);
-  const [shakeEye, setShakeEye] = React.useState(false);
 
   return (
     <>
       <Modal className='cvModal' show={showCV} onHide={() => { setShowCV(false); }}>
         <PDFViewer>
-          <CV />
+          <Cv />
         </PDFViewer>
       </Modal>
 
       <header className="header">
-        <Container>
+        <TabContainer>
           <Row>
-            <Col xs={0} sm={0} xl={3} />
-            <Col xs={12} sm={2} xl={2} className='avatar'>
+            <Col xs={0} sm={0} lg={3} />
+            <Col xs={12} sm={2} lg={2} className='avatar'>
               {/* <img src='https://avatars.githubusercontent.com/u/25032940?v=4' alt="Xenakis Nikos" /> */}
               <img src='../assets/images/avatar.png' alt="Xenakis Nikos" />
             </Col>
-            <Col xs={12} sm={8} xl={4}>
+            <Col xs={12} sm={8} lg={4}>
               <div className="profile-content">
                 <Row>
                   <Col xs={12}>
@@ -48,9 +43,6 @@ export default function App() {
                         <a href={linkedIn.link}>
                           <FontAwesomeIcon
                             icon={faLinkedin}
-                            shake={shakeLinkedIn}
-                            onMouseOver={() => { setShakeLinkedIn(true) }}
-                            onMouseLeave={() => { setShakeLinkedIn(false) }}
                           />
                         </a>
                       </li>
@@ -58,9 +50,6 @@ export default function App() {
                         <a href={gitHub.link}>
                           <FontAwesomeIcon
                             icon={faGithub}
-                            shake={shakeGithub}
-                            onMouseOver={() => { setShakeGithub(true) }}
-                            onMouseLeave={() => { setShakeGithub(false) }}
                           />
                         </a>
                       </li>
@@ -68,9 +57,6 @@ export default function App() {
                         <a href={stackOverflowLink}>
                           <FontAwesomeIcon
                             icon={faStackOverflow}
-                            shake={shakeStackOverflow}
-                            onMouseOver={() => { setShakeStackOverflow(true) }}
-                            onMouseLeave={() => { setShakeStackOverflow(false) }}
                           />
                         </a>
                       </li>
@@ -79,7 +65,7 @@ export default function App() {
                 </Row>
               </div>
             </Col>
-            <Col xs={12} sm={2} xl={1} className='resume'>
+            <Col xs={12} sm={2} lg={1} className='resume'>
               <Row>
                 <Col xs={12} className='resumeTitle'>
                   <h5>Resume</h5>
@@ -88,9 +74,6 @@ export default function App() {
                   <span onClick={() => { setShowCV(true); }}>
                     <FontAwesomeIcon
                       icon={faEye}
-                      shake={shakeEye}
-                      onMouseOver={() => { setShakeEye(true) }}
-                      onMouseLeave={() => { setShakeEye(false) }}
                     />
                   </span>
                 </Col>
@@ -98,24 +81,21 @@ export default function App() {
                   <a href={'../assets/Xenakis Nikos CV.pdf'} download="Xenakis Nikos CV.pdf">
                     <FontAwesomeIcon
                       icon={faDownload}
-                      shake={shakeDownload}
-                      onMouseOver={() => { setShakeDownload(true) }}
-                      onMouseLeave={() => { setShakeDownload(false) }}
                     />
                   </a>
                 </Col>
               </Row>
               {/* <a href={CVLink}><FontAwesomeIcon icon={faDownload} /></a> */}
             </Col>
-            <Col xs={0} sm={0} xl={1} />
+            <Col xs={0} sm={0} lg={1} />
           </Row>
-        </Container>
+        </TabContainer>
       </header>
 
       <div className="container sections-wrapper">
         <Row>
-          <Col xs={0} sm={0} xl={3} />
-          <Col xs={12} sm={12} md={8} xl={5}>
+          <Col xs={0} sm={0} lg={3} />
+          <Col xs={12} sm={12} md={8} lg={5}>
             <section className="about section">
               <div className="section-inner">
                 <h2 className="heading">Summary</h2>
@@ -141,7 +121,7 @@ export default function App() {
                         <span className='technologies'>
                           <br />
                           {w.technologies.split(',').map((t, i) => (
-                            <Badge className='technology' pill bg="light" text="dark" key={i}>
+                            <Badge className='technology' pill bg="light" text="dark" key={`${w.name}-${i}`}>
                               {t}
                             </Badge>
                           ))}
@@ -154,7 +134,7 @@ export default function App() {
             </section>
 
           </Col>
-          <Col xs={12} sm={12} md={4} xl={3} className="secondary">
+          <Col xs={12} sm={12} md={4} lg={3} className="secondary">
             <aside className="info section">
               <div className="section-inner small">
                 <h2 className="heading">Basic Information</h2>
@@ -176,8 +156,9 @@ export default function App() {
                   <div className="skillset">
                     {skills.map((s, i) => (
                       <div className="item" key={i}>
-                        <span className="level-title">{s.name} </span>-
-                        <span className="level-label" data-toggle="tooltip" data-placement="left" data-animation="true"> {s.level}</span>
+                        <span className="level-title">{s.name} </span>
+                        <span> - </span>
+                        <span className="level-label" data-toggle="tooltip" data-placement="left" data-animation="true">{s.level}</span>
                         <div className="level-bar">
                           <div className="level-bar-inner" style={{ width: s.width }}>
                           </div>
@@ -224,7 +205,7 @@ export default function App() {
               </div>
             </aside>
           </Col>
-          <Col xs={0} sm={0} xl={1} />
+          <Col xs={0} sm={0} lg={1} />
         </Row>
       </div>
 

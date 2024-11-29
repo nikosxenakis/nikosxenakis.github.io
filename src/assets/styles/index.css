@@ -177,6 +177,7 @@ a:hover {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 100;
   }
@@ -205,6 +206,7 @@ a:hover {
     margin-left: 40px;
     opacity: 0;
   }
+
   to {
     margin-left: inherit;
     opacity: 100;

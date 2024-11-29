@@ -83,7 +83,7 @@ module.exports = {
          },
          {
             test: /\.(js|jsx)$/,
-            exclude: /\.test\.(js|jsx)|node_modules$/,
+            exclude: /(\.test\.(js|jsx)|node_modules)$/,
             use: {
                loader: 'babel-loader',
             }

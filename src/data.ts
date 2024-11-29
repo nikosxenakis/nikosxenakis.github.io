@@ -27,8 +27,8 @@ export const work = [{
    companyUrl: 'https://www.sphynx.ch',
    location: 'Zurich, Switzerland',
    date: 'Fed 2024 - Present',
-   description: ``,
-   technologies: '',
+   description: `Engineering: Designed and implemented the Sphynx Incident Response Tool, ensuring scalability, reliability, and seamless integration with existing frameworks. Project Management: Managed the SecOPERA EU project for Sphynx, overseeing project plans, execution, and risk management.`,
+   technologies: 'Java,Spring Boot,Node.js',
    forCV: true,
 }, {
    role: 'Senior Software Engineer',
@@ -46,7 +46,7 @@ export const work = [{
    location: 'Edinburgh, UK',
    date: 'Aug 2021 - Nov 2022',
    dateCV: 'Sept 2019 - Nov 2022',
-   description: 'I played a key role in developing Mission Planning, Monitoring, and Post Mission Analysis software for Unmanned Underwater Vehicles (UUVs). My dedication and performance led to my rapid promotion to the senior level, making me the fastest promoted engineer in the company at the time. I also actively participated in customer trials, contributing to our overall success.',
+   description: 'Playing a key role in developing Mission Planning, Monitoring, and Mission Analysis software for Unmanned Underwater Vehicles (UUVs). My dedication and performance led to my rapid promotion to the senior level, making me the fastest promoted engineer in the company at the time, while participated in customer trials.',
    technologies: 'C#,.NET Framework,Java,C++,NSIS,WIX Toolset,Jenkins',
    forCV: true,
 }, {
@@ -94,7 +94,7 @@ export const work = [{
 }];
 
 export const education = [{
-   role: 'Msc in High Performance Computing with Data Science',
+   role: 'Msc in HPC with Data Science',
    // roleShort: 'Msc in HPC with Data Science',
    company: 'University of Edinburgh',
    companyUrl: 'https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2019&id=871',

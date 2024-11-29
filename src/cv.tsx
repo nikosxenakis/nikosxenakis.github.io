@@ -316,8 +316,8 @@ export default function CV() {
                   <View style={styles.section}>
                      <Text style={styles.sectionTitle}>Languages</Text>
                      <View style={styles.smallSectionContent}>
-                        {languages.map((x, i) => (
-                           <Text key={i} style={styles.smallSectionText}>{x.name} <Text style={styles.smallSectionSecondary}>{x.level}</Text></Text>
+                        {languages.map((x) => (
+                           <Text key={x.name} style={styles.smallSectionText}>{x.name} <Text style={styles.smallSectionSecondary}>{x.level}</Text></Text>
                         ))}
                      </View>
                   </View>
@@ -325,7 +325,7 @@ export default function CV() {
                      <Text style={styles.sectionTitle}>Interests</Text>
                      <View style={styles.smallSectionContent}>
                         {interests.filter(x => x.forCV).map((x, i) => (
-                           <Text key={i} style={styles.smallSectionText}>{x.name} </Text>
+                           <Text key={x.name} style={styles.smallSectionText}>{x.name} </Text>
                         ))}
                      </View>
                   </View>

@@ -2,11 +2,11 @@
 
 ## Commands
 ```
-npm i
+yarn install
 
-npm run start
+yarn run start
 
-npm run build
+yarn run build
 ```
 
 ## Todo
