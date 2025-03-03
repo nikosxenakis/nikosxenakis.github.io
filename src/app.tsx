@@ -23,12 +23,12 @@ export default function App() {
       <header className="header">
         <TabContainer>
           <Row>
-            <Col xs={0} sm={0} lg={3} />
+            <Col xs={0} sm={0} lg={1} />
             <Col xs={12} sm={2} lg={2} className='avatar'>
               {/* <img src='https://avatars.githubusercontent.com/u/25032940?v=4' alt="Xenakis Nikos" /> */}
               <img src='../assets/images/avatar.png' alt="Xenakis Nikos" />
             </Col>
-            <Col xs={12} sm={8} lg={4}>
+            <Col xs={12} sm={8} lg={5}>
               <div className="profile-content">
                 <Row>
                   <Col xs={12}>
@@ -65,7 +65,7 @@ export default function App() {
                 </Row>
               </div>
             </Col>
-            <Col xs={12} sm={2} lg={1} className='resume'>
+            <Col xs={12} sm={2} lg={2} className='resume'>
               <Row>
                 <Col xs={12} className='resumeTitle'>
                   <h5>Resume</h5>
@@ -94,8 +94,8 @@ export default function App() {
 
       <div className="container sections-wrapper">
         <Row>
-          <Col xs={0} sm={0} lg={3} />
-          <Col xs={12} sm={12} md={8} lg={5}>
+          <Col xs={0} sm={0} lg={1} xl={1} xxl={2} />
+          <Col xs={12} sm={12} md={8} lg={6} xl={6} xxl={6}>
             <section className="about section">
               <div className="section-inner">
                 <h2 className="heading">Summary</h2>
@@ -134,7 +134,7 @@ export default function App() {
             </section>
 
           </Col>
-          <Col xs={12} sm={12} md={4} lg={3} className="secondary">
+          <Col xs={12} sm={12} md={4} lg={4} xl={4} xxl={3} className="secondary">
             <aside className="info section">
               <div className="section-inner small">
                 <h2 className="heading">Basic Information</h2>
@@ -205,7 +205,7 @@ export default function App() {
               </div>
             </aside>
           </Col>
-          <Col xs={0} sm={0} lg={1} />
+          <Col xs={0} sm={0} lg={1} xl={1} xxl={1} />
         </Row>
       </div>
 

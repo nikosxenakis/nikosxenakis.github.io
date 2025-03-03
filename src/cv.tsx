@@ -2,12 +2,12 @@ import React from 'react';
 import { Page, Text, Image, View, Document, StyleSheet, Font, Link, Svg, Path } from '@react-pdf/renderer';
 import { education, email, gitHub, interests, languages, linkedIn, name, projects, title, website, work } from './data';
 
-Font.register({ family: 'Roboto', src: '/Roboto-Regular.ttf', fontStyle: 'normal', fontWeight: 'normal' });
-Font.register({ family: 'Roboto', src: '/Roboto-Bold.ttf', fontStyle: 'normal', fontWeight: 'bold' });
-Font.register({ family: 'Roboto', src: '/Roboto-Thin.ttf', fontWeight: 'thin' });
-Font.register({ family: 'Roboto', src: '/Roboto-Italic.ttf', fontStyle: 'italic', fontWeight: 'normal' });
+(Font as any).register({ family: 'Roboto', src: '/Roboto-Regular.ttf', fontStyle: 'normal', fontWeight: 'normal' });
+(Font as any).register({ family: 'Roboto', src: '/Roboto-Bold.ttf', fontStyle: 'normal', fontWeight: 'bold' });
+(Font as any).register({ family: 'Roboto', src: '/Roboto-Thin.ttf', fontWeight: 'thin' });
+(Font as any).register({ family: 'Roboto', src: '/Roboto-Italic.ttf', fontStyle: 'italic', fontWeight: 'normal' });
 
-Font.registerEmojiSource({
+(Font as any).registerEmojiSource({
    format: 'png',
    url: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/",
 });
@@ -225,8 +225,8 @@ export default function CV() {
                <View style={styles.section}>
                   <Text style={styles.sectionTitle}>Work experience</Text>
                   <View style={styles.sectionContent}>
-                     {work.filter(x => x.forCV).map((x, i) => (
-                        <View key={i} style={styles.sectionItem}>
+                     {work.filter(x => x.forCV).map((x) => (
+                        <View key={x.role} style={styles.sectionItem}>
                            <View style={styles.sectionItemLeft}>
                               <Text style={styles.sectionItemTitle}>{x.role} </Text>
                               {x.companyShort && <Text style={styles.sectionItemOrganisation}><Link src={x.companyUrl} style={styles.linkStyle}>{x.companyShort}</Link> </Text>}
@@ -243,8 +243,8 @@ export default function CV() {
                                  {x.technologies &&
                                     <View style={styles.sectionItemContent}>
                                        {/* <Text><Text style={styles.workItemDetailsTitle}>Technologies </Text> {x.technologies}</Text> */}
-                                       {x.technologies.split(',').map((y, j) => (
-                                          <View key={j} style={styles.technologyItem}>
+                                       {x.technologies.split(',').map((y) => (
+                                          <View key={y} style={styles.technologyItem}>
                                              <Text>{y}</Text>
                                           </View>
                                        ))}
@@ -259,8 +259,8 @@ export default function CV() {
                <View style={styles.section}>
                   <Text style={styles.sectionTitle}>Education</Text>
                   <View style={styles.sectionContent}>
-                     {education.filter(x => x.forCV).map((x, i) => (
-                        <View key={i} style={styles.sectionItem}>
+                     {education.filter(x => x.forCV).map((x) => (
+                        <View key={x.company} style={styles.sectionItem}>
                            <View style={styles.sectionItemLeft}>
                               {x.roleShort && <Text style={styles.sectionItemTitle}>{x.roleShort} </Text>}
                               {!x.roleShort && x.role && <Text style={styles.sectionItemTitle}>{x.role} </Text>}
@@ -297,13 +297,13 @@ export default function CV() {
                         {projects.filter(x => x.forCV).map((x, i) => (
                            // <Text key={i} style={styles.smallSectionText}><Link src={x.url} style={styles.linkStyle}>{x.name}</Link></Text>
 
-                           <View key={i} style={styles.projectItem}>
+                           <View key={x.name} style={styles.projectItem}>
                               <View style={styles.projectItemContentName}>
                                  <Link style={styles.projectItemName} src={x.url}>{x.name}</Link>
                               </View>
                               <View style={styles.projectItemContent}>
                                  {x.technologies.split(',').map((y, j) => (
-                                    <View key={j} style={styles.technologyItem}>
+                                    <View key={y} style={styles.technologyItem}>
                                        <Text>{y}</Text>
                                     </View>
                                  ))}
