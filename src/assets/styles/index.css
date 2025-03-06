@@ -214,6 +214,7 @@ a:hover {
 }
 
 .section .content {
+  font-size: 14px;
   animation: fade-in 1s;
 }
 
@@ -221,8 +222,11 @@ a:hover {
   margin-bottom: 30px;
 }
 
+.section .item ul {
+  font-size: 14px;
+}
+
 .section .item .itemHeader {
-  display: inline-flex;
   width: 100%;
 }
 

@@ -23,12 +23,11 @@ export default function App() {
       <header className="header">
         <TabContainer>
           <Row>
-            <Col xs={0} sm={0} lg={1} />
-            <Col xs={12} sm={2} lg={2} className='avatar'>
-              {/* <img src='https://avatars.githubusercontent.com/u/25032940?v=4' alt="Xenakis Nikos" /> */}
-              <img src='../assets/images/avatar.png' alt="Xenakis Nikos" />
-            </Col>
-            <Col xs={12} sm={8} lg={5}>
+            <Col xs={0} sm={0} lg={2} />
+            {/* <Col xs={12} sm={2} lg={2} className='avatar'> */}
+              {/* <img src='../assets/images/avatar.png' alt="Xenakis Nikolaos" /> */}
+            {/* </Col> */}
+            <Col xs={12} sm={10} lg={6}>
               <div className="profile-content">
                 <Row>
                   <Col xs={12}>
@@ -78,7 +77,7 @@ export default function App() {
                   </span>
                 </Col>
                 <Col xs={6}>
-                  <a href={'../assets/Xenakis Nikos CV.pdf'} download="Xenakis Nikos CV.pdf">
+                  <a href={'../assets/Xenakis Nikolaos CV.pdf'} download="Xenakis Nikolaos CV.pdf">
                     <FontAwesomeIcon
                       icon={faDownload}
                     />

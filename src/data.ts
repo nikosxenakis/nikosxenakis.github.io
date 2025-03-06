@@ -1,4 +1,4 @@
-export const name = 'Xenakis Nikos';
+export const name = 'Xenakis Nikolaos';
 export const title = 'Senior Software Engineer';
 export const email = {
    short: 'nikosxenakis94@gmail.com',
