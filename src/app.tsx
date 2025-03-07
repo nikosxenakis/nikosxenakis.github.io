@@ -113,8 +113,8 @@ export default function App() {
               <div className="section-inner">
                 <h2 className="heading">Projects <FontAwesomeIcon icon={faCode} /></h2>
                 <div className="content">
-                  {projects.map((w, i) => (
-                    <div className="item" key={i}>
+                  {projects.map(w => (
+                    <div className="item" key={w.name}>
                       <h3 className="title"><a href={w.url}>{w.name}</a> <span className="year">({w.date})</span></h3>
                       <p className="description">{w.description}{w.technologies ? (
                         <span className='technologies'>
@@ -154,7 +154,7 @@ export default function App() {
                   <p className="intro"></p>
                   <div className="skillset">
                     {skills.map((s, i) => (
-                      <div className="item" key={i}>
+                      <div className="item" key={s.name}>
                         <span className="level-title">{s.name} </span>
                         <span> - </span>
                         <span className="level-label" data-toggle="tooltip" data-placement="left" data-animation="true">{s.level}</span>
@@ -174,13 +174,13 @@ export default function App() {
                 <h2 className="heading">Languages</h2>
                 <div className="content">
                   <ul className="list-unstyled">
-                    {languages.map((l, i) => (
-                      <li className="item" key={i}>
+                    {languages.map(l => (
+                      <li className="item" key={l.name}>
                         <span className="title"><strong>{l.name} </strong></span>
                         <span className="level">
                           {l.level}
                           <br className="visible-sm visible-xs" />
-                          {[...Array(l.stars)].map((e, i) => <FontAwesomeIcon icon={faStar} key={i} />)}
+                          {[...Array(l.stars)].map((e) => <FontAwesomeIcon icon={faStar} key={e} />)}
                         </span>
                       </li>
                     ))}
@@ -195,7 +195,7 @@ export default function App() {
                 <div className="content">
                   <ul className="list-unstyled">
                     {interests.map((l, i) => (
-                      <li className="item" key={i}>
+                      <li className="item" key={l.name}>
                         <span className="title">{l.name}</span>
                       </li>
                     ))}
@@ -210,7 +210,7 @@ export default function App() {
 
       <footer className="footer">
         <div className="container text-right">
-          <small className="copyright">@Copyrights Xenakis Nikolaos - February 2024</small>
+          <small className="copyright">@Copyrights Xenakis Nikolaos - March 2025</small>
         </div>
       </footer>
     </>

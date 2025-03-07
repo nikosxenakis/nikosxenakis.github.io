@@ -15,6 +15,7 @@ export default function Experience() {
                      <Row className="itemHeader">
                         <Col className="itemHeaderLeft" xs={12} sm={7}>
                            <h3 className="title">{w.role}</h3>
+                           {w.format ? <h4 className="format">( {w.format} )</h4> : ''}
                            <h6 className="company"><a href={w.companyUrl}>{w.company}</a></h6>
                         </Col>
                         <Col className="itemHeaderRight" xs={12} sm={5}>
@@ -22,11 +23,18 @@ export default function Experience() {
                            <h6 className="year">{w.date}</h6>
                         </Col>
                      </Row>
-                     <p className="description">{w.description}{w.technologies ? (
+                     <p className="description">
+                        {w.description ? (
+                           <ul>
+                              {w.description.map(d => (
+                                 <li key={d}>{d}</li>))}
+                           </ul>
+                        ) : ''}
+                        
+                        {w.technologies ? (
                         <span className='technologies'>
-                           <br />
-                           {w.technologies.split(',').map((t, i) => (
-                              <Badge className='technology' pill bg="light" text="dark" key={i}>
+                           {w.technologies.split(',').map(t => (
+                              <Badge className='technology' pill bg="light" text="dark" key={t}>
                                  {t}
                               </Badge>
                            ))}

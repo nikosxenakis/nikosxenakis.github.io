@@ -24,16 +24,13 @@ export default function Education() {
                      </Row>
                      <ul>
                         {w.grade && <li>
-                           Grade: {w.grade}
+                           <b>Grade</b> {w.grade}
+                        </li>}
+                        {w.scholarship && <li>
+                           <b>Scholarship</b> {w.scholarship}
                         </li>}
                         {w.dissertation && <li>
-                           Dissertation: {w.dissertation}
-                        </li>}
-                        {w.awards && <li>
-                           Awards: {w.awards}
-                        </li>}
-                        {w.description && <li>
-                           {w.description}
+                           <b>Dissertation</b> {w.dissertation}
                         </li>}
                      </ul>
                   </div>

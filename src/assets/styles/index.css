@@ -249,6 +249,13 @@ a:hover {
   font-weight: bold;
 }
 
+.section .item .format {
+  font-size: 15px;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 3px;
+}
+
 .section .item .company {
   font-size: 15px;
   font-weight: normal;
@@ -276,6 +283,16 @@ a:hover {
 
 .section .item .description {
   font-size: 14px;
+}
+
+.section .item .description ul {
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.experience.section .item {
+  padding-left: 15px;
+  margin-bottom: 50px;
 }
 
 .section .item .technologies .title {

@@ -1107,13 +1107,13 @@
   resolved "https://registry.yarnpkg.com/@react-pdf/fns/-/fns-3.1.2.tgz#9ce7351d9fdf1cdb6e9c6ffd6801bc65f29f991c"
   integrity sha512-qTKGUf0iAMGg2+OsUcp9ffKnKi41RukM/zYIWMDJ4hRVYSr89Q7e3wSDW/Koqx3ea3Uy/z3h2y3wPX6Bdfxk6g==
 
-"@react-pdf/font@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/font/-/font-4.0.0.tgz#08731956fb5a293504bd6ab75fcc08179aeedcaf"
-  integrity sha512-ZOrLlcbYyWoxh3gIXtM4grApw0Rx7EIaBMBpsw5KabyKqBkNTkayOcjhIpVMuC2UB0CBOS/GNb8P9CjrKe7Tog==
+"@react-pdf/font@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@react-pdf/font/-/font-4.0.2.tgz#58ede51937bb57025dcf221b107e248d0ea9d60b"
+  integrity sha512-/dAWu7Y2RD1RxarDZ9SkYPHgBYOhmcDnet4W/qN/m8k+A2Hr3ja54GymSR7GGxWBtxjKtNauVKrTa9LS1n8WUw==
   dependencies:
-    "@react-pdf/pdfkit" "^4.0.2"
-    "@react-pdf/types" "^2.8.1"
+    "@react-pdf/pdfkit" "^4.0.3"
+    "@react-pdf/types" "^2.9.0"
     fontkit "^2.0.2"
     is-url "^1.2.4"
 
@@ -1125,25 +1125,25 @@
     "@react-pdf/png-js" "^3.0.0"
     jay-peg "^1.1.1"
 
-"@react-pdf/layout@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/layout/-/layout-4.3.0.tgz#8bb7defd0ddb21a87044150d1fa1a746959df90d"
-  integrity sha512-zJqM6wyzmfiPszN3J1zP+dqBUQVRqV1Shovcqh2SkjX8vJNmh+UemE+9yuuarD1qkNkzu6y+hvuksD/K1vVNiA==
+"@react-pdf/layout@^4.4.0":
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/layout/-/layout-4.4.0.tgz#26ddf73951ab0ce923689730d3b8eaf0b0db4841"
+  integrity sha512-Aq+Cc6JYausWLoks2FvHe3PwK9cTuvksB2uJ0AnkKJEUtQbvCq8eCRb1bjbbwIji9OzFRTTzZij7LzkpKHjIeA==
   dependencies:
     "@react-pdf/fns" "3.1.2"
     "@react-pdf/image" "^3.0.3"
     "@react-pdf/primitives" "^4.1.1"
-    "@react-pdf/stylesheet" "^6.0.1"
+    "@react-pdf/stylesheet" "^6.1.0"
     "@react-pdf/textkit" "^6.0.0"
-    "@react-pdf/types" "^2.8.1"
+    "@react-pdf/types" "^2.9.0"
     emoji-regex "^10.3.0"
     queue "^6.0.1"
     yoga-layout "^3.2.1"
 
-"@react-pdf/pdfkit@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@react-pdf/pdfkit/-/pdfkit-4.0.2.tgz#44f280fa57c0db37b00afff84f1b6016ae91d303"
-  integrity sha512-pyYFAI7YL5Oud60W+wcu9zsN73tg8XgHGtEM8FQ6PY4RgEKp+AXkj+YE2hKuX3eOVB65MPzbJbVWtTjO3MPa5g==
+"@react-pdf/pdfkit@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@react-pdf/pdfkit/-/pdfkit-4.0.3.tgz#8b8a0e7e2aadbbada738a1c164f06ffff2947c8b"
+  integrity sha512-k+Lsuq8vTwWsCqTp+CCB4+2N+sOTFrzwGA7aw3H9ix/PDWR9QksbmNg0YkzGbLAPI6CeawmiLHcf4trZ5ecLPQ==
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@react-pdf/png-js" "^3.0.0"
@@ -1166,24 +1166,24 @@
   resolved "https://registry.yarnpkg.com/@react-pdf/primitives/-/primitives-4.1.1.tgz#c7bfb7e83173661b6ec50ada4aba8dc9e94d0563"
   integrity sha512-IuhxYls1luJb7NUWy6q5avb1XrNaVj9bTNI40U9qGRuS6n7Hje/8H8Qi99Z9UKFV74bBP3DOf3L1wV2qZVgVrQ==
 
-"@react-pdf/reconciler@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@react-pdf/reconciler/-/reconciler-1.1.3.tgz#6fbd0f601fcb4f7ff1ff7c4dcc4df6afbccd9129"
-  integrity sha512-4vqY0klmUH32kTFvuqdAszkOpwfZYKMLO4VpJ5xZWTsoUOLQSyhC2QM2QCj9eaxpB2Nd5Kl9uW+KfyutvZnMzQ==
+"@react-pdf/reconciler@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@react-pdf/reconciler/-/reconciler-1.1.4.tgz#62395cf5c8786a1c3465e2cf6315562543b663c5"
+  integrity sha512-oTQDiR/t4Z/Guxac88IavpU2UgN7eR0RMI9DRKvKnvPz2DUasGjXfChAdMqDNmJJxxV26mMy9xQOUV2UU5/okg==
   dependencies:
     object-assign "^4.1.1"
     scheduler "0.25.0-rc-603e6108-20241029"
 
-"@react-pdf/render@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/render/-/render-4.2.0.tgz#c2c41d9552da8a99133a2c83e464402a18d56e58"
-  integrity sha512-Vx5RAkF3M12Z08HT7+ylXmImuh8wrkmhXTmQbLH45i4Sbo1ycKZEf+BjW8dE7kt2j4/Lvnmxk1ssZPdS+fWNEQ==
+"@react-pdf/render@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/render/-/render-4.3.0.tgz#454542e87db70a3319323f8fbc5d1003db4e8c1e"
+  integrity sha512-MdWfWaqO6d7SZD75TZ2z5L35V+cHpyA43YNRlJNG0RJ7/MeVGDQv12y/BXOJgonZKkeEGdzM3EpAt9/g4E22WA==
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@react-pdf/fns" "3.1.2"
     "@react-pdf/primitives" "^4.1.1"
     "@react-pdf/textkit" "^6.0.0"
-    "@react-pdf/types" "^2.8.1"
+    "@react-pdf/types" "^2.9.0"
     abs-svg-path "^0.1.1"
     color-string "^1.9.1"
     normalize-svg-path "^1.1.0"
@@ -1191,31 +1191,31 @@
     svg-arc-to-cubic-bezier "^3.2.0"
 
 "@react-pdf/renderer@^4.2.3":
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-4.2.3.tgz#11ad5e1ef559e63e46fd7f392842d5ff99937399"
-  integrity sha512-961Zs6hUYrqCE3c0Q5yFxZyX+A01OnQbG9bIr7DnMxBC47pfvgD6zzjsugeCwu8embLtfy2YTtcvQRH9u/Yovg==
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-4.3.0.tgz#21a41e0cf0db703e3cc54f6eb7d6cd78b460de06"
+  integrity sha512-28gpA69fU9ZQrDzmd5xMJa1bDf8t0PT3ApUKBl2PUpoE/x4JlvCB5X66nMXrfFrgF2EZrA72zWQAkvbg7TE8zw==
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@react-pdf/fns" "3.1.2"
-    "@react-pdf/font" "^4.0.0"
-    "@react-pdf/layout" "^4.3.0"
-    "@react-pdf/pdfkit" "^4.0.2"
+    "@react-pdf/font" "^4.0.2"
+    "@react-pdf/layout" "^4.4.0"
+    "@react-pdf/pdfkit" "^4.0.3"
     "@react-pdf/primitives" "^4.1.1"
-    "@react-pdf/reconciler" "^1.1.3"
-    "@react-pdf/render" "^4.2.0"
-    "@react-pdf/types" "^2.8.1"
+    "@react-pdf/reconciler" "^1.1.4"
+    "@react-pdf/render" "^4.3.0"
+    "@react-pdf/types" "^2.9.0"
     events "^3.3.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     queue "^6.0.1"
 
-"@react-pdf/stylesheet@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@react-pdf/stylesheet/-/stylesheet-6.0.1.tgz#4a037ffa1ff8c67faa68bdd5d3df025121971488"
-  integrity sha512-cUz1TI1bPlhqMMM8WfcYNGRRqQIelZ4qBXTmSHG+TSmxKtU/Kw+RmMc6wxMfoonFONjn2tWxSiE5kAvXgA8mEw==
+"@react-pdf/stylesheet@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/stylesheet/-/stylesheet-6.1.0.tgz#ca6b5b0f7cc749b36379379d943f648f8527d71a"
+  integrity sha512-BGZ2sYNUp38VJUegjva/jsri3iiRGnVNjWI+G9dTwAvLNOmwFvSJzqaCsEnqQ/DW5mrTBk/577FhDY7pv6AidA==
   dependencies:
     "@react-pdf/fns" "3.1.2"
-    "@react-pdf/types" "^2.8.1"
+    "@react-pdf/types" "^2.9.0"
     color-string "^1.9.1"
     hsl-to-hex "^1.0.0"
     media-engine "^1.0.3"
@@ -1231,14 +1231,14 @@
     hyphen "^1.6.4"
     unicode-properties "^1.4.1"
 
-"@react-pdf/types@^2.8.1":
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/@react-pdf/types/-/types-2.8.1.tgz#7fb691b5b3c0f3ebb44d6af9ad60186333f3e6b9"
-  integrity sha512-K08KUjoA9r1R0S7QcOpvkbChavPJwBkaBUk82jQ1NQhlKldHqpR/CIcoSSY/FxFYURQiZzPVYUqY4UwL2PtDEQ==
+"@react-pdf/types@^2.9.0":
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@react-pdf/types/-/types-2.9.0.tgz#a2721a847cb1ace2c31ca29b0303c7b51a2241c2"
+  integrity sha512-ckj80vZLlvl9oYrQ4tovEaqKWP3O06Eb1D48/jQWbdwz1Yh7Y9v1cEmwlP8ET+a1Whp8xfdM0xduMexkuPANCQ==
   dependencies:
-    "@react-pdf/font" "^4.0.0"
+    "@react-pdf/font" "^4.0.2"
     "@react-pdf/primitives" "^4.1.1"
-    "@react-pdf/stylesheet" "^6.0.1"
+    "@react-pdf/stylesheet" "^6.1.0"
 
 "@restart/hooks@^0.4.9":
   version "0.4.16"
@@ -1451,9 +1451,9 @@
     "@types/node" "*"
 
 "@types/node@*", "@types/node@^22.13.8":
-  version "22.13.8"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.13.8.tgz#57e2450295b33a6518d6fd4f65f47236d3e41d8d"
-  integrity sha512-G3EfaZS+iOGYWLLRCEAXdWK9my08oHNZ+FHluRiggIYJPOXzhOiDgpVCUHaUvyIC5/fj7C/p637jdzC666AOKQ==
+  version "22.13.9"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.13.9.tgz#5d9a8f7a975a5bd3ef267352deb96fb13ec02eca"
+  integrity sha512-acBjXdRJ3A6Pb3tqnw9HZmyR3Fiol3aGxRCK1x3d+6CDAMjl7I649wpSd+yNURCjbOUGu9tqtLKnTGxmK6CyGw==
   dependencies:
     undici-types "~6.20.0"
 
@@ -1538,9 +1538,9 @@
   integrity sha512-D1XC7WK8K+zZEveUPY+cf4+kgauk8N4eHr/XIHXGlGYkHLud6hK9lYfZk1ry1TNh798cZUCgb6MqGEG8DkJt6Q==
 
 "@types/ws@^8.5.10":
-  version "8.5.14"
-  resolved "https://registry.yarnpkg.com/@types/ws/-/ws-8.5.14.tgz#93d44b268c9127d96026cf44353725dd9b6c3c21"
-  integrity sha512-bd/YFLW+URhBzMXurx7lWByOu+xzU9+kb3RboOteXYDfW+tr+JZa99OyNmPINEGB/ahzKrEuc8rcv4gnpJmxTw==
+  version "8.18.0"
+  resolved "https://registry.yarnpkg.com/@types/ws/-/ws-8.18.0.tgz#8a2ec491d6f0685ceaab9a9b7ff44146236993b5"
+  integrity sha512-8svvI3hMyvN0kKCJMvTJP/x6Y/EoQbepff882wL+Sn5QsXb3etnamgrJq4isrBxSJj5L2AuXcI0+bgkoAXGUJw==
   dependencies:
     "@types/node" "*"
 
@@ -1728,9 +1728,9 @@ acorn-walk@^8.0.0, acorn-walk@^8.1.1:
     acorn "^8.11.0"
 
 acorn@^8.0.4, acorn@^8.11.0, acorn@^8.14.0, acorn@^8.4.1, acorn@^8.8.2:
-  version "8.14.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.14.0.tgz#063e2c70cac5fb4f6467f0b11152e04c682795b0"
-  integrity sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==
+  version "8.14.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.14.1.tgz#721d5dc10f7d5b5609a891773d47731796935dfb"
+  integrity sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==
 
 ajv-formats@^2.1.1:
   version "2.1.1"
@@ -1985,12 +1985,12 @@ call-bind-apply-helpers@^1.0.1, call-bind-apply-helpers@^1.0.2:
     function-bind "^1.1.2"
 
 call-bound@^1.0.2:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/call-bound/-/call-bound-1.0.3.tgz#41cfd032b593e39176a71533ab4f384aa04fd681"
-  integrity sha512-YTd+6wGlNlPxSuri7Y6X8tY2dmm12UMH66RpKMhiX6rsk5wXXnYgbUcOt8kiS31/AjfoTOvCsE+w8nZQLQnzHA==
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/call-bound/-/call-bound-1.0.4.tgz#238de935d2a2a692928c538c7ccfa91067fd062a"
+  integrity sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==
   dependencies:
-    call-bind-apply-helpers "^1.0.1"
-    get-intrinsic "^1.2.6"
+    call-bind-apply-helpers "^1.0.2"
+    get-intrinsic "^1.3.0"
 
 callsites@^3.0.0:
   version "3.1.0"
@@ -2016,9 +2016,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001688:
-  version "1.0.30001701"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001701.tgz#ad9c90301f7153cf6b3314d16cc30757285bf9e7"
-  integrity sha512-faRs/AW3jA9nTwmJBSO1PQ6L/EOgsB5HMQQq4iCu5zhPgVVgO/pZRHlmatwijZKetFw8/Pr4q6dEN8sJuq8qTw==
+  version "1.0.30001702"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001702.tgz#cde16fa8adaa066c04aec2967b6cde46354644c4"
+  integrity sha512-LoPe/D7zioC0REI5W73PeR1e1MLCipRGq/VkovJnd6Df+QVqT+vT33OXCp8QUd7kA7RZrHWxb1B36OQKI/0gOA==
 
 chalk@^4.0.0, chalk@^4.1.0:
   version "4.1.2"
@@ -2248,14 +2248,14 @@ css-loader@^7.1.2:
     semver "^7.5.4"
 
 css-minimizer-webpack-plugin@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/css-minimizer-webpack-plugin/-/css-minimizer-webpack-plugin-7.0.0.tgz#b77a3d2f7c0fd02d3ac250dcc2f79065363f3cd3"
-  integrity sha512-niy66jxsQHqO+EYbhPuIhqRQ1mNcNVUHrMnkzzir9kFOERJUaQDDRhh7dKDz33kBpkWMF9M8Vx0QlDbc5AHOsw==
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/css-minimizer-webpack-plugin/-/css-minimizer-webpack-plugin-7.0.2.tgz#aa1b01c6033f5b2f86ddb60c1f5bddd012b50cac"
+  integrity sha512-nBRWZtI77PBZQgcXMNqiIXVshiQOVLGSf2qX/WZfG8IQfMbeHUMXaBWQmiiSTmPJUflQxHjZjzAmuyO7tpL2Jg==
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.25"
-    cssnano "^7.0.1"
+    cssnano "^7.0.4"
     jest-worker "^29.7.0"
-    postcss "^8.4.38"
+    postcss "^8.4.40"
     schema-utils "^4.2.0"
     serialize-javascript "^6.0.2"
 
@@ -2348,7 +2348,7 @@ cssnano-utils@^5.0.0:
   resolved "https://registry.yarnpkg.com/cssnano-utils/-/cssnano-utils-5.0.0.tgz#b53a0343dd5d21012911882db6ae7d2eae0e3687"
   integrity sha512-Uij0Xdxc24L6SirFr25MlwC2rCFX6scyUmuKpzI+JQ7cyqDEwD42fJ0xfB3yLfOnRDU5LKGgjQ9FA6LYh76GWQ==
 
-cssnano@^7.0.1:
+cssnano@^7.0.4:
   version "7.0.6"
   resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-7.0.6.tgz#63d54fd42bc017f6aaed69e47d9aaef85b7850ec"
   integrity sha512-54woqx8SCbp8HwvNZYn68ZFAepuouZW4lTwiMVnBErM3VkO7/Sd4oTOt3Zz3bPx3kxQ36aISppyXj2Md4lg8bw==
@@ -2555,9 +2555,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.73:
-  version "1.5.109"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.109.tgz#905a573d2b4cbb31412a2de6267fb22cf45e097e"
-  integrity sha512-AidaH9JETVRr9DIPGfp1kAarm/W6hRJTPuCnkF+2MqhF4KaAgRIcBc8nvjk+YMXZhwfISof/7WG29eS4iGxQLQ==
+  version "1.5.113"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.113.tgz#1175b8ba4170541e44e9afa8b992e5bbfff0d150"
+  integrity sha512-wjT2O4hX+wdWPJ76gWSkMhcHAV2PTMX+QetUCPYEdCIe+cxmgzzSSiGRCKW8nuh4mwKZlpv0xvoW7OF2X+wmHg==
 
 emoji-regex@^10.3.0:
   version "10.4.0"
@@ -2933,7 +2933,7 @@ gensync@^1.0.0-beta.2:
   resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.2.tgz#32a6ee76c3d7f52d46b2b1ae5d93fea8580a25e0"
   integrity sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==
 
-get-intrinsic@^1.2.5, get-intrinsic@^1.2.6:
+get-intrinsic@^1.2.5, get-intrinsic@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/get-intrinsic/-/get-intrinsic-1.3.0.tgz#743f0e3b6964a93a5491ed1bffaae054d7f98d01"
   integrity sha512-9fSjSaos/fRIVIp+xSJlE6lfwhES7LNtKaCBIamHsjr2na1BiABJPo0mOjjz8GJDURarmCPGqaiVg5mfjb98CQ==
@@ -3639,9 +3639,9 @@ multicast-dns@^7.2.5:
     thunky "^1.0.2"
 
 nanoid@^3.3.8:
-  version "3.3.8"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.8.tgz#b1be3030bee36aaff18bacb375e5cce521684baf"
-  integrity sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==
+  version "3.3.9"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.9.tgz#e0097d8e026b3343ff053e9ccd407360a03f503a"
+  integrity sha512-SppoicMGpZvbF1l3z4x7No3OlIjP7QJvC9XR7AhZr1kL133KHnKPztkKDc+Ir4aJ/1VhTySrtKhrsycmrMQfvg==
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -4129,7 +4129,7 @@ postcss-value-parser@^4.1.0, postcss-value-parser@^4.2.0:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
-postcss@^8.4.33, postcss@^8.4.38:
+postcss@^8.4.33, postcss@^8.4.40:
   version "8.5.3"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.3.tgz#1463b6f1c7fb16fe258736cba29a2de35237eafb"
   integrity sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==
@@ -4768,9 +4768,9 @@ tapable@^2.0.0, tapable@^2.1.1, tapable@^2.2.0, tapable@^2.2.1:
   integrity sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==
 
 terser-webpack-plugin@^5.3.11:
-  version "5.3.12"
-  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-5.3.12.tgz#d9518c80493081bace668aa8613b22e4a838810c"
-  integrity sha512-jDLYqo7oF8tJIttjXO6jBY5Hk8p3A8W4ttih7cCEq64fQFWmgJ4VqAQjKr7WwIDlmXKEc6QeoRb5ecjZ+2afcg==
+  version "5.3.14"
+  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-5.3.14.tgz#9031d48e57ab27567f02ace85c7d690db66c3e06"
+  integrity sha512-vkZjpUjb6OMS7dhV+tILUW6BhpDR7P2L/aQSAv+Uwk+m8KATX9EccViHTJR2qDtACKPIYndLGCyl3FMo+r2LMw==
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.25"
     jest-worker "^27.4.5"

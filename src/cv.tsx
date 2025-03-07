@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
    },
    headerName: {
-      fontSize: 28,
+      fontSize: 24,
       color: primaryColor,
    },
    headerTitle: {
@@ -40,23 +40,23 @@ const styles = StyleSheet.create({
    },
    headerContentLeft: {
       marginLeft: 20,
-      width: '70%',
-      maxWidth: '70%',
+      width: '72%',
+      maxWidth: '72%',
       textAlign: 'left',
    },
    headerContentRight: {
-      width: '30%',
-      maxWidth: '30%',
+      width: '28%',
+      maxWidth: '28%',
       flexDirection: 'column',
+      fontSize: 9,
    },
    contactDetails: {
       paddingTop: 10,
-      fontSize: 8,
    },
    contactDetailsItem: {
       flexDirection: 'row',
-      marginBottom: 10,
-      fontSize: 9,
+      marginBottom: 7,
+      // fontSize: 10,
       textAlign: 'left',
       display: 'flex',
    },
@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
    cvContents: {
       marginLeft: 10,
       marginRight: 10,
-      marginTop: 10,
-      marginBottom: 20,
+      // marginTop: 10,
+      marginBottom: 10,
    },
    section: {
       paddingLeft: 10,
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
    sectionContent: {
    },
    sectionItem: {
-      marginBottom: 17,
+      marginBottom: 15,
       display: 'flex',
       justifyContent: 'space-between',
       flexDirection: 'row',
@@ -112,6 +112,11 @@ const styles = StyleSheet.create({
       fontSize: 10,
       marginBottom: 2,
    },
+   sectionItemFormat: {
+      fontSize: 8,
+      marginBottom: 2,
+      fontStyle: 'italic',
+   },
    sectionItemOrganisation: {
       fontSize: 9,
       marginBottom: 2,
@@ -129,6 +134,12 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       marginBottom: 3,
    },
+   exeprienceDescription: {
+      marginBottom: 3,
+   },
+   exeprienceDescriptionItem: {
+      marginBottom: 3,
+   },
    workItemDetailsTitle: {
       fontWeight: 'bold',
    },
@@ -137,14 +148,16 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
    },
    smallSectionContent: {
-      flexDirection: 'column',
+      flexDirection: 'row',
    },
    smallSectionText: {
-      fontSize: 8,
-      marginBottom: 5,
+      fontSize: 10,
+      marginRight: 35,
    },
    smallSectionSecondary: {
       color: secondaryColor,
+      marginRight: 5,
+      fontSize: 8,
    },
    linkStyle: {
       textDecoration: 'none',
@@ -228,16 +241,21 @@ export default function CV() {
                      {work.filter(x => x.forCV).map((x) => (
                         <View key={x.role} style={styles.sectionItem}>
                            <View style={styles.sectionItemLeft}>
-                              <Text style={styles.sectionItemTitle}>{x.role} </Text>
+                              <Text style={styles.sectionItemTitle}>{x.role}</Text>
+                              {x.format && <Text style={styles.sectionItemFormat}>({x.format})</Text>}
                               {x.companyShort && <Text style={styles.sectionItemOrganisation}><Link src={x.companyUrl} style={styles.linkStyle}>{x.companyShort}</Link> </Text>}
                               {!x.companyShort && x.company && <Text style={styles.sectionItemOrganisation}><Link src={x.companyUrl} style={styles.linkStyle}>{x.company}</Link> </Text>}
-                              <Text style={styles.sectionItemDate}>{x.location} ({x.dateCV ? x.dateCV : x.date})</Text>
+                              <Text style={styles.sectionItemDate}>{x.location} ({x.date})</Text>
                            </View>
                            <View style={styles.sectionItemRight}>
                               <View style={styles.sectionItemContents}>
                                  {x.description &&
-                                    <View style={styles.sectionItemContent}>
-                                       <Text>{x.description}</Text>
+                                    <View style={styles.exeprienceDescription}>
+                                       {x.description.map((d) => (
+                                          <View key={d} style={styles.exeprienceDescriptionItem}>
+                                             <Text>• {d}</Text>
+                                          </View>
+                                       ))}
                                     </View>
                                  }
                                  {x.technologies &&
@@ -264,19 +282,15 @@ export default function CV() {
                            <View style={styles.sectionItemLeft}>
                               {x.roleShort && <Text style={styles.sectionItemTitle}>{x.roleShort} </Text>}
                               {!x.roleShort && x.role && <Text style={styles.sectionItemTitle}>{x.role} </Text>}
+                              {x.grade && <Text style={styles.sectionItemFormat}>{x.grade}</Text>}
                               <Text style={styles.sectionItemOrganisation}><Link src={x.companyUrl ?? ''} style={styles.linkStyle}>{x.company}</Link> </Text>
-                              <Text style={styles.sectionItemDate}>{x.date}</Text>
+                              <Text style={styles.sectionItemDate}>{x.location} ({x.date})</Text>
                            </View>
                            <View style={styles.sectionItemRight}>
                               <View style={styles.sectionItemContents}>
-                                 {x.description &&
+                                 {x.scholarship &&
                                     <View style={styles.sectionItemContent}>
-                                       <Text>{x.description}</Text>
-                                    </View>
-                                 }
-                                 {x.awards &&
-                                    <View style={styles.sectionItemContent}>
-                                       <Text><Text style={styles.workItemDetailsTitle}>Scholarships </Text> {x.awards}</Text>
+                                       <Text><Text style={styles.workItemDetailsTitle}>Scholarship </Text> {x.scholarship}</Text>
                                     </View>
                                  }
                                  {x.dissertation &&
@@ -292,40 +306,10 @@ export default function CV() {
                </View>
                <View style={styles.smallSectionGroup}>
                   <View style={styles.section}>
-                     <Text style={styles.sectionTitle}>Projects</Text>
-                     <View style={styles.smallSectionContentProject}>
-                        {projects.filter(x => x.forCV).map((x, i) => (
-                           // <Text key={i} style={styles.smallSectionText}><Link src={x.url} style={styles.linkStyle}>{x.name}</Link></Text>
-
-                           <View key={x.name} style={styles.projectItem}>
-                              <View style={styles.projectItemContentName}>
-                                 <Link style={styles.projectItemName} src={x.url}>{x.name}</Link>
-                              </View>
-                              <View style={styles.projectItemContent}>
-                                 {x.technologies.split(',').map((y, j) => (
-                                    <View key={y} style={styles.technologyItem}>
-                                       <Text>{y}</Text>
-                                    </View>
-                                 ))}
-                              </View>
-
-                           </View>
-                        ))}
-                     </View>
-                  </View>
-                  <View style={styles.section}>
                      <Text style={styles.sectionTitle}>Languages</Text>
                      <View style={styles.smallSectionContent}>
                         {languages.map((x) => (
                            <Text key={x.name} style={styles.smallSectionText}>{x.name} <Text style={styles.smallSectionSecondary}>{x.level}</Text></Text>
-                        ))}
-                     </View>
-                  </View>
-                  <View style={styles.section}>
-                     <Text style={styles.sectionTitle}>Interests</Text>
-                     <View style={styles.smallSectionContent}>
-                        {interests.filter(x => x.forCV).map((x, i) => (
-                           <Text key={x.name} style={styles.smallSectionText}>{x.name} </Text>
                         ))}
                      </View>
                   </View>
