@@ -1,5 +1,7 @@
 export const name = 'Xenakis Nikolaos';
 export const title = 'Senior Software Engineer';
+export const location = 'Zurich, Switzerland';
+export const nationality = 'Greece, EU';
 export const email = {
    short: 'nikosxenakis94@gmail.com',
    link: 'mailto:nikosxenakis94@gmail.com',
@@ -20,7 +22,11 @@ export const website = {
 
 export const stackOverflowLink = 'https://stackoverflow.com/users/8756896/nikos-xenakis';
 export const locationMaps = 'https://www.google.co.uk/maps/place/%CE%96%CF%85%CF%81%CE%AF%CF%87%CE%B7/@47.3774122,8.4543354,12z/data=!4m15!1m8!3m7!1s0x47900b9749bea219:0xe66e8df1e71fdc03!2zzpbPhc-Bzq_Ph863!3b1!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY!3m5!1s0x47900b9749bea219:0xe66e8df1e71fdc03!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY?entry=ttu';
-export const summary = 'Passion and devotion are the cornerstones of my professional approach. I am deeply committed to staying updated, export constantly researching innovative products and cutting-edge methods to ensure that my projects not only meet but exceed expectations. With a rich background in designing, developing, and testing software, I bring a blend of technical expertise and creative problem-solving to every challenge. My goal is to deliver solutions that are not just efficient and reliable, but also future-ready. I thrive in collaborative environments and am always eager to learn and grow alongside my peers.';
+export const summary = {
+   long: 'Passion and devotion are the cornerstones of my professional approach. I am deeply committed to staying updated, export constantly researching innovative products and cutting-edge methods to ensure that my projects not only meet but exceed expectations. With a rich background in designing, developing, and testing software, I bring a blend of technical expertise and creative problem-solving to every challenge. My goal is to deliver solutions that are not just efficient and reliable, but also future-ready. I thrive in collaborative environments and am always eager to learn and grow alongside my peers.',
+   short: 'Accomplished Senior Software Engineer specializing in scalable, secure systems. Proven at both large and small sized companies, with expertise in Java, Node.js, .NET, and CI/CD to drive agile, innovative solutions.',
+};
+
 export const work = [{
    role: 'Specialist R&D Engineer',
    format: 'contractor',
@@ -42,8 +48,8 @@ export const work = [{
    date: 'Nov 2022 - Feb 2024',
    description: [
       `Engineered state-of-the-art well-being products tailored for enterprises, used daily by 20K users.`,
-      `Introduced an SDLC process, implemented CI/CD pipelines across all projects, streamlining weekly releases.`,
-      `Automated infrastructure deployment using Terraform, ensuring reproducability, scalability and isolation across deployments, reducing time to release under 5 minutes.`,
+      `Established an SDLC process and implemented CI/CD pipelines for the 2 products, enabling weekly releases.`,
+      `Automated infrastructure deployment with Terraform, ensuring scalability, isolation, and sub-5-minute releases.`,
       `Led successfully 2 major product releases over 1 year, migrating to new infrastructure and codebase.`,
    ],
    technologies: 'TypeScript,Node.js,React,Terraform,GitHub CI/CD,ElectronJS,AWS',
@@ -69,7 +75,7 @@ export const work = [{
    location: 'Edinburgh, UK',
    date: 'Sept 2019 - Aug 2021',
    description: [
-      `Developed the Mission Planning, Monitoring, and Analysis software for Unmanned Underwater Vehicles (UUVs).`,
+      `Contributed to the development of Mission Planning and Analysis software, supporting 6 Unmanned Underwater Vehicle (UUV) systems from various vendors.`,
       `Demonstrated products in real-world operational scenarios, resulting at 100% contracts extension.`,
       `Earned rapid promotion to the senior level in less than 2 years, becoming the fastest-promotion in the company.`,
    ],
@@ -93,8 +99,7 @@ export const work = [{
    location: 'Athens, Greece',
    date: 'April 2017 - Sep 2018',
    description: [
-      // `Developed web services for the National Bank of Greece, handling requirements analysis, design, and implementation of the bank’s CRM product.`,
-      `Working on the migration of the bank’s CRM legacy code to Angular.`,
+      `Working on the migration of the bank’s CRM legacy code with thousands lines of code to Angular.`,
       `Led and delivered in time an internal bank project system for customer application management, collaborating with other 2 junior engineers.`,
    ],
    technologies: '.NET,Typescript,Angular',
@@ -107,7 +112,7 @@ export const work = [{
    location: 'Heraklion, Greece',
    date: 'Sep 2015 - Jan 2016',
    description: [
-      `Assisted in teaching the "Introduction to Computer Science" course, by conducting lab sessions.`,
+      `Assisted in teaching the "Introduction to Programming" course, by conducting lab sessions with approximately 20 students.`,
       `Selected for "TheProfit" program, allowing top 10 performing students to support academic work.`,
    ],
    forCV: true,
@@ -133,7 +138,7 @@ export const education = [{
    date: 'Sep 2018 - Sep 2019',
    grade: '75% (First-Class Honours)',
    dissertation: 'Parallelisation of frame processing for Optical Coherence Tomography for Optos (85%).',
-   scholarship: 'Received the Best Student Award for the MSc program. Additionally, I was awarded the Highly Skilled Workforce Scholarship covering the tuition fees.',
+   scholarship: 'Earned the Best Student Award for the MSc program and the Highly Skilled Workforce Scholarship, which covered tuition fees.',
    forCV: true,
 }, {
    role: 'Bachelor in Computer Science',
@@ -143,7 +148,7 @@ export const education = [{
    date: 'Sep 2012 - Jul 2016',
    grade: '84% (First-Class Honours)',
    dissertation: 'ICE Editor is a visual programming language for end-user programmers for IOT devices. ICE Editor is a web client application written in JavaScript.',
-   scholarship: '3 years in a row awarded with the memorial scholarship "Stelios Orfanoudakis". This scholarship is given to the top 3 students of the Computer Science department each year.',
+   scholarship: 'Secured the Stelios Orfanoudakis Memorial Scholarship for three consecutive years, awarded to the top three students of the Computer Science department annually.',
    forCV: true,
 }, {
    role: 'IT Essentials: PC Hardware and Software',

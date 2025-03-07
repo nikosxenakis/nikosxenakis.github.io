@@ -1631,16 +1631,17 @@ exports.version = "19.0.0";
 __webpack_require__.d(__webpack_exports__, {
   yo: () => (/* reexport */ Document),
   KQ: () => (/* binding */ Font),
-  _V: () => (/* reexport */ Image),
   N_: () => (/* reexport */ Link),
   TO: () => (/* binding */ PDFViewer),
   YW: () => (/* reexport */ Page),
+  wA: () => (/* reexport */ Path),
   vv: () => (/* binding */ StyleSheet),
+  BS: () => (/* reexport */ Svg),
   EY: () => (/* reexport */ Text),
   Ss: () => (/* reexport */ View)
 });
 
-// UNUSED EXPORTS: BlobProvider, Canvas, Checkbox, Circle, ClipPath, Defs, Ellipse, FieldSet, G, Line, LinearGradient, List, Note, PDFDownloadLink, Path, Polygon, Polyline, RadialGradient, Rect, Select, Stop, Svg, TextInput, TextInstance, Tspan, createRenderer, default, pdf, render, renderToBuffer, renderToFile, renderToStream, renderToString, usePDF, version
+// UNUSED EXPORTS: BlobProvider, Canvas, Checkbox, Circle, ClipPath, Defs, Ellipse, FieldSet, G, Image, Line, LinearGradient, List, Note, PDFDownloadLink, Polygon, Polyline, RadialGradient, Rect, Select, Stop, TextInput, TextInstance, Tspan, createRenderer, default, pdf, render, renderToBuffer, renderToFile, renderToStream, renderToString, usePDF, version
 
 // NAMESPACE OBJECT: ./node_modules/@react-pdf/primitives/lib/index.js
 var lib_namespaceObject = {};

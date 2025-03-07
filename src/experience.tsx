@@ -11,7 +11,7 @@ export default function Experience() {
             <h2 className="heading">Work Experience <FontAwesomeIcon icon={faUserTie} /></h2>
             <div className="content">
                {work.map((w) => (
-                  <div className="item" key={w.date}>
+                  <div className="item" key={w.role + w.company}>
                      <Row className="itemHeader">
                         <Col className="itemHeaderLeft" xs={12} sm={7}>
                            <h3 className="title">{w.role}</h3>
@@ -23,23 +23,19 @@ export default function Experience() {
                            <h6 className="year">{w.date}</h6>
                         </Col>
                      </Row>
-                     <p className="description">
-                        {w.description ? (
-                           <ul>
-                              {w.description.map(d => (
-                                 <li key={d}>{d}</li>))}
-                           </ul>
-                        ) : ''}
-                        
-                        {w.technologies ? (
+                     {w.description ? (
+                        <ul>
+                           {w.description.map(d => (
+                              <li key={d}>{d}</li>))}
+                        </ul>
+                     ) : ''}
+                     {w.technologies ? (
                         <span className='technologies'>
                            {w.technologies.split(',').map(t => (
-                              <Badge className='technology' pill bg="light" text="dark" key={t}>
-                                 {t}
-                              </Badge>
+                              <Badge className='technology' pill bg="light" text="dark" key={t}>{t}</Badge>
                            ))}
                         </span>
-                     ) : ''}</p>
+                     ) : ''}
                   </div>
                ))}
             </div>

@@ -60,14 +60,10 @@ a:hover {
   background-color: #d6e0ce !important;
   margin-right: 5px;
   border-radius: 5px;
-  margin-right: 2px;
 }
 
 .cvModal {
-  /* width: 90vw; */
-  /* max-width: 90vw; */
   max-width: 90%;
-  /* height: 70%; */
 }
 
 .cvModal .modal-content {
@@ -108,14 +104,12 @@ a:hover {
   margin-top: 30px;
   margin-bottom: 30px;
   color: var(--link-color);
-  /* border: 2px solid var(--link-color); */
-  /* border-radius: 10px; */
   display: flex;
   width: 110px;
   border: none;
-  margin: auto;
+  /* margin: auto;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; */
 }
 
 .header .resumeTitle {
@@ -134,6 +128,8 @@ a:hover {
 }
 
 .header .profile-content .name {
+  font-weight: normal;
+  color: var(--background-color);
   font-size: 32px;
   margin-bottom: 5px;
   margin-top: 30px;
@@ -155,11 +151,13 @@ a:hover {
 .header .resume svg {
   width: 36px;
   height: 36px;
+  color: var(--link-color);
 }
 
 .header .profile-content .social svg:hover,
 .header .resume svg:hover {
   cursor: pointer;
+  color: var(--link-hover-color);
 }
 
 /* ======= Sections======= */
@@ -283,11 +281,6 @@ a:hover {
 
 .section .item .description {
   font-size: 14px;
-}
-
-.section .item .description ul {
-  padding-left: 15px;
-  margin-bottom: 10px;
 }
 
 .experience.section .item {
@@ -418,16 +411,4 @@ a:hover {
   .section .item .itemHeaderRight {
     text-align: left;
   }
-
 }
-
-/* @media (min-width: 1200px) {
-  .section .section-inner {
-    max-width: unset;
-  }
-} */
-
-/* Small devices (tablets, 768px and up) */
-/* Medium devices (desktops, 992px and up) */
-/* Large devices (large desktops, 1200px and up) */
-/* Ex-Large devices (large desktops, 1200px and up) */

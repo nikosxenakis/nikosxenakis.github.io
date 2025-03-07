@@ -3,9 +3,9 @@ import { PDFViewer } from '@react-pdf/renderer';
 import { Col, TabContainer, Modal, Row, Badge } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
-import { faCode, faDownload, faEnvelope, faEye, faFlag, faLocationDot, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faDownload, faEnvelope, faEye, faFlag, faLocationDot, faFile, faStar } from '@fortawesome/free-solid-svg-icons';
 import Cv from './cv';
-import { email, gitHub, interests, languages, linkedIn, locationMaps, name, projects, skills, stackOverflowLink, summary, title } from './data';
+import { email, nationality, location, gitHub, interests, languages, linkedIn, locationMaps, name, projects, skills, stackOverflowLink, summary, title } from './data';
 import Education from './education';
 import Experience from './experience';
 
@@ -25,7 +25,7 @@ export default function App() {
           <Row>
             <Col xs={0} sm={0} lg={2} />
             {/* <Col xs={12} sm={2} lg={2} className='avatar'> */}
-              {/* <img src='../assets/images/avatar.png' alt="Xenakis Nikolaos" /> */}
+            {/* <img src='../assets/images/avatar.png' alt="Xenakis Nikolaos" /> */}
             {/* </Col> */}
             <Col xs={12} sm={10} lg={6}>
               <div className="profile-content">
@@ -39,32 +39,25 @@ export default function App() {
                   <Col xs={12}>
                     <ul className="social list-inline">
                       <li>
-                        <a href={linkedIn.link}>
-                          <FontAwesomeIcon
-                            icon={faLinkedin}
-                          />
-                        </a>
+                        {/* <a href={stackOverflowLink}><FontAwesomeIcon icon={faFile} /></a> */}
+                        <span onClick={() => setShowCV(true)}>
+                          <FontAwesomeIcon icon={faFile} />
+                        </span>
                       </li>
                       <li>
-                        <a href={gitHub.link}>
-                          <FontAwesomeIcon
-                            icon={faGithub}
-                          />
-                        </a>
+                        <a href={linkedIn.link}><FontAwesomeIcon icon={faLinkedin} /></a>
+                      </li>
+                      <li><a href={gitHub.link}><FontAwesomeIcon icon={faGithub} /></a>
                       </li>
                       <li>
-                        <a href={stackOverflowLink}>
-                          <FontAwesomeIcon
-                            icon={faStackOverflow}
-                          />
-                        </a>
+                        <a href={stackOverflowLink}><FontAwesomeIcon icon={faStackOverflow} /></a>
                       </li>
                     </ul>
                   </Col>
                 </Row>
               </div>
             </Col>
-            <Col xs={12} sm={2} lg={2} className='resume'>
+            {/* <Col xs={12} sm={2} lg={2} className='resume'>
               <Row>
                 <Col xs={12} className='resumeTitle'>
                   <h5>Resume</h5>
@@ -84,8 +77,7 @@ export default function App() {
                   </a>
                 </Col>
               </Row>
-              {/* <a href={CVLink}><FontAwesomeIcon icon={faDownload} /></a> */}
-            </Col>
+            </Col> */}
             <Col xs={0} sm={0} lg={1} />
           </Row>
         </TabContainer>
@@ -99,7 +91,7 @@ export default function App() {
               <div className="section-inner">
                 <h2 className="heading">Summary</h2>
                 <div className="content">
-                  <p>{summary}</p>
+                  <p>{summary.long}</p>
                   <p><b>Work Authorization</b> Eligible to work in the EU, no Visa required</p>
                 </div>
               </div>
@@ -139,9 +131,9 @@ export default function App() {
                 <h2 className="heading">Basic Information</h2>
                 <div className="content">
                   <ul className="list-unstyled">
-                    <li><FontAwesomeIcon icon={faEnvelope} /> <span className="sr-only">Email:</span><a href={email.link}>{email.short}</a></li>
-                    <li><FontAwesomeIcon icon={faLocationDot} /> <span className="sr-only">Location:</span><a href={locationMaps}>Zurich, Switzerland</a></li>
-                    <li><FontAwesomeIcon icon={faFlag} /> <span className="sr-only">Nationality:</span>Greek</li>
+                    <li><FontAwesomeIcon icon={faEnvelope} /> <a href={email.link}>{email.short}</a></li>
+                    <li><FontAwesomeIcon icon={faLocationDot} /> <a href={locationMaps}>{location}</a></li>
+                    <li><FontAwesomeIcon icon={faFlag} /> {nationality}</li>
                   </ul>
                 </div>
               </div>
@@ -175,12 +167,12 @@ export default function App() {
                 <div className="content">
                   <ul className="list-unstyled">
                     {languages.map(l => (
-                      <li className="item" key={l.name}>
+                      <li className="item" key={l.name + l.level}>
                         <span className="title"><strong>{l.name} </strong></span>
                         <span className="level">
                           {l.level}
                           <br className="visible-sm visible-xs" />
-                          {[...Array(l.stars)].map((e) => <FontAwesomeIcon icon={faStar} key={e} />)}
+                          {[...Array(l.stars)].map((e, i) => <FontAwesomeIcon icon={faStar} key={l.name + i} />)}
                         </span>
                       </li>
                     ))}
