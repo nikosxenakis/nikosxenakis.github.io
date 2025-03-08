@@ -4,6 +4,7 @@
    ],
    "exclude": [
       "node_modules/**",
+      "src/cv.tsx",
    ],
    "compilerOptions": {
       "jsx": "react",

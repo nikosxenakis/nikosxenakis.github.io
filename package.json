@@ -1,17 +1,15 @@
 {
   "name": "personal-website",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "private": false,
   "repository": "https://github.com/nikosxenakis/nikosxenakis.github.io",
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@popperjs/core": "^2.11.8",
-    "@react-pdf/renderer": "^4.2.3",
     "bootstrap": "^5.3.3",
     "buffer": "^6.0.3",
     "react": "^19.0.0",

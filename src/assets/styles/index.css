@@ -1,12 +1,10 @@
 /* ======= Base ======= */
 :root {
-  --container-background-color: #e4e4e4;
-  --background-color: #7b8d6c;
-  --secondary-color: #6d757d;
-  --link-color: #65864a;
-  --link-hover-color: #6b9a44;
-  --background-light-color: #d6e0ce;
-
+  --container-background-color: #EFEBE9;
+  --background-color: #3E2723;
+  --background-light-color: #BCAAA4;
+  --link-color: #6D4C41;
+  --link-hover-color: #4E342E;
   --font-size: 16px;
   --border-radius: 4px;
 }
@@ -32,34 +30,14 @@
 body {
   font-family: 'Roboto', sans-serif;
   color: black;
-  background: var(--background-color);
+  background: var(--container-background-color);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-}
-
-a {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: var(--link-hover-color);
-}
-
 .technology {
-  color: black !important;
-  background-color: var(--background-light-color) !important;
+  background-color: var(--container-background-color) !important;
   margin-right: 5px;
   border-radius: 5px;
 }
@@ -77,17 +55,13 @@ a:hover {
   height: 100%;
 }
 
-.text-highlight {
-  color: #32383e;
-}
-
 .container {
   max-width: 100%;
 }
 
 /* ======= Header ======= */
 .header {
-  background: var(--container-background-color);
+  background: var(--background-color);
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
@@ -105,13 +79,10 @@ a:hover {
   justify-content: center;
   margin-top: 30px;
   margin-bottom: 30px;
-  color: var(--link-color);
+  color: var(--container-background-color);
   display: flex;
   width: 110px;
   border: none;
-  /* margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px; */
 }
 
 .header .resumeTitle {
@@ -131,14 +102,14 @@ a:hover {
 
 .header .name {
   font-weight: normal;
-  color: var(--background-color);
+  color: var(--container-background-color);
   font-size: 32px;
   margin-bottom: 5px;
   margin-top: 30px;
 }
 
 .header .title {
-  color: var(--secondary-color);
+  color: var(--background-light-color);
   font-weight: 400;
   font-size: 23px;
   margin-top: 0;
@@ -159,13 +130,13 @@ a:hover {
 .header .resume svg {
   width: 36px;
   height: 36px;
-  color: var(--link-color);
+  color: var(--container-background-color);
 }
 
 .header-icons svg:hover,
 .header .resume svg:hover {
   cursor: pointer;
-  color: var(--link-hover-color);
+  color: var(--link-color);
 }
 
 /* ======= Sections======= */
@@ -204,7 +175,6 @@ a:hover {
 .section .heading {
   margin-bottom: 30px;
   font-size: 24px;
-  /* font-weight: 500; */
   animation: slide 1s;
 }
 
@@ -249,11 +219,17 @@ a:hover {
 .section .item .title {
   font-size: 17px;
   margin-bottom: 0px;
+  font-weight: bold;
 }
 
 .section .item .title a {
-  color: black;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.section .item .title a:hover {
+  color: var(--background-color);
 }
 
 .section .item .format {
@@ -269,7 +245,12 @@ a:hover {
 }
 
 .section .item .company a {
+  text-decoration: none;
   color: black;
+}
+
+.section .item .company a:hover {
+  color: var(--background-color);
 }
 
 .section .item .place {
@@ -293,7 +274,6 @@ a:hover {
 }
 
 .experience.section .item {
-  padding-left: 15px;
   margin-bottom: 50px;
 }
 
@@ -310,16 +290,12 @@ a:hover {
 .info li {
   margin-bottom: 15px;
 }
+.info a {
+  text-decoration: none;
+    color: black;
+}
 
 /* Skills Section */
-.skills .intro {
-  margin-bottom: 30px;
-}
-
-.skills .small .item {
-  margin-bottom: 30px;
-}
-
 .skills .skillset .level-title {
   font-size: 14px;
   position: relative;
@@ -334,7 +310,7 @@ a:hover {
 
 .skills .skillset .level-bar {
   height: 15px;
-  background: #e8e8e8;
+  background: var(--container-background-color);
 }
 
 .skills .skillset .level-bar-inner {
@@ -342,45 +318,21 @@ a:hover {
   background: var(--link-color);
 }
 
-/* Education section */
-.education .item .title {
-  font-size: 16px;
-  margin-top: 0;
-}
-
 /* Language Section */
 .languages .item .level {
-  color: var(--secondary-color);
+  color: var(--link-hover-color);
 }
 
 .languages .item .level svg {
   color: var(--link-color);
 }
 
-/* List section */
-.list ul li {
-  margin-bottom: 10px;
-}
-
-.list ul li a {
-  color: var(--secondary-color);
-}
-
-/* ======= Footer ======= */
 .footer {
-  background: #32383e;
-  color: #fff;
+  background: var(--background-color);
+  color: var(--container-background-color);
   padding: 10px 0;
-}
-
-.footer .copyright {
   line-height: 1.6;
-  color: #a1aab4;
   font-size: 14px;
-}
-
-.footer a {
-  color: #fff;
 }
 
 /* Extra small devices (phones, less than 768px) */

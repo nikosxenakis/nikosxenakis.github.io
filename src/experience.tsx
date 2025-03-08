@@ -23,12 +23,18 @@ export default function Experience() {
                            <h6 className="year">{w.date}</h6>
                         </Col>
                      </Row>
+                     <Row>
+                        <Col xs={12}>
                      {w.description ? (
                         <ul>
                            {w.description.map(d => (
                               <li key={d}>{d}</li>))}
                         </ul>
                      ) : ''}
+                        </Col>
+                     </Row>
+                     <Row>
+                        <Col xs={12}>
                      {w.technologies ? (
                         <span className='technologies'>
                            {w.technologies.split(',').map(t => (
@@ -36,6 +42,8 @@ export default function Experience() {
                            ))}
                         </span>
                      ) : ''}
+                        </Col>
+                     </Row>
                   </div>
                ))}
             </div>

@@ -1,24 +1,24 @@
 import React from 'react';
-import { PDFViewer } from '@react-pdf/renderer';
+// import { PDFViewer } from '@react-pdf/renderer';
 import { Col, TabContainer, Modal, Row, Badge, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { faCode, faEnvelope, faFlag, faLocationDot, faDownload, faStar } from '@fortawesome/free-solid-svg-icons';
-import Cv from './cv';
+// import Cv from './cv';
 import { email, nationality, location, gitHub, interests, languages, linkedIn, locationMaps, name, projects, skills, stackOverflowLink, summary, title } from './data';
 import Education from './education';
 import Experience from './experience';
 
 export default function App() {
-  const [showCV, setShowCV] = React.useState(false);
+  // const [showCV, setShowCV] = React.useState(false);
 
   return (
     <>
-      <Modal className='cvModal' show={showCV} onHide={() => { setShowCV(false); }}>
+      {/* <Modal className='cvModal' show={showCV} onHide={() => { setShowCV(false); }}>
         <PDFViewer>
           <Cv />
         </PDFViewer>
-      </Modal>
+      </Modal> */}
 
       <header className="header">
         <TabContainer>
