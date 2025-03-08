@@ -1,9 +1,9 @@
 import React from 'react';
 import { PDFViewer } from '@react-pdf/renderer';
-import { Col, TabContainer, Modal, Row, Badge } from 'react-bootstrap';
+import { Col, TabContainer, Modal, Row, Badge, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
-import { faCode, faDownload, faEnvelope, faEye, faFlag, faLocationDot, faFile, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faEnvelope, faFlag, faLocationDot, faDownload, faStar } from '@fortawesome/free-solid-svg-icons';
 import Cv from './cv';
 import { email, nationality, location, gitHub, interests, languages, linkedIn, locationMaps, name, projects, skills, stackOverflowLink, summary, title } from './data';
 import Education from './education';
@@ -28,7 +28,7 @@ export default function App() {
             {/* <img src='../assets/images/avatar.png' alt="Xenakis Nikolaos" /> */}
             {/* </Col> */}
             <Col xs={12} sm={10} lg={6}>
-              <div className="profile-content">
+              <div>
                 <Row>
                   <Col xs={12}>
                     <h1 className="name">{name}</h1>
@@ -37,21 +37,32 @@ export default function App() {
                     <h2 className="title">{title}</h2>
                   </Col>
                   <Col xs={12}>
-                    <ul className="social list-inline">
-                      <li>
-                        {/* <a href={stackOverflowLink}><FontAwesomeIcon icon={faFile} /></a> */}
-                        <span onClick={() => setShowCV(true)}>
-                          <FontAwesomeIcon icon={faFile} />
-                        </span>
-                      </li>
-                      <li>
-                        <a href={linkedIn.link}><FontAwesomeIcon icon={faLinkedin} /></a>
-                      </li>
-                      <li><a href={gitHub.link}><FontAwesomeIcon icon={faGithub} /></a>
-                      </li>
-                      <li>
-                        <a href={stackOverflowLink}><FontAwesomeIcon icon={faStackOverflow} /></a>
-                      </li>
+                    <ul className="header-icons">
+                      <OverlayTrigger placement="top" overlay={<Tooltip id="tooltip-cv">Download CV</Tooltip>}>
+                        <li>
+                          {/* <span onClick={() => setShowCV(true)} style={{ cursor: 'pointer' }}>
+                            <FontAwesomeIcon icon={faDownload} />
+                          </span> */}
+                          <a href="../assets/Xenakis Nikolaos CV.pdf" download="Xenakis Nikolaos CV.pdf" style={{ cursor: 'pointer' }}>
+                            <FontAwesomeIcon icon={faDownload} />
+                          </a>
+                        </li>
+                      </OverlayTrigger>
+                      <OverlayTrigger placement="top" overlay={<Tooltip id="tooltip-cv">Visit LinkedIn</Tooltip>}>
+                        <li>
+                          <a href={linkedIn.link}><FontAwesomeIcon icon={faLinkedin} /></a>
+                        </li>
+                      </OverlayTrigger>
+                      <OverlayTrigger placement="top" overlay={<Tooltip id="tooltip-cv">Visit GitHub</Tooltip>}>
+                        <li>
+                          <a href={gitHub.link}><FontAwesomeIcon icon={faGithub} /></a>
+                        </li>
+                      </OverlayTrigger>
+                      <OverlayTrigger placement="top" overlay={<Tooltip id="tooltip-cv">Visit Stack Overflow</Tooltip>}>
+                        <li>
+                          <a href={stackOverflowLink}><FontAwesomeIcon icon={faStackOverflow} /></a>
+                        </li>
+                      </OverlayTrigger>
                     </ul>
                   </Col>
                 </Row>

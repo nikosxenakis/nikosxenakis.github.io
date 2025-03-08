@@ -1,14 +1,14 @@
 import React from 'react';
 import { Badge, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserTie } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { work } from './data';
 
 export default function Experience() {
    return (
       <section className="experience section">
          <div className="section-inner">
-            <h2 className="heading">Work Experience <FontAwesomeIcon icon={faUserTie} /></h2>
+            <h2 className="heading">Work Experience <FontAwesomeIcon icon={faBriefcase} /></h2>
             <div className="content">
                {work.map((w) => (
                   <div className="item" key={w.role + w.company}>

@@ -1,10 +1,12 @@
 /* ======= Base ======= */
 :root {
-  --secondary-color: #6d757d;
-  --background-color: #7b8d6c;
   --container-background-color: #e4e4e4;
+  --background-color: #7b8d6c;
+  --secondary-color: #6d757d;
   --link-color: #65864a;
   --link-hover-color: #6b9a44;
+  --background-light-color: #d6e0ce;
+
   --font-size: 16px;
   --border-radius: 4px;
 }
@@ -57,7 +59,7 @@ a:hover {
 
 .technology {
   color: black !important;
-  background-color: #d6e0ce !important;
+  background-color: var(--background-light-color) !important;
   margin-right: 5px;
   border-radius: 5px;
 }
@@ -127,7 +129,7 @@ a:hover {
   margin-right: 30px;
 }
 
-.header .profile-content .name {
+.header .name {
   font-weight: normal;
   color: var(--background-color);
   font-size: 32px;
@@ -135,7 +137,7 @@ a:hover {
   margin-top: 30px;
 }
 
-.header .profile-content .title {
+.header .title {
   color: var(--secondary-color);
   font-weight: 400;
   font-size: 23px;
@@ -143,18 +145,24 @@ a:hover {
   margin-bottom: 15px;
 }
 
-.header .profile-content .social.list-inline {
+.header-icons {
+  list-style: none;
   display: inline-flex;
+  padding-left: 0px;
 }
 
-.header .profile-content .social svg,
+.header-icons li {
+  margin-right: 5px;
+}
+
+.header-icons svg,
 .header .resume svg {
   width: 36px;
   height: 36px;
   color: var(--link-color);
 }
 
-.header .profile-content .social svg:hover,
+.header-icons svg:hover,
 .header .resume svg:hover {
   cursor: pointer;
   color: var(--link-hover-color);
@@ -196,6 +204,7 @@ a:hover {
 .section .heading {
   margin-bottom: 30px;
   font-size: 24px;
+  /* font-weight: 500; */
   animation: slide 1s;
 }
 
@@ -348,15 +357,6 @@ a:hover {
   color: var(--link-color);
 }
 
-.list-inline {
-  list-style: none;
-  display: flex;
-}
-
-.list-inline li {
-  margin-right: 5px;
-}
-
 /* List section */
 .list ul li {
   margin-bottom: 10px;
@@ -392,11 +392,6 @@ a:hover {
   .header .profile-image {
     float: none !important;
     margin: 0 auto;
-  }
-
-  .header .profile-content {
-    float: none !important;
-    text-align: center;
   }
 
   .header .btn {
