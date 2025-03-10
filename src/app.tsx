@@ -11,7 +11,20 @@ import Experience from './experience';
 
 export default function App() {
   // const [showCV, setShowCV] = React.useState(false);
-
+  const handleDownloadCV = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const enteredPassword = prompt("Enter password to download the CV:");
+    if (enteredPassword === "Xen@kisCV") {
+      const link = document.createElement('a');
+      link.href = "../assets/Xenakis Nikolaos CV.pdf";
+      link.download = "Xenakis Nikolaos CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      alert("Incorrect password.");
+    }
+  };
   return (
     <>
       {/* <Modal className='cvModal' show={showCV} onHide={() => { setShowCV(false); }}>
@@ -43,9 +56,12 @@ export default function App() {
                           {/* <span onClick={() => setShowCV(true)} style={{ cursor: 'pointer' }}>
                             <FontAwesomeIcon icon={faDownload} />
                           </span> */}
-                          <a href="../assets/Xenakis Nikolaos CV.pdf" download="Xenakis Nikolaos CV.pdf" style={{ cursor: 'pointer' }}>
+                          <a onClick={handleDownloadCV} style={{ cursor: 'pointer' }}>
                             <FontAwesomeIcon icon={faDownload} />
                           </a>
+                          {/* <a href="../assets/Xenakis Nikolaos CV.pdf" download="Xenakis Nikolaos CV.pdf" style={{ cursor: 'pointer' }}>
+                            <FontAwesomeIcon icon={faDownload} />
+                          </a> */}
                         </li>
                       </OverlayTrigger>
                       <OverlayTrigger placement="top" overlay={<Tooltip id="tooltip-cv">Visit LinkedIn</Tooltip>}>

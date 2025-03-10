@@ -118,7 +118,7 @@ export const work = [{
    forCV: true,
 }, {
    role: 'Undergraduate Research Intern',
-   company: 'FORTH (Research Center)',
+   company: 'FORTH (Research Centre)',
    companyUrl: 'https://www.forth.gr',
    location: 'Heraklion, Greece',
    date: 'Jun 2015 - Sep 2015',
@@ -138,7 +138,7 @@ export const education = [{
    date: 'Sep 2018 - Sep 2019',
    grade: '75% (Distinction)',
    dissertation: 'Parallelisation of frame processing for Optical Coherence Tomography for Optos (85%).',
-   scholarship: 'Achieved the highest grade in the MSc program, earning the Best Academic Performance Award. Also awarded the Highly Skilled Workforce Scholarship, which covered full tuition.',
+   scholarship: 'Awarded the Best Academic Performance Award for achieving the highest grades in the MSc program.',
    forCV: true,
 }, {
    role: 'Bachelor in Computer Science',
@@ -148,7 +148,7 @@ export const education = [{
    date: 'Sep 2012 - Jul 2016',
    grade: '84% (First-Class Honours)',
    dissertation: 'ICE Editor is a visual programming language for end-user programmers for IOT devices. ICE Editor is a web client application written in JavaScript.',
-   scholarship: 'Secured the Stelios Orfanoudakis Memorial Scholarship for three consecutive years, awarded to the top three students of the Computer Science department annually.',
+   scholarship: 'Awarded the `Highly Skilled Workforce Scholarship`, covering full MSc tuition. Awarded the Stelios Orfanoudakis Scholarship for three years as a top-three BSc student annually.',
    forCV: true,
 }, {
    role: 'IT Essentials: PC Hardware and Software',
