@@ -28,7 +28,7 @@ export const summary = {
 };
 
 export const work = [{
-   role: 'Specialist R&D Engineer',
+   role: 'Senior Software Engineer and Project Manager',
    format: 'contractor',
    company: 'Sphynx',
    companyUrl: 'https://www.sphynx.ch',
@@ -48,7 +48,7 @@ export const work = [{
    date: 'Nov 2022 - Feb 2024',
    description: [
       `Engineered state-of-the-art well-being products tailored for enterprises, used daily by 20K users.`,
-      `Established an SDLC process and implemented CI/CD pipelines for the 2 products, enabling weekly releases.`,
+      `Established an SDLC process and implemented CI/CD pipelines for the products, enabling weekly releases.`,
       `Automated infrastructure deployment with Terraform, ensuring scalability, isolation, and sub-5-minute releases.`,
       `Led successfully 2 major product releases over 1 year, migrating to new infrastructure and codebase.`,
    ],
@@ -63,7 +63,7 @@ export const work = [{
    description: [
       `Directed CI/CD initiative, implementing Jenkins pipelines and integrating approximately 80 projects.`,
       `Project lead consistently delivering 100% of the projects ahead of schedule.`,
-      `Led research efforts for a web-based product transition, developing prototypes.`,
+      `Led projects, delivering 100% of them ahead of schedule`,
       // `Mentoring 2 junior engineers.`,
    ],
    technologies: '.NET,Java,PostgreSQL,Jenkins',
@@ -77,7 +77,7 @@ export const work = [{
    description: [
       `Contributed to the development of Mission Planning and Analysis software, supporting 6 Unmanned Underwater Vehicle (UUV) systems from various vendors.`,
       `Demonstrated products in real-world operational scenarios, resulting at 100% contracts extension.`,
-      `Earned rapid promotion to the senior level in less than 2 years, becoming the fastest-promotion in the company.`,
+      `Rapidly promoted to the senior level in less than 2 years, becoming the fastest-promotion in the company.`,
    ],
    // technologies: '.NET,Java,Jenkins',
    forCV: true,
@@ -99,8 +99,8 @@ export const work = [{
    location: 'Athens, Greece',
    date: 'April 2017 - Sep 2018',
    description: [
-      `Working on the migration of the bank’s CRM legacy code with thousands lines of code to Angular.`,
-      `Led and delivered an internal bank project system for customer application management, collaborating with other 2 junior engineers.`,
+      `Migrated the bank’s CRM legacy code with thousands of lines of code to Angular.`,
+      `Led and delivered an internal bank project system for customer application management, working in a team of 3 engineers.`,
    ],
    technologies: '.NET,Typescript,Angular',
    forCV: true,
@@ -138,7 +138,7 @@ export const education = [{
    date: 'Sep 2018 - Sep 2019',
    grade: '75% (Distinction)',
    dissertation: 'Parallelisation of frame processing for Optical Coherence Tomography for Optos (85%).',
-   scholarship: 'Awarded the Best Academic Performance Award for achieving the highest grades in the MSc program.',
+   scholarship: 'Awarded the Best Academic Performance Award as the top graduate with highest grades in the MSc program. Awarded the Highly Skilled Workforce Scholarship for academic excellence covering MSc tuition.',
    forCV: true,
 }, {
    role: 'Bachelor in Computer Science',
@@ -211,7 +211,7 @@ export const interests = [{
 }];
 
 export const skills = [{
-   name: 'Java Spring Boot, .NET',
+   name: 'Java, Spring Boot, .NET',
    level: 'Proficient',
    width: '100%',
 }, {

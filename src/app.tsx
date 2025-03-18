@@ -16,8 +16,8 @@ export default function App() {
     const enteredPassword = prompt("Enter password to download the CV:");
     if (enteredPassword === "Xen@kisCV") {
       const link = document.createElement('a');
-      link.href = "../assets/Xenakis Nikolaos CV.pdf";
-      link.download = "Xenakis Nikolaos CV.pdf";
+      link.href = "../assets/Xenakis_Nikolaos_CV.pdf";
+      link.download = "Xenakis_Nikolaos_CV.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -59,7 +59,7 @@ export default function App() {
                           <a onClick={handleDownloadCV} style={{ cursor: 'pointer' }}>
                             <FontAwesomeIcon icon={faDownload} />
                           </a>
-                          {/* <a href="../assets/Xenakis Nikolaos CV.pdf" download="Xenakis Nikolaos CV.pdf" style={{ cursor: 'pointer' }}>
+                          {/* <a href="../assets/Xenakis_Nikolaos_CV.pdf" download="Xenakis_Nikolaos_CV.pdf" style={{ cursor: 'pointer' }}>
                             <FontAwesomeIcon icon={faDownload} />
                           </a> */}
                         </li>
@@ -97,7 +97,7 @@ export default function App() {
                   </span>
                 </Col>
                 <Col xs={6}>
-                  <a href={'../assets/Xenakis Nikolaos CV.pdf'} download="Xenakis Nikolaos CV.pdf">
+                  <a href={'../assets/Xenakis_Nikolaos_CV.pdf'} download="Xenakis_Nikolaos_CV.pdf">
                     <FontAwesomeIcon
                       icon={faDownload}
                     />
