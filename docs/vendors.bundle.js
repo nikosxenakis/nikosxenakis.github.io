@@ -19976,6 +19976,7 @@ var taskQueue = [],
   isPerformingWork = !1,
   isHostCallbackScheduled = !1,
   isHostTimeoutScheduled = !1,
+  needsPaint = !1,
   localSetTimeout = "function" === typeof setTimeout ? setTimeout : null,
   localClearTimeout = "function" === typeof clearTimeout ? clearTimeout : null,
   localSetImmediate = "undefined" !== typeof setImmediate ? setImmediate : null;
@@ -19988,7 +19989,7 @@ function advanceTimers(currentTime) {
 function handleTimeout(currentTime) {
   isHostTimeoutScheduled = !1;
   advanceTimers(currentTime);
-  if (!isHostCallbackScheduled) if (null !== peek(taskQueue)) isHostCallbackScheduled = !0, requestHostCallback();else {
+  if (!isHostCallbackScheduled) if (null !== peek(taskQueue)) isHostCallbackScheduled = !0, isMessageLoopRunning || (isMessageLoopRunning = !0, schedulePerformWorkUntilDeadline());else {
     var firstTimer = peek(timerQueue);
     null !== firstTimer && requestHostTimeout(handleTimeout, firstTimer.startTime - currentTime);
   }
@@ -19998,9 +19999,10 @@ var isMessageLoopRunning = !1,
   frameInterval = 5,
   startTime = -1;
 function shouldYieldToHost() {
-  return exports.unstable_now() - startTime < frameInterval ? !1 : !0;
+  return needsPaint ? !0 : exports.unstable_now() - startTime < frameInterval ? !1 : !0;
 }
 function performWorkUntilDeadline() {
+  needsPaint = !1;
   if (isMessageLoopRunning) {
     var currentTime = exports.unstable_now();
     startTime = currentTime;
@@ -20062,9 +20064,6 @@ if ("function" === typeof localSetImmediate) schedulePerformWorkUntilDeadline = 
 } else schedulePerformWorkUntilDeadline = function () {
   localSetTimeout(performWorkUntilDeadline, 0);
 };
-function requestHostCallback() {
-  isMessageLoopRunning || (isMessageLoopRunning = !0, schedulePerformWorkUntilDeadline());
-}
 function requestHostTimeout(callback, ms) {
   taskTimeoutID = localSetTimeout(function () {
     callback(exports.unstable_now());
@@ -20079,17 +20078,11 @@ exports.unstable_UserBlockingPriority = 2;
 exports.unstable_cancelCallback = function (task) {
   task.callback = null;
 };
-exports.unstable_continueExecution = function () {
-  isHostCallbackScheduled || isPerformingWork || (isHostCallbackScheduled = !0, requestHostCallback());
-};
 exports.unstable_forceFrameRate = function (fps) {
   0 > fps || 125 < fps ? console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported") : frameInterval = 0 < fps ? Math.floor(1e3 / fps) : 5;
 };
 exports.unstable_getCurrentPriorityLevel = function () {
   return currentPriorityLevel;
-};
-exports.unstable_getFirstCallbackNode = function () {
-  return peek(taskQueue);
 };
 exports.unstable_next = function (eventHandler) {
   switch (currentPriorityLevel) {
@@ -20109,8 +20102,9 @@ exports.unstable_next = function (eventHandler) {
     currentPriorityLevel = previousPriorityLevel;
   }
 };
-exports.unstable_pauseExecution = function () {};
-exports.unstable_requestPaint = function () {};
+exports.unstable_requestPaint = function () {
+  needsPaint = !0;
+};
 exports.unstable_runWithPriority = function (priorityLevel, eventHandler) {
   switch (priorityLevel) {
     case 1:
@@ -20158,7 +20152,7 @@ exports.unstable_scheduleCallback = function (priorityLevel, callback, options) 
     expirationTime: timeout,
     sortIndex: -1
   };
-  options > currentTime ? (priorityLevel.sortIndex = options, push(timerQueue, priorityLevel), null === peek(taskQueue) && priorityLevel === peek(timerQueue) && (isHostTimeoutScheduled ? (localClearTimeout(taskTimeoutID), taskTimeoutID = -1) : isHostTimeoutScheduled = !0, requestHostTimeout(handleTimeout, options - currentTime))) : (priorityLevel.sortIndex = timeout, push(taskQueue, priorityLevel), isHostCallbackScheduled || isPerformingWork || (isHostCallbackScheduled = !0, requestHostCallback()));
+  options > currentTime ? (priorityLevel.sortIndex = options, push(timerQueue, priorityLevel), null === peek(taskQueue) && priorityLevel === peek(timerQueue) && (isHostTimeoutScheduled ? (localClearTimeout(taskTimeoutID), taskTimeoutID = -1) : isHostTimeoutScheduled = !0, requestHostTimeout(handleTimeout, options - currentTime))) : (priorityLevel.sortIndex = timeout, push(taskQueue, priorityLevel), isHostCallbackScheduled || isPerformingWork || (isHostCallbackScheduled = !0, isMessageLoopRunning || (isMessageLoopRunning = !0, schedulePerformWorkUntilDeadline())));
   return priorityLevel;
 };
 exports.unstable_shouldYield = shouldYieldToHost;
