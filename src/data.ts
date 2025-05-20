@@ -1,6 +1,6 @@
 export const name = 'Xenakis Nikolaos';
 export const title = 'Senior Software Engineer';
-export const location = 'Zurich, Switzerland';
+export const location = 'Zürich, Switzerland';
 export const nationality = 'Greece, EU';
 export const email = {
    short: 'nikosxenakis94@gmail.com',
@@ -32,7 +32,7 @@ export const work = [{
    format: 'contractor',
    company: 'Sphynx',
    companyUrl: 'https://www.sphynx.ch',
-   location: 'Zurich, Switzerland',
+   location: 'Zürich, Switzerland',
    date: 'Fed 2024 - Present',
    description: [
       `Architecting and developing the Incident Response Tool, an automation product mitigating cyberattacks guaranteeing high-availability and scalability.`,
@@ -44,7 +44,7 @@ export const work = [{
    role: 'Senior Software Engineer',
    company: 'Welbot',
    companyUrl: 'https://welbot.io',
-   location: 'Edinburgh, UK',
+   location: 'Edinburgh, United Kingdom',
    date: 'Nov 2022 - Feb 2024',
    description: [
       `Engineered state-of-the-art well-being products tailored for enterprises, used daily by 20K users.`,
@@ -58,7 +58,7 @@ export const work = [{
    role: 'Senior Software Engineer',
    company: 'SeeByte',
    companyUrl: 'http://www.seebyte.com/',
-   location: 'Edinburgh, UK',
+   location: 'Edinburgh, United Kingdom',
    date: 'Aug 2021 - Nov 2022',
    description: [
       `Directed CI/CD initiative, implementing Jenkins pipelines and integrating approximately 80 projects.`,
@@ -72,7 +72,7 @@ export const work = [{
    role: 'Software Engineer',
    company: 'SeeByte',
    companyUrl: 'http://www.seebyte.com/',
-   location: 'Edinburgh, UK',
+   location: 'Edinburgh, United Kingdom',
    date: 'Sept 2019 - Aug 2021',
    description: [
       `Contributed to the development of Mission Planning and Analysis software, supporting 6 Unmanned Underwater Vehicle (UUV) systems from various vendors.`,
@@ -86,7 +86,7 @@ export const work = [{
    format: 'part-time',
    company: 'Information Services of UoE',
    companyUrl: 'https://www.ed.ac.uk/information-services',
-   location: 'Edinburgh, UK',
+   location: 'Edinburgh, United Kingdom',
    date: 'April 2019 - June 2019',
    description: [
       `Created an XML-based publishing workflow, including tools evaluation, customization, integration, and workflow establishment for academic journals.`,
@@ -134,7 +134,7 @@ export const education = [{
    // roleShort: 'MSc in HPC with Data Science',
    company: 'University of Edinburgh',
    companyUrl: 'https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2019&id=871',
-   location: 'Edinburgh, UK',
+   location: 'Edinburgh, United Kingdom',
    date: 'Sep 2018 - Sep 2019',
    grade: '75% (Distinction)',
    dissertation: 'Parallelisation of frame processing for Optical Coherence Tomography for Optos (85%).',
