@@ -167,7 +167,8 @@ function $b5e257d569688ac6$var$LegacySSRProvider(props) {
 let $b5e257d569688ac6$var$warnedAboutSSRProvider = false;
 function $b5e257d569688ac6$export$9f8ac96af4b1b2ae(props) {
     if (typeof (0, $670gB$react)['useId'] === 'function') {
-        if (false) {}
+        if (false) // removed by dead control flow
+{}
         return /*#__PURE__*/ (0, $670gB$react).createElement((0, $670gB$react).Fragment, null, props.children);
     }
     return /*#__PURE__*/ (0, $670gB$react).createElement($b5e257d569688ac6$var$LegacySSRProvider, props);
@@ -216,7 +217,8 @@ function $b5e257d569688ac6$var$useLegacySSRSafeId(defaultId) {
     let ctx = (0, react__WEBPACK_IMPORTED_MODULE_0__.useContext)($b5e257d569688ac6$var$SSRContext);
     // If we are rendering in a non-DOM environment, and there's no SSRProvider,
     // provide a warning to hint to the developer to add one.
-    if (ctx === $b5e257d569688ac6$var$defaultContext && !$b5e257d569688ac6$var$canUseDOM && "production" !== 'production') {}
+    if (ctx === $b5e257d569688ac6$var$defaultContext && !$b5e257d569688ac6$var$canUseDOM && "production" !== 'production') // removed by dead control flow
+{}
     let counter = $b5e257d569688ac6$var$useCounter(!!defaultId);
     let prefix = ctx === $b5e257d569688ac6$var$defaultContext && "production" === 'test' ? 0 : `react-aria${ctx.prefix}`;
     return defaultId || `${prefix}-${counter}`;
@@ -520,7 +522,8 @@ function checkDCE() {
   if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function') {
     return;
   }
-  if (false) {}
+  if (false) // removed by dead control flow
+{}
   try {
     // Verify that the code above has been dead code eliminated (DCE'd).
     __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
@@ -535,7 +538,8 @@ if (true) {
   // DevTools can report bad minification during injection.
   checkDCE();
   module.exports = __webpack_require__(9096);
-} else {}
+} else // removed by dead control flow
+{}
 
 /***/ }),
 
@@ -2319,7 +2323,8 @@ exports.jsxs = jsxProd;
 
 if (true) {
   module.exports = __webpack_require__(6963);
-} else {}
+} else // removed by dead control flow
+{}
 
 /***/ }),
 
@@ -2366,7 +2371,8 @@ function safeFindDOMNode(componentOrElement) {
 
 if (true) {
   module.exports = __webpack_require__(5740);
-} else {}
+} else // removed by dead control flow
+{}
 
 /***/ }),
 
@@ -2380,7 +2386,8 @@ function checkDCE() {
   if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function') {
     return;
   }
-  if (false) {}
+  if (false) // removed by dead control flow
+{}
   try {
     // Verify that the code above has been dead code eliminated (DCE'd).
     __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
@@ -2395,7 +2402,8 @@ if (true) {
   // DevTools can report bad minification during injection.
   checkDCE();
   module.exports = __webpack_require__(5580);
-} else {}
+} else // removed by dead control flow
+{}
 
 /***/ })
 

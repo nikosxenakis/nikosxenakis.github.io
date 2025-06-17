@@ -24,7 +24,8 @@
  * will remain to ensure logic does not differ in production.
  */
 var invariant = function (condition, format, a, b, c, d, e, f) {
-  if (false) {}
+  if (false) // removed by dead control flow
+{}
   if (!condition) {
     var error;
     if (format === undefined) {
@@ -3405,7 +3406,8 @@ function uncontrolledPropTypes(controlledValues, displayName) {
   Object.keys(controlledValues).forEach(function (prop) {
     // add default propTypes for folks that use runtime checks
     propTypes[defaultKey(prop)] = noop;
-    if (false) { var handler; }
+    if (false) // removed by dead control flow
+{ var handler; }
   });
   return propTypes;
 }
@@ -13291,7 +13293,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
       return classNames;
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else {}
+  } else // removed by dead control flow
+{}
 })();
 
 /***/ }),
@@ -19899,7 +19902,8 @@ var convertCurry = convert.bind(null, react.createElement);
  * LICENSE file in the root directory of this source tree.
  */
 
-if (false) { var throwOnDirectAccess, ReactIs; } else {
+if (false) // removed by dead control flow
+{ var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
   module.exports = __webpack_require__(9829)();
@@ -20527,7 +20531,8 @@ Tabs.Panel = esm_TabPanel;
 
 if (true) {
   module.exports = __webpack_require__(8724);
-} else {}
+} else // removed by dead control flow
+{}
 
 /***/ }),
 
