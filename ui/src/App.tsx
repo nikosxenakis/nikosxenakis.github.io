@@ -309,7 +309,7 @@ export default function App() {
 
             <footer className="footer">
                 <div className="container text-right">
-                    <small className="copyright">@Copyrights Xenakis Nikolaos - June 2025</small>
+                    <small className="copyright">@Copyrights Xenakis Nikolaos - July 2025</small>
                 </div>
             </footer>
         </>
