@@ -12,3 +12,5 @@ coverage/
 !coverage/badges.svg
 
 .npmrc
+
+/dist
