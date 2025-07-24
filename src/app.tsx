@@ -1,28 +1,9 @@
 import React from "react";
 // import { PDFViewer } from '@react-pdf/renderer';
-import {
-    Col,
-    TabContainer,
-    Modal,
-    Row,
-    Badge,
-    OverlayTrigger,
-    Tooltip,
-} from "react-bootstrap";
+import { Col, TabContainer, Row, Badge, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faGithub,
-    faLinkedin,
-    faStackOverflow,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-    faCode,
-    faEnvelope,
-    faFlag,
-    faLocationDot,
-    faDownload,
-    faStar,
-} from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin, faStackOverflow } from "@fortawesome/free-brands-svg-icons";
+import { faCode, faEnvelope, faFlag, faLocationDot, faDownload, faStar } from "@fortawesome/free-solid-svg-icons";
 // import Cv from './cv';
 import {
     email,
@@ -46,14 +27,12 @@ import Experience from "./experience";
 export default function App() {
     // const [showCV, setShowCV] = React.useState(false);
     const [showAvatar] = React.useState(false);
-    const handleDownloadCV = (
-        e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    ) => {
+    const handleDownloadCV = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         e.preventDefault();
         const enteredPassword = prompt("Enter password to download the CV:");
         if (enteredPassword === "Xen@kisCV") {
             const link = document.createElement("a");
-            link.href = "../assets/Xenakis_Nikolaos_CV.pdf";
+            link.href = "/Xenakis_Nikolaos_CV.pdf";
             link.download = "Xenakis_Nikolaos_CV.pdf";
             document.body.appendChild(link);
             link.click();
@@ -75,10 +54,7 @@ export default function App() {
                         <Col xs={0} sm={0} lg={2} />
                         {showAvatar ? (
                             <Col xs={12} sm={2} lg={2} className="avatar">
-                                <img
-                                    src="../assets/images/avatar.png"
-                                    alt="Xenakis Nikolaos"
-                                />
+                                <img src="../assets/images/avatar.png" alt="Xenakis Nikolaos" />
                             </Col>
                         ) : (
                             <></>
@@ -96,80 +72,52 @@ export default function App() {
                                         <ul className="header-icons">
                                             <OverlayTrigger
                                                 placement="top"
-                                                overlay={
-                                                    <Tooltip id="tooltip-cv">
-                                                        Download CV
-                                                    </Tooltip>
-                                                }
+                                                overlay={<Tooltip id="tooltip-cv">Download CV</Tooltip>}
                                             >
                                                 <li>
                                                     {/* <span onClick={() => setShowCV(true)} style={{ cursor: 'pointer' }}>
                             <FontAwesomeIcon icon={faDownload} />
                           </span> */}
                                                     <a
-                                                        onClick={
-                                                            handleDownloadCV
-                                                        }
+                                                        onClick={handleDownloadCV}
                                                         style={{
                                                             cursor: "pointer",
                                                         }}
                                                     >
-                                                        <FontAwesomeIcon
-                                                            icon={faDownload}
-                                                        />
+                                                        <FontAwesomeIcon icon={faDownload} />
                                                     </a>
-                                                    {/* <a href="../assets/Xenakis_Nikolaos_CV.pdf" download="Xenakis_Nikolaos_CV.pdf" style={{ cursor: 'pointer' }}>
+                                                    {/* <a href="./assets/Xenakis_Nikolaos_CV.pdf" download="Xenakis_Nikolaos_CV.pdf" style={{ cursor: 'pointer' }}>
                             <FontAwesomeIcon icon={faDownload} />
                           </a> */}
                                                 </li>
                                             </OverlayTrigger>
                                             <OverlayTrigger
                                                 placement="top"
-                                                overlay={
-                                                    <Tooltip id="tooltip-cv">
-                                                        Visit LinkedIn
-                                                    </Tooltip>
-                                                }
+                                                overlay={<Tooltip id="tooltip-cv">Visit LinkedIn</Tooltip>}
                                             >
                                                 <li>
                                                     <a href={linkedIn.link}>
-                                                        <FontAwesomeIcon
-                                                            icon={faLinkedin}
-                                                        />
+                                                        <FontAwesomeIcon icon={faLinkedin} />
                                                     </a>
                                                 </li>
                                             </OverlayTrigger>
                                             <OverlayTrigger
                                                 placement="top"
-                                                overlay={
-                                                    <Tooltip id="tooltip-cv">
-                                                        Visit GitHub
-                                                    </Tooltip>
-                                                }
+                                                overlay={<Tooltip id="tooltip-cv">Visit GitHub</Tooltip>}
                                             >
                                                 <li>
                                                     <a href={gitHub.link}>
-                                                        <FontAwesomeIcon
-                                                            icon={faGithub}
-                                                        />
+                                                        <FontAwesomeIcon icon={faGithub} />
                                                     </a>
                                                 </li>
                                             </OverlayTrigger>
                                             <OverlayTrigger
                                                 placement="top"
-                                                overlay={
-                                                    <Tooltip id="tooltip-cv">
-                                                        Visit Stack Overflow
-                                                    </Tooltip>
-                                                }
+                                                overlay={<Tooltip id="tooltip-cv">Visit Stack Overflow</Tooltip>}
                                             >
                                                 <li>
                                                     <a href={stackOverflowLink}>
-                                                        <FontAwesomeIcon
-                                                            icon={
-                                                                faStackOverflow
-                                                            }
-                                                        />
+                                                        <FontAwesomeIcon icon={faStackOverflow} />
                                                     </a>
                                                 </li>
                                             </OverlayTrigger>
@@ -191,7 +139,7 @@ export default function App() {
                   </span>
                 </Col>
                 <Col xs={6}>
-                  <a href={'../assets/Xenakis_Nikolaos_CV.pdf'} download="Xenakis_Nikolaos_CV.pdf">
+                  <a href={'./assets/Xenakis_Nikolaos_CV.pdf'} download="Xenakis_Nikolaos_CV.pdf">
                     <FontAwesomeIcon
                       icon={faDownload}
                     />
@@ -214,8 +162,7 @@ export default function App() {
                                 <div className="content">
                                     <p>{summary.long}</p>
                                     <p>
-                                        <b>Work Authorization</b> Eligible to
-                                        work in the EU, no Visa required
+                                        <b>Work Authorization</b> Eligible to work in the EU, no Visa required
                                     </p>
                                 </div>
                             </div>
@@ -234,29 +181,24 @@ export default function App() {
                                     {projects.map((w) => (
                                         <div className="item" key={w.name}>
                                             <h3 className="title">
-                                                <a href={w.url}>{w.name}</a>{" "}
-                                                <span className="year">
-                                                    ({w.date})
-                                                </span>
+                                                <a href={w.url}>{w.name}</a> <span className="year">({w.date})</span>
                                             </h3>
                                             <p className="description">
                                                 {w.description}
                                                 {w.technologies ? (
                                                     <span className="technologies">
                                                         <br />
-                                                        {w.technologies
-                                                            .split(",")
-                                                            .map((t, i) => (
-                                                                <Badge
-                                                                    className="technology"
-                                                                    pill
-                                                                    bg="light"
-                                                                    text="dark"
-                                                                    key={`${w.name}-${i}`}
-                                                                >
-                                                                    {t}
-                                                                </Badge>
-                                                            ))}
+                                                        {w.technologies.split(",").map((t, i) => (
+                                                            <Badge
+                                                                className="technology"
+                                                                pill
+                                                                bg="light"
+                                                                text="dark"
+                                                                key={`${w.name}-${i}`}
+                                                            >
+                                                                {t}
+                                                            </Badge>
+                                                        ))}
                                                     </span>
                                                 ) : (
                                                     ""
@@ -268,39 +210,21 @@ export default function App() {
                             </div>
                         </section>
                     </Col>
-                    <Col
-                        xs={12}
-                        sm={12}
-                        md={4}
-                        lg={4}
-                        xl={4}
-                        xxl={3}
-                        className="secondary"
-                    >
+                    <Col xs={12} sm={12} md={4} lg={4} xl={4} xxl={3} className="secondary">
                         <aside className="info section">
                             <div className="section-inner small">
                                 <h2 className="heading">Basic Information</h2>
                                 <div className="content">
                                     <ul className="list-unstyled">
                                         <li>
-                                            <FontAwesomeIcon
-                                                icon={faEnvelope}
-                                            />{" "}
-                                            <a href={email.link}>
-                                                {email.short}
-                                            </a>
+                                            <FontAwesomeIcon icon={faEnvelope} /> <a href={email.link}>{email.short}</a>
                                         </li>
                                         <li>
-                                            <FontAwesomeIcon
-                                                icon={faLocationDot}
-                                            />{" "}
-                                            <a href={locationMaps}>
-                                                {location}
-                                            </a>
+                                            <FontAwesomeIcon icon={faLocationDot} />{" "}
+                                            <a href={locationMaps}>{location}</a>
                                         </li>
                                         <li>
-                                            <FontAwesomeIcon icon={faFlag} />{" "}
-                                            {nationality}
+                                            <FontAwesomeIcon icon={faFlag} /> {nationality}
                                         </li>
                                     </ul>
                                 </div>
@@ -313,11 +237,9 @@ export default function App() {
                                 <div className="content">
                                     <p className="intro"></p>
                                     <div className="skillset">
-                                        {skills.map((s, i) => (
+                                        {skills.map((s) => (
                                             <div className="item" key={s.name}>
-                                                <span className="level-title">
-                                                    {s.name}{" "}
-                                                </span>
+                                                <span className="level-title">{s.name} </span>
                                                 <span> - </span>
                                                 <span
                                                     className="level-label"
@@ -348,24 +270,16 @@ export default function App() {
                                 <div className="content">
                                     <ul className="list-unstyled">
                                         {languages.map((l) => (
-                                            <li
-                                                className="item"
-                                                key={l.name + l.level}
-                                            >
+                                            <li className="item" key={l.name + l.level}>
                                                 <span className="title">
                                                     <strong>{l.name} </strong>
                                                 </span>
                                                 <span className="level">
                                                     {l.level}
                                                     <br className="visible-sm visible-xs" />
-                                                    {[...Array(l.stars)].map(
-                                                        (e, i) => (
-                                                            <FontAwesomeIcon
-                                                                icon={faStar}
-                                                                key={l.name + i}
-                                                            />
-                                                        ),
-                                                    )}
+                                                    {[...Array(l.stars)].map((_, i) => (
+                                                        <FontAwesomeIcon icon={faStar} key={l.name + i} />
+                                                    ))}
                                                 </span>
                                             </li>
                                         ))}
@@ -395,9 +309,7 @@ export default function App() {
 
             <footer className="footer">
                 <div className="container text-right">
-                    <small className="copyright">
-                        @Copyrights Xenakis Nikolaos - June 2025
-                    </small>
+                    <small className="copyright">@Copyrights Xenakis Nikolaos - June 2025</small>
                 </div>
             </footer>
         </>

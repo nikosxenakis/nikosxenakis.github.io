@@ -1,26 +1,7 @@
 {
-   "include": [
-      "./src"
-   ],
-   "exclude": [
-      "node_modules/**",
-      "src/cv.tsx",
-   ],
-   "compilerOptions": {
-      "jsx": "react",
-      "outDir": "./build",
-      "module": "esnext",
-      "target": "esnext",
-      "noImplicitAny": true,
-      "preserveConstEnums": true,
-      "removeComments": true,
-      "esModuleInterop": true,
-      "strict": true,
-      "alwaysStrict": true,
-      "inlineSourceMap": true,
-      "skipLibCheck": true,
-      "allowJs": true,
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-   }
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }

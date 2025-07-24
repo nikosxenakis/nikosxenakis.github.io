@@ -1,4 +1,3 @@
-import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +9,7 @@ export default function Education() {
          <div className="section-inner">
             <h2 className="heading">Education <FontAwesomeIcon icon={faGraduationCap} /></h2>
             <div className="content">
-               {education.map((w, i) => (
+               {education.map((w) => (
                   <div className="item" key={w.role}>
                      <Row className="itemHeader">
                         <Col className="itemHeaderLeft" xs={12} sm={7}>
