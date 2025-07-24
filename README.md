@@ -20,11 +20,11 @@ Runs the app in development mode. Open [http://localhost:5173](http://localhost:
 
 ### `yarn run build:prod`
 
-Builds the app for production to the `docs` folder. It bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `dist` folder. It bundles React in production mode and optimizes the build for the best performance.
 
 ## Usage
 
-After building the project, deploy the contents of the `docs` folder to your preferred static hosting service.
+After building the project, deploy the contents of the `dist` folder to your preferred static hosting service.
 
 ## License
 

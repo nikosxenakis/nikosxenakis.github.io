@@ -1,7 +1,7 @@
 services:
   react:
     build:
-      context: .
+      context: ./ui
       dockerfile: Dockerfile
     container_name: react
     restart: always
