@@ -16,17 +16,15 @@ In the project directory, you can run:
 
 ### `yarn run dev`
 
-Runs the app in development mode.  
-Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+Runs the app in development mode. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 
-### `yarn run build`
+### `yarn run build:prod`
 
-Builds the app for production to the `build` folder.  
-It bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `docs` folder. It bundles React in production mode and optimizes the build for the best performance.
 
 ## Usage
 
-After building the project, deploy the contents of the `build` folder to your preferred static hosting service.
+After building the project, deploy the contents of the `docs` folder to your preferred static hosting service.
 
 ## License
 
