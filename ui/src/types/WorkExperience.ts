@@ -9,4 +9,5 @@ export default interface WorkExperience {
     description: string[];
     technologies?: string;
     forCV?: boolean; // If true, this will be included in the CV
+    logo: string;
 }

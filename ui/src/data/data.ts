@@ -45,6 +45,7 @@ export const work: WorkExperience[] = [
         ],
         technologies: "Java,Spring Boot,Node.js,PostgreSQL,Distributed Systems",
         forCV: true,
+        logo: "sphynx.png",
     },
     {
         role: "Senior Software Engineer",
@@ -60,6 +61,7 @@ export const work: WorkExperience[] = [
         ],
         technologies: "TypeScript,Node.js,React,Terraform,GitHub CI/CD,ElectronJS,AWS",
         forCV: true,
+        logo: "welbot.png",
     },
     {
         role: "Senior Software Engineer",
@@ -75,6 +77,7 @@ export const work: WorkExperience[] = [
         ],
         technologies: ".NET,Java,PostgreSQL,Jenkins",
         forCV: true,
+        logo: "seebyte.png",
     },
     {
         role: "Software Engineer",
@@ -89,6 +92,7 @@ export const work: WorkExperience[] = [
         ],
         // technologies: '.NET,Java,Jenkins',
         forCV: true,
+        logo: "seebyte.png",
     },
     {
         role: "Software Engineer Intern",
@@ -101,6 +105,7 @@ export const work: WorkExperience[] = [
             `Created an XML-based publishing workflow, including tools evaluation, customization, integration, and workflow establishment for academic journals.`,
         ],
         forCV: false,
+        logo: "uoe.jpg",
     },
     {
         role: "Software Engineer",
@@ -114,6 +119,7 @@ export const work: WorkExperience[] = [
         ],
         technologies: ".NET,Typescript,Angular",
         forCV: true,
+        logo: "wings.png",
     },
     {
         role: "Teaching Assistant",
@@ -127,6 +133,7 @@ export const work: WorkExperience[] = [
             `Selected for "TheProfit" program, allowing top 10 performing students to support academic work.`,
         ],
         forCV: true,
+        logo: "uoc.jpg",
     },
     {
         role: "Undergraduate Research Intern",
@@ -137,6 +144,7 @@ export const work: WorkExperience[] = [
         description: [`Conducted research in Big Data Systems using acceleration devices (GPUs, FPGAs).`],
         technologies: "HDFS,MapReduce,Spark,CUDA",
         forCV: true,
+        logo: "forth.png",
     },
 ];
 
