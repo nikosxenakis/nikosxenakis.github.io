@@ -1,5 +1,6 @@
 :root {
   --background-color: #221f25;
+  --background-light-color: #403a45;
   --text-color: #fff;
   --link-color: #6b6175;
   --link-hover-color: #9e90ad;
@@ -34,6 +35,9 @@ a {
   transition: opacity 0.5s linear, transform 0.5s linear;
 }
 
+.subsection {
+  background-color: var(--background-light-color);
+}
 .icon-row-bounce {
   bottom: 58px;
   animation: drop 1.2s cubic-bezier(.28,.84,.42,1) forwards;
