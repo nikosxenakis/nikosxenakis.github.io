@@ -13,7 +13,6 @@ body, html, #root {
   height: 100%;
   scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
-  background-color: var(--background-color);
   color: var(--text-color);
 }
 
@@ -28,18 +27,65 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid var(--text-color); */
-  /* position: absolute; */
-  /* top: 0; */
-  /* left: 0; */
-  /* width: 100%; */
+  background-color: var(--background-color);
   transition: opacity 0.5s linear, transform 0.5s linear;
+}
+
+.section-bottom-border {
+  border-bottom-left-radius: 130px 60px;
+  border-bottom-right-radius: 130px 60px;
+}
+
+.section-top-border {
+  border-top-left-radius: 130px 60px;
+  border-top-right-radius: 130px 60px;
 }
 
 .subsection {
   background-color: var(--background-light-color);
   box-shadow: var(--box-shadow-color) 0px 2px 8px;
 }
+
+/* Intro */
+
+.introTab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1.8rem;
+  gap: 1.8rem;
+  animation: slideInLeft 0.8s cubic-bezier(.28,.84,.42,1) forwards;
+  opacity: 0;
+}
+
+.introTabItem {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--text-color);
+  text-decoration: none;
+  flex-direction: row;
+  transition: color 0.6s cubic-bezier(.28,.84,.42,1);
+}
+
+.introTabItem:hover {
+  color: #9e90ad;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-120px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .icon-row-bounce {
   bottom: 58px;
   animation: drop 1.2s cubic-bezier(.28,.84,.42,1) forwards;
@@ -49,6 +95,7 @@ a {
   display: flex;
   justify-content: center;
   gap: 30px;
+  cursor: pointer;
 }
 
 @keyframes drop {
@@ -60,4 +107,11 @@ a {
     bottom: 58px;
     opacity: 1;
   }
+}
+
+/* Work Experience */
+.timeline-item {
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.5s;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
@@ -6,17 +6,21 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import Typography from "@mui/material/Typography";
-import { work } from "@/data/data";
 import { Chip, List, ListItem } from "@mui/material";
+import { work } from "@/data/data";
 
 const Experience = () => {
     const [activeIdx, setActiveIdx] = useState<number | null>(1);
 
     return (
-        <div className="section">
+        <div className="section section-top-border">
             <div style={{ textAlign: "center", padding: "2vw" }}>
-                <h1>Work Experience</h1>
-                <p>Developing meaningful products for the past 7 years.</p>
+                <Typography variant="h3" component="h3">
+                    Work Experience
+                </Typography>
+                <Typography variant="h5" component="h5">
+                    Developing meaningful products for the past 7 years.
+                </Typography>
             </div>
             <div style={{ display: "flex", gap: "2vw", padding: "2vw" }}>
                 <div style={{ flex: "0 0 60%" }}>
@@ -27,11 +31,9 @@ const Experience = () => {
                                 onMouseEnter={() => setActiveIdx(idx)}
                                 onMouseLeave={() => setActiveIdx(null)}
                                 onClick={() => setActiveIdx(idx)}
+                                className="timeline-item"
                                 style={{
-                                    cursor: "pointer",
-                                    background: activeIdx === idx ? "#403a45" : "transparent",
-                                    borderRadius: "8px",
-                                    transition: "background 0.2s",
+                                    background: activeIdx === idx ? "var(--background-light-color)" : "transparent",
                                 }}
                             >
                                 <TimelineOppositeContent sx={{ py: "12px" }}>
@@ -73,7 +75,7 @@ const Experience = () => {
                     style={{
                         flex: "0 0 30%",
                         minWidth: "350px",
-                        width: "350px",
+                        maxWidth: "450px",
                         maxHeight: "400px",
                     }}
                 >
