@@ -1,5 +1,6 @@
 export default interface WorkExperience {
     role: string;
+    roleShort?: string;
     format?: "full-time" | "part-time" | "contractor";
     company: string;
     companyShort?: string;

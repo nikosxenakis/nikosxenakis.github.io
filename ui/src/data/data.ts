@@ -34,6 +34,7 @@ export const summary = {
 export const work: WorkExperience[] = [
     {
         role: "Senior Software Engineer and Project Manager",
+        roleShort: "Senior Software Engineer",
         format: "contractor",
         company: "Sphynx",
         companyUrl: "https://www.sphynx.ch",
@@ -124,7 +125,7 @@ export const work: WorkExperience[] = [
     {
         role: "Teaching Assistant",
         company: "Computer Science Department, University of Crete",
-        companyShort: "Computer Science Department, UoC",
+        companyShort: "CSD, UoC",
         companyUrl: "http://www.csd.uoc.gr",
         location: "Heraklion, Greece",
         date: "Sep 2015 - Jan 2016",
@@ -137,6 +138,7 @@ export const work: WorkExperience[] = [
     },
     {
         role: "Undergraduate Research Intern",
+        roleShort: "Research Intern",
         company: "FORTH (Research Centre)",
         companyUrl: "https://www.forth.gr",
         location: "Heraklion, Greece",

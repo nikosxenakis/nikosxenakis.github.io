@@ -7,91 +7,112 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import Typography from "@mui/material/Typography";
 import { work } from "@/data/data";
+import { Chip, List, ListItem } from "@mui/material";
 
 const Experience = () => {
     const [activeIdx, setActiveIdx] = useState<number | null>(1);
 
     return (
-        <div className="section" style={{ display: "flex", alignItems: "flex-start" }}>
-            <div style={{ width: "100%", textAlign: "center", margin: "2rem 0" }}>
+        <div className="section">
+            <div style={{ textAlign: "center", padding: "2vw" }}>
                 <h1>Work Experience</h1>
-                <p>This section will showcase my professional experience.</p>
+                <p>Developing meaningful products for the past 7 years.</p>
             </div>
-            <div style={{ flex: "0 0 55%", marginLeft: "-5vw" }}>
-                <Timeline position="right">
-                    {work.map((item, idx) => (
-                        <TimelineItem
-                            key={idx}
-                            onMouseEnter={() => setActiveIdx(idx)}
-                            // onMouseLeave={() => setActiveIdx(null)}
-                            onClick={() => setActiveIdx(idx)}
+            <div style={{ display: "flex", gap: "2vw", padding: "2vw" }}>
+                <div style={{ flex: "0 0 60%" }}>
+                    <Timeline position="left">
+                        {work.map((item, idx) => (
+                            <TimelineItem
+                                key={idx}
+                                onMouseEnter={() => setActiveIdx(idx)}
+                                onMouseLeave={() => setActiveIdx(null)}
+                                onClick={() => setActiveIdx(idx)}
+                                style={{
+                                    cursor: "pointer",
+                                    background: activeIdx === idx ? "#403a45" : "transparent",
+                                    borderRadius: "8px",
+                                    transition: "background 0.2s",
+                                }}
+                            >
+                                <TimelineOppositeContent sx={{ py: "12px" }}>
+                                    <Typography variant="body2" component="span">
+                                        {item.date}
+                                    </Typography>
+                                    <br />
+                                    <Typography variant="body2" component="span">
+                                        {item.location}
+                                    </Typography>
+                                </TimelineOppositeContent>
+
+                                <TimelineSeparator>
+                                    {idx !== 0 && <TimelineConnector />}
+                                    <img
+                                        src={`/assets/images/companies/${item.logo}`}
+                                        style={{ height: "32px", borderRadius: "20%", aspectRatio: "auto" }}
+                                        alt={item.company}
+                                    />
+                                    {idx !== work.length - 1 && <TimelineConnector />}
+                                </TimelineSeparator>
+
+                                <TimelineContent sx={{ py: "12px" }}>
+                                    <Typography variant="body2" component="span">
+                                        {item.roleShort ? item.roleShort : item.role}
+                                    </Typography>
+                                    <br />
+                                    <Typography variant="body2" component="span">
+                                        <a href={item.companyUrl}>
+                                            {item.companyShort ? item.companyShort : item.company}
+                                        </a>
+                                    </Typography>
+                                </TimelineContent>
+                            </TimelineItem>
+                        ))}
+                    </Timeline>
+                </div>
+                <div
+                    style={{
+                        flex: "0 0 30%",
+                        minWidth: "350px",
+                        width: "350px",
+                        maxHeight: "400px",
+                    }}
+                >
+                    {activeIdx !== null && work[activeIdx].description && (
+                        <div
                             style={{
-                                cursor: "pointer",
-                                background: activeIdx === idx ? "#403a45" : "transparent",
-                                borderRadius: "8px",
-                                transition: "background 0.2s",
+                                margin: "2vw",
+                                padding: "1rem",
+                                borderRadius: "12px",
                             }}
+                            className="subsection"
                         >
-                            <TimelineOppositeContent sx={{ py: "12px", px: 2 }}>
-                                <Typography variant="body1" component="span">
-                                    {item.date}
-                                </Typography>
-                                <br />
-                                <Typography variant="body1" component="span">
-                                    {item.location}
-                                </Typography>
-                            </TimelineOppositeContent>
-                            <TimelineSeparator>
-                                {idx !== 0 && <TimelineConnector />}
-                                <img
-                                    src={`/assets/images/companies/${item.logo}`}
-                                    style={{ width: "42px", height: "42px", borderRadius: "50%" }}
-                                    alt={item.company}
-                                />
-                                {idx !== work.length - 1 && <TimelineConnector />}
-                            </TimelineSeparator>
-                            <TimelineContent sx={{ py: "12px", px: 2 }}>
-                                <Typography variant="body1" component="span">
-                                    {item.role}
-                                </Typography>
-                                <Typography>
-                                    <a href={item.companyUrl}>{item.company}</a>
-                                </Typography>
-                            </TimelineContent>
-                        </TimelineItem>
-                    ))}
-                </Timeline>
-            </div>
-            {/* Description panel */}
-            <div
-                style={{
-                    flex: "0 0 45%",
-                    margin: "2vw",
-                    padding: "1rem",
-                    minHeight: "300px",
-                    /* padding: 2rem; */
-                    borderRadius: "12px",
-                    boxShadow: "#706876ff 0px 2px 16px",
-                    display: "block",
-                    position: "absolute",
-                    top: "1250px",
-                    right: "0px",
-                    width: "350px",
-                }}
-                className="subsection"
-            >
-                {activeIdx !== null && work[activeIdx].description && (
-                    <>
-                        <Typography variant="h5" gutterBottom>
-                            {work[activeIdx].role} @ {work[activeIdx].company}
-                        </Typography>
-                        <ul>
-                            {work[activeIdx].description.map((desc: string, i: number) => (
-                                <li key={i}>{desc}</li>
-                            ))}
-                        </ul>
-                    </>
-                )}
+                            <List>
+                                {work[activeIdx].description?.map((desc: string, i: number) => (
+                                    <ListItem key={i}>{desc}</ListItem>
+                                ))}
+                            </List>
+                            {work[activeIdx].technologies && (
+                                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "1rem" }}>
+                                    {work[activeIdx].technologies.split(",").map((tech: string, i: number) => (
+                                        <Chip
+                                            key={i}
+                                            label={tech.trim()}
+                                            color="primary"
+                                            variant="outlined"
+                                            style={{
+                                                fontSize: "0.95rem",
+                                                borderRadius: "6px",
+                                                padding: "0.3rem 0.7rem",
+                                                border: "1px solid #ccc",
+                                                color: "#fff",
+                                            }}
+                                        />
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );
