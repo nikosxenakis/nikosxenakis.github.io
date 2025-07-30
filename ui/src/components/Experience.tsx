@@ -6,7 +6,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import Typography from "@mui/material/Typography";
-import { Chip, List, ListItem } from "@mui/material";
+import { Chip, List, ListItem, Paper } from "@mui/material";
 import { work } from "@/data/data";
 
 const Experience = () => {
@@ -18,7 +18,7 @@ const Experience = () => {
                 <Typography variant="h3" component="h3">
                     Work Experience
                 </Typography>
-                <Typography variant="h5" component="h5">
+                <Typography variant="body1" component="span">
                     Developing meaningful products for the past 7 years.
                 </Typography>
             </div>
@@ -29,7 +29,7 @@ const Experience = () => {
                             <TimelineItem
                                 key={idx}
                                 onMouseEnter={() => setActiveIdx(idx)}
-                                onMouseLeave={() => setActiveIdx(null)}
+                                // onMouseLeave={() => setActiveIdx(null)}
                                 onClick={() => setActiveIdx(idx)}
                                 className="timeline-item"
                                 style={{
@@ -80,12 +80,7 @@ const Experience = () => {
                     }}
                 >
                     {activeIdx !== null && work[activeIdx].description && (
-                        <div
-                            style={{
-                                margin: "2vw",
-                                padding: "1rem",
-                                borderRadius: "12px",
-                            }}
+                        <Paper
                             className="subsection"
                         >
                             <List>
@@ -102,17 +97,17 @@ const Experience = () => {
                                             color="primary"
                                             variant="outlined"
                                             style={{
-                                                fontSize: "0.95rem",
                                                 borderRadius: "6px",
                                                 padding: "0.3rem 0.7rem",
                                                 border: "1px solid #ccc",
+                                                boxShadow: "0px 1px 3px rgba(0, 0, 0, 0.2)",
                                                 color: "#fff",
                                             }}
                                         />
                                     ))}
                                 </div>
                             )}
-                        </div>
+                        </Paper>
                     )}
                 </div>
             </div>

@@ -32,18 +32,21 @@ a {
 }
 
 .section-bottom-border {
-  border-bottom-left-radius: 130px 60px;
-  border-bottom-right-radius: 130px 60px;
+  /* border-bottom-left-radius: 130px 60px;
+  border-bottom-right-radius: 130px 60px; */
 }
 
 .section-top-border {
-  border-top-left-radius: 130px 60px;
-  border-top-right-radius: 130px 60px;
+  /* border-top-left-radius: 130px 60px; */
+  /* border-top-right-radius: 130px 60px; */
 }
 
 .subsection {
-  background-color: var(--background-light-color);
-  box-shadow: var(--box-shadow-color) 0px 2px 8px;
+  padding: 1rem;
+  border-radius: 12px;
+  color: var(--text-color) !important;
+  background-color: var(--background-light-color) !important;
+  box-shadow: var(--box-shadow-color) 0px 1px 4px;
 }
 
 /* Intro */

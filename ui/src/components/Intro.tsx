@@ -1,6 +1,7 @@
-import { name, title, email, location } from "@/data/data";
+import { name, title, email, location, languages } from "@/data/data";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
+import { IoLanguage } from "react-icons/io5";
 
 const iconStyle = {
     fontSize: "38px",
@@ -10,42 +11,93 @@ const iconStyle = {
 };
 
 import Typography from "@mui/material/Typography";
+import { SpeedDial, SpeedDialAction } from "@mui/material";
+import React from "react";
 
-const Intro = () => (
-    <div className="section section-bottom-border" style={{ position: "relative" }}>
-        <div className="introTab">
-            <a href={email.link} className="introTabItem">
-                <MdEmail />
-                <Typography variant="body2" component="span">
-                    {email.short}
-                </Typography>
-            </a>
-            <a
-                href="https://www.google.com/maps?q=Zürich"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="introTabItem"
+const Intro = () => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    const languagesLocal = languages.map((lang) => ({
+        ...lang,
+        icon: (
+            <img
+                src={`/assets/images/flags/${lang.name.toLowerCase()}.png`}
+                alt={lang.name}
+                style={{ width: "24px" }}
+            />
+        ),
+    }));
+
+    return (
+        <div className="section section-bottom-border" style={{ position: "relative" }}>
+            <div className="introTab">
+                <a href={email.link} className="introTabItem">
+                    <MdEmail />
+                    <Typography variant="body2" component="span">
+                        {email.short}
+                    </Typography>
+                </a>
+                <a
+                    href="https://www.google.com/maps?q=Zürich"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="introTabItem"
+                >
+                    <FaLocationDot />
+                    <Typography variant="body2" component="span">
+                        {location}
+                    </Typography>
+                </a>
+            </div>
+            <SpeedDial
+                ariaLabel="Languages"
+                sx={{
+                    position: "absolute",
+                    bottom: 16,
+                    right: 16,
+                    "& .MuiFab-primary": {
+                        backgroundColor: "#403a45", // custom background color
+                        color: "#fff",
+                    },
+                }}
+                icon={<IoLanguage />}
+                onClose={handleClose}
+                onOpen={handleOpen}
+                open={open}
             >
-                <FaLocationDot />
-                <Typography variant="body2" component="span">
-                    {location}
+                {languagesLocal.map((language) => (
+                    <SpeedDialAction
+                        key={language.name}
+                        title={language.level}
+                        icon={language.icon}
+                        onClick={handleClose}
+                        sx={{
+                            backgroundColor: "transparent",
+                            color: "#fff",
+                            "&:hover": {
+                                backgroundColor: "#6b6175",
+                            },
+                        }}
+                    />
+                ))}
+            </SpeedDial>
+            <div style={{ textAlign: "center", padding: "2vw", maxWidth: "800px", margin: "0 auto" }}>
+                <Typography variant="h1" component="h1" style={{ marginBottom: "1rem" }}>
+                    {name}
                 </Typography>
-            </a>
+                <Typography variant="h4" component="h4">
+                    {title}
+                </Typography>
+            </div>
+            <div className="icon-row-bounce">
+                <img src="/assets/images/icons/github.png" alt="GitHub" style={iconStyle} />
+                <img src="/assets/images/icons/linkedin2.png" alt="LinkedIn" style={iconStyle} />
+                <img src="/assets/images/icons/stackoverflow.png" alt="Stack Overflow" style={iconStyle} />
+            </div>
         </div>
-        <div style={{ textAlign: "center", padding: "2vw", maxWidth: "800px", margin: "0 auto" }}>
-            <Typography variant="h1" component="h1" style={{ marginBottom: "1rem" }}>
-                {name}
-            </Typography>
-            <Typography variant="h4" component="h4">
-                {title}
-            </Typography>
-        </div>
-        <div className="icon-row-bounce">
-            <img src="/assets/images/icons/github.png" alt="GitHub" style={iconStyle} />
-            <img src="/assets/images/icons/linkedin2.png" alt="LinkedIn" style={iconStyle} />
-            <img src="/assets/images/icons/stackoverflow.png" alt="Stack Overflow" style={iconStyle} />
-        </div>
-    </div>
-);
+    );
+};
 
 export default Intro;

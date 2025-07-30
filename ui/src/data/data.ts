@@ -233,7 +233,7 @@ export const languages = [
     },
     {
         name: "German",
-        level: "Beginner (A1)",
+        level: "Beginner (A2)",
         stars: 1,
     },
 ];
