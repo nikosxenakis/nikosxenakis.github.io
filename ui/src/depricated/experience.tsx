@@ -1,7 +1,7 @@
 import { Badge, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import { work } from './data';
+import { work } from './data/data';
 
 export default function Experience() {
    return (

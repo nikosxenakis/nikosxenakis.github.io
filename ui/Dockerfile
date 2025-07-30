@@ -1,11 +1,10 @@
-# build step
-FROM node:24.4-slim AS builder
+FROM node:24.0-alpine AS build
+
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build:prod
 
-# serve static files
-FROM nginx:stable-alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
+FROM nginx:stable-alpine AS production
+COPY --from=build /app/dist /usr/share/nginx/html

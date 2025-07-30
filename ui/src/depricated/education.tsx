@@ -1,7 +1,7 @@
 import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
-import { education } from './data';
+import { education } from './data/data';
 
 export default function Education() {
    return (

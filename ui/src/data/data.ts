@@ -1,21 +1,24 @@
-export const name = "Xenakis Nikolaos";
+import type Link from "@/types/Link";
+import type WorkExperience from "@/types/WorkExperience";
+
+export const name = "Nikolaos Xenakis";
 export const title = "Senior Software Engineer";
 export const location = "Zürich, Switzerland";
 export const nationality = "Greece, EU";
-export const email = {
+export const email: Link = {
     short: "nikosxenakis94@gmail.com",
     link: "mailto:nikosxenakis94@gmail.com",
 };
-export const linkedIn = {
+export const linkedIn: Link = {
     short: "linkedin.com/in/nikosxenakis",
     link: "https://www.linkedin.com/in/nikosxenakis",
 };
-export const gitHub = {
+export const gitHub: Link = {
     short: "github.com/nikosxenakis",
     link: "https://github.com/nikosxenakis",
 };
 
-export const website = {
+export const website: Link = {
     short: "nikosxenakis.github.io",
     link: "https://nikosxenakis.github.io",
 };
@@ -28,7 +31,7 @@ export const summary = {
     short: "Specializing in Full Stack development for scalable, fault-tolerant and secure products. Proven at both large and small sized companies, with expertise in Java, Node.js, .NET, and CI/CD. Collaborating with teams and clients, by following agile methodologies towards innovative solutions.",
 };
 
-export const work = [
+export const work: WorkExperience[] = [
     {
         role: "Senior Software Engineer and Project Manager",
         format: "contractor",

@@ -1,0 +1,24 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: sans-serif;
+  background-color: #221f25;
+  color: #fff;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 48px; */
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.5s linear, transform 0.5s linear;
+}

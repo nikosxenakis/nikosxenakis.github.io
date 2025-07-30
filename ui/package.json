@@ -11,13 +11,17 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.3",
     "@popperjs/core": "^2.11.8",
+    "@types/node": "^24.1.0",
+    "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.3.7",
     "buffer": "^6.0.3",
+    "path": "^0.12.7",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.7.0",
@@ -31,7 +35,7 @@
     "vite": "^7.0.6"
   },
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "tsc -b && vite build",
     "build:prod": "tsc -b && vite build --mode production",
     "lint": "eslint .",
