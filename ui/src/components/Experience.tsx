@@ -10,109 +10,102 @@ import { Chip, List, ListItem, Paper } from "@mui/material";
 import { work } from "@/data/data";
 
 const Experience = () => {
-    const [activeIdx, setActiveIdx] = useState<number | null>(1);
+  const [activeIdx, setActiveIdx] = useState<number | null>(0);
 
-    return (
-        <div className="section section-top-border">
-            <div style={{ textAlign: "center", padding: "2vw" }}>
-                <Typography variant="h3" component="h3">
-                    Work Experience
-                </Typography>
-                <Typography variant="body1" component="span">
-                    Developing meaningful products for the past 7 years.
-                </Typography>
-            </div>
-            <div style={{ display: "flex", gap: "2vw", padding: "2vw" }}>
-                <div style={{ flex: "0 0 60%" }}>
-                    <Timeline position="left">
-                        {work.map((item, idx) => (
-                            <TimelineItem
-                                key={idx}
-                                onMouseEnter={() => setActiveIdx(idx)}
-                                // onMouseLeave={() => setActiveIdx(null)}
-                                onClick={() => setActiveIdx(idx)}
-                                className="timeline-item"
-                                style={{
-                                    background: activeIdx === idx ? "var(--background-light-color)" : "transparent",
-                                }}
-                            >
-                                <TimelineOppositeContent sx={{ py: "12px" }}>
-                                    <Typography variant="body2" component="span">
-                                        {item.date}
-                                    </Typography>
-                                    <br />
-                                    <Typography variant="body2" component="span">
-                                        {item.location}
-                                    </Typography>
-                                </TimelineOppositeContent>
+  return (
+    <div className="section section-top-border">
+      <div style={{ textAlign: "center", padding: "2vw" }}>
+        <Typography variant="h3" component="h3">
+          Work Experience
+        </Typography>
+        <Typography variant="body1" component="span">
+          Developing meaningful products for the past 7 years.
+        </Typography>
+      </div>
+      <div className="experienceContainer">
+        <div className="timeline-container">
+          <Timeline position="left">
+            {work.map((item, idx) => (
+              <TimelineItem
+                key={idx}
+                onMouseEnter={() => setActiveIdx(idx)}
+                onMouseLeave={() => setActiveIdx(null)}
+                onClick={() => setActiveIdx(idx)}
+                className="timeline-item"
+                style={{
+                  background: activeIdx === idx ? "var(--background-light-color)" : "transparent",
+                }}
+              >
+                <TimelineOppositeContent sx={{ py: "12px" }}>
+                  <Typography variant="body2" component="span">
+                    {item.date}
+                  </Typography>
+                  <br />
+                  <Typography variant="body2" component="span">
+                    {item.location}
+                  </Typography>
+                </TimelineOppositeContent>
 
-                                <TimelineSeparator>
-                                    {idx !== 0 && <TimelineConnector />}
-                                    <img
-                                        src={`/assets/images/companies/${item.logo}`}
-                                        style={{ height: "32px", borderRadius: "20%", aspectRatio: "auto" }}
-                                        alt={item.company}
-                                    />
-                                    {idx !== work.length - 1 && <TimelineConnector />}
-                                </TimelineSeparator>
+                <TimelineSeparator>
+                  {idx !== 0 && <TimelineConnector />}
+                  <img
+                    src={`/assets/images/companies/${item.logo}`}
+                    style={{ height: "32px", borderRadius: "20%", aspectRatio: "auto" }}
+                    alt={item.company}
+                  />
+                  {idx !== work.length - 1 && <TimelineConnector />}
+                </TimelineSeparator>
 
-                                <TimelineContent sx={{ py: "12px" }}>
-                                    <Typography variant="body2" component="span">
-                                        {item.roleShort ? item.roleShort : item.role}
-                                    </Typography>
-                                    <br />
-                                    <Typography variant="body2" component="span">
-                                        <a href={item.companyUrl}>
-                                            {item.companyShort ? item.companyShort : item.company}
-                                        </a>
-                                    </Typography>
-                                </TimelineContent>
-                            </TimelineItem>
-                        ))}
-                    </Timeline>
-                </div>
-                <div
-                    style={{
-                        flex: "0 0 30%",
-                        minWidth: "350px",
-                        maxWidth: "450px",
-                        maxHeight: "400px",
-                    }}
-                >
-                    {activeIdx !== null && work[activeIdx].description && (
-                        <Paper
-                            className="subsection"
-                        >
-                            <List>
-                                {work[activeIdx].description?.map((desc: string, i: number) => (
-                                    <ListItem key={i}>{desc}</ListItem>
-                                ))}
-                            </List>
-                            {work[activeIdx].technologies && (
-                                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "1rem" }}>
-                                    {work[activeIdx].technologies.split(",").map((tech: string, i: number) => (
-                                        <Chip
-                                            key={i}
-                                            label={tech.trim()}
-                                            color="primary"
-                                            variant="outlined"
-                                            style={{
-                                                borderRadius: "6px",
-                                                padding: "0.3rem 0.7rem",
-                                                border: "1px solid #ccc",
-                                                boxShadow: "0px 1px 3px rgba(0, 0, 0, 0.2)",
-                                                color: "#fff",
-                                            }}
-                                        />
-                                    ))}
-                                </div>
-                            )}
-                        </Paper>
-                    )}
-                </div>
-            </div>
+                <TimelineContent sx={{ py: "12px" }}>
+                  <Typography variant="body1" component="span" sx={{ fontSize: "1.1rem" }}>
+                    {item.roleShort ? item.roleShort : item.role}
+                  </Typography>
+                  <br />
+                  <Typography variant="body2" component="span">
+                    <a href={item.companyUrl}>
+                      {item.companyShort ? item.companyShort : item.company}
+                    </a>
+                  </Typography>
+                </TimelineContent>
+              </TimelineItem>
+            ))}
+          </Timeline>
         </div>
-    );
+        <div className="work-experience-description">
+          {activeIdx !== null && work[activeIdx].description && (
+            <Paper className="subsection">
+              <List>
+                {work[activeIdx].description?.map((desc: string, i: number) => (
+                  <ListItem key={i}>{desc}</ListItem>
+                ))}
+              </List>
+              {work[activeIdx].technologies && (
+                <div
+                  style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "1rem" }}
+                >
+                  {work[activeIdx].technologies.split(",").map((tech: string, i: number) => (
+                    <Chip
+                      key={i}
+                      label={tech.trim()}
+                      color="primary"
+                      variant="outlined"
+                      style={{
+                        borderRadius: "6px",
+                        padding: "0.3rem 0.7rem",
+                        border: "1px solid #ccc",
+                        boxShadow: "0px 1px 3px rgba(0, 0, 0, 0.2)",
+                        color: "#fff",
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
+            </Paper>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Experience;

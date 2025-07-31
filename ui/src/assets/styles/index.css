@@ -1,361 +1,361 @@
 /* ======= Base ======= */
 :root {
-  --container-background-color: #EFEBE9;
-  --background-color: #3E2723;
-  --background-light-color: #BCAAA4;
-  --link-color: #6D4C41;
-  --link-hover-color: #4E342E;
-  --font-size: 16px;
-  --border-radius: 4px;
+   --container-background-color: #efebe9;
+   --background-color: #3e2723;
+   --background-light-color: #bcaaa4;
+   --link-color: #6d4c41;
+   --link-hover-color: #4e342e;
+   --font-size: 16px;
+   --border-radius: 4px;
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("TrueType");
-  font-weight: normal;
+   font-family: "Roboto";
+   src: url("../fonts/Roboto/Roboto-Regular.ttf") format("TrueType");
+   font-weight: normal;
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("TrueType");
-  font-weight: bold;
+   font-family: "Roboto";
+   src: url("../fonts/Roboto/Roboto-Bold.ttf") format("TrueType");
+   font-weight: bold;
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/Roboto-Italic.ttf") format("TrueType");
-  font-style: italic;
+   font-family: "Roboto";
+   src: url("../fonts/Roboto/Roboto-Italic.ttf") format("TrueType");
+   font-style: italic;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  color: black;
-  background: var(--container-background-color);
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+   font-family: "Roboto", sans-serif;
+   color: black;
+   background: var(--container-background-color);
+   font-size: 16px;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 }
 
 .technology {
-  background-color: var(--container-background-color) !important;
-  margin-right: 5px;
-  border-radius: 5px;
+   background-color: var(--container-background-color) !important;
+   margin-right: 5px;
+   border-radius: 5px;
 }
 
 .cvModal {
-  max-width: 90%;
+   max-width: 90%;
 }
 
 .cvModal .modal-content {
-  width: 800px;
-  height: 1190px;
+   width: 800px;
+   height: 1190px;
 }
 
 .cvModal .modal-content iframe {
-  height: 100%;
+   height: 100%;
 }
 
 .container {
-  max-width: 100%;
+   max-width: 100%;
 }
 
 /* ======= Header ======= */
 .header {
-  background: var(--background-color);
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-bottom: 0px;
+   background: var(--background-color);
+   margin-right: auto;
+   margin-left: auto;
+   padding-right: 15px;
+   padding-left: 15px;
+   padding-bottom: 0px;
 }
 
 .header .avatar,
 .header .resume {
-  display: flex;
-  align-items: center;
+   display: flex;
+   align-items: center;
 }
 
 .header .resume {
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  color: var(--container-background-color);
-  display: flex;
-  width: 110px;
-  border: none;
+   justify-content: center;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   color: var(--container-background-color);
+   display: flex;
+   width: 110px;
+   border: none;
 }
 
 .header .resumeTitle {
-  text-align: center;
+   text-align: center;
 }
 
 .header .avatar img {
-  width: 120px;
-  height: 120px;
-  margin: auto;
-  margin-top: 30px;
+   width: 120px;
+   height: 120px;
+   margin: auto;
+   margin-top: 30px;
 }
 
 .header .profile-image {
-  margin-right: 30px;
+   margin-right: 30px;
 }
 
 .header .name {
-  font-weight: normal;
-  color: var(--container-background-color);
-  font-size: 32px;
-  margin-bottom: 5px;
-  margin-top: 30px;
+   font-weight: normal;
+   color: var(--container-background-color);
+   font-size: 32px;
+   margin-bottom: 5px;
+   margin-top: 30px;
 }
 
 .header .title {
-  color: var(--background-light-color);
-  font-weight: 400;
-  font-size: 23px;
-  margin-top: 0;
-  margin-bottom: 15px;
+   color: var(--background-light-color);
+   font-weight: 400;
+   font-size: 23px;
+   margin-top: 0;
+   margin-bottom: 15px;
 }
 
 .header-icons {
-  list-style: none;
-  display: inline-flex;
-  padding-left: 0px;
+   list-style: none;
+   display: inline-flex;
+   padding-left: 0px;
 }
 
 .header-icons li {
-  margin-right: 5px;
+   margin-right: 5px;
 }
 
 .header-icons svg,
 .header .resume svg {
-  width: 36px;
-  height: 36px;
-  color: var(--container-background-color);
+   width: 36px;
+   height: 36px;
+   color: var(--container-background-color);
 }
 
 .header-icons svg:hover,
 .header .resume svg:hover {
-  cursor: pointer;
-  color: var(--link-color);
+   cursor: pointer;
+   color: var(--link-color);
 }
 
 /* ======= Sections======= */
 .sections-wrapper {
-  padding-top: 60px;
-  padding-bottom: 60px;
+   padding-top: 60px;
+   padding-bottom: 60px;
 }
 
 .section {
-  margin-bottom: 30px;
-  animation: fade-in 0.4s;
+   margin-bottom: 30px;
+   animation: fade-in 0.4s;
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
+   from {
+      opacity: 0;
+   }
 
-  to {
-    opacity: 100;
-  }
+   to {
+      opacity: 100;
+   }
 }
 
 .section .section-inner {
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  max-width: 1000px;
-  min-height: 240px;
+   background: #fff;
+   padding: 30px;
+   border-radius: 10px;
+   max-width: 1000px;
+   min-height: 240px;
 }
 
 .section .section-inner.small {
-  max-width: 500px;
+   max-width: 500px;
 }
 
 .section .heading {
-  margin-bottom: 30px;
-  font-size: 24px;
-  animation: slide 1s;
+   margin-bottom: 30px;
+   font-size: 24px;
+   animation: slide 1s;
 }
 
 @keyframes slide {
-  from {
-    margin-left: 40px;
-    opacity: 0;
-  }
+   from {
+      margin-left: 40px;
+      opacity: 0;
+   }
 
-  to {
-    margin-left: inherit;
-    opacity: 100;
-  }
+   to {
+      margin-left: inherit;
+      opacity: 100;
+   }
 }
 
 .section .content {
-  font-size: 14px;
-  animation: fade-in 1s;
+   font-size: 14px;
+   animation: fade-in 1s;
 }
 
 .section .item {
-  margin-bottom: 30px;
+   margin-bottom: 30px;
 }
 
 .section .item ul {
-  font-size: 14px;
+   font-size: 14px;
 }
 
 .section .item .itemHeader {
-  width: 100%;
+   width: 100%;
 }
 
 .section .item .itemHeaderLeft {
-  min-width: 200px;
+   min-width: 200px;
 }
 
 .section .item .itemHeaderRight {
-  min-width: 140px;
-  text-align: right;
+   min-width: 140px;
+   text-align: right;
 }
 
 .section .item .title {
-  font-size: 17px;
-  margin-bottom: 0px;
-  font-weight: bold;
+   font-size: 17px;
+   margin-bottom: 0px;
+   font-weight: bold;
 }
 
 .section .item .title a {
-  font-weight: bold;
-  text-decoration: none;
-  color: black;
+   font-weight: bold;
+   text-decoration: none;
+   color: black;
 }
 
 .section .item .title a:hover {
-  color: var(--background-color);
+   color: var(--background-color);
 }
 
 .section .item .format {
-  font-size: 15px;
-  font-weight: normal;
-  font-style: italic;
-  margin-bottom: 3px;
+   font-size: 15px;
+   font-weight: normal;
+   font-style: italic;
+   margin-bottom: 3px;
 }
 
 .section .item .company {
-  font-size: 15px;
-  font-weight: normal;
+   font-size: 15px;
+   font-weight: normal;
 }
 
 .section .item .company a {
-  text-decoration: none;
-  color: black;
+   text-decoration: none;
+   color: black;
 }
 
 .section .item .company a:hover {
-  color: var(--background-color);
+   color: var(--background-color);
 }
 
 .section .item .place {
-  font-size: 15px;
-  font-weight: normal;
-  margin-bottom: 0px;
+   font-size: 15px;
+   font-weight: normal;
+   margin-bottom: 0px;
 }
 
 .section .item .year {
-  color: var(--secondary-color);
-  font-weight: 500;
-  font-size: 14px;
+   color: var(--secondary-color);
+   font-weight: 500;
+   font-size: 14px;
 }
 
 .section .small .item {
-  margin-bottom: 10px;
+   margin-bottom: 10px;
 }
 
 .section .item .description {
-  font-size: 14px;
+   font-size: 14px;
 }
 
 .experience.section .item {
-  margin-bottom: 50px;
+   margin-bottom: 50px;
 }
 
 .section .item .technologies .title {
-  font-weight: 600;
+   font-weight: 600;
 }
 
 /* Work Section */
 .experience .item .title .place a:hover {
-  color: var(--link-hover-color);
+   color: var(--link-hover-color);
 }
 
 /* Info Section */
 .info li {
-  margin-bottom: 15px;
+   margin-bottom: 15px;
 }
 .info a {
-  text-decoration: none;
-    color: black;
+   text-decoration: none;
+   color: black;
 }
 
 /* Skills Section */
 .skills .skillset .level-title {
-  font-size: 14px;
-  position: relative;
-  margin-top: 0;
+   font-size: 14px;
+   position: relative;
+   margin-top: 0;
 }
 
 .skills .skillset .level-label {
-  color: var(--background-color);
-  font-size: 14px;
-  font-weight: 400;
+   color: var(--background-color);
+   font-size: 14px;
+   font-weight: 400;
 }
 
 .skills .skillset .level-bar {
-  height: 15px;
-  background: var(--container-background-color);
+   height: 15px;
+   background: var(--container-background-color);
 }
 
 .skills .skillset .level-bar-inner {
-  height: 15px;
-  background: var(--link-color);
+   height: 15px;
+   background: var(--link-color);
 }
 
 /* Language Section */
 .languages .item .level {
-  color: var(--link-hover-color);
+   color: var(--link-hover-color);
 }
 
 .languages .item .level svg {
-  color: var(--link-color);
+   color: var(--link-color);
 }
 
 .footer {
-  background: var(--background-color);
-  color: var(--container-background-color);
-  padding: 10px 0;
-  line-height: 1.6;
-  font-size: 14px;
+   background: var(--background-color);
+   color: var(--container-background-color);
+   padding: 10px 0;
+   line-height: 1.6;
+   font-size: 14px;
 }
 
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767px) {
-  .header {
-    text-align: center;
-  }
+   .header {
+      text-align: center;
+   }
 
-  .header .profile-image {
-    float: none !important;
-    margin: 0 auto;
-  }
+   .header .profile-image {
+      float: none !important;
+      margin: 0 auto;
+   }
 
-  .header .btn {
-    margin-top: 30px;
-    float: none !important;
-  }
+   .header .btn {
+      margin-top: 30px;
+      float: none !important;
+   }
 
-  .project-image {
-    margin-bottom: 15px;
-  }
+   .project-image {
+      margin-bottom: 15px;
+   }
 
-  .section .item .itemHeaderRight {
-    text-align: left;
-  }
+   .section .item .itemHeaderRight {
+      text-align: left;
+   }
 }
