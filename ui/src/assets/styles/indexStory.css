@@ -1,10 +1,10 @@
 :root {
-  --background-color: #221f25;
-  --background-light-color: #403a45;
-  --box-shadow-color: #706876ff;
-  --text-color: #fff;
-  --link-color: #6b6175;
-  --link-hover-color: #9e90ad;
+  --background-color: #2a2f3a; /* Gunmetal base */
+  --background-light-color: #3a3f4a; /* Slightly lighter for contrast */
+  --box-shadow-color: #5c5766; /* Soft shadow with subtle depth */
+  --text-color: #ffffff; /* High contrast text */
+  --link-color: #9c8ebf; /* Soft lavender for links */
+  --link-hover-color: #c1b2df; /* Lighter on hover */
 }
 
 body,
@@ -33,15 +33,15 @@ a {
   transition: opacity 0.5s linear, transform 0.5s linear;
 }
 
-.section-bottom-border {
-  /* border-bottom-left-radius: 130px 60px;
-  border-bottom-right-radius: 130px 60px; */
+/* .section-bottom-border {
+  border-bottom-left-radius: 130px 60px;
+  border-bottom-right-radius: 130px 60px;
 }
 
 .section-top-border {
-  /* border-top-left-radius: 130px 60px; */
-  /* border-top-right-radius: 130px 60px; */
-}
+  border-top-left-radius: 130px 60px;
+  border-top-right-radius: 130px 60px;
+} */
 
 .subsection {
   padding: 1rem;
@@ -77,7 +77,7 @@ a {
 }
 
 .introTabItem:hover {
-  color: #9e90ad;
+  color: var(--link-hover-color);
 }
 
 @keyframes slideInLeft {
