@@ -1,6 +1,7 @@
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoLanguage } from "react-icons/io5";
+import { FcSportsMode } from "react-icons/fc";
 import {
   name,
   title,
@@ -10,6 +11,7 @@ import {
   gitHub,
   linkedIn,
   stackOverflow,
+  interests,
 } from "@/data/data";
 
 import Typography from "@mui/material/Typography";
@@ -17,9 +19,13 @@ import { SpeedDial, SpeedDialAction } from "@mui/material";
 import React from "react";
 
 const Intro = () => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [openLanguages, setOpenLanguages] = React.useState(false);
+  const handleOpenLanguages = () => setOpenLanguages(true);
+  const handleCloseLanguages = () => setOpenLanguages(false);
+
+  const [openInterests, setOpenInterests] = React.useState(false);
+  const handleOpenInterests = () => setOpenInterests(true);
+  const handleCloseInterests = () => setOpenInterests(false);
 
   const languagesLocal = languages.map((lang) => ({
     ...lang,
@@ -30,6 +36,11 @@ const Intro = () => {
         style={{ width: "24px" }}
       />
     ),
+  }));
+
+  const interestsLocal = interests.map((interest) => ({
+    ...interest,
+    icon: <span style={{ fontSize: "1.5rem" }}>{interest.emoji}</span>,
   }));
 
   return (
@@ -66,16 +77,49 @@ const Intro = () => {
           },
         }}
         icon={<IoLanguage />}
-        onClose={handleClose}
-        onOpen={handleOpen}
-        open={open}
+        onClose={handleCloseLanguages}
+        onOpen={handleOpenLanguages}
+        open={openLanguages}
       >
         {languagesLocal.map((language) => (
           <SpeedDialAction
             key={language.name}
             title={language.level}
             icon={language.icon}
-            onClick={handleClose}
+            onClick={handleCloseLanguages}
+            sx={{
+              backgroundColor: "#403a45",
+              color: "#fff",
+              "&:hover": {
+                backgroundColor: "#6b6175",
+              },
+            }}
+          />
+        ))}
+      </SpeedDial>
+      <SpeedDial
+        ariaLabel="Interests"
+        direction="down"
+        sx={{
+          position: "absolute",
+          top: 16,
+          right: 80,
+          "& .MuiFab-primary": {
+            backgroundColor: "#403a45",
+            color: "#fff",
+          },
+        }}
+        icon={<FcSportsMode />}
+        onClose={handleCloseInterests}
+        onOpen={handleOpenInterests}
+        open={openInterests}
+      >
+        {interestsLocal.map((interest) => (
+          <SpeedDialAction
+            key={interest.name}
+            title={interest.name}
+            icon={interest.icon}
+            onClick={handleCloseInterests}
             sx={{
               backgroundColor: "#403a45",
               color: "#fff",

@@ -252,16 +252,20 @@ export const languages = [
 
 export const interests = [
   {
-    name: "♟️ Chess",
+    name: "Chess",
+    emoji: "♟️",
   },
   {
-    name: "🕺🏽 Latin and Cretan dancing",
+    name: "Latin and Cretan dancing",
+    emoji: "🕺🏽",
   },
   {
-    name: "🏋️ Weight lifting",
+    name: "Weight lifting",
+    emoji: "🏋️",
   },
   {
-    name: "🚴 Cycling",
+    name: "Cycling",
+    emoji: "🚴",
   },
 ];
 
