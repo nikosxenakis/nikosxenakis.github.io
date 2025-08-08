@@ -24,7 +24,8 @@ a {
 }
 
 .section {
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,14 +43,6 @@ a {
   border-top-left-radius: 130px 60px;
   border-top-right-radius: 130px 60px;
 } */
-
-.subsection {
-  padding: 1rem;
-  border-radius: 12px;
-  color: var(--text-color) !important;
-  background-color: var(--background-light-color) !important;
-  box-shadow: var(--box-shadow-color) 0px 1px 4px;
-}
 
 /* Intro */
 
@@ -135,7 +128,26 @@ a {
 .timeline-container {
   flex: 0 0 60%;
   max-width: 550px;
+  width: 550px;
+  max-height: 60vh;
+  overflow-y: auto;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #9c8ebf #2a2f3a; /* For Firefox */
 }
+
+.timeline-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+  background: #9c8ebf;
+  border-radius: 4px;
+}
+
+.timeline-container::-webkit-scrollbar-track {
+  background: #2a2f3a;
+}
+
 .timeline-item {
   cursor: pointer;
   border-radius: 8px;
@@ -143,7 +155,29 @@ a {
 }
 .work-experience-description {
   flex: 0 0 40%;
-  min-width: 350px;
+  min-width: 450px;
   max-width: 450px;
   max-height: 400px;
+}
+
+.work-experience-container {
+  padding: 1rem;
+  border-radius: 12px;
+  color: var(--text-color) !important;
+  background-color: var(--background-light-color) !important;
+  box-shadow: var(--box-shadow-color) 0px 1px 4px;
+  min-height: 400px;
+}
+
+.technologies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.technology-chip {
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
 }

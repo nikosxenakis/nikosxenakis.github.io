@@ -19,11 +19,26 @@ const Experience = () => {
           Work Experience
         </Typography>
         <Typography variant="body1" component="span">
-          Developing meaningful products for the past 7 years.
+          Developing meaningful products for the past{" "}
+          {Number(new Date().toISOString().substring(0, 4)) - 2018} years.
         </Typography>
       </div>
       <div className="experienceContainer">
-        <div className="timeline-container">
+        <div
+          className="timeline-container"
+          onWheel={(e) => {
+            const container = e.currentTarget;
+            const atTop = container.scrollTop === 0;
+            const atBottom =
+              container.scrollHeight - container.scrollTop === container.clientHeight;
+            if ((e.deltaY < 0 && atTop) || (e.deltaY > 0 && atBottom)) {
+              // Allow parent to scroll
+              return;
+            }
+            // Prevent parent scroll
+            e.stopPropagation();
+          }}
+        >
           <Timeline position="left">
             {work.map((item, idx) => (
               <TimelineItem
@@ -72,34 +87,39 @@ const Experience = () => {
           </Timeline>
         </div>
         <div className="work-experience-description">
-          {activeIdx !== null && work[activeIdx].description && (
-            <Paper className="subsection">
+          {activeIdx !== null && work[activeIdx].description ? (
+            <Paper className="work-experience-container">
               <List>
                 {work[activeIdx].description?.map((desc: string, i: number) => (
                   <ListItem key={i}>{desc}</ListItem>
                 ))}
               </List>
               {work[activeIdx].technologies && (
-                <div
-                  style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "1rem" }}
-                >
+                <div className="technologies-list">
                   {work[activeIdx].technologies.split(",").map((tech: string, i: number) => (
                     <Chip
                       key={i}
                       label={tech.trim()}
                       color="primary"
                       variant="outlined"
+                      className="technology-chip"
                       style={{
-                        borderRadius: "6px",
-                        padding: "0.3rem 0.7rem",
                         border: "1px solid #ccc",
-                        boxShadow: "0px 1px 3px rgba(0, 0, 0, 0.2)",
                         color: "#fff",
                       }}
                     />
                   ))}
                 </div>
               )}
+            </Paper>
+          ) : (
+            <Paper
+              className="work-experience-container"
+              style={{ textAlign: "center", padding: "2rem" }}
+            >
+              <Typography variant="body1" component="span">
+                Tap on a work item to show details
+              </Typography>
             </Paper>
           )}
         </div>
