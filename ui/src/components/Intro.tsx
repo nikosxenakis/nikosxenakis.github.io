@@ -1,7 +1,10 @@
+import React from "react";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoLanguage } from "react-icons/io5";
 import { FcSportsMode } from "react-icons/fc";
+import Typography from "@mui/material/Typography";
+import { SpeedDial, SpeedDialAction } from "@mui/material";
 import {
   name,
   title,
@@ -13,10 +16,6 @@ import {
   stackOverflow,
   interests,
 } from "@/data/data";
-
-import Typography from "@mui/material/Typography";
-import { SpeedDial, SpeedDialAction } from "@mui/material";
-import React from "react";
 
 const Intro = () => {
   const [openLanguages, setOpenLanguages] = React.useState(false);
@@ -138,10 +137,10 @@ const Intro = () => {
           margin: "0 auto",
         }}
       >
-        <Typography variant="h1" component="h1" style={{ marginBottom: "1rem" }}>
+        <Typography variant="h2" component="h2" style={{ marginBottom: "1rem" }}>
           {name}
         </Typography>
-        <Typography variant="h4" component="h4">
+        <Typography variant="h5" component="h5">
           {title}
         </Typography>
       </div>
