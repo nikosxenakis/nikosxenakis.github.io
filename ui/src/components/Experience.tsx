@@ -88,7 +88,7 @@ const Experience = () => {
         </div>
         <div className="work-experience-description">
           {activeIdx !== null && work[activeIdx].description ? (
-            <Paper className="work-experience-container">
+            <Paper className="work-experience-container glassmorphic">
               <List>
                 {work[activeIdx].description?.map((desc: string, i: number) => (
                   <ListItem key={i}>{desc}</ListItem>
@@ -114,7 +114,7 @@ const Experience = () => {
             </Paper>
           ) : (
             <Paper
-              className="work-experience-container"
+              className="work-experience-container glassmorphic"
               style={{ textAlign: "center", padding: "2rem" }}
             >
               <Typography variant="body1" component="span">
