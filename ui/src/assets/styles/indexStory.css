@@ -30,19 +30,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--background-color);
-  transition: opacity 0.5s linear, transform 0.5s linear;
 }
-
-/* .section-bottom-border {
-  border-bottom-left-radius: 130px 60px;
-  border-bottom-right-radius: 130px 60px;
-}
-
-.section-top-border {
-  border-top-left-radius: 130px 60px;
-  border-top-right-radius: 130px 60px;
-} */
 
 /* Intro */
 
@@ -86,7 +74,7 @@ a {
 
 .icon-row-bounce {
   bottom: 58px;
-  animation: drop 1.2s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
+  animation: drop 1.5s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
   position: absolute;
   left: 0;
   width: 100%;
