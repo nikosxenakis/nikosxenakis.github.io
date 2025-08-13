@@ -1,9 +1,9 @@
 import { useRef, useEffect } from "react";
+import Background from "@/components/Background";
 import Intro from "@/components/Intro";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Projects from "@/components/Projects";
-import Background from "@/components/Background";
 
 export default function App() {
   const introRef = useRef<HTMLDivElement>(null);

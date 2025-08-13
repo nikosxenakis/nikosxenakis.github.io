@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import "@fontsource/inter";
-import "./assets/styles/indexStory.css";
+import "./assets/styles/index.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

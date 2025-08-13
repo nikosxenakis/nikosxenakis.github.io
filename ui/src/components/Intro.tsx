@@ -63,72 +63,69 @@ const Intro = () => {
           </Typography>
         </a>
       </div>
-      <SpeedDial
-        ariaLabel="Languages"
-        direction="down"
-        sx={{
-          position: "absolute",
-          top: 16,
-          right: 16,
-          "& .MuiFab-primary": {
-            backgroundColor: "#403a45", // custom background color
-            color: "#fff",
-          },
-        }}
-        icon={<IoLanguage />}
-        onClose={handleCloseLanguages}
-        onOpen={handleOpenLanguages}
-        open={openLanguages}
-      >
-        {languagesLocal.map((language) => (
-          <SpeedDialAction
-            key={language.name}
-            title={language.level}
-            icon={language.icon}
-            onClick={handleCloseLanguages}
-            sx={{
+      <div className="introActions">
+        <SpeedDial
+          ariaLabel="Languages"
+          direction="down"
+          sx={{
+            "& .MuiFab-primary": {
               backgroundColor: "#403a45",
               color: "#fff",
-              "&:hover": {
-                backgroundColor: "#6b6175",
-              },
-            }}
-          />
-        ))}
-      </SpeedDial>
-      <SpeedDial
-        ariaLabel="Interests"
-        direction="down"
-        sx={{
-          position: "absolute",
-          top: 16,
-          right: 80,
-          "& .MuiFab-primary": {
-            backgroundColor: "#403a45",
-            color: "#fff",
-          },
-        }}
-        icon={<FcSportsMode />}
-        onClose={handleCloseInterests}
-        onOpen={handleOpenInterests}
-        open={openInterests}
-      >
-        {interestsLocal.map((interest) => (
-          <SpeedDialAction
-            key={interest.name}
-            title={interest.name}
-            icon={interest.icon}
-            onClick={handleCloseInterests}
-            sx={{
+            },
+          }}
+          icon={<IoLanguage />}
+          onClose={handleCloseLanguages}
+          onOpen={handleOpenLanguages}
+          open={openLanguages}
+        >
+          {languagesLocal.map((language) => (
+            <SpeedDialAction
+              key={language.name}
+              title={language.level}
+              icon={language.icon}
+              onClick={handleCloseLanguages}
+              sx={{
+                backgroundColor: "#403a45",
+                color: "#fff",
+                "&:hover": {
+                  backgroundColor: "#6b6175",
+                },
+              }}
+            />
+          ))}
+        </SpeedDial>
+        <SpeedDial
+          ariaLabel="Interests"
+          direction="down"
+          sx={{
+            "& .MuiFab-primary": {
               backgroundColor: "#403a45",
               color: "#fff",
-              "&:hover": {
-                backgroundColor: "#6b6175",
-              },
-            }}
-          />
-        ))}
-      </SpeedDial>
+            },
+          }}
+          icon={<FcSportsMode />}
+          onClose={handleCloseInterests}
+          onOpen={handleOpenInterests}
+          open={openInterests}
+        >
+          {interestsLocal.map((interest) => (
+            <SpeedDialAction
+              key={interest.name}
+              title={interest.name}
+              icon={interest.icon}
+              onClick={handleCloseInterests}
+              sx={{
+                backgroundColor: "#403a45",
+                color: "#fff",
+                "&:hover": {
+                  backgroundColor: "#6b6175",
+                },
+              }}
+            />
+          ))}
+        </SpeedDial>
+      </div>
+
       <div
         style={{
           textAlign: "center",
