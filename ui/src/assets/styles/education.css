@@ -1,0 +1,16 @@
+/* Education */
+.educationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: min(900px, 92vw);
+  margin: 0 auto;
+}
+.education-card {
+  padding: 1.2rem 1.4rem;
+  border-radius: 12px;
+  opacity: 0.8;
+  color: var(--text-color) !important;
+  background-color: var(--background-light-color) !important;
+  box-shadow: var(--box-shadow-color) 0px 1px 4px;
+}
