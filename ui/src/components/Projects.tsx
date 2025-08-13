@@ -14,7 +14,7 @@ const imageForProject = (name: string) => {
 const Projects = () => {
   return (
     <div className="section section-top-border">
-      <div style={{ textAlign: "center", padding: "2vw" }}>
+      <div className="section-title">
         <Typography variant="h3" component="h3">
           Projects
         </Typography>

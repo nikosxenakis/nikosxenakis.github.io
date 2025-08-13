@@ -16,6 +16,7 @@ import {
   stackOverflow,
   interests,
 } from "@/data/data";
+import "@/assets/styles/intro.css";
 
 const Intro = () => {
   const [openLanguages, setOpenLanguages] = React.useState(false);

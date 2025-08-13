@@ -8,13 +8,14 @@ import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import Typography from "@mui/material/Typography";
 import { Chip, List, ListItem, Paper } from "@mui/material";
 import { work } from "@/data/data";
+import "@/assets/styles/workExperience.css";
 
 const Experience = () => {
   const [activeIdx, setActiveIdx] = useState<number | null>(0);
 
   return (
     <div className="section section-top-border">
-      <div style={{ textAlign: "center", padding: "2vw" }}>
+      <div className="section-title">
         <Typography variant="h3" component="h3">
           Work Experience
         </Typography>
