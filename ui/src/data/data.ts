@@ -1,5 +1,6 @@
 import type Link from "@/types/Link";
 import type WorkExperience from "@/types/WorkExperience";
+import type Project from "@/types/Project";
 
 export const name = "Nikolaos Xenakis";
 export const title = "Senior Software Engineer";
@@ -201,11 +202,12 @@ export const education = [
   },
 ];
 
-export const projects = [
+export const projects: Project[] = [
   {
     name: "Georgioupolis Transfers",
     date: "2017",
     url: "https://georgioupolis-taxi.firebaseapp.com/",
+    imageUrl: "https://georgioupolis-taxi.firebaseapp.com/assets/images/logo.jpg",
     description: "Website for booking transfer and tours in Crete, Greece.",
     technologies: "Typescript,Angular,Node.js",
   },
@@ -213,21 +215,30 @@ export const projects = [
     name: "ImagInLexis",
     date: "June 2016 - August 2016",
     url: "https://github.com/nikosxenakis/ImagInLexis",
+    imageUrl:
+      "https://github.com/nikosxenakis/ImagInLexis/blob/master/src/main/resources/com/xenakis/images/logo/imagInLexisLogo.png?raw=true",
     description: `Hired to create a desktop application for a bachelor's thesis focused on Logotherapy. The application primarily enhances speech therapy intervention plans by incorporating a series of tests for patients to undertake. Designed with a gamified approach, the application caters specifically to children, making the therapeutic process engaging and interactive.`,
+    descriptionShort: `Hired to create a desktop application for a bachelor's thesis focused on Logotherapy.`,
     technologies: "Java,JavaFX",
   },
   {
     name: "ICE Editor",
     date: "March 2016 - June 2016",
     url: "https://github.com/nikosxenakis/ICE_Editor",
+    imageUrl:
+      "https://github.com/nikosxenakis/ICE_Editor/blob/master/thesis%20report/images/index.jpg?raw=true",
     description: `A web-based platform designed for end-users to craft straightforward applets for IoT (Internet Of Things) devices. This intuitive editor minimizes both compile and runtime errors, offering a drag-and-drop interface alongside value editing capabilities. It features a versatile API, allowing users to swiftly develop programs using Javascript or by defining them in JSON files.`,
+    descriptionShort: `A web-based platform for creating IoT applets.`,
     technologies: "HTML/CSS/JS,Canvas.js",
   },
   {
     name: "1942",
     date: "November 2015 - January 2016",
     url: "https://www.youtube.com/watch?v=kdICR49vbvg",
+    imageUrl:
+      "https://play-lh.googleusercontent.com/nEBtB95_mcjS5T2g9DHVAASuEVetJeHh5S-pH-yujc4A3vtULqhxZwIlYy-eoOvZnvc=w526-h296-rw",
     description: `1942, a beloved retro video game from 1984, has been reimagined in this project. Utilizing the original sprite sheets, the game has been recreated with the C++ programming language, leveraging the SDL cross-platform software development library.`,
+    descriptionShort: `A reimagining of the classic 1942 video game.`,
     technologies: "C++,SDL",
   },
 ];
