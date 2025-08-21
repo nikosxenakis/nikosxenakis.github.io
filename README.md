@@ -14,7 +14,7 @@ yarn install
 
 In the project directory, you can run:
 
-### `yarn run dev`
+### `yarn run start`
 
 Runs the app in development mode. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 

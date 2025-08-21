@@ -6,7 +6,8 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import Typography from "@mui/material/Typography";
-import { Chip, List, ListItem, Paper } from "@mui/material";
+import { Chip, List, ListItem, Paper, IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import { work } from "@/data/data";
 import "@/assets/styles/workExperience.css";
 
@@ -87,43 +88,51 @@ const Experience = () => {
             ))}
           </Timeline>
         </div>
-        <div className="work-experience-description">
-          {activeIdx !== null && work[activeIdx].description ? (
-            <Paper className="work-experience-container glassmorphic">
-              <List>
-                {work[activeIdx].description?.map((desc: string, i: number) => (
-                  <ListItem key={i}>{desc}</ListItem>
-                ))}
-              </List>
-              {work[activeIdx].technologies && (
-                <div className="technologies-list">
-                  {work[activeIdx].technologies.split(",").map((tech: string, i: number) => (
-                    <Chip
-                      key={i}
-                      label={tech.trim()}
-                      color="primary"
-                      variant="outlined"
-                      className="technology-chip"
-                      style={{
-                        border: "1px solid #ccc",
-                        color: "#fff",
-                      }}
-                    />
-                  ))}
-                </div>
+        {activeIdx !== null && (
+          <div className="work-overlay" role="dialog" aria-live="polite">
+            <Paper className="work-overlay-content glassmorphic">
+              <IconButton
+                className="work-overlay-close"
+                aria-label="Close details"
+                onClick={() => setActiveIdx(null)}
+                size="small"
+              >
+                <CloseIcon fontSize="small" />
+              </IconButton>
+
+              {work[activeIdx].description ? (
+                <>
+                  <List>
+                    {work[activeIdx].description?.map((desc: string, i: number) => (
+                      <ListItem key={i}>{desc}</ListItem>
+                    ))}
+                  </List>
+                  {work[activeIdx].technologies && (
+                    <div className="technologies-list">
+                      {work[activeIdx].technologies.split(",").map((tech: string, i: number) => (
+                        <Chip
+                          key={i}
+                          label={tech.trim()}
+                          color="primary"
+                          variant="outlined"
+                          className="technology-chip"
+                          style={{
+                            border: "1px solid #ccc",
+                            color: "#fff",
+                          }}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Typography variant="body1" component="span" style={{ textAlign: "center" }}>
+                  No details available.
+                </Typography>
               )}
             </Paper>
-          ) : (
-            <Paper
-              className="work-experience-container glassmorphic"
-              style={{ textAlign: "center", padding: "2rem" }}
-            >
-              <Typography variant="body1" component="span">
-                Tap on a work item to show details
-              </Typography>
-            </Paper>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -50,7 +50,8 @@ a {
 }
 
 .glassmorphic {
-  background: rgba(30, 30, 40, 0.55);
+  background: rgba(30, 30, 40, 0.55) !important;
+  color: #ffffff !important;
   border-radius: 16px;
   box-shadow: 0 4px 32px 0 var(--box-shadow-color);
   backdrop-filter: blur(12px) saturate(120%);
