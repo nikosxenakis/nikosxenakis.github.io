@@ -52,7 +52,7 @@ export const work: WorkExperience[] = [
     ],
     technologies: "TypeScript,AWS",
     forCV: true,
-    logo: "avaloq.svg",
+    logo: "avaloq.png",
   },
   {
     role: "Senior Software Engineer and Project Manager",

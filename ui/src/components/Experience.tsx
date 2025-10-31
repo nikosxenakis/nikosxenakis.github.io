@@ -67,7 +67,7 @@ const Experience = () => {
                   {idx !== 0 && <TimelineConnector />}
                   <img
                     src={`/assets/images/companies/${item.logo}`}
-                    style={{ height: "32px", borderRadius: "20%", aspectRatio: "auto" }}
+                    style={{ height: "32px", borderRadius: "20%", aspectRatio: "auto", padding: "0 12px" }}
                     alt={item.company}
                   />
                   {idx !== work.length - 1 && <TimelineConnector />}
