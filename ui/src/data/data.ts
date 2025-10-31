@@ -42,13 +42,26 @@ export const summary = {
 
 export const work: WorkExperience[] = [
   {
+    role: "Senior Software Engineer",
+    company: "Avaloq",
+    companyUrl: "https://www.avaloq.com",
+    location: "Zürich, Switzerland",
+    date: "Oct 2025 - Present",
+    description: [
+      `Working on banking software solutions.`,
+    ],
+    technologies: "TypeScript,AWS",
+    forCV: true,
+    logo: "avaloq.svg",
+  },
+  {
     role: "Senior Software Engineer and Project Manager",
     roleShort: "Senior Software Engineer",
     format: "contractor",
     company: "Sphynx",
     companyUrl: "https://www.sphynx.ch",
     location: "Zürich, Switzerland",
-    date: "Fed 2024 - Present",
+    date: "Fed 2024 - Sep 2025",
     description: [
       `Architecting and developing the Incident Response Tool, an automation product mitigating cyberattacks guaranteeing high-availability and scalability.`,
       `Managing the SecOPERA EU project representing Sphynx, collaborating with other 10 EU organisations.`,
