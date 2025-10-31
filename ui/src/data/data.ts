@@ -47,9 +47,7 @@ export const work: WorkExperience[] = [
     companyUrl: "https://www.avaloq.com",
     location: "Zürich, Switzerland",
     date: "Oct 2025 - Present",
-    description: [
-      `Working on banking software solutions.`,
-    ],
+    description: [`Working on banking software solutions.`],
     technologies: "TypeScript,AWS",
     forCV: true,
     logo: "avaloq.png",
@@ -74,7 +72,7 @@ export const work: WorkExperience[] = [
     role: "Senior Software Engineer",
     company: "Welbot",
     companyUrl: "https://welbot.io",
-    location: "Edinburgh, United Kingdom",
+    location: "Edinburgh, UK",
     date: "Nov 2022 - Feb 2024",
     description: [
       `Engineered state-of-the-art well-being products tailored for enterprises, used daily by 20K users.`,
@@ -90,7 +88,7 @@ export const work: WorkExperience[] = [
     role: "Senior Software Engineer",
     company: "SeeByte",
     companyUrl: "http://www.seebyte.com/",
-    location: "Edinburgh, United Kingdom",
+    location: "Edinburgh, UK",
     date: "Aug 2021 - Nov 2022",
     description: [
       `Directed CI/CD initiative, implementing Jenkins pipelines and integrating approximately 80 projects.`,
@@ -106,7 +104,7 @@ export const work: WorkExperience[] = [
     role: "Software Engineer",
     company: "SeeByte",
     companyUrl: "http://www.seebyte.com/",
-    location: "Edinburgh, United Kingdom",
+    location: "Edinburgh, UK",
     date: "Sept 2019 - Aug 2021",
     description: [
       `Contributed to the development of Mission Planning and Analysis software, supporting 6 Unmanned Underwater Vehicle (UUV) systems from various vendors.`,
@@ -122,7 +120,7 @@ export const work: WorkExperience[] = [
     format: "part-time",
     company: "Information Services of UoE",
     companyUrl: "https://www.ed.ac.uk/information-services",
-    location: "Edinburgh, United Kingdom",
+    location: "Edinburgh, UK",
     date: "April 2019 - June 2019",
     description: [
       `Created an XML-based publishing workflow, including tools evaluation, customization, integration, and workflow establishment for academic journals.`,
@@ -181,7 +179,7 @@ export const education = [
     company: "University of Edinburgh",
     companyUrl:
       "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2019&id=871",
-    location: "Edinburgh, United Kingdom",
+    location: "Edinburgh, UK",
     date: "Sep 2018 - Sep 2019",
     grade: "75% (Distinction)",
     dissertation:

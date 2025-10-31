@@ -237,6 +237,8 @@
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
     min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .timeline-item .MuiTimelineSeparator-root {
@@ -303,6 +305,8 @@
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
     min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .timeline-item .MuiTimelineOppositeContent-root .MuiTypography-root {
