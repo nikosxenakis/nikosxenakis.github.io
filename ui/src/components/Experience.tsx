@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
@@ -12,7 +12,46 @@ import { work } from "@/data/data";
 import "@/assets/styles/workExperience.css";
 
 const Experience = () => {
-  const [activeIdx, setActiveIdx] = useState<number | null>(0);
+  const [activeIdx, setActiveIdx] = useState<number | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const closeOverlay = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setActiveIdx(null);
+      setIsClosing(false);
+    }, 250);
+  };
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && activeIdx !== null && !isClosing) {
+        closeOverlay();
+      }
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [activeIdx, isClosing]);
+
+  useEffect(() => {
+    // Close overlay when component unmounts or user scrolls away
+    return () => {
+      setActiveIdx(null);
+      setIsClosing(false);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Close overlay when user scrolls
+    const handleScroll = () => {
+      if (activeIdx !== null && !isClosing) {
+        closeOverlay();
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activeIdx, isClosing]);
 
   return (
     <div className="section section-top-border">
@@ -45,13 +84,17 @@ const Experience = () => {
             {work.map((item, idx) => (
               <TimelineItem
                 key={idx}
-                onMouseEnter={() => setActiveIdx(idx)}
-                onMouseLeave={() => setActiveIdx(null)}
                 onClick={() => setActiveIdx(idx)}
-                className="timeline-item"
-                style={{
-                  background: activeIdx === idx ? "var(--background-light-color)" : "transparent",
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActiveIdx(idx);
+                  }
                 }}
+                className={`timeline-item ${activeIdx === idx ? "active" : ""}`}
+                tabIndex={0}
+                role="button"
+                aria-pressed={activeIdx === idx}
               >
                 <TimelineOppositeContent sx={{ py: "12px" }}>
                   <Typography variant="body2" component="span">
@@ -89,16 +132,17 @@ const Experience = () => {
           </Timeline>
         </div>
         {activeIdx !== null && (
-          <div className="work-overlay" role="dialog" aria-live="polite">
-            <Paper className="work-overlay-content glassmorphic">
-              <IconButton
-                className="work-overlay-close"
-                aria-label="Close details"
-                onClick={() => setActiveIdx(null)}
-                size="small"
-              >
-                <CloseIcon fontSize="small" />
-              </IconButton>
+          <div
+            className={`work-overlay ${isClosing ? 'closing' : ''}`}
+            role="dialog"
+            aria-live="polite"
+            aria-labelledby="work-title"
+            onClick={() => closeOverlay()}
+          >
+            <Paper
+              className="work-overlay-content glassmorphic"
+              onClick={(e) => e.stopPropagation()}
+            >
 
               {work[activeIdx].description ? (
                 <>
@@ -116,10 +160,6 @@ const Experience = () => {
                           color="primary"
                           variant="outlined"
                           className="technology-chip"
-                          style={{
-                            border: "1px solid #ccc",
-                            color: "#fff",
-                          }}
                         />
                       ))}
                     </div>

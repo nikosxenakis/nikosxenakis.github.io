@@ -49,6 +49,14 @@ a {
   margin-bottom: 15px;
 }
 
+.section-top-border {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-bottom-border {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .glassmorphic {
   background: rgba(30, 30, 40, 0.55) !important;
   color: #ffffff !important;
@@ -57,4 +65,47 @@ a {
   backdrop-filter: blur(12px) saturate(120%);
   -webkit-backdrop-filter: blur(12px) saturate(120%);
   border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .section-title {
+    padding: 1.5vw;
+    margin-bottom: 12px;
+  }
+
+  .section-title h3 {
+    font-size: 1.75rem;
+  }
+
+  .section-title span {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .section-title {
+    padding: 1vw;
+    margin-bottom: 10px;
+  }
+
+  .section-title h3 {
+    font-size: 1.5rem;
+  }
+
+  .section-title span {
+    font-size: 0.9rem;
+  }
+
+  .section {
+    height: 100dvh;
+  }
 }

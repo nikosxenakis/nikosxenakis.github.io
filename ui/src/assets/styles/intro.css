@@ -79,3 +79,79 @@
   gap: 0.75rem;
   z-index: 1;
 }
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .introTab {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .introTabItem {
+    font-size: 0.9rem;
+  }
+
+  .icon-row-bounce {
+    gap: 20px;
+    bottom: 48px;
+  }
+
+  .icon-social-media {
+    width: 36px;
+    height: 36px;
+  }
+
+  .introActions {
+    top: 12px;
+    right: 12px;
+    gap: 0.5rem;
+  }
+
+  .introActions .MuiSpeedDial-root .MuiFab-primary {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .introActions .MuiSpeedDialAction-fab {
+    width: 38px !important;
+    height: 38px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .introTab {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .introTabItem {
+    font-size: 0.85rem;
+    gap: 0.25rem;
+  }
+
+  .icon-row-bounce {
+    gap: 15px;
+    bottom: 40px;
+  }
+
+  .icon-social-media {
+    width: 32px;
+    height: 32px;
+  }
+
+  .introActions {
+    gap: 0.4rem;
+  }
+
+  .introActions .MuiSpeedDial-root .MuiFab-primary {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .introActions .MuiSpeedDialAction-fab {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}

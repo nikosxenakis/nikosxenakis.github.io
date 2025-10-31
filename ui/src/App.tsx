@@ -3,13 +3,13 @@ import Background from "@/components/Background";
 import Intro from "@/components/Intro";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
-import Projects from "@/components/Projects";
+// import Projects from "@/components/Projects";
 
 export default function App() {
   const introRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const educationRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
+  // const projectsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
@@ -17,7 +17,7 @@ export default function App() {
         introRef.current,
         experienceRef.current,
         educationRef.current,
-        projectsRef.current,
+        // projectsRef.current,
       ].filter((section): section is HTMLDivElement | null => section !== undefined);
       const currentSection = sections.find(
         (section) =>
@@ -51,9 +51,6 @@ export default function App() {
       </div>
       <div ref={educationRef}>
         <Education />
-      </div>
-      <div ref={projectsRef}>
-        <Projects />
       </div>
     </>
   );

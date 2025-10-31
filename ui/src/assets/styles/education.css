@@ -14,3 +14,27 @@
   background-color: var(--background-light-color) !important;
   box-shadow: var(--box-shadow-color) 0px 1px 4px;
 }
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .educationContainer {
+    width: 95vw;
+    gap: 1rem;
+  }
+
+  .education-card {
+    padding: 1rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .educationContainer {
+    width: 96vw;
+    gap: 0.9rem;
+  }
+
+  .education-card {
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+  }
+}
