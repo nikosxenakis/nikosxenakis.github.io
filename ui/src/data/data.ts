@@ -181,7 +181,8 @@ export const education = [
       "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2019&id=871",
     location: "Edinburgh, UK",
     date: "Sep 2018 - Sep 2019",
-    grade: "75% (Distinction)",
+    // grade: "75% (Distinction)",
+    grade: "Distinction",
     dissertation:
       "Parallelisation of frame processing for Optical Coherence Tomography for Optos (85%).",
     scholarship:
@@ -194,7 +195,8 @@ export const education = [
     companyUrl: "https://www.csd.uoc.gr",
     location: "Heraklion, Greece",
     date: "Sep 2012 - Jul 2016",
-    grade: "84% (First-Class Honours)",
+    // grade: "84% (First-Class Honours)",
+    grade: "First-Class Honours (top 3%)",
     dissertation:
       "ICE Editor is a visual programming language for end-user programmers for IOT devices. ICE Editor is a web client application written in JavaScript.",
     scholarship:
