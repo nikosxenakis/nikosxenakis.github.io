@@ -35,7 +35,7 @@ export const website: Link = {
 export const locationMaps =
   "https://www.google.co.uk/maps/place/%CE%96%CF%85%CF%81%CE%AF%CF%87%CE%B7/@47.3774122,8.4543354,12z/data=!4m15!1m8!3m7!1s0x47900b9749bea219:0xe66e8df1e71fdc03!2zzpbPhc-Bzq_Ph863!3b1!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY!3m5!1s0x47900b9749bea219:0xe66e8df1e71fdc03!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY?entry=ttu";
 export const summary =
-  "Engineer with 7+ years of experience building scalable, fault-tolerant full-stack systems using Java, Spring Boot, Node.js, and TypeScript. Fast learner with a strong record of leading projects, improving architecture, and delivering high-impact features. Passionate about clean design, automation, and developing future-ready products.";
+  "Senior Software Engineer with 7+ years of experience building scalable, fault-tolerant full-stack systems using Java, Spring Boot, Node.js, and TypeScript. Fast learner with a strong record of leading projects, improving architecture, and delivering high-impact features. Passionate about clean design, automation, and developing future-ready products.";
 
 export const work: WorkExperience[] = [
   {
@@ -47,7 +47,7 @@ export const work: WorkExperience[] = [
     location: "Zürich, Switzerland",
     date: "Fed 2024 - Sep 2025",
     description: [
-      `Architecting and developing the Incident Response Tool, an automation product mitigating cyberattacks guaranteeing high-availability and scalability.`,
+      `Architecting and developing an Incident Response Automation Tool using Java, Spring Boot and PostgreSQL, ensuring high availability, scalability, and reliability for cybersecurity critical workflows.`,
       `Managing the SecOPERA EU project representing Sphynx, collaborating with other 10 EU organisations.`,
     ],
     technologies: "Java,Spring Boot,Node.js,PostgreSQL,Distributed Systems",
@@ -61,8 +61,8 @@ export const work: WorkExperience[] = [
     location: "Edinburgh, UK",
     date: "Nov 2022 - Feb 2024",
     description: [
-      `Engineered state-of-the-art well-being products tailored for enterprises, used daily by 20K users.`,
-      `Established an SDLC process and implemented CI/CD pipelines for the products, enabling weekly releases.`,
+      `Engineered well-being products tailored for enterprises with Node.js, TypeScript, React and AWS, used daily by 20K users.`,
+      `Established SDLC processes and implemented CI/CD pipelines for the products, enabling weekly releases.`,
       `Automated infrastructure deployment with Terraform, ensuring scalability, isolation, and sub-5-minute releases.`,
       `Led successfully 2 major product releases over 1 year, migrating to new infrastructure and codebase.`,
     ],
@@ -122,7 +122,7 @@ export const work: WorkExperience[] = [
     date: "April 2017 - Sep 2018",
     description: [
       `Migrated the bank’s CRM legacy code with thousands of lines of code to Angular.`,
-      `Led and delivered an internal bank project system for customer application management, working in a team of 3 engineers.`,
+      `Led and delivered a customer application management bank project, working in a team of three engineers.`,
     ],
     technologies: ".NET,Typescript,Angular",
     forCV: true,
