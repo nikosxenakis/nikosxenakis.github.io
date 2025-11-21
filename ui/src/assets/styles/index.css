@@ -14,6 +14,7 @@ html,
   font-family: "Inter", sans-serif;
   height: 100%;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 .MuiTypography-root,
@@ -26,6 +27,20 @@ html,
 a {
   color: var(--link-color);
   text-decoration: none;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.scroll-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh 0;
 }
 
 .footer-section {
