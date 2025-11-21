@@ -1,0 +1,278 @@
+%---- Required Packages and Functions ----
+\documentclass[a4paper,11pt]{article}
+\usepackage{geometry}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5}
+\usepackage[sfdefault]{roboto}
+
+\setcounter{secnumdepth}{0}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+
+\tcbset{
+   frame code={}
+   center title,
+   left=0pt,
+   right=0pt,
+   top=0pt,
+   bottom=0pt,
+   colback=gray!20,
+   colframe=white,
+   width=\dimexpr\textwidth\relax,
+   enlarge left by=-2mm,
+   boxsep=4pt,
+   arc=0pt,outer arc=0pt,
+}
+
+\urlstyle{same}
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%-------------------------
+% Custom commands
+\let\oldsection\section
+
+\renewcommand{\section}[1]{
+   \vspace{-3mm}
+   \oldsection{\textbf\large{#1}}
+   \vspace{-1.5mm}
+   {\color{gray}\hrule width 0.98\textwidth height 0.1pt}
+   \vspace{2mm}
+}
+
+\newcommand{\dateString}[1]{
+   \textcolor{gray}{\small{#1}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+   \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \dateString{#4} \\
+      \small{#3} &  \small{#2}\\
+   \end{tabular*}
+   \vspace{-2mm}
+}
+
+\newcommand{\cvItem}[1]{
+   \item \small #1
+}
+
+\newcommand{\achievementItem}[2]{
+\vspace{0.5mm}\item
+   \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+   \small{\textbullet\ #1} & \dateString{#2}
+   \end{tabular*}
+   \vspace{-2mm}
+}
+
+\newcommand{\multiSkillList}[8]{
+   \begin{tabular*}{0.98\textwidth}{@{\extracolsep{\fill}}llll}
+      \small{#1} & \small{#2} & \small{#3} & \small{#4} \\
+      \small{#5} & \small{#6} & \small{#7} & \small{#8} \\
+   \end{tabular*}
+}
+
+\renewcommand\labelitemi{}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+
+\newcommand{\resumeItemListStart}{
+   \begin{justify}
+   \begin{itemize}[label={\textbullet}, leftmargin=2ex, labelsep=0.3em, rightmargin=2ex, itemsep=0mm]
+   \small
+}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}}
+
+\newcommand{\resumeItemSeparator}{\vspace{0.0mm}}
+\newcommand{\achievementItemSeparator}{\vspace{-1.0mm}}
+\newcommand{\resumeSubheadingSeparator}{\vspace{-1mm}}
+\newcommand{\sectionSeparator}{\vspace{-0.5mm}}
+
+\newcommand{\cvsection}[1]{
+\vspace{2mm}
+\begin{tcolorbox}
+   \textbf{\large #1}
+\end{tcolorbox}
+\vspace{-4mm}
+}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+%---- End of Packages and Functions ------
+
+%-------------------------------------------
+
+%%%%%% DEFINITIONS %%%%%%%
+\newcommand{\name}{Nikolaos Xenakis}
+\newcommand{\role}{Senior Software Engineer}
+\newcommand{\phone}{+41 78 250 24 08}
+\newcommand{\emaila}{nikosxenakis94@gmail.com}
+\newcommand{\location}{Zürich, Switzerland}
+\newcommand{\linkLinkedin}{\href{https://linkedin.com/in/nikosxenakis}}
+\newcommand{\linkWebsite}{\href{https://nikosxenakis.github.io}}
+
+\begin{document}
+
+%----------HEADING-----------------
+
+\begin{tabularx}{\linewidth}{L >{\hspace*{3.2cm}}L} \\
+   \textbf{\Large \name} & {\raisebox{0.0\height}{\small \faPhone}\ \phone} \\
+   {\Large \role} & \href{mailto:\emaila}{\raisebox{0.0\height}{\small \faEnvelope}\ {\emaila}} \\
+   {} & \raisebox{0.0\height}{\small \faMapMarker*}\ { \location} \\
+   % {} & \href{https://github.com/nikosxenakis}{\raisebox{0.0\height}{\small \faGithub}\ {nikosxenakis}} \\
+   {} & \linkLinkedin{\raisebox{0.0\height}{\small \faLinkedin}\ { linkedin.com/in/nikosxenakis}} \\
+   {} & \linkWebsite{\raisebox{0.0\height}{\small \faGlobe}\ { nikosxenakis.github.io}}
+\end{tabularx}
+
+%-----------SUMMARY-----------
+\begin{justify}
+\small
+Senior Software Engineer with 7+ years of experience building scalable backend and full-stack systems using Java, Spring Boot, Node.js, and TypeScript. Fast learner with a strong track record of leading projects, improving architecture, and delivering high-impact features.
+\end{justify}
+
+\sectionSeparator
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+   \resumeSubheading
+      {Senior Software Engineer and Project Manager}{Zürich, Switzerland}
+      {Sphynx}{February 2024 - September 2025}
+      \resumeSubheadingSeparator
+      \resumeItemListStart
+         \cvItem {Architecting and developing an Incident Response Automation Tool using Java, Spring Boot and PostgreSQL, ensuring high availability, scalability, and reliability for cybersecurity critical workflows.}
+         \cvItem {Managing the SecOPERA EU project on behalf of Sphynx, collaborating with 10 other EU organisations.}
+      \resumeItemListEnd
+
+   \resumeItemSeparator
+
+   \resumeSubheading
+      {Senior Software Engineer}{Edinburgh, United Kingdom}
+      {Welbot}{November 2022 - February 2024}
+      \resumeSubheadingSeparator
+      \resumeItemListStart
+         \cvItem {Engineered state-of-the-art well-being products tailored for enterprises with Node.js, TypeScript, React and AWS, used daily by 20K users.}
+         \cvItem {Established an SDLC process and implemented CI/CD pipelines using GitHub Actions, enabling weekly releases.}
+         \cvItem {Automated infrastructure with Terraform, deploying AWS environments with sub-5-minute provisioning times.}
+         \cvItem {Successfully led two major product releases in one year, migrating to a new infrastructure and codebase.}
+      \resumeItemListEnd
+
+   \resumeItemSeparator
+
+   % \resumeSubheading
+   %     {Senior Software Engineer}{Edinburgh, United Kingdom}
+   %     {SeeByte}{August 2021 - November 2022}
+   %     \resumeSubheadingSeparator
+   %     \resumeItemListStart
+   %         \cvItem {Directed the company-wide CI/CD initiative, implementing Jenkins pipelines and integrating approximately 80 projects.}
+   %         \cvItem {Led projects, using Java and .NET, delivering 100\% of them ahead of schedule.}
+   %     \resumeItemListEnd
+
+   % \resumeItemSeparator
+
+   % \resumeSubheading
+   %     {Software Engineer}{Edinburgh, United Kingdom}
+   %     {SeeByte}{September 2019 - August 2021}
+   %     \resumeSubheadingSeparator
+   %     \resumeItemListStart
+   %         \cvItem {Developed the Mission Planning and Analysis software for Unmanned Underwater Vehicles using Java, .NET and C++, enabling interoperability across 6 different UUV vendors.}
+   %         \cvItem {Demonstrated products in real-world operational scenarios, resulting in a 100\% contract extension rate.}
+   %         \cvItem {Rapidly promoted to the senior level in under 2 years, becoming the fastest promotion in the company.}
+   %     \resumeItemListEnd
+
+   \resumeSubheading
+      {Senior Software Engineer (Promoted from Software Engineer)}{Edinburgh, United Kingdom}
+      {SeeByte}{September 2019 - November 2022}
+      \resumeSubheadingSeparator
+      \resumeItemListStart
+         \cvItem {Developed mission planning and analysis software for Unmanned Underwater Vehicles using Java, .NET and C++, enabling interoperability across 6 different UUV vendors.}
+         \cvItem {Participated in real-world sea trials and client demonstrations, contributing to a 100\% contract extension rate.}
+         \cvItem {Achieved the fastest promotion in the company, moving from Software Engineer to Senior in under 2 years.}
+         \cvItem {Led company-wide CI/CD improvements, implementing Jenkins pipelines and integrating approximately 80 projects to improve release reliability.}
+         \cvItem {Delivered multiple engineering projects ahead of schedule, collaborating across research and product teams.}
+      \resumeItemListEnd
+
+   \resumeItemSeparator
+
+   \resumeSubheading
+      {Software Engineer}{Athens, Greece}
+      {Wings ICT Solutions}{April 2017 - September 2018}
+      \resumeSubheadingSeparator
+      \resumeItemListStart
+         \cvItem {Modernized the National Bank of Greece’s CRM by migrating an Objective-C codebase to Angular and TypeScript.}
+         \cvItem {Led and delivered an internal bank project for customer application management, working in a team of three engineers.}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\sectionSeparator
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+   \resumeSubheading
+      % {MSc in High Performance Computing with Data Science}{75\% (Distinction)}
+      {MSc in High Performance Computing with Data Science}{Distinction}
+      {University of Edinburgh, United Kingdom}{September 2018 - September 2019}
+
+   \resumeItemSeparator
+   
+   \resumeSubheading
+      % {BSc in Computer Science}{84\% (First-Class Honours)}
+      {BSc in Computer Science}{First-Class Honours}
+      {University of Crete, Greece}{September 2012 - June 2016}
+
+\resumeSubHeadingListEnd
+
+\sectionSeparator
+
+%-----------AWARDS-----------
+\section{Awards}
+\resumeSubHeadingListStart
+
+\achievementItem
+   {Best Academic Performance Award - graduated with the highest grades in the MSc program.}
+   {2019}
+
+\achievementItemSeparator
+
+\achievementItem
+   % {`Highly Skilled Workforce Scholarship` - full MSc tuition scholarship (£30K), awarded for academic excellence.}
+   {Highly Skilled Workforce Scholarship - £30K MSc tuition awarded for academic excellence.}
+   {2018}
+
+\achievementItemSeparator
+
+\achievementItem
+   % {`Stelios Orfanoudakis Scholarship` - awarded annually for three years as a top-three BSc student (€10K).}
+   {Stelios Orfanoudakis Scholarship - awarded for three years as a top-three BSc student (€10K).}
+   {2014 - 2016}
+
+\resumeSubHeadingListEnd
+
+\section{Skills}
+
+%-----------SKILLS-----------
+\multiSkillList
+   {Java}{Spring Boot}{Node.js}{TypeScript}
+   {AWS}{GitHub CI/CD}{Kafka}{Event-driven architecture}
+%    {.NET}{React}{Angular}{Terraform}{distributed systems}{Docker}
+
+\end{document}
