@@ -42,17 +42,6 @@ export const summary = {
 
 export const work: WorkExperience[] = [
   {
-    role: "Senior Software Engineer",
-    company: "Avaloq",
-    companyUrl: "https://www.avaloq.com",
-    location: "Zürich, Switzerland",
-    date: "Oct 2025 - Present",
-    description: [`Working on banking software solutions.`],
-    technologies: "TypeScript,AWS",
-    forCV: true,
-    logo: "avaloq.png",
-  },
-  {
     role: "Senior Software Engineer and Project Manager",
     roleShort: "Senior Software Engineer",
     format: "contractor",

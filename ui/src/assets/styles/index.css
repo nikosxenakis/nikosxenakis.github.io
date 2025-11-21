@@ -1,7 +1,7 @@
 :root {
-  --background-color: #2a2f3a; /* Gunmetal base */
-  --background-light-color: #3a3f4a; /* Slightly lighter for contrast */
-  --box-shadow-color: #5c5766; /* Soft shadow with subtle depth */
+  --background-color: #1e2330; /* Dark base */
+  --background-light-color: #2a2f3a; /* Slightly lighter for contrast */
+  --box-shadow-color: rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
   --text-color: #ffffff; /* High contrast text */
   --link-color: #9c8ebf; /* Soft lavender for links */
   --link-hover-color: #c1b2df; /* Lighter on hover */
@@ -19,13 +19,7 @@ html,
 .MuiTypography-root,
 .MuiButton-root,
 .MuiChip-root,
-.MuiPaper-root,
-.MuiList-root,
-.MuiListItem-root,
-.MuiTimeline-root,
-.MuiTimelineItem-root,
-.MuiTimelineContent-root,
-.MuiTimelineOppositeContent-root {
+.MuiPaper-root {
   font-family: "Inter", "Roboto", sans-serif !important;
 }
 
@@ -49,22 +43,12 @@ a {
   margin-bottom: 15px;
 }
 
-.section-top-border {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.section-bottom-border {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 .glassmorphic {
-  background: rgba(30, 30, 40, 0.55) !important;
+  background: rgba(42, 47, 58, 0.9) !important;
   color: #ffffff !important;
   border-radius: 16px;
-  box-shadow: 0 4px 32px 0 var(--box-shadow-color);
-  backdrop-filter: blur(12px) saturate(120%);
-  -webkit-backdrop-filter: blur(12px) saturate(120%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Mobile Responsive Design */

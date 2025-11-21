@@ -15,6 +15,7 @@ import {
   linkedIn,
   stackOverflow,
   interests,
+  summary,
 } from "@/data/data";
 import "@/assets/styles/intro.css";
 
@@ -44,7 +45,7 @@ const Intro = () => {
   }));
 
   return (
-    <div className="section section-bottom-border" style={{ position: "relative" }}>
+    <div className="section" style={{ position: "relative" }}>
       <div className="introTab">
         <a href={email.link} className="introTabItem">
           <MdEmail />
@@ -138,8 +139,11 @@ const Intro = () => {
         <Typography variant="h2" component="h2" style={{ marginBottom: "1rem" }}>
           {name}
         </Typography>
-        <Typography variant="h5" component="h5">
+        <Typography variant="h5" component="h5" style={{ marginBottom: "1.5rem" }}>
           {title}
+        </Typography>
+        <Typography variant="body1" component="p" style={{ lineHeight: "1.6", opacity: 0.95 }}>
+          {summary.short}
         </Typography>
       </div>
       <div className="icon-row-bounce">

@@ -1,359 +1,106 @@
+/* Work Experience */
 .experienceContainer {
   display: flex;
-  gap: 2vw;
-  padding: 2vw;
-  flex-direction: row;
-}
-.timeline-container {
-  width: min(90vw, 900px);
-  max-width: 900px;
-  max-height: 60vh;
-  overflow-y: auto;
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: #9c8ebf #2a2f3a; /* For Firefox */
-}
-
-.timeline-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.timeline-container::-webkit-scrollbar-thumb {
-  background: #9c8ebf;
-  border-radius: 4px;
-}
-
-.timeline-container::-webkit-scrollbar-track {
-  background: #2a2f3a;
-}
-
-.timeline-item {
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background 0.5s;
-}
-
-.timeline-item:focus {
-  outline: 2px solid var(--link-color);
-  outline-offset: 2px;
-}
-
-.timeline-item.active {
-  background: var(--background-light-color);
-}
-
-.timeline-item .MuiTimelineSeparator-root {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100%;
+  gap: 1.2rem;
+  width: min(900px, 92vw);
+  margin: 0 auto;
 }
 
-.timeline-item .MuiTimelineConnector-root {
-  flex: 1 1 auto;
-  min-height: 12px;
-}
-
-.timeline-item .MuiTimelineSeparator-root img {
-  margin: 12px 0;
-  flex-shrink: 0;
-}
-
-.timeline-item .MuiTimelineOppositeContent-root .MuiTypography-root {
-  font-size: 0.95rem;
-}
-
-.timeline-item .MuiTimelineContent-root .MuiTypography-root {
-  font-size: 1.15rem;
-}
-
-.work-experience-description {
-  flex: 0 0 40%;
-  min-width: 450px;
-  max-width: 450px;
-  max-height: 400px;
-}
-
-.work-experience-container {
-  padding: 1rem;
+.experience-card {
+  padding: 1.2rem 1.4rem;
   border-radius: 12px;
   opacity: 0.8;
   color: var(--text-color) !important;
   background-color: var(--background-light-color) !important;
   box-shadow: var(--box-shadow-color) 0px 1px 4px;
-  min-height: 400px;
+}
+
+.experience-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.company-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.experience-title-section {
+  flex: 1;
+}
+
+.experience-description {
+  margin: 0.75rem 0 0 0;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.experience-description li {
+  margin-bottom: 0.5rem;
+}
+
+.experience-description li:last-child {
+  margin-bottom: 0;
 }
 
 .technologies-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 
 .technology-chip {
   border-radius: 6px;
-  padding: 0.3rem 0.7rem;
-  box-shadow: 0px 1px 3px var(--box-shadow-color);
-  border: 1px solid var(--text-color) !important;
+  font-size: 0.8rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
   color: var(--text-color) !important;
 }
 
-/* Section title helper */
-.section-title {
-  text-align: center;
-  padding: 2vw;
-}
-
-/* Bottom overlay for work details */
-.work-overlay {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background-color: rgba(0, 0, 0, 0);
-  pointer-events: auto;
-  animation: overlayFadeIn 300ms ease-out forwards;
-}
-
-.work-overlay.closing {
-  animation: overlayFadeOut 250ms ease-in forwards;
-}
-
-.work-overlay-content {
-  pointer-events: auto;
-  width: min(980px, 96vw);
-  max-height: min(60vh, 520px);
-  margin: 0 2vw 2vw;
-  padding: 1rem 1rem 1.25rem;
-  border-radius: 14px 14px 18px 18px;
-  overflow: auto;
-  transform: translateY(100%);
-  animation: workOverlaySlideIn 350ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-
-.work-overlay.closing .work-overlay-content {
-  animation: workOverlaySlideOut 250ms cubic-bezier(0.4, 0, 1, 1) forwards;
-}
-
-.work-overlay-close {
-  position: sticky;
-  top: 0;
-  float: right;
-  align-self: flex-end;
-  margin-left: auto;
-  color: #fff !important;
-}
-
-@keyframes overlayFadeIn {
-  from {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  to {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-}
-
-@keyframes overlayFadeOut {
-  from {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  to {
-    background-color: rgba(0, 0, 0, 0);
-  }
-}
-
-@keyframes workOverlaySlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes workOverlaySlideOut {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-}
-
-/* Responsive Design */
-@media (min-width: 1400px) {
-  .timeline-container {
-    width: min(85vw, 1200px);
-    max-width: 1200px;
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1399px) {
-  .timeline-container {
-    width: min(88vw, 1000px);
-    max-width: 1000px;
-  }
-}
-
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
   .experienceContainer {
-    flex-direction: column;
-    padding: 1vw;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .timeline-container {
     width: 95vw;
-    max-width: 95vw;
-    max-height: 65vh;
-    margin: 0 auto;
+    gap: 1rem;
   }
 
-  .timeline-container .MuiTimeline-root {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin: 0 auto;
+  .experience-card {
+    padding: 1rem 1.2rem;
   }
 
-  .timeline-item .MuiTimelineItem-root {
-    min-height: 0 !important;
-  }
-
-  .timeline-item .MuiTimelineOppositeContent-root {
-    flex: 0.35 !important;
-    padding-right: 4px !important;
-    padding-left: 4px !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    min-width: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  .timeline-item .MuiTimelineSeparator-root {
-    flex: 0 0 auto !important;
-    align-self: stretch !important;
-  }
-
-  .timeline-item .MuiTimelineContent-root {
-    flex: 0.5 !important;
-    padding-left: 4px !important;
-    padding-right: 4px !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    min-width: 0 !important;
-  }
-
-  .timeline-item .MuiTimelineContent-root .MuiTypography-root,
-  .timeline-item .MuiTimelineOppositeContent-root .MuiTypography-root {
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto !important;
-  }
-
-  .timeline-item .MuiTimelineSeparator-root img {
-    height: 28px !important;
-    padding: 0 6px !important;
-  }
-
-  .work-overlay-content {
-    width: 94vw;
-    max-height: 60vh;
-    margin: 0 1vw 1vw;
-    padding: 0.75rem;
+  .company-logo {
+    width: 40px;
+    height: 40px;
   }
 }
 
 @media (max-width: 480px) {
   .experienceContainer {
-    align-items: center;
-    justify-content: center;
-  }
-
-  .timeline-container {
     width: 96vw;
-    max-height: 60vh;
-    margin: 0 auto;
+    gap: 0.9rem;
   }
 
-  .timeline-container .MuiTimeline-root {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin: 0 auto;
+  .experience-card {
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
   }
 
-  .timeline-item .MuiTimelineItem-root {
-    min-height: 0 !important;
+  .company-logo {
+    width: 36px;
+    height: 36px;
   }
 
-  .timeline-item .MuiTimelineOppositeContent-root {
-    flex: 0.3 !important;
-    padding-right: 2px !important;
-    padding-left: 2px !important;
-    font-size: 0.75rem !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    min-width: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  .timeline-item .MuiTimelineOppositeContent-root .MuiTypography-root {
-    font-size: 0.7rem !important;
-  }
-
-  .timeline-item .MuiTimelineSeparator-root {
-    flex: 0 0 auto !important;
-    align-self: stretch !important;
-  }
-
-  .timeline-item .MuiTimelineContent-root {
-    flex: 0.5 !important;
-    padding-left: 2px !important;
-    padding-right: 2px !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    min-width: 0 !important;
-  }
-
-  .timeline-item .MuiTimelineContent-root .MuiTypography-root {
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto !important;
-    font-size: 0.9rem !important;
-  }
-
-  .timeline-item .MuiTimelineOppositeContent-root .MuiTypography-root {
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto !important;
-  }
-
-  .timeline-item .MuiTimelineSeparator-root img {
-    height: 24px !important;
-    padding: 0 4px !important;
-    margin: 8px 0 !important;
-  }
-
-  .work-overlay-content {
-    width: 96vw;
-    max-height: 65vh;
-    padding: 0.5rem;
+  .experience-description {
+    padding-left: 1.2rem;
   }
 
   .technology-chip {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem !important;
   }
 }
