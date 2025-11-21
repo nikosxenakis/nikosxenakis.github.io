@@ -28,6 +28,15 @@ a {
   text-decoration: none;
 }
 
+.footer-section {
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .section {
   height: 100dvh; /* Fill the entire viewport height */
   /* min-width: 100vw; */
@@ -103,9 +112,5 @@ a {
 
   .MuiTypography-h5 {
     font-size: 1.1rem !important;
-  }
-
-  .section {
-    height: 100dvh;
   }
 }

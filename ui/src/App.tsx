@@ -1,4 +1,3 @@
-import { useRef, useEffect } from "react";
 import Background from "@/components/Background";
 import Intro from "@/components/Intro";
 import Experience from "@/components/Experience";
@@ -7,74 +6,21 @@ import Footer from "@/components/Footer";
 // import Projects from "@/components/Projects";
 
 export default function App() {
-  const introRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  // const projectsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      const sections: (HTMLDivElement | null)[] = [
-        introRef.current,
-        contentRef.current,
-        // projectsRef.current,
-      ].filter((section): section is HTMLDivElement | null => section !== undefined);
-      const currentSection = sections.find(
-        (section) =>
-          section &&
-          section.getBoundingClientRect().top <= window.innerHeight / 2 &&
-          section.getBoundingClientRect().bottom >= window.innerHeight / 2
-      );
-      const currentIdx = sections.indexOf(currentSection ? currentSection : null);
-
-      // If we're in the content section and it has scroll, allow normal scrolling
-      if (currentIdx === 1 && contentRef.current) {
-        const atTop = contentRef.current.scrollTop === 0;
-        const atBottom = contentRef.current.scrollHeight - contentRef.current.scrollTop === contentRef.current.clientHeight;
-
-        // Only handle section navigation when at the edges
-        if ((e.deltaY < 0 && atTop) || (e.deltaY > 0 && atBottom)) {
-          if (e.deltaY > 0 && currentIdx < sections.length - 1) {
-            sections[currentIdx + 1]?.scrollIntoView({ behavior: "smooth" });
-            e.preventDefault();
-          } else if (e.deltaY < 0 && currentIdx > 0) {
-            sections[currentIdx - 1]?.scrollIntoView({ behavior: "smooth" });
-            e.preventDefault();
-          }
-        }
-      } else {
-        // For intro section, handle normal section navigation
-        if (e.deltaY > 0 && currentIdx < sections.length - 1) {
-          sections[currentIdx + 1]?.scrollIntoView({ behavior: "smooth" });
-          e.preventDefault();
-        } else if (e.deltaY < 0 && currentIdx > 0) {
-          sections[currentIdx - 1]?.scrollIntoView({ behavior: "smooth" });
-          e.preventDefault();
-        }
-      }
-    };
-
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => window.removeEventListener("wheel", handleWheel);
-  }, []);
-
   return (
-    <>
+    <div>
       <Background />
-      <div ref={introRef}>
+      <div>
         <Intro />
       </div>
-      <div ref={contentRef} className="section" style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        padding: "2vh 0",
-        overflowY: "auto"
-      }}>
+      <div>
         <Experience />
+      </div>
+      <div>
         <Education />
+      </div>
+      <div>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }

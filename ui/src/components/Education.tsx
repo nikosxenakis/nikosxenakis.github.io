@@ -7,10 +7,7 @@ const Education = () => {
   const eduItems = education.filter((e) => e.forCV).slice(0, 2);
 
   return (
-    <div style={{
-      paddingTop: "2vh",
-      borderTop: "1px solid rgba(255, 255, 255, 0.1)"
-    }}>
+    <div>
       <div className="section-title">
         <Typography variant="h3" component="h3">
           Education
