@@ -62,12 +62,20 @@ a {
     margin-bottom: 12px;
   }
 
-  .section-title h3 {
-    font-size: 1.75rem;
+  .section-title .MuiTypography-h3 {
+    font-size: 1.75rem !important;
   }
 
-  .section-title span {
-    font-size: 0.95rem;
+  .section-title .MuiTypography-body1 {
+    font-size: 0.95rem !important;
+  }
+
+  .MuiTypography-h4 {
+    font-size: 1.5rem !important;
+  }
+
+  .MuiTypography-h5 {
+    font-size: 1.25rem !important;
   }
 }
 
@@ -81,12 +89,20 @@ a {
     margin-bottom: 10px;
   }
 
-  .section-title h3 {
-    font-size: 1.5rem;
+  .section-title .MuiTypography-h3 {
+    font-size: 1.5rem !important;
   }
 
-  .section-title span {
-    font-size: 0.9rem;
+  .section-title .MuiTypography-body1 {
+    font-size: 0.85rem !important;
+  }
+
+  .MuiTypography-h4 {
+    font-size: 1.3rem !important;
+  }
+
+  .MuiTypography-h5 {
+    font-size: 1.1rem !important;
   }
 
   .section {

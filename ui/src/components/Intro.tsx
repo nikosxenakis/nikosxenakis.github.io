@@ -143,7 +143,7 @@ const Intro = () => {
           {title}
         </Typography>
         <Typography variant="body1" component="p" style={{ lineHeight: "1.6", opacity: 0.95 }}>
-          {summary.short}
+          {summary}
         </Typography>
       </div>
       <div className="icon-row-bounce">

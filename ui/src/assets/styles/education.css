@@ -24,6 +24,18 @@
   .education-card {
     padding: 1rem 1.2rem;
   }
+
+  .education-card .MuiTypography-h5 {
+    font-size: 1.2rem !important;
+  }
+
+  .education-card .MuiTypography-body1 {
+    font-size: 0.9rem !important;
+  }
+
+  .education-card .MuiTypography-body2 {
+    font-size: 0.85rem !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -35,5 +47,17 @@
   .education-card {
     padding: 0.9rem 1rem;
     font-size: 0.95rem;
+  }
+
+  .education-card .MuiTypography-h5 {
+    font-size: 1.1rem !important;
+  }
+
+  .education-card .MuiTypography-body1 {
+    font-size: 0.85rem !important;
+  }
+
+  .education-card .MuiTypography-body2 {
+    font-size: 0.8rem !important;
   }
 }

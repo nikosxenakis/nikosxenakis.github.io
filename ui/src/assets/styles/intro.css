@@ -93,6 +93,18 @@
     font-size: 0.9rem;
   }
 
+  .section .MuiTypography-h2 {
+    font-size: 2.5rem !important;
+  }
+
+  .section .MuiTypography-h5 {
+    font-size: 1.25rem !important;
+  }
+
+  .section .MuiTypography-body1 {
+    font-size: 0.95rem !important;
+  }
+
   .icon-row-bounce {
     gap: 20px;
     bottom: 48px;
@@ -129,6 +141,18 @@
   .introTabItem {
     font-size: 0.85rem;
     gap: 0.25rem;
+  }
+
+  .section .MuiTypography-h2 {
+    font-size: 2rem !important;
+  }
+
+  .section .MuiTypography-h5 {
+    font-size: 1.1rem !important;
+  }
+
+  .section .MuiTypography-body1 {
+    font-size: 0.85rem !important;
   }
 
   .icon-row-bounce {

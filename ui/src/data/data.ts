@@ -34,11 +34,8 @@ export const website: Link = {
 
 export const locationMaps =
   "https://www.google.co.uk/maps/place/%CE%96%CF%85%CF%81%CE%AF%CF%87%CE%B7/@47.3774122,8.4543354,12z/data=!4m15!1m8!3m7!1s0x47900b9749bea219:0xe66e8df1e71fdc03!2zzpbPhc-Bzq_Ph863!3b1!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY!3m5!1s0x47900b9749bea219:0xe66e8df1e71fdc03!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY?entry=ttu";
-export const summary = {
-  long: "Passion and devotion are the cornerstones of my professional approach. I am deeply committed to staying updated, export constantly researching innovative products and cutting-edge methods to ensure that my projects not only meet but exceed expectations. With a rich background in designing, developing, and testing software, I bring a blend of technical expertise and creative problem-solving to every challenge. My goal is to deliver solutions that are not just efficient and reliable, but also future-ready. I thrive in collaborative environments and am always eager to learn and grow alongside my peers.",
-  short:
-    "Specializing in Full Stack development for scalable, fault-tolerant and secure products. Proven at both large and small sized companies, with expertise in Java, Node.js, .NET, and CI/CD. Collaborating with teams and clients, by following agile methodologies towards innovative solutions.",
-};
+export const summary =
+  "Engineer with 7+ years of experience building scalable, fault-tolerant full-stack systems using Java, Spring Boot, Node.js, and TypeScript. Fast learner with a strong record of leading projects, improving architecture, and delivering high-impact features. Passionate about clean design, automation, and developing future-ready products.";
 
 export const work: WorkExperience[] = [
   {

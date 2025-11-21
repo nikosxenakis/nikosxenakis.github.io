@@ -74,6 +74,18 @@
     padding: 1rem 1.2rem;
   }
 
+  .experience-card .MuiTypography-h5 {
+    font-size: 1.2rem !important;
+  }
+
+  .experience-card .MuiTypography-body1 {
+    font-size: 0.9rem !important;
+  }
+
+  .experience-card .MuiTypography-body2 {
+    font-size: 0.85rem !important;
+  }
+
   .company-logo {
     width: 40px;
     height: 40px;
@@ -91,6 +103,18 @@
     font-size: 0.95rem;
   }
 
+  .experience-card .MuiTypography-h5 {
+    font-size: 1.1rem !important;
+  }
+
+  .experience-card .MuiTypography-body1 {
+    font-size: 0.85rem !important;
+  }
+
+  .experience-card .MuiTypography-body2 {
+    font-size: 0.8rem !important;
+  }
+
   .company-logo {
     width: 36px;
     height: 36px;
@@ -98,6 +122,10 @@
 
   .experience-description {
     padding-left: 1.2rem;
+  }
+
+  .experience-description li {
+    margin-bottom: 0.4rem;
   }
 
   .technology-chip {
