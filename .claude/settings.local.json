@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(yarn upgrade-interactive:*)",
-      "Bash(yarn upgrade:*)"
+      "Bash(yarn upgrade:*)",
+      "Bash(yarn build)",
+      "Bash(yarn install)"
     ],
     "deny": [],
     "ask": []

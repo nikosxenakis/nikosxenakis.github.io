@@ -21,7 +21,7 @@ html,
 .MuiButton-root,
 .MuiChip-root,
 .MuiPaper-root {
-  font-family: "Inter", "Roboto", sans-serif !important;
+  font-family: "Inter", sans-serif !important;
 }
 
 a {

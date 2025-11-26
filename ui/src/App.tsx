@@ -4,7 +4,6 @@ import Intro from "@/components/Intro";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
-// import Projects from "@/components/Projects";
 
 export default function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -77,13 +76,28 @@ export default function App() {
   return (
     <div className="scroll-container" ref={containerRef}>
       <Background />
-      <div className="scroll-section" ref={(el) => { sectionRefs.current[0] = el; }}>
+      <div
+        className="scroll-section"
+        ref={(el) => {
+          sectionRefs.current[0] = el;
+        }}
+      >
         <Intro />
       </div>
-      <div className="scroll-section" ref={(el) => { sectionRefs.current[1] = el; }}>
+      <div
+        className="scroll-section"
+        ref={(el) => {
+          sectionRefs.current[1] = el;
+        }}
+      >
         <Experience />
       </div>
-      <div className="scroll-section" ref={(el) => { sectionRefs.current[2] = el; }}>
+      <div
+        className="scroll-section"
+        ref={(el) => {
+          sectionRefs.current[2] = el;
+        }}
+      >
         <Education />
         <Footer />
       </div>
