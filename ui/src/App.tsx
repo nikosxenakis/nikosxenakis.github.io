@@ -99,8 +99,8 @@ export default function App() {
         }}
       >
         <Education />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

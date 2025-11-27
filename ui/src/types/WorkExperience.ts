@@ -9,6 +9,6 @@ export default interface WorkExperience {
   date: string;
   description: string[];
   technologies?: string;
-  forCV?: boolean; // If true, this will be included in the CV
+  showOnWebsite?: boolean;
   logo: string;
 }

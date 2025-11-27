@@ -1,4 +1,4 @@
-FROM node:22-alpine AS build
+FROM node:22.21-alpine3.23 AS build
 
 WORKDIR /app
 
@@ -15,7 +15,7 @@ COPY . .
 # Build production bundle
 RUN yarn build:prod
 
-FROM nginx:1.27-alpine AS production
+FROM nginx:1.29-alpine AS production
 
 # Update packages to fix vulnerabilities
 RUN apk update && \

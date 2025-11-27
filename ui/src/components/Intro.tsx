@@ -23,6 +23,10 @@ const Intro = () => {
   const [openLanguages, setOpenLanguages] = React.useState(false);
   const handleOpenLanguages = () => setOpenLanguages(true);
   const handleCloseLanguages = () => setOpenLanguages(false);
+  const [floatingEmojis, setFloatingEmojis] = React.useState<
+    { id: number; emoji: string; left: number; duration: number }[]
+  >([]);
+  const floatingId = React.useRef(0);
 
   const [openInterests, setOpenInterests] = React.useState(false);
   const handleOpenInterests = () => setOpenInterests(true);
@@ -43,6 +47,23 @@ const Intro = () => {
     ...interest,
     icon: <span style={{ fontSize: "1.5rem" }}>{interest.emoji}</span>,
   }));
+
+  const launchEmojis = () => {
+    const greetings = ["👋", "🎈", "🙌", "✨"];
+    const burst = Array.from({ length: 1 }).map(() => ({
+      id: floatingId.current++,
+      emoji: greetings[Math.floor(Math.random() * greetings.length)],
+      left: 20 + Math.random() * 60,
+      duration: 1.4 + Math.random() * 0.5,
+    }));
+
+    setFloatingEmojis((prev) => [...prev, ...burst]);
+    burst.forEach((item) => {
+      setTimeout(() => {
+        setFloatingEmojis((prev) => prev.filter((e) => e.id !== item.id));
+      }, (item.duration + 0.2) * 1000);
+    });
+  };
 
   return (
     <div className="section" style={{ position: "relative" }}>
@@ -136,6 +157,20 @@ const Intro = () => {
           margin: "0 auto",
         }}
       >
+        <div className="intro-avatar-wrapper" onMouseEnter={launchEmojis} onClick={launchEmojis}>
+          <img src="/assets/images/avatar.png" alt={name} className="intro-avatar" />
+          <div className="floating-emoji-container">
+            {floatingEmojis.map((item) => (
+              <span
+                key={item.id}
+                className="floating-emoji"
+                style={{ left: `${item.left}%`, animationDuration: `${item.duration}s` }}
+              >
+                {item.emoji}
+              </span>
+            ))}
+          </div>
+        </div>
         <Typography variant="h2" component="h2" style={{ marginBottom: "1rem" }}>
           {name}
         </Typography>

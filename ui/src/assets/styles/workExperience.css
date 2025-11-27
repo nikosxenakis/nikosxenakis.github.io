@@ -2,13 +2,13 @@
 .experienceContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
   width: min(900px, 92vw);
   margin: 0 auto;
 }
 
 .experience-card {
-  padding: 1.2rem 1.4rem;
+  padding: 1rem 1.2rem;
   border-radius: 12px;
   opacity: 0.8;
   color: var(--text-color) !important;
@@ -21,6 +21,7 @@
   gap: 1rem;
   align-items: flex-start;
   margin-bottom: 0.75rem;
+  cursor: pointer;
 }
 
 .company-logo {
@@ -33,6 +34,64 @@
 
 .experience-title-section {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.experience-title-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.experience-title-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+
+.experience-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  line-height: 1.2;
+}
+
+.experience-date {
+  opacity: 0.9;
+}
+
+.experience-location {
+  opacity: 0.85;
+}
+
+.experience-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  color: var(--text-color);
+}
+
+.experience-toggle.expanded {
+  transform: rotate(180deg);
+}
+
+.technology-chip {
+  border-radius: 14px;
+  font-size: 0.85rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: var(--text-color) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(4px);
+  padding: 0 6px;
 }
 
 .experience-description {
@@ -54,13 +113,6 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.75rem;
-}
-
-.technology-chip {
-  border-radius: 6px;
-  font-size: 0.8rem !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  color: var(--text-color) !important;
 }
 
 /* Mobile Responsive Design */
@@ -104,7 +156,7 @@
   }
 
   .experience-card .MuiTypography-h5 {
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
   }
 
   .experience-card .MuiTypography-body1 {
@@ -129,6 +181,6 @@
   }
 
   .technology-chip {
-    font-size: 0.7rem !important;
+    font-size: 0.78rem !important;
   }
 }

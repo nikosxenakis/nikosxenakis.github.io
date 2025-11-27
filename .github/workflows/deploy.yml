@@ -17,7 +17,6 @@ concurrency:
 
 jobs:
   deploy:
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -26,7 +25,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -49,7 +48,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: './ui/dist'
+          path: "./ui/dist"
 
       - name: Deploy to GitHub Pages
         id: deployment

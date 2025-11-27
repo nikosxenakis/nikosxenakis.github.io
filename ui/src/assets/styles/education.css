@@ -14,6 +14,25 @@
   box-shadow: var(--box-shadow-color) 0px 1px 4px;
 }
 
+.education-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.education-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.education-title-section {
+  flex: 1;
+}
+
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
   .educationContainer {
@@ -23,6 +42,11 @@
 
   .education-card {
     padding: 1rem 1.2rem;
+  }
+
+  .education-logo {
+    width: 40px;
+    height: 40px;
   }
 
   .education-card .MuiTypography-h5 {
@@ -47,6 +71,11 @@
   .education-card {
     padding: 0.9rem 1rem;
     font-size: 0.95rem;
+  }
+
+  .education-logo {
+    width: 36px;
+    height: 36px;
   }
 
   .education-card .MuiTypography-h5 {
