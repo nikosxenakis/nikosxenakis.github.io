@@ -165,6 +165,7 @@ export const education = [
     role: "MSc in HPC with Data Science",
     // roleShort: 'MSc in HPC with Data Science',
     company: "University of Edinburgh",
+    companyShort: "UoE",
     companyUrl:
       "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2019&id=871",
     location: "Edinburgh, UK",
@@ -181,11 +182,13 @@ export const education = [
   {
     role: "Bachelor in Computer Science",
     company: "University of Crete",
+    companyShort: "UoC",
     companyUrl: "https://www.csd.uoc.gr",
     location: "Heraklion, Greece",
     date: "Sep 2012 - Jul 2016",
     // grade: "84% (First-Class Honours)",
-    grade: "First-Class Honours (top 3%)",
+    // grade: "First-Class Honours (top 3%)",
+    grade: "First-Class Honours",
     dissertation:
       "ICE Editor is a visual programming language for end-user programmers for IOT devices. ICE Editor is a web client application written in JavaScript.",
     scholarship:

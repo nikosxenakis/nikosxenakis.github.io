@@ -6,6 +6,7 @@
   flex-direction: row;
   align-items: center;
   padding: 1.8rem;
+  margin-left: 1rem;
   gap: 1.8rem;
   animation: slideInLeft 0.8s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
   opacity: 0;
@@ -78,6 +79,7 @@
   flex-direction: row;
   gap: 0.75rem;
   z-index: 1;
+  margin-right: 1rem;
 }
 
 .intro-avatar-wrapper {

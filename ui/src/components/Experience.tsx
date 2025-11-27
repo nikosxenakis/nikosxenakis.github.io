@@ -63,13 +63,9 @@ const Experience = () => {
                     </Typography>
                   </div>
                   <div className="experience-meta">
-                    <Typography
-                      variant="body1"
-                      component="div"
-                      style={{ marginBottom: item.location ? "0.15rem" : "0" }}
-                    >
+                    <Typography variant="body1" component="div">
                       <a href={item.companyUrl} target="_blank" rel="noreferrer">
-                        {item.company}
+                        {isMobile && item.companyShort ? item.companyShort : item.company}
                       </a>
                     </Typography>
                     {item.location && (

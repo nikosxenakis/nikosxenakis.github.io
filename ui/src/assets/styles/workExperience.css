@@ -156,7 +156,7 @@
   }
 
   .experience-card .MuiTypography-h5 {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
   }
 
   .experience-card .MuiTypography-body1 {
@@ -164,12 +164,12 @@
   }
 
   .experience-card .MuiTypography-body2 {
-    font-size: 0.8rem !important;
+    font-size: 0.7rem !important;
   }
 
   .company-logo {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
   }
 
   .experience-description {

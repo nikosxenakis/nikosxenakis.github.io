@@ -171,10 +171,10 @@ const Intro = () => {
             ))}
           </div>
         </div>
-        <Typography variant="h2" component="h2" style={{ marginBottom: "1rem" }}>
+        <Typography variant="h2" component="h2" style={{ marginBottom: "1.2rem" }}>
           {name}
         </Typography>
-        <Typography variant="h5" component="h5" style={{ marginBottom: "1.5rem" }}>
+        <Typography variant="h5" component="h5" style={{ marginBottom: "2rem" }}>
           {title}
         </Typography>
         <Typography variant="body1" component="p" style={{ lineHeight: "1.6", opacity: 0.95 }}>
