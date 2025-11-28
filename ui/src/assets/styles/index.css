@@ -54,13 +54,8 @@ a {
 }
 
 .section {
-  height: 100dvh; /* Fill the entire viewport height */
-  /* min-width: 100vw; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 3vh;
+  height: 100dvh;
+  position: relative;
 }
 
 .section-title {

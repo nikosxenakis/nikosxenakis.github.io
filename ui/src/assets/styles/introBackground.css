@@ -1,0 +1,18 @@
+.introBackgroundWords {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.introWord {
+  position: absolute;
+  font-size: clamp(1.4rem, 2.2vw, 2.6rem);
+  font-weight: 700;
+  color: var(--text-color);
+  opacity: 0.08;
+  filter: blur(2.5px);
+  text-transform: uppercase;
+  white-space: nowrap;
+}

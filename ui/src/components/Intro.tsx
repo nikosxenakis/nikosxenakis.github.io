@@ -1,36 +1,15 @@
 import React from "react";
-import { MdEmail } from "react-icons/md";
-import { FaLocationDot } from "react-icons/fa6";
-import { IoLanguage } from "react-icons/io5";
-import { FcSportsMode } from "react-icons/fc";
 import Typography from "@mui/material/Typography";
-import { SpeedDial, SpeedDialAction } from "@mui/material";
-import {
-  name,
-  title,
-  email,
-  location,
-  languages,
-  gitHub,
-  linkedIn,
-  stackOverflow,
-  interests,
-  summary,
-} from "@/data/data";
+import { name, title, languages, interests, summary } from "@/data/data";
+import IntroBackground from "./IntroBackground";
+import IntroFooter from "./IntroFooter";
 import "@/assets/styles/intro.css";
 
 const Intro = () => {
-  const [openLanguages, setOpenLanguages] = React.useState(false);
-  const handleOpenLanguages = () => setOpenLanguages(true);
-  const handleCloseLanguages = () => setOpenLanguages(false);
   const [floatingEmojis, setFloatingEmojis] = React.useState<
     { id: number; emoji: string; left: number; duration: number }[]
   >([]);
   const floatingId = React.useRef(0);
-
-  const [openInterests, setOpenInterests] = React.useState(false);
-  const handleOpenInterests = () => setOpenInterests(true);
-  const handleCloseInterests = () => setOpenInterests(false);
 
   const languagesLocal = languages.map((lang) => ({
     ...lang,
@@ -66,138 +45,50 @@ const Intro = () => {
   };
 
   return (
-    <div className="section" style={{ position: "relative" }}>
-      <div className="introTab">
-        <a href={email.link} className="introTabItem">
-          <MdEmail />
-          <Typography variant="body2" component="span">
-            {email.short}
-          </Typography>
-        </a>
-        <a
-          href="https://www.google.com/maps?q=Zürich"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="introTabItem"
-        >
-          <FaLocationDot />
-          <Typography variant="body2" component="span">
-            {location}
-          </Typography>
-        </a>
-      </div>
-      <div className="introActions">
-        <SpeedDial
-          ariaLabel="Languages"
-          direction="down"
-          sx={{
-            "& .MuiFab-primary": {
-              backgroundColor: "#403a45",
-              color: "#fff",
-            },
-          }}
-          icon={<IoLanguage />}
-          onClose={handleCloseLanguages}
-          onOpen={handleOpenLanguages}
-          open={openLanguages}
-        >
+    <div className="section">
+      <IntroBackground />
+
+      <div className="introRow">
+        <div className="introSideList">
           {languagesLocal.map((language) => (
-            <SpeedDialAction
-              key={language.name}
-              title={language.level}
-              icon={language.icon}
-              onClick={handleCloseLanguages}
-              sx={{
-                backgroundColor: "#403a45",
-                color: "#fff",
-                "&:hover": {
-                  backgroundColor: "#6b6175",
-                },
-              }}
-            />
+            <div key={language.name}>{language.icon}</div>
           ))}
-        </SpeedDial>
-        <SpeedDial
-          ariaLabel="Interests"
-          direction="down"
-          sx={{
-            "& .MuiFab-primary": {
-              backgroundColor: "#403a45",
-              color: "#fff",
-            },
-          }}
-          icon={<FcSportsMode />}
-          onClose={handleCloseInterests}
-          onOpen={handleOpenInterests}
-          open={openInterests}
-        >
+        </div>
+
+        <div className="introCenter">
+          <div onMouseEnter={launchEmojis} onClick={launchEmojis}>
+            <img src="/assets/images/avatar.png" alt={name} className="intro-avatar" />
+            <div className="floating-emoji-container">
+              {floatingEmojis.map((item) => (
+                <span
+                  key={item.id}
+                  className="floating-emoji"
+                  style={{ left: `${item.left}%`, animationDuration: `${item.duration}s` }}
+                >
+                  {item.emoji}
+                </span>
+              ))}
+            </div>
+          </div>
+          <Typography variant="h2" component="h2">
+            {name}
+          </Typography>
+          <Typography variant="h5" component="h5">
+            {title}
+          </Typography>
+          <Typography variant="body1" component="p">
+            {summary}
+          </Typography>
+        </div>
+
+        <div className="introSideList">
           {interestsLocal.map((interest) => (
-            <SpeedDialAction
-              key={interest.name}
-              title={interest.name}
-              icon={interest.icon}
-              onClick={handleCloseInterests}
-              sx={{
-                backgroundColor: "#403a45",
-                color: "#fff",
-                "&:hover": {
-                  backgroundColor: "#6b6175",
-                },
-              }}
-            />
+            <div key={interest.name}>{interest.icon}</div>
           ))}
-        </SpeedDial>
+        </div>
       </div>
 
-      <div
-        style={{
-          textAlign: "center",
-          padding: "2vw",
-          maxWidth: "800px",
-          margin: "0 auto",
-        }}
-      >
-        <div className="intro-avatar-wrapper" onMouseEnter={launchEmojis} onClick={launchEmojis}>
-          <img src="/assets/images/avatar.png" alt={name} className="intro-avatar" />
-          <div className="floating-emoji-container">
-            {floatingEmojis.map((item) => (
-              <span
-                key={item.id}
-                className="floating-emoji"
-                style={{ left: `${item.left}%`, animationDuration: `${item.duration}s` }}
-              >
-                {item.emoji}
-              </span>
-            ))}
-          </div>
-        </div>
-        <Typography variant="h2" component="h2" style={{ marginBottom: "1.2rem" }}>
-          {name}
-        </Typography>
-        <Typography variant="h5" component="h5" style={{ marginBottom: "2rem" }}>
-          {title}
-        </Typography>
-        <Typography variant="body1" component="p" style={{ lineHeight: "1.6", opacity: 0.95 }}>
-          {summary}
-        </Typography>
-      </div>
-      <div className="icon-row-bounce">
-        <img
-          src="/assets/images/icons/github.png"
-          className="icon-social-media"
-          onClick={() => window.open(gitHub.link, "_blank")}
-        />
-        <img
-          src="/assets/images/icons/linkedin2.png"
-          className="icon-social-media"
-          onClick={() => window.open(linkedIn.link, "_blank")}
-        />
-        <img
-          src="/assets/images/icons/stackoverflow.png"
-          className="icon-social-media"
-          onClick={() => window.open(stackOverflow.link, "_blank")}
-        />
-      </div>
+      <IntroFooter />
     </div>
   );
 };

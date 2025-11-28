@@ -273,11 +273,11 @@ export const interests = [
     emoji: "♟️",
   },
   {
-    name: "Latin and Cretan dancing",
+    name: "Dancing",
     emoji: "🕺🏽",
   },
   {
-    name: "Weight lifting",
+    name: "Gym",
     emoji: "🏋️",
   },
   {
