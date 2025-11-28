@@ -1,72 +1,8 @@
-/* Work Experience */
-.experienceContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: min(900px, 92vw);
-  margin: 0 auto;
-}
-
-.experience-card {
-  padding: 1rem 1.2rem;
-  border-radius: 12px;
-  opacity: 0.8;
-  color: var(--text-color) !important;
-  background-color: var(--background-light-color) !important;
-  box-shadow: var(--box-shadow-color) 0px 1px 4px;
-}
-
-.experience-header {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  margin-bottom: 0.75rem;
-  cursor: pointer;
-}
-
 .company-logo {
   width: 48px;
   height: 48px;
   border-radius: 8px;
   object-fit: contain;
-  flex-shrink: 0;
-}
-
-.experience-title-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.experience-title-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.experience-title-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.05rem;
-}
-
-.experience-meta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-  line-height: 1.2;
-}
-
-.experience-date {
-  opacity: 0.9;
-}
-
-.experience-location {
-  opacity: 0.85;
 }
 
 .experience-toggle {
@@ -117,27 +53,6 @@
 
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
-  .experienceContainer {
-    width: 95vw;
-    gap: 1rem;
-  }
-
-  .experience-card {
-    padding: 1rem 1.2rem;
-  }
-
-  .experience-card .MuiTypography-h5 {
-    font-size: 1.2rem !important;
-  }
-
-  .experience-card .MuiTypography-body1 {
-    font-size: 0.9rem !important;
-  }
-
-  .experience-card .MuiTypography-body2 {
-    font-size: 0.85rem !important;
-  }
-
   .company-logo {
     width: 40px;
     height: 40px;
@@ -145,28 +60,6 @@
 }
 
 @media (max-width: 480px) {
-  .experienceContainer {
-    width: 96vw;
-    gap: 0.9rem;
-  }
-
-  .experience-card {
-    padding: 0.9rem 1rem;
-    font-size: 0.95rem;
-  }
-
-  .experience-card .MuiTypography-h5 {
-    font-size: 0.9rem !important;
-  }
-
-  .experience-card .MuiTypography-body1 {
-    font-size: 0.85rem !important;
-  }
-
-  .experience-card .MuiTypography-body2 {
-    font-size: 0.7rem !important;
-  }
-
   .company-logo {
     width: 28px;
     height: 28px;

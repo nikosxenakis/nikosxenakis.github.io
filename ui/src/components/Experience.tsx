@@ -20,7 +20,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <div style={{ marginBottom: "3vh" }}>
+    <div className="section">
       <div className="section-title">
         <Typography variant="h3" component="h3">
           Work Experience
@@ -31,11 +31,11 @@ const Experience = () => {
         </Typography>
       </div>
 
-      <div className="experienceContainer">
+      <div className="cardContainer">
         {workItems.map((item, idx) => (
-          <Paper key={idx} className="experience-card glassmorphic">
+          <Paper key={idx} className="card">
             <div
-              className="experience-header"
+              className="card-header"
               role="button"
               tabIndex={0}
               onClick={() => setExpandedIndex(expandedIndex === idx ? null : idx)}
@@ -47,41 +47,41 @@ const Experience = () => {
               }}
               aria-expanded={expandedIndex === idx}
             >
-              <img
-                src={`/assets/images/companies/${item.logo}`}
-                className="company-logo"
-                alt={item.company}
-              />
-              <div className="experience-title-section">
-                <div className="experience-title-top">
-                  <div className="experience-title-left">
-                    <Typography variant="h5" component="h4" style={{ marginBottom: "0.1rem" }}>
-                      {isMobile && item.roleShort ? item.roleShort : item.role}
-                    </Typography>
-                    <Typography variant="body2" component="div" className="experience-date">
-                      {item.date}
-                    </Typography>
-                  </div>
-                  <div className="experience-meta">
-                    <Typography variant="body1" component="div">
-                      <a href={item.companyUrl} target="_blank" rel="noreferrer">
-                        {isMobile && item.companyShort ? item.companyShort : item.company}
-                      </a>
-                    </Typography>
-                    {item.location && (
-                      <Typography variant="body2" component="div" className="experience-location">
-                        {item.location}
-                      </Typography>
-                    )}
-                  </div>
-                </div>
+              <div className="header-col-icon">
+                <img
+                  src={`/assets/images/companies/${item.logo}`}
+                  className="company-logo"
+                  alt={item.company}
+                />
               </div>
-              <span
-                className={`experience-toggle ${expandedIndex === idx ? "expanded" : ""}`}
-                aria-hidden="true"
-              >
-                {expandedIndex === idx ? "-" : "+"}
-              </span>
+              <div className="header-col-title">
+                <Typography variant="h5" component="h4">
+                  {isMobile && item.roleShort ? item.roleShort : item.role}
+                </Typography>
+                <Typography variant="body2" component="div" className="header-date">
+                  {item.date}
+                </Typography>
+              </div>
+              <div className="header-col-meta">
+                <Typography variant="body1" component="div">
+                  <a href={item.companyUrl} target="_blank" rel="noreferrer">
+                    {isMobile && item.companyShort ? item.companyShort : item.company}
+                  </a>
+                </Typography>
+                {item.location && (
+                  <Typography variant="body2" component="div" className="header-location">
+                    {item.location}
+                  </Typography>
+                )}
+              </div>
+              <div className="header-col-toggle">
+                <span
+                  className={`experience-toggle ${expandedIndex === idx ? "expanded" : ""}`}
+                  aria-hidden="true"
+                >
+                  {expandedIndex === idx ? "-" : "+"}
+                </span>
+              </div>
             </div>
 
             {expandedIndex === idx && (

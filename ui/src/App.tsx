@@ -3,6 +3,7 @@ import Background from "@/components/Background";
 import Intro from "@/components/Intro";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
+import Skills from "@/components/Skills";
 import Footer from "@/components/Footer";
 
 export default function App() {
@@ -100,7 +101,15 @@ export default function App() {
       >
         <Education />
       </div>
-      <Footer />
+      <div
+        className="scroll-section"
+        ref={(el) => {
+          sectionRefs.current[3] = el;
+        }}
+      >
+        <Skills />
+      </div>
+      {/* <Footer /> */}
     </div>
   );
 }

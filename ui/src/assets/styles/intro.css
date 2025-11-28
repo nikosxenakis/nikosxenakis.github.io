@@ -1,38 +1,31 @@
+.introSection {
+  height: 100%;
+  position: relative;
+}
+
 .introRow {
   display: flex;
   gap: 1rem;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 0 2rem;
-}
-
-.introCenter {
   text-align: center;
 }
 
-.introSideList {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  justify-content: center;
-}
-
-.section .MuiTypography-h2 {
-  font-size: 3.75rem !important;
+.MuiTypography-h2 {
   margin-bottom: 1rem;
 }
 
-.section .MuiTypography-h5 {
-  font-size: 2rem !important;
+.MuiTypography-h5 {
   margin-bottom: 2rem;
 }
 
-.section .MuiTypography-body1 {
-  font-size: 1rem !important;
-  line-height: 1.5;
+.summary {
+  margin-left: 15% !important;
+  margin-right: 15% !important;
 }
 
 .intro-avatar {
@@ -42,7 +35,6 @@
 }
 
 .floating-emoji-container {
-  position: relative;
   inset: 0;
   pointer-events: none;
   overflow: visible;
@@ -72,16 +64,9 @@
 
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
-  .section .MuiTypography-h2 {
-    font-size: 2.5rem !important;
-  }
-
-  .section .MuiTypography-h5 {
-    font-size: 1.25rem !important;
-  }
-
-  .section .MuiTypography-body1 {
-    font-size: 0.95rem !important;
+  .summary {
+    margin-left: 10% !important;
+    margin-right: 10% !important;
   }
 
   .intro-avatar {
@@ -95,20 +80,9 @@
 }
 
 @media (max-width: 480px) {
-  .introSideList {
-    display: none;
-  }
-
-  .section .MuiTypography-h2 {
-    font-size: 2rem !important;
-  }
-
-  .section .MuiTypography-h5 {
-    font-size: 1.1rem !important;
-  }
-
-  .section .MuiTypography-body1 {
-    font-size: 0.85rem !important;
+  .summary {
+    margin-left: 2% !important;
+    margin-right: 2% !important;
   }
 
   .intro-avatar {

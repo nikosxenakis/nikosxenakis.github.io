@@ -1,0 +1,13 @@
+.footer-section {
+  justify-content: space-between;
+  text-align: center;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.footer-section .MuiTypography-body2 {
+  opacity: 0.75 !important;
+}

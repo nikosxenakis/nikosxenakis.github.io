@@ -1,111 +1,21 @@
-.educationContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  width: min(900px, 92vw);
-  margin: 0 auto;
-}
-.education-card {
-  padding: 1.2rem 1.4rem;
-  border-radius: 12px;
-  opacity: 0.8;
-  color: var(--text-color) !important;
-  background-color: var(--background-light-color) !important;
-  box-shadow: var(--box-shadow-color) 0px 1px 4px;
-}
-
-.education-header {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  margin-bottom: 0.75rem;
-}
-
 .education-logo {
   width: 48px;
   height: 48px;
   border-radius: 8px;
   object-fit: contain;
-  flex-shrink: 0;
-}
-
-.education-title-section {
-  flex: 1;
-}
-
-.education-meta-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem 1rem;
-  align-items: start;
-}
-
-.education-meta-left,
-.education-meta-right {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.education-meta-right {
-  align-items: flex-end;
-  text-align: right;
 }
 
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
-  .educationContainer {
-    width: 95vw;
-    gap: 1rem;
-  }
-
-  .education-card {
-    padding: 1rem 1.2rem;
-  }
-
   .education-logo {
     width: 40px;
     height: 40px;
   }
-
-  .education-card .MuiTypography-h5 {
-    font-size: 1.2rem !important;
-  }
-
-  .education-card .MuiTypography-body1 {
-    font-size: 0.9rem !important;
-  }
-
-  .education-card .MuiTypography-body2 {
-    font-size: 0.85rem !important;
-  }
 }
 
 @media (max-width: 480px) {
-  .educationContainer {
-    width: 96vw;
-    gap: 0.9rem;
-  }
-
-  .education-card {
-    padding: 0.9rem 1rem;
-    font-size: 0.95rem;
-  }
-
   .education-logo {
     width: 28px;
     height: 28px;
-  }
-
-  .education-card .MuiTypography-h5 {
-    font-size: 1.1rem !important;
-  }
-
-  .education-card .MuiTypography-body1 {
-    font-size: 0.85rem !important;
-  }
-
-  .education-card .MuiTypography-body2 {
-    font-size: 0.7rem !important;
   }
 }
