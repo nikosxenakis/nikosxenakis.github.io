@@ -4,6 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import Typography from "@mui/material/Typography";
 import { email, location, gitHub, linkedIn, stackOverflow } from "@/data/data";
 import "@/assets/styles/introFooter.css";
+import Chatbot from "./Chatbot";
 
 const IntroFooter = () => {
   return (
@@ -43,6 +44,7 @@ const IntroFooter = () => {
           className="icon-social-media"
           onClick={() => window.open(stackOverflow.link, "_blank")}
         />
+        <Chatbot />
       </div>
     </>
   );

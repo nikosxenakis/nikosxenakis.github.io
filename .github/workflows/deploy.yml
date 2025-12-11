@@ -44,6 +44,8 @@ jobs:
       - name: Build the project
         run: yarn build:prod
         working-directory: ./ui
+        env:
+          VITE_GROQ_API_KEY: ${{ secrets.VITE_GROQ_API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
