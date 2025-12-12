@@ -6,6 +6,12 @@ import { RiRefreshLine, RiRobot2Line, RiSubtractLine } from "react-icons/ri";
 type ChatMessage = { text: string; sender: "user" | "bot" };
 const STORAGE_KEY = "nikos-chatbot-messages";
 
+const SUGGESTIONS = [
+  "Where did you study?",
+  "What languages do you speak?",
+  "What was your last role?",
+];
+
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>(() => {
@@ -23,6 +29,26 @@ const Chatbot = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const formatBotMessage = (text: string) => {
+    const stripped = text.replace(/\*\*/g, "").replace(/__/g, "");
+    const parts = stripped
+      .split(/\n+/)
+      .map((line) => line.replace(/^[-*]\s*/, "").trim())
+      .filter(Boolean);
+
+    if (parts.length > 1) {
+      return (
+        <ul className="message-list">
+          {parts.map((part, idx) => (
+            <li key={idx}>{part}</li>
+          ))}
+        </ul>
+      );
+    }
+
+    return parts[0] ?? "";
+  };
+
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
@@ -34,6 +60,20 @@ const Chatbot = () => {
   const toggleChat = () => {
     setIsOpen(!isOpen);
   };
+
+  const buildPayload = (question: string) => ({
+    model: "llama-3.1-8b-instant",
+    temperature: 0.3,
+    max_tokens: 150,
+    messages: [
+      { role: "system", content: prompt },
+      ...messages.map((message) => ({
+        role: message.sender === "user" ? "user" : "assistant",
+        content: message.text,
+      })),
+      { role: "user", content: question },
+    ],
+  });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -51,28 +91,17 @@ const Chatbot = () => {
     }
   };
 
-  const buildPayload = (question: string) => ({
-    model: "llama-3.1-8b-instant",
-    temperature: 0.3,
-    max_tokens: 150,
-    messages: [
-      { role: "system", content: prompt },
-      ...messages.map((message) => ({
-        role: message.sender === "user" ? "user" : "assistant",
-        content: message.text,
-      })),
-      { role: "user", content: question },
-    ],
-  });
+  const handleSendMessage = async (override?: string) => {
+    const question = (override ?? inputValue).trim();
+    if (question === "" || isLoading) return;
 
-  const handleSendMessage = async () => {
-    if (inputValue.trim() === "" || isLoading) return;
-
-    const userMessage: ChatMessage = { text: inputValue.trim(), sender: "user" };
+    const userMessage: ChatMessage = { text: question, sender: "user" };
     const updatedMessages = [...messages, userMessage];
 
     setMessages(updatedMessages);
-    setInputValue("");
+    if (!override) {
+      setInputValue("");
+    }
     setIsLoading(true);
     setError(null);
 
@@ -137,11 +166,24 @@ const Chatbot = () => {
           {messages.length === 0 && !isLoading && (
             <div className="chatbot-empty">Ask me anything about my work and experience.</div>
           )}
+          {messages.length === 0 && !isLoading && (
+            <div className="chatbot-suggestions">
+              {SUGGESTIONS.map((suggestion) => (
+                <button
+                  key={suggestion}
+                  className="chatbot-chip"
+                  onClick={() => handleSendMessage(suggestion)}
+                >
+                  {suggestion}
+                </button>
+              ))}
+            </div>
+          )}
           {messages.map((message, index) => {
             const ariaLabel = message.sender === "user" ? "Your message" : "Bot response";
             return (
               <div key={index} className={`message ${message.sender}`} aria-label={ariaLabel}>
-                {message.text}
+                {message.sender === "bot" ? formatBotMessage(message.text) : message.text}
               </div>
             );
           })}
@@ -157,7 +199,7 @@ const Chatbot = () => {
             placeholder="Type a message..."
             disabled={isLoading}
           />
-          <button onClick={handleSendMessage} disabled={isLoading}>
+          <button onClick={() => handleSendMessage()} disabled={isLoading}>
             {isLoading ? "..." : "Send"}
           </button>
         </div>

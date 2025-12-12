@@ -119,6 +119,17 @@
   line-height: 1.5;
 }
 
+.message-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.message-list li {
+  line-height: 1.5;
+}
+
 .message.user {
   background: linear-gradient(135deg, var(--link-color, #9c8ebf), var(--link-hover-color, #c1b2df));
   color: #fff;
@@ -204,6 +215,33 @@
   border: 1px dashed rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 14px;
+}
+
+.chatbot-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 16px 14px 16px;
+}
+
+.chatbot-chip {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-color, #ffffff);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.chatbot-chip:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.chatbot-chip:active {
+  transform: translateY(1px);
 }
 
 @media (max-width: 700px) {
