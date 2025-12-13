@@ -171,7 +171,7 @@ const Chatbot = () => {
               {SUGGESTIONS.map((suggestion) => (
                 <button
                   key={suggestion}
-                  className="chatbot-chip"
+                  className="chip"
                   onClick={() => handleSendMessage(suggestion)}
                 >
                   {suggestion}

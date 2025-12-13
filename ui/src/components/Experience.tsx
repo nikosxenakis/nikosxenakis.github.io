@@ -99,14 +99,14 @@ const Experience = () => {
                 )}
 
                 {item.technologies && (
-                  <div className="technologies-list">
+                  <div className="chip-container">
                     {item.technologies.split(",").map((tech: string, i: number) => (
                       <Chip
                         key={i}
                         label={tech.trim()}
                         variant="outlined"
                         size="small"
-                        className="technology-chip"
+                        className="chip"
                       />
                     ))}
                   </div>

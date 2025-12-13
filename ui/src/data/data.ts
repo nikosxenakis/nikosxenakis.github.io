@@ -210,27 +210,38 @@ export const education = [
 
 export const projects: Project[] = [
   {
+    name: "Home Server",
+    date: "2025",
+    imageUrl: "https://img.fruugo.com/product/4/63/1949102634_max.jpg",
+    description:
+      "Personal Beelink MINI S12 running Ubuntu with Traefik in front of Docker/Docker Compose services (qBittorrent, Jellyfin, Home Assistant, Portainer, Uptime Kuma, Immich, cockpit) plus Wireguard VPN and Authentik. Nightly rsync backups to a 2 TB SanDisk drive; media/files shared over SMB; certs stored under ~/source/home-server/traefik/certs; no RAID yet.",
+    descriptionShort:
+      "Beelink MINI S12 home server on Ubuntu with Traefik, Dockerized apps, Wireguard VPN, Authentik, and nightly rsync backups.",
+    technologies: "Ubuntu,self-hosted,Docker,Wireguard,Authentik,SMB",
+  },
+  {
     name: "Georgioupolis Transfers",
     date: "2017",
     url: "https://georgioupolis-taxi.firebaseapp.com/",
+    githubUrl: "https://github.com/nikosxenakis/georgioupolis-transfers",
     imageUrl: "https://georgioupolis-taxi.firebaseapp.com/assets/images/logo.jpg",
-    description: "Website for booking transfer and tours in Crete, Greece.",
+    description: "Website for booking local transfer and tours.",
     technologies: "Typescript,Angular,Node.js",
   },
   {
     name: "ImagInLexis",
-    date: "June 2016 - August 2016",
-    url: "https://github.com/nikosxenakis/ImagInLexis",
+    date: "2016",
+    githubUrl: "https://github.com/nikosxenakis/ImagInLexis",
     imageUrl:
-      "https://github.com/nikosxenakis/ImagInLexis/blob/master/src/main/resources/com/xenakis/images/logo/imagInLexisLogo.png?raw=true",
-    description: `Hired to create a desktop application for a bachelor's thesis focused on Logotherapy. The application primarily enhances speech therapy intervention plans by incorporating a series of tests for patients to undertake. Designed with a gamified approach, the application caters specifically to children, making the therapeutic process engaging and interactive.`,
-    descriptionShort: `Hired to create a desktop application for a bachelor's thesis focused on Logotherapy.`,
+      "https://github.com/nikosxenakis/ImagInLexis/blob/main/src/main/resources/com/xenakis/images/logo/imagInLexisLogo.png?raw=true",
+    description: `Desktop application for a bachelor's thesis focused on Logotherapy. The application primarily enhances speech therapy intervention plans by incorporating a series of tests for patients to undertake. Designed with a gamified approach, the application caters specifically to children, making the therapeutic process engaging and interactive.`,
+    descriptionShort: `Desktop application for a bachelor's thesis focused on Logotherapy.`,
     technologies: "Java,JavaFX",
   },
   {
     name: "ICE Editor",
-    date: "March 2016 - June 2016",
-    url: "https://github.com/nikosxenakis/ICE_Editor",
+    date: "2016",
+    githubUrl: "https://github.com/nikosxenakis/ICE_Editor",
     imageUrl:
       "https://github.com/nikosxenakis/ICE_Editor/blob/master/thesis%20report/images/index.jpg?raw=true",
     description: `A web-based platform designed for end-users to craft straightforward applets for IoT (Internet Of Things) devices. This intuitive editor minimizes both compile and runtime errors, offering a drag-and-drop interface alongside value editing capabilities. It features a versatile API, allowing users to swiftly develop programs using Javascript or by defining them in JSON files.`,
@@ -239,13 +250,24 @@ export const projects: Project[] = [
   },
   {
     name: "1942",
-    date: "November 2015 - January 2016",
+    date: "2015 - 2016",
     url: "https://www.youtube.com/watch?v=kdICR49vbvg",
+    githubUrl: "https://github.com/nikosxenakis/1942",
     imageUrl:
-      "https://play-lh.googleusercontent.com/nEBtB95_mcjS5T2g9DHVAASuEVetJeHh5S-pH-yujc4A3vtULqhxZwIlYy-eoOvZnvc=w526-h296-rw",
+      "https://m.media-amazon.com/images/M/MV5BYWZkNTMwM2YtZDBkOS00ZTE2LWFmZjctOGRmZWQxNzYyZGEwXkEyXkFqcGc@._V1_.jpg",
     description: `1942, a beloved retro video game from 1984, has been reimagined in this project. Utilizing the original sprite sheets, the game has been recreated with the C++ programming language, leveraging the SDL cross-platform software development library.`,
     descriptionShort: `A reimagining of the classic 1942 video game.`,
     technologies: "C++,SDL",
+  },
+  {
+    name: "Recipes",
+    date: "2024",
+    url: "https://nikosxenakis.github.io/recipes/",
+    githubUrl: "https://github.com/nikosxenakis/recipes",
+    imageUrl: "https://nikosxenakis.github.io/recipes/favicon.ico",
+    description: `A recipe website to manage and view cooking recipes.`,
+    descriptionShort: `A recipe website to manage and view cooking recipes.`,
+    technologies: "React,TypeScript,Node.js",
   },
 ];
 
