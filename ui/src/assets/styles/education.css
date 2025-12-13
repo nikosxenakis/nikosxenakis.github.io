@@ -5,11 +5,19 @@
   object-fit: contain;
 }
 
-/* Mobile Responsive Design */
+.education-details {
+  margin-top: 1rem !important;
+}
+
 @media (max-width: 768px) {
   .education-logo {
     width: 40px;
     height: 40px;
+  }
+
+  .education-details {
+    margin-top: 0.75rem !important;
+    font-size: small !important;
   }
 }
 
@@ -17,5 +25,10 @@
   .education-logo {
     width: 28px;
     height: 28px;
+  }
+
+  .education-details {
+    margin-top: 0.65rem !important;
+    font-size: smaller !important;
   }
 }

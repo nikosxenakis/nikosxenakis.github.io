@@ -61,16 +61,12 @@ const Education = () => {
               </div>
             </div>
             {item.dissertation && (
-              <Typography variant="body2" component="p" style={{ marginTop: "0.75rem" }}>
+              <Typography variant="body2" component="p" className="education-details">
                 <strong>📄 Dissertation:</strong> {item.dissertation}
               </Typography>
             )}
             {item.scholarship && (
-              <Typography
-                variant="body2"
-                component="p"
-                style={{ marginTop: "0.5rem", opacity: 0.95 }}
-              >
+              <Typography variant="body2" component="p" className="education-details">
                 <strong>🏅 Scholarships/Awards:</strong> {item.scholarship}
               </Typography>
             )}
