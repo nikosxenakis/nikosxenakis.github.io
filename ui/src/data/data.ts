@@ -241,6 +241,7 @@ export const projects: Project[] = [
   {
     name: "ICE Editor",
     date: "2016",
+    url: "https://nikosxenakis.github.io/ICE_Editor/",
     githubUrl: "https://github.com/nikosxenakis/ICE_Editor",
     imageUrl:
       "https://github.com/nikosxenakis/ICE_Editor/blob/master/thesis%20report/images/index.jpg?raw=true",
