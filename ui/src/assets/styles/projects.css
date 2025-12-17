@@ -56,7 +56,7 @@
 }
 
 .project-card {
-  min-width: clamp(240px, 32vw, 420px);
+  min-width: clamp(220px, 32vw, 320px);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;

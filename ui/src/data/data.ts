@@ -214,10 +214,10 @@ export const projects: Project[] = [
     date: "2025",
     imageUrl: "https://img.fruugo.com/product/4/63/1949102634_max.jpg",
     description:
-      "Personal Beelink MINI S12 running Ubuntu with Traefik in front of Docker/Docker Compose services (qBittorrent, Jellyfin, Home Assistant, Portainer, Uptime Kuma, Immich, cockpit) plus Wireguard VPN and Authentik. Nightly rsync backups to a 2 TB SanDisk drive; media/files shared over SMB; certs stored under ~/source/home-server/traefik/certs; no RAID yet.",
+      "Personal Beelink MINI S12 running Linux with Traefik in front of Docker/Docker Compose services (qBittorrent, Jellyfin, Home Assistant, Portainer, Uptime Kuma, Immich, cockpit) plus Wireguard VPN and Authentik. Nightly rsync backups to a 2 TB SanDisk drive; media/files shared over SMB; certs stored under ~/source/home-server/traefik/certs; no RAID yet.",
     descriptionShort:
-      "Beelink MINI S12 home server on Ubuntu with Traefik, Dockerized apps, Wireguard VPN, Authentik, and nightly rsync backups.",
-    technologies: "Ubuntu,self-hosted,Docker,Wireguard,Authentik,SMB",
+      "Beelink MINI S12 home server on Linux with Traefik, Dockerized apps, Wireguard VPN, Authentik, and nightly rsync backups.",
+    technologies: "self-hosted,Docker,Wireguard,Authentik,SMB",
   },
   {
     name: "Georgioupolis Transfers",
@@ -244,7 +244,7 @@ export const projects: Project[] = [
     url: "https://nikosxenakis.github.io/ICE_Editor/",
     githubUrl: "https://github.com/nikosxenakis/ICE_Editor",
     imageUrl:
-      "https://github.com/nikosxenakis/ICE_Editor/blob/master/thesis%20report/images/index.jpg?raw=true",
+      "https://raw.githubusercontent.com/nikosxenakis/ICE_Editor/master/thesis%20report/images/index.jpg",
     description: `A web-based platform designed for end-users to craft straightforward applets for IoT (Internet Of Things) devices. This intuitive editor minimizes both compile and runtime errors, offering a drag-and-drop interface alongside value editing capabilities. It features a versatile API, allowing users to swiftly develop programs using Javascript or by defining them in JSON files.`,
     descriptionShort: `A web-based platform for creating IoT applets.`,
     technologies: "HTML/CSS/JS,Canvas.js",

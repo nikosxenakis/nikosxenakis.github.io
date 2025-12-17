@@ -15,14 +15,6 @@
   text-align: center;
 }
 
-.MuiTypography-h2 {
-  margin-bottom: 1rem;
-}
-
-.MuiTypography-h5 {
-  margin-bottom: 2rem;
-}
-
 .summary {
   margin-left: 15% !important;
   margin-right: 15% !important;
@@ -86,8 +78,9 @@
   }
 
   .intro-avatar {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.2rem;
   }
 
   .floating-emoji {

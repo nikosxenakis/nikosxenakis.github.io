@@ -139,43 +139,59 @@ const Projects = () => {
                 </div>
 
                 <div className="project-content">
-                  <div className="project-top">
-                    <div className="project-title">
-                      <Typography variant="h6" component="h4">
-                        {project.name}
-                      </Typography>
-                      <Chip
-                        label={project.date}
-                        size="small"
-                        variant="outlined"
-                        className="project-date-chip"
-                      />
-                      {project.descriptionShort || project.description ? (
-                        <Typography variant="body2" component="p" className="project-description">
-                          {project.descriptionShort || project.description}
+                  <Stack spacing={0.5}>
+                    <Stack
+                      direction={{ xs: "column", sm: "row" }}
+                      justifyContent="space-between"
+                      alignItems={{ xs: "flex-start", sm: "center" }}
+                      spacing={{ xs: 1, sm: 0 }}
+                    >
+                      <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap">
+                        <Typography variant="h6" component="h4">
+                          {project.name}
                         </Typography>
-                      ) : null}
-                    </div>
-
-                    {links.length > 0 && (
-                      <Stack spacing={0.4} direction="row" className="project-links">
-                        {links.map((link) => (
-                          <Tooltip key={link.href} title={link.label}>
-                            <IconButton
-                              size="small"
-                              href={link.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              aria-label={link.label}
-                              className="project-link-icon"
-                            >
-                              {link.icon}
-                            </IconButton>
-                          </Tooltip>
-                        ))}
+                        <Chip
+                          label={project.date}
+                          size="small"
+                          variant="outlined"
+                          className="project-date-chip"
+                          sx={{ alignSelf: "center" }}
+                        />
                       </Stack>
-                    )}
-                  </div>
+
+                      {links.length > 0 && (
+                        <Stack
+                          spacing={0.4}
+                          direction="row"
+                          className="project-links"
+                          onPointerDown={(e) => e.stopPropagation()}
+                          alignSelf={{ xs: "flex-start", sm: "auto" }}
+                        >
+                          {links.map((link) => (
+                            <Tooltip key={link.href} title={link.label}>
+                              <IconButton
+                                component="a"
+                                size="small"
+                                href={link.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label={link.label}
+                                className="project-link-icon"
+                              >
+                                {link.icon}
+                              </IconButton>
+                            </Tooltip>
+                          ))}
+                        </Stack>
+                      )}
+                    </Stack>
+
+                    {project.descriptionShort || project.description ? (
+                      <Typography variant="body2" component="p" className="project-description">
+                        {project.descriptionShort || project.description}
+                      </Typography>
+                    ) : null}
+                  </Stack>
 
                   <div className="chip-container project-footer">
                     {project.technologies.split(",").map((tech) => (

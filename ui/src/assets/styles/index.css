@@ -159,6 +159,10 @@ a {
     font-size: 0.95rem !important;
   }
 
+  .MuiTypography-body2 {
+    font-size: 0.8rem !important;
+  }
+
   .MuiTypography-h4 {
     font-size: 1.5rem !important;
   }
@@ -194,12 +198,16 @@ a {
     font-size: 0.85rem !important;
   }
 
+  .MuiTypography-body2 {
+    font-size: 0.8rem !important;
+  }
+
   .MuiTypography-h4 {
     font-size: 1.3rem !important;
   }
 
   .MuiTypography-h5 {
-    font-size: 1rem !important;
+    font-size: 0.85rem !important;
   }
 
   .card {
