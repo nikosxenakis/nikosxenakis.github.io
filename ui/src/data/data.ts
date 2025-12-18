@@ -252,8 +252,9 @@ export const projects: Project[] = [
   {
     name: "1942",
     date: "2015 - 2016",
-    url: "https://www.youtube.com/watch?v=kdICR49vbvg",
-    githubUrl: "https://github.com/nikosxenakis/1942",
+    url: "https://kavros.github.io/1942-Arcade-Game",
+    // videoUrl: "https://www.youtube.com/watch?v=DqQoP_M39lQ",
+    githubUrl: "https://github.com/kavros/1942-Arcade-Game",
     imageUrl:
       "https://m.media-amazon.com/images/M/MV5BYWZkNTMwM2YtZDBkOS00ZTE2LWFmZjctOGRmZWQxNzYyZGEwXkEyXkFqcGc@._V1_.jpg",
     description: `1942, a beloved retro video game from 1984, has been reimagined in this project. Utilizing the original sprite sheets, the game has been recreated with the C++ programming language, leveraging the SDL cross-platform software development library.`,
