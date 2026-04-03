@@ -39,6 +39,17 @@ export const summary =
 
 export const work: WorkExperience[] = [
   {
+    role: "Software Engineer",
+    company: "DFINITY",
+    companyUrl: "https://dfinity.org",
+    location: "Zürich, CH",
+    date: "Feb 2026 - Present",
+    description: [],
+    technologies: "",
+    showOnWebsite: true,
+    logo: "dfinity.png",
+  },
+  {
     role: "Senior Software Engineer",
     roleShort: "Sr. Software Engineer",
     format: "contractor",

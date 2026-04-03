@@ -14,7 +14,6 @@ const Education = () => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     const handleChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
     mediaQuery.addEventListener("change", handleChange);
-    setIsMobile(mediaQuery.matches);
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 

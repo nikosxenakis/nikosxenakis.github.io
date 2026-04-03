@@ -133,7 +133,7 @@ const Chatbot = () => {
         "I had trouble formulating a response. Please try again.";
 
       setMessages([...updatedMessages, { text: botReply, sender: "bot" }]);
-    } catch (err) {
+    } catch {
       setError("Something went wrong reaching the chat service. Please try again in a moment.");
       setMessages([
         ...updatedMessages,

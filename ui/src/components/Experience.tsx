@@ -15,7 +15,6 @@ const Experience = () => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     const handleChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
     mediaQuery.addEventListener("change", handleChange);
-    setIsMobile(mediaQuery.matches);
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
@@ -55,21 +54,21 @@ const Experience = () => {
                 />
               </div>
               <div className="header-col-title">
-                <Typography variant="h5" component="h4">
+                <Typography variant="h6" component="h4">
                   {isMobile && item.roleShort ? item.roleShort : item.role}
                 </Typography>
-                <Typography variant="body2" component="div" className="header-date">
+                <Typography variant="caption" component="div" className="header-date">
                   {item.date}
                 </Typography>
               </div>
               <div className="header-col-meta">
-                <Typography variant="body1" component="div">
+                <Typography variant="body2" component="div">
                   <a href={item.companyUrl} target="_blank" rel="noreferrer">
                     {isMobile && item.companyShort ? item.companyShort : item.company}
                   </a>
                 </Typography>
                 {item.location && (
-                  <Typography variant="body2" component="div" className="header-location">
+                  <Typography variant="caption" component="div" className="header-location">
                     {item.location}
                   </Typography>
                 )}
