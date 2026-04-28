@@ -35,7 +35,7 @@ export const website: Link = {
 export const locationMaps =
   "https://www.google.co.uk/maps/place/%CE%96%CF%85%CF%81%CE%AF%CF%87%CE%B7/@47.3774122,8.4543354,12z/data=!4m15!1m8!3m7!1s0x47900b9749bea219:0xe66e8df1e71fdc03!2zzpbPhc-Bzq_Ph863!3b1!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY!3m5!1s0x47900b9749bea219:0xe66e8df1e71fdc03!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY?entry=ttu";
 export const summary =
-  "Senior Software Engineer with 8+ years of experience building scalable, fault-tolerant full-stack systems using TypeScript, Node.js and Spring Boot. Fast learner with a strong record of leading projects, improving architecture, and delivering high-impact features. Passionate about clean design, automation, and developing future-ready products.";
+  "Senior Software Engineer with 10 years of experience building scalable, fault-tolerant full-stack systems using TypeScript, Node.js and Spring Boot. Fast learner with a strong record of leading projects, improving architecture, and delivering high-impact features. Passionate about clean design, automation, and developing future-ready products.";
 
 export const work: WorkExperience[] = [
   {
@@ -44,8 +44,10 @@ export const work: WorkExperience[] = [
     companyUrl: "https://dfinity.org",
     location: "Zürich, CH",
     date: "Feb 2026 - Present",
-    description: [],
-    technologies: "",
+    description: [
+      `Contributed to open-source SDK TypeScript libraries for the ICP and development for cloud engine products.`,
+    ],
+    technologies: "TypeScript,JavaScript,React,ICP",
     showOnWebsite: true,
     logo: "dfinity.png",
   },
