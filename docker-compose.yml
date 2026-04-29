@@ -1,16 +1,18 @@
 services:
-  react:
+  ui:
     build:
       context: ./ui
       dockerfile: Dockerfile
-    container_name: react
+    container_name: ui
     restart: always
 
-  nginx:
+  proxy:
     image: nginx:latest
-    container_name: nginx
+    container_name: proxy
     restart: always
     ports:
       - "80:80"
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - ui

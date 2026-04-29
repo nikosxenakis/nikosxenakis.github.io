@@ -35,9 +35,3 @@ pnpm-debug.log*
 
 # Optional npm cache directory
 .npm
-
-# Optional eslint cache
-.eslintcache
-
-# Testing
-coverage/

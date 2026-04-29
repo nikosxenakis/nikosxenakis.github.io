@@ -142,11 +142,10 @@ const Projects = () => {
                   <Stack spacing={0.5}>
                     <Stack
                       direction={{ xs: "column", sm: "row" }}
-                      justifyContent="space-between"
-                      alignItems={{ xs: "flex-start", sm: "center" }}
                       spacing={{ xs: 1, sm: 0 }}
+                      sx={{ justifyContent: "space-between", alignItems: { xs: "flex-start", sm: "center" } }}
                     >
-                      <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap">
+                      <Stack direction="row" spacing={1} sx={{ alignItems: "center", flexWrap: "wrap" }}>
                         <Typography variant="h6" component="h4">
                           {project.name}
                         </Typography>
@@ -165,7 +164,7 @@ const Projects = () => {
                           direction="row"
                           className="project-links"
                           onPointerDown={(e) => e.stopPropagation()}
-                          alignSelf={{ xs: "flex-start", sm: "auto" }}
+                          sx={{ alignSelf: { xs: "flex-start", sm: "auto" } }}
                         >
                           {links.map((link) => (
                             <Tooltip key={link.href} title={link.label}>

@@ -1,21 +1,23 @@
-FROM node:22.21-alpine3.23 AS build
+FROM node:25-alpine3.23 AS build
 
 WORKDIR /app
 
-# Copy dependency files
-COPY package*.json yarn.lock ./
+# Install pnpm
+RUN npm install -g pnpm@10.33.2
 
-# Install dependencies and clean cache
-RUN yarn install --frozen-lockfile --production=false && \
-    yarn cache clean
+# Copy dependency files
+COPY package.json pnpm-lock.yaml ./
+
+# Install dependencies
+RUN pnpm install --frozen-lockfile
 
 # Copy source files
 COPY . .
 
 # Build production bundle
-RUN yarn build:prod
+RUN pnpm run build:prod
 
-FROM nginx:1.29-alpine AS production
+FROM nginx:alpine-slim AS production
 
 # Update packages to fix vulnerabilities
 RUN apk update && \
