@@ -37,16 +37,20 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 22
-          cache: yarn
-          cache-dependency-path: ui/yarn.lock
+          node-version: 25
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.2
+          run_install: false
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
         working-directory: ./ui
 
       - name: Build the project
-        run: yarn build:prod
+        run: pnpm run build:prod
         working-directory: ./ui
         env:
           VITE_GROQ_API_KEY: ${{ secrets.VITE_GROQ_API_KEY }}
