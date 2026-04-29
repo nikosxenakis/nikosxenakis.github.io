@@ -45,7 +45,7 @@ export const work: WorkExperience[] = [
     location: "Zürich, CH",
     date: "Feb 2026 - Present",
     description: [
-      `Contributed to open-source SDK TypeScript libraries for the ICP and development for cloud engine products.`,
+      `Contributing to open-source SDK TypeScript libraries for the ICP and development for cloud engine products.`,
     ],
     technologies: "TypeScript,JavaScript,React,ICP",
     showOnWebsite: true,
