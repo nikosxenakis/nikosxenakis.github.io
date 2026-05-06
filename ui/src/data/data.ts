@@ -224,13 +224,13 @@ export const education = [
 export const projects: Project[] = [
   {
     name: "Home Server",
-    date: "2025",
-    imageUrl: "https://img.fruugo.com/product/4/63/1949102634_max.jpg",
+    date: "2025-2026",
+    imageUrl: "https://www.proxmox.com/images/proxmox/Proxmox_logo_standard_hex_400px.png",
     description:
-      "Personal Beelink MINI S12 running Linux with Traefik in front of Docker/Docker Compose services (qBittorrent, Jellyfin, Home Assistant, Portainer, Uptime Kuma, Immich, cockpit) plus Wireguard VPN and Authentik. Nightly rsync backups to a 2 TB SanDisk drive; media/files shared over SMB; certs stored under ~/source/home-server/traefik/certs; no RAID yet.",
+      "Low-power HP Elitedesk running Proxmox VE, hosting multiple VMs and LXC containers. Services include Traefik as a reverse proxy, Wireguard VPN for secure remote access, SMB for file sharing, and ZFS for reliable storage.",
     descriptionShort:
-      "Beelink MINI S12 home server on Linux with Traefik, Dockerized apps, Wireguard VPN, Authentik, and nightly rsync backups.",
-    technologies: "self-hosted,Docker,Wireguard,Authentik,SMB",
+      "HP Elitedesk home server on Proxmox VE with Traefik, VMs, LXC containers, Wireguard VPN, SMB, and ZFS storage.",
+    technologies: "Proxmox,Traefik,Wireguard,SMB,ZFS,self-hosted,LXC",
   },
   {
     name: "Georgioupolis Transfers",
