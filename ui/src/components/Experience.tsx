@@ -19,7 +19,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <div className="section">
+    <div className="section section-top">
       <div className="section-title">
         <Typography variant="h3" component="h3">
           Work Experience
