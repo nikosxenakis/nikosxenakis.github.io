@@ -276,13 +276,13 @@ export const projects: Project[] = [
   },
   {
     name: "Recipes",
-    date: "2024",
-    url: "https://nikosxenakis.github.io/recipes/",
+    date: "2024 - Present",
+    url: "https://recipes-nikosxenakis.vercel.app/",
     githubUrl: "https://github.com/nikosxenakis/recipes",
-    imageUrl: "https://nikosxenakis.github.io/recipes/favicon.ico",
-    description: `A recipe website to manage and view cooking recipes.`,
+    imageUrl: "https://recipes-nikosxenakis.vercel.app/favicon.ico",
+    description: `A recipe website to manage and view cooking recipes, deployed on Vercel.`,
     descriptionShort: `A recipe website to manage and view cooking recipes.`,
-    technologies: "React,TypeScript,Node.js",
+    technologies: "React,TypeScript,Node.js,Vercel",
   },
 ];
 
