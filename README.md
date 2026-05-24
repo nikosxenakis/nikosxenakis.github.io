@@ -1,6 +1,6 @@
 # PersonalWebsite
 
-A personal website built to showcase projects, experience, and portfolio. The site includes an AI-powered chatbot that uses [Groq](https://console.groq.com/) as the LLM provider (model: `llama-3.1-8b-instant`) to answer questions about Nikolaos Xenakis.
+A personal website built to showcase projects, experience, and portfolio. The site includes an AI-powered chatbot that uses [Google Gemini](https://ai.google.dev/) as the LLM provider (model: `gemini-2.5-flash`) to answer questions about Nikolaos Xenakis.
 
 ## Installation
 
@@ -23,10 +23,10 @@ pnpm start
 Create a `.env` file in the `ui/` directory with the following:
 
 ```
-VITE_GROQ_API_KEY=your_groq_api_key_here
+VITE_GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-Get a free API key at [console.groq.com](https://console.groq.com/).
+Get a free API key at [Google AI Studio](https://aistudio.google.com/app/apikey).
 
 ## Build
 
