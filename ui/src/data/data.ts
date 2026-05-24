@@ -233,15 +233,6 @@ export const projects: Project[] = [
     technologies: "Proxmox,Traefik,Wireguard,SMB,ZFS,self-hosted,LXC",
   },
   {
-    name: "Georgioupolis Transfers",
-    date: "2017",
-    url: "https://georgioupolis-taxi.firebaseapp.com/",
-    githubUrl: "https://github.com/nikosxenakis/georgioupolis-transfers",
-    imageUrl: "https://georgioupolis-taxi.firebaseapp.com/assets/images/logo.jpg",
-    description: "Website for booking local transfer and tours.",
-    technologies: "Typescript,Angular,Node.js",
-  },
-  {
     name: "ImagInLexis",
     date: "2016",
     githubUrl: "https://github.com/nikosxenakis/ImagInLexis",
