@@ -53,7 +53,7 @@ jobs:
         run: pnpm run build:prod
         working-directory: ./ui
         env:
-          VITE_GROQ_API_KEY: ${{ secrets.VITE_GROQ_API_KEY }}
+          VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
