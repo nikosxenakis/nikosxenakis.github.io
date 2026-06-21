@@ -222,7 +222,7 @@ export const education = [
     dissertation:
       "ICE Editor is a visual programming language for end-user programmers for IOT devices. ICE Editor is a web client application written in JavaScript.",
     scholarship:
-      "Awarded the `Highly Skilled Workforce Scholarship`, covering full MSc tuition. Awarded the Stelios Orfanoudakis Scholarship for three years as a top-three BSc student annually.",
+      "Awarded the `Highly Skilled Workforce Scholarship`, covering full BSc tuition. Awarded the Stelios Orfanoudakis Scholarship for three years as a top-three BSc student annually.",
     showOnWebsite: true,
     logo: "uoc.jpg",
   },
