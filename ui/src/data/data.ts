@@ -45,7 +45,7 @@ export const work: WorkExperience[] = [
     location: "Zürich, CH",
     date: "Jun 2026 - Present",
     description: [],
-    technologies: "TypeScript,Python,AI,LLMs",
+    technologies: "TypeScript,LLMs,GCP",
     showOnWebsite: true,
     logo: "mentiora.png",
   },
