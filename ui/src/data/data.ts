@@ -39,11 +39,24 @@ export const summary =
 
 export const work: WorkExperience[] = [
   {
+    role: "Senior AI Engineer",
+    company: "Mentiora.ai",
+    companyUrl: "https://mentiora.ai",
+    location: "Zürich, CH",
+    date: "Jun 2026 - Present",
+    description: [
+      `Building AI-powered products and systems at Mentiora.ai.`,
+    ],
+    technologies: "TypeScript,Python,AI,LLMs",
+    showOnWebsite: true,
+    logo: "mentiora.png",
+  },
+  {
     role: "Software Engineer",
     company: "DFINITY",
     companyUrl: "https://dfinity.org",
     location: "Zürich, CH",
-    date: "Feb 2026 - Present",
+    date: "Feb 2026 - May 2026",
     description: [
       `Contributing to open-source SDK TypeScript libraries for the ICP and development for cloud engine products.`,
     ],
