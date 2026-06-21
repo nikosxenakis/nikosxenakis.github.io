@@ -44,9 +44,7 @@ export const work: WorkExperience[] = [
     companyUrl: "https://mentiora.ai",
     location: "Zürich, CH",
     date: "Jun 2026 - Present",
-    description: [
-      `Building AI-powered products and systems at Mentiora.ai.`,
-    ],
+    description: [],
     technologies: "TypeScript,Python,AI,LLMs",
     showOnWebsite: true,
     logo: "mentiora.png",
