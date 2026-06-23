@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "@/assets/styles/chatbot.css";
-import { prompt } from "@/data/prompt";
 import { RiRefreshLine, RiRobot2Line, RiSubtractLine } from "react-icons/ri";
 
 type ChatMessage = { text: string; sender: "user" | "bot" };
-
-type GeminiPart = { text?: string };
-type GeminiResponse = {
-  candidates?: { content?: { parts?: GeminiPart[] } }[];
-};
 
 const STORAGE_KEY = "nikos-chatbot-messages";
 
@@ -67,20 +61,6 @@ const Chatbot = () => {
     setIsOpen(!isOpen);
   };
 
-  const buildPayload = (question: string) => ({
-    systemInstruction: { parts: [{ text: prompt }] },
-    contents: [
-      ...messages.map((message) => ({
-        role: message.sender === "user" ? "user" : "model",
-        parts: [{ text: message.text }],
-      })),
-      { role: "user", parts: [{ text: question }] },
-    ],
-    generationConfig: {
-      temperature: 0.3,
-      maxOutputTokens: 150,
-    },
-  });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -112,32 +92,20 @@ const Chatbot = () => {
     setIsLoading(true);
     setError(null);
 
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-
-    if (!apiKey) {
-      setError("Missing VITE_GEMINI_API_KEY. Add it to your environment to enable chat.");
-      setIsLoading(false);
-      return;
-    }
-
     try {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
-      const response = await fetch(url, {
+      const apiBase = (import.meta.env.VITE_API_URL as string | undefined) ?? "";
+      const response = await fetch(`${apiBase}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(buildPayload(userMessage.text)),
+        body: JSON.stringify({ messages, question: userMessage.text }),
       });
 
       if (!response.ok) {
         throw new Error(`Request failed: ${response.status}`);
       }
 
-      const data = (await response.json()) as GeminiResponse;
-      const botReply =
-        data.candidates?.[0]?.content?.parts
-          ?.map((part) => part.text ?? "")
-          .join("")
-          .trim() || "I had trouble formulating a response. Please try again.";
+      const data = (await response.json()) as { reply: string };
+      const botReply = data.reply || "I had trouble formulating a response. Please try again.";
 
       setMessages([...updatedMessages, { text: botReply, sender: "bot" }]);
     } catch {

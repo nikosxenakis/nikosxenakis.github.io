@@ -1,0 +1,10 @@
+{
+  "framework": null,
+  "buildCommand": null,
+  "outputDirectory": null,
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "@vercel/node@5.8.19"
+    }
+  }
+}

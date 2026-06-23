@@ -1,0 +1,10 @@
+{
+  "name": "nikosxenakis-api",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "devDependencies": {
+    "@vercel/node": "^5.8.19"
+  }
+}
