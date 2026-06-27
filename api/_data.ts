@@ -70,8 +70,12 @@ export const work: WorkExperience[] = [
     company: "Mentiora.ai",
     location: "Zürich, CH",
     date: "Jun 2026 - Present",
-    description: [],
-    technologies: "TypeScript,LLMs,GCP",
+    description: [
+      "Senior engineer responsible for the benchmarking product, owning the lifecycle from architecture through delivery.",
+      "Architecting an LLM evaluation platform leveraging LLMs-as-judges for automated output scoring, prompt and model optimisation across client deployments.",
+      "Leading client communication and requirements, translating needs into technical specifications.",
+    ],
+    technologies: "TypeScript,LLMs,GCP,React",
   },
   {
     role: "Software Engineer",
