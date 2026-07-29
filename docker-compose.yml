@@ -7,7 +7,7 @@ services:
     restart: always
 
   proxy:
-    image: nginx:latest
+    image: nginx:1.31.3
     container_name: proxy
     restart: always
     ports:
