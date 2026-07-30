@@ -1,5 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { systemPrompt } from "./_prompt.js";
+import { checkRateLimit, getClientKey, MAX_REQUESTS_PER_WINDOW } from "./_rateLimit.js";
+import { MAX_QUESTION_LENGTH, sanitiseHistory } from "./_validation.js";
 
 const GEMINI_MODEL = "gemini-2.5-flash";
 
@@ -9,7 +11,6 @@ const ALLOWED_ORIGINS = [
   "http://localhost",
 ];
 
-type ChatMessage = { text: string; sender: "user" | "bot" };
 type GeminiPart = { text?: string };
 type GeminiResponse = {
   candidates?: { content?: { parts?: GeminiPart[] } }[];
@@ -40,9 +41,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
 
+  const limit = checkRateLimit(getClientKey(req.headers));
+  res.setHeader("X-RateLimit-Limit", String(MAX_REQUESTS_PER_WINDOW));
+  res.setHeader("X-RateLimit-Remaining", String(limit.remaining));
+
+  if (!limit.allowed) {
+    res.setHeader("Retry-After", String(limit.retryAfterSeconds));
+    res.status(429).json({ error: "Too many requests. Please try again shortly." });
+    return;
+  }
+
   const { messages, question } = req.body as {
-    messages?: ChatMessage[];
-    question?: string;
+    messages?: unknown;
+    question?: unknown;
   };
 
   if (!question || typeof question !== "string" || question.trim() === "") {
@@ -50,7 +61,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
 
-  const history: ChatMessage[] = Array.isArray(messages) ? messages : [];
+  if (question.length > MAX_QUESTION_LENGTH) {
+    res
+      .status(400)
+      .json({ error: `question must be ${MAX_QUESTION_LENGTH} characters or fewer` });
+    return;
+  }
+
+  const history = sanitiseHistory(messages);
 
   const payload = {
     systemInstruction: { parts: [{ text: systemPrompt }] },
