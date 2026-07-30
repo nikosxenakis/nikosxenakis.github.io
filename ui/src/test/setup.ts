@@ -3,29 +3,43 @@ import { afterEach, vi } from "vitest";
 import { cleanup } from "@testing-library/react";
 
 /**
- * jsdom 30 under Vitest 4 does not expose window.localStorage, even with a
- * non-opaque document origin, and Node's own experimental localStorage needs a
- * CLI flag. An in-memory Storage keeps the persistence paths testable.
+ * Storage is installed unconditionally rather than only when it looks missing.
+ * jsdom 30 under Vitest 4 exposes no window.localStorage at all, while some Node
+ * versions expose a stub that is present but has no working methods, so a
+ * truthiness guard passes and then `clear()` throws. Always owning the
+ * implementation keeps tests identical across local and CI runtimes.
  */
-if (!window.localStorage) {
-  const store = new Map<string, string>();
-  const storage: Storage = {
-    get length() {
-      return store.size;
-    },
-    clear: () => store.clear(),
-    getItem: (key: string) => (store.has(key) ? store.get(key)! : null),
-    key: (index: number) => [...store.keys()][index] ?? null,
-    removeItem: (key: string) => {
-      store.delete(key);
-    },
-    setItem: (key: string, value: string) => {
-      store.set(key, String(value));
-    },
-  };
+const store = new Map<string, string>();
+const memoryStorage: Storage = {
+  get length() {
+    return store.size;
+  },
+  clear: () => store.clear(),
+  getItem: (key: string) => (store.has(key) ? store.get(key)! : null),
+  key: (index: number) => [...store.keys()][index] ?? null,
+  removeItem: (key: string) => {
+    store.delete(key);
+  },
+  setItem: (key: string, value: string) => {
+    store.set(key, String(value));
+  },
+};
 
-  Object.defineProperty(window, "localStorage", { value: storage, configurable: true });
-  Object.defineProperty(globalThis, "localStorage", { value: storage, configurable: true });
+for (const target of [globalThis, window]) {
+  try {
+    Object.defineProperty(target, "localStorage", {
+      value: memoryStorage,
+      configurable: true,
+      writable: true,
+    });
+  } catch {
+    // A non-configurable localStorage is reported by the assertion below,
+    // rather than surfacing as a confusing failure inside every test.
+  }
+}
+
+if (typeof localStorage?.clear !== "function") {
+  throw new Error("Test setup could not install a usable localStorage");
 }
 
 // jsdom implements neither of these, and several components depend on them.
