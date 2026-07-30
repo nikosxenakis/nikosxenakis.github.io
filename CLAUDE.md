@@ -32,6 +32,20 @@ pnpm run build    # tsc -b && vite build
 
 CI (`.github/workflows/ci.yml`) runs lint, typecheck, test, build on every PR and push to main.
 
+### Keep the suite small
+
+The bar for a test here is **"would this have caught a real bug?"**, not coverage. A lean
+suite is a deliberate trade-off: shipping quickly matters more than testing everything.
+
+- Write tests for regressions (a bug that actually happened), for logic with edge cases, and
+  for behaviour that is easy to break silently. Nothing else.
+- Do not test what the JSX plainly says. Asserting that a component renders the label you
+  just typed into it proves nothing and costs time on every run.
+- Prefer one test making several related assertions over five near-identical tests.
+- Extract logic worth testing into a plain function rather than testing it through the DOM.
+- Adding a test file is more expensive than adding a test: each one spins up its own jsdom
+  environment. Fold new cases into an existing file where they fit.
+
 ### Testing quirks worth knowing
 
 - `vitest.config.ts` is separate from `vite.config.ts`. Test config lives only in the former.
@@ -92,6 +106,17 @@ faded the text along with the background.
   there**, or the chat silently fails from it.
 
 ## Conventions
+
+**Keep comments short.** Match the density of the surrounding code, which is mostly
+uncommented. Specifically:
+
+- One line where possible. Multi-line block comments only for a constraint that genuinely
+  cannot be inferred from the code.
+- Explain *why*, never *what*. If the code says it, the comment is noise.
+- No bug narratives. "This used to return X because Y" belongs in the commit message or a
+  test name, not above the fix.
+- Comment the non-obvious: an upstream quirk, a deliberate trade-off, a rule that will look
+  wrong to the next reader. Skip everything else.
 
 - Accessibility is load-bearing here and regressions are easy: interactive elements must be
   real `<button>`/`<a>`, not click-handled `<div>`/`<img>`. There is exactly one `<h1>` (the
