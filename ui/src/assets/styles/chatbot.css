@@ -57,7 +57,7 @@
   /* Hiding the closed panel keeps its input and buttons out of the tab order. */
   visibility: hidden;
   transition: transform 0.3s ease-in-out, visibility 0s linear 0.3s;
-  z-index: 1000;
+  z-index: 1001;
   overflow: hidden;
 }
 
@@ -115,6 +115,8 @@
   flex-grow: 1;
   padding: 18px 16px;
   overflow-y: auto;
+  /* Reaching either end of the transcript must not scroll the page behind it. */
+  overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -239,36 +241,52 @@
 }
 
 @media (max-width: 700px) {
+  /* 44px is the minimum comfortable touch target. */
   .chatbot-fab {
     bottom: 88px;
     right: 24px;
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     border-radius: 14px;
   }
 
   .chatbot-fab-icon {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
   }
 
+  /*
+   * Full-screen sheet rather than a floating card: on a phone the keyboard
+   * takes most of the screen, and a small panel ends up squeezed behind it.
+   * Height follows the visual viewport so the input stays above the keyboard.
+   */
   .chatbot-container {
-    right: 16px;
-    left: 16px;
-    width: auto;
-    height: 70vh;
-    bottom: 60px;
-    border-radius: 14px;
-    transform: translateX(0) scale(0);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: var(--chat-visual-height, 100dvh);
+    max-height: 100dvh;
+    border-radius: 0;
+    border: none;
+    transform: translateX(0) translateY(100%);
     transform-origin: bottom center;
   }
 
   .chatbot-container.open {
-    transform: translateX(0) scale(1);
+    transform: translateX(0) translateY(0);
   }
 
+  /* The sheet covers the launcher while open. */
+  .chatbot-fab {
+    z-index: 999;
+  }
+
+  /* Full-screen means the sheet reaches the notch and the home indicator. */
   .chatbot-header {
     padding: 10px 12px;
+    padding-top: calc(10px + env(safe-area-inset-top));
   }
 
   .chatbot-messages {
@@ -277,6 +295,7 @@
 
   .chatbot-input {
     padding: 10px 10px 12px 10px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
   }
 
   .chatbot-input button {

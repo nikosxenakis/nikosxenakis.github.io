@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import "@/assets/styles/chatbot.css";
 import { RiRefreshLine, RiRobot2Line, RiSubtractLine } from "react-icons/ri";
 
@@ -32,6 +33,7 @@ const Chatbot = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const panelRef = useRef<HTMLDivElement>(null);
   const messagesRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const fabRef = useRef<HTMLButtonElement>(null);
@@ -95,6 +97,47 @@ const Chatbot = () => {
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handlePointerDown = (event: Event) => {
+      const target = event.target as Node;
+      // The launcher toggles itself; closing here too would reopen instantly.
+      if (panelRef.current?.contains(target) || fabRef.current?.contains(target)) return;
+      setIsOpen(false);
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [isOpen]);
+
+  /*
+   * On phones the panel is a full-screen sheet, and an open keyboard shrinks the
+   * visual viewport without changing dvh. Tracking it keeps the input above the
+   * keyboard instead of behind it.
+   */
+  useEffect(() => {
+    const viewport = window.visualViewport;
+    if (!isOpen || !viewport) return;
+
+    const apply = () => {
+      document.documentElement.style.setProperty(
+        "--chat-visual-height",
+        `${viewport.height}px`
+      );
+    };
+
+    apply();
+    viewport.addEventListener("resize", apply);
+    viewport.addEventListener("scroll", apply);
+
+    return () => {
+      viewport.removeEventListener("resize", apply);
+      viewport.removeEventListener("scroll", apply);
+      document.documentElement.style.removeProperty("--chat-visual-height");
+    };
   }, [isOpen]);
 
   useEffect(() => {
@@ -195,9 +238,18 @@ const Chatbot = () => {
     handleSendMessage();
   };
 
-  return (
-    <div>
-      <div className={`chatbot-container ${isOpen ? "open" : ""}`} aria-live="polite">
+  /*
+   * Portalled to body because the launcher sits inside .socialMediaIconsRow,
+   * which is animated with a transform. A transformed ancestor becomes the
+   * containing block for position:fixed children, so the panel was anchored to
+   * the intro section instead of the viewport.
+   */
+  const panel = (
+    <div
+      ref={panelRef}
+      className={`chatbot-container ${isOpen ? "open" : ""}`}
+      aria-live="polite"
+    >
         <div className="chatbot-header">
           <p className="chatbot-title">Chat with me</p>
           <div className="chatbot-actions">
@@ -265,8 +317,13 @@ const Chatbot = () => {
           <button type="submit" disabled={isLoading || inputValue.trim() === ""}>
             {isLoading ? "..." : "Send"}
           </button>
-        </form>
-      </div>
+      </form>
+    </div>
+  );
+
+  return (
+    <div>
+      {createPortal(panel, document.body)}
       <button
         ref={fabRef}
         type="button"
