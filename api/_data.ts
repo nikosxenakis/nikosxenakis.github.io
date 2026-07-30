@@ -61,8 +61,18 @@ export const website: Link = {
   link: "https://nikosxenakis.github.io",
 };
 
-export const summary =
-  "Senior Software Engineer with 10 years of experience building scalable, fault-tolerant full-stack systems using TypeScript, Node.js and Spring Boot. Fast learner with a strong record of leading projects, improving architecture, and delivering high-impact features. Passionate about clean design, automation, and developing future-ready products.";
+/**
+ * Mirrors careerStartYear in ui/src/data/data.ts. This file is a standalone
+ * copy because the Vercel function cannot resolve the UI's "@/" alias, so the
+ * figure is computed rather than hardcoded: a literal "10 years" here would
+ * silently disagree with the website every January.
+ *
+ * ui/src/data/dataSync.test.ts fails if the two copies drift apart.
+ */
+export const careerStartYear = 2016;
+export const yearsOfExperience = new Date().getFullYear() - careerStartYear;
+
+export const summary = `Senior Software Engineer with ${yearsOfExperience} years of experience building scalable, fault-tolerant full-stack systems using TypeScript, Node.js and Spring Boot. Fast learner with a strong record of leading projects, improving architecture, and delivering high-impact features. Passionate about clean design, automation, and developing future-ready products.`;
 
 export const work: WorkExperience[] = [
   {
@@ -127,7 +137,7 @@ export const work: WorkExperience[] = [
     role: "Software Engineer",
     company: "SeeByte",
     location: "Edinburgh, UK",
-    date: "Sept 2019 - Aug 2021",
+    date: "Sep 2019 - Aug 2021",
     description: [
       "Contributed to the development of Mission Planning and Analysis software, supporting 6 Unmanned Underwater Vehicle (UUV) systems from various vendors.",
       "Demonstrated products in real-world operational scenarios, resulting at 100% contracts extension.",
@@ -193,6 +203,13 @@ export const projects: Project[] = [
     description:
       "A web-based platform designed for end-users to craft straightforward applets for IoT devices. This intuitive editor minimizes both compile and runtime errors, offering a drag-and-drop interface alongside value editing capabilities.",
     technologies: "HTML/CSS/JS,Canvas.js",
+  },
+  {
+    name: "1942",
+    date: "2015 - 2016",
+    description:
+      "1942, a beloved retro video game from 1984, has been reimagined in this project. Utilizing the original sprite sheets, the game has been recreated with the C++ programming language, leveraging the SDL cross-platform software development library.",
+    technologies: "C++,SDL",
   },
   {
     name: "Recipes",
