@@ -2,19 +2,18 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { systemPrompt } from "./_prompt.js";
 import { checkRateLimit, getClientKey, MAX_REQUESTS_PER_WINDOW } from "./_rateLimit.js";
 import { MAX_QUESTION_LENGTH, sanitiseHistory } from "./_validation.js";
+import { extractReply, FALLBACK_REPLY, type GeminiResponse } from "./_reply.js";
 
 const GEMINI_MODEL = "gemini-2.5-flash";
+
+/** Room for a few sentences or a short bullet list, with the answer alone. */
+const MAX_OUTPUT_TOKENS = 400;
 
 const ALLOWED_ORIGINS = [
   "https://nikosxenakis.github.io",
   "https://nikosxenakis.org",
   "http://localhost",
 ];
-
-type GeminiPart = { text?: string };
-type GeminiResponse = {
-  candidates?: { content?: { parts?: GeminiPart[] } }[];
-};
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const origin = String(req.headers.origin ?? "");
@@ -81,7 +80,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     ],
     generationConfig: {
       temperature: 0.3,
-      maxOutputTokens: 150,
+      // gemini-2.5-flash thinks by default and charges it to maxOutputTokens,
+      // starving the answer. Thinking buys nothing for prompt lookups.
+      thinkingConfig: { thinkingBudget: 0 },
+      maxOutputTokens: MAX_OUTPUT_TOKENS,
     },
   };
 
@@ -104,13 +106,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const data = (await response.json()) as GeminiResponse;
-    const reply =
-      data.candidates?.[0]?.content?.parts
-        ?.map((p) => p.text ?? "")
-        .join("")
-        .trim() ?? "";
+    const { reply, truncated, finishReason } = extractReply(data);
 
-    res.json({ reply: reply || "I had trouble formulating a response. Please try again." });
+    // Surfaces a too-small token budget in the function logs, not just in chat.
+    if (truncated) {
+      console.warn(
+        `Gemini hit MAX_TOKENS with maxOutputTokens=${MAX_OUTPUT_TOKENS}; reply was ${reply.length} chars`
+      );
+    } else if (finishReason && finishReason !== "STOP") {
+      console.warn(`Gemini finished with reason ${finishReason}`);
+    }
+
+    res.json({ reply: reply || FALLBACK_REPLY });
   } catch (err) {
     console.error("Chat request failed:", err);
     res.status(502).json({ error: "Failed to reach the AI service" });
