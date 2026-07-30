@@ -6,28 +6,16 @@ import LanguageIcon from "@mui/icons-material/Language";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { projects } from "@/data/data";
+import { byDateDesc } from "@/utils/projectDate";
 import "@/assets/styles/projects.css";
 
 const Projects = () => {
-  const sortByDateDesc = (value: string) => {
-    const startPart = value.split("-")[0].trim();
-    const parsed = Date.parse(startPart);
-
-    if (!Number.isNaN(parsed)) {
-      return parsed;
-    }
-
-    const yearMatch = value.match(/(20\\d{2}|19\\d{2})/);
-    return yearMatch ? Date.parse(`${yearMatch[0]}-01-01`) : 0;
-  };
-
-  const projectsSorted = [...projects].sort(
-    (a, b) => sortByDateDesc(b.date) - sortByDateDesc(a.date)
-  );
+  const projectsSorted = [...projects].sort(byDateDesc);
 
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
 
   const updateScrollState = () => {
@@ -35,6 +23,9 @@ const Projects = () => {
     if (!node) return;
     setCanScrollLeft(node.scrollLeft > 8);
     setCanScrollRight(node.scrollLeft + node.clientWidth < node.scrollWidth - 8);
+    // When every card already fits there is nothing to page through, so the
+    // arrows are hidden rather than shown permanently disabled.
+    setHasOverflow(node.scrollWidth > node.clientWidth + 1);
   };
 
   const scrollByAmount = (direction: "left" | "right") => {
@@ -87,16 +78,23 @@ const Projects = () => {
     const handleResize = () => updateScrollState();
     window.addEventListener("resize", handleResize);
 
+    // Catches width changes the window resize event misses, such as late font
+    // or image loads reflowing the cards.
+    const observer =
+      typeof ResizeObserver === "undefined" ? null : new ResizeObserver(handleResize);
+    observer?.observe(node);
+
     return () => {
       node.removeEventListener("scroll", updateScrollState);
       window.removeEventListener("resize", handleResize);
+      observer?.disconnect();
     };
   }, []);
 
   return (
     <div className="section">
       <div className="section-title">
-        <Typography variant="h3" component="h3">
+        <Typography variant="h3" component="h2">
           Projects
         </Typography>
         <Typography variant="body1" component="span">
@@ -105,15 +103,17 @@ const Projects = () => {
       </div>
 
       <div className="projects-wrapper">
-        <IconButton
-          className="projects-nav-btn"
-          onClick={() => scrollByAmount("left")}
-          disabled={!canScrollLeft}
-          aria-label="Scroll projects left"
-          size="small"
-        >
-          <ArrowBackIosNewIcon fontSize="inherit" />
-        </IconButton>
+        {hasOverflow && (
+          <IconButton
+            className="projects-nav-btn"
+            onClick={() => scrollByAmount("left")}
+            disabled={!canScrollLeft}
+            aria-label="Scroll projects left"
+            size="small"
+          >
+            <ArrowBackIosNewIcon fontSize="inherit" />
+          </IconButton>
+        )}
 
         <div
           className={`projects-scroller ${isDragging ? "dragging" : ""}`}
@@ -127,7 +127,7 @@ const Projects = () => {
           {projectsSorted.map((project) => {
             const links = [
               project.url ? { href: project.url, label: "Website", icon: <LanguageIcon /> } : null,
-              project.githubUrl
+              project.githubUrl && !project.isPrivate
                 ? { href: project.githubUrl, label: "GitHub", icon: <GitHubIcon /> }
                 : null,
             ].filter(Boolean) as { href: string; label: string; icon: JSX.Element }[];
@@ -135,7 +135,15 @@ const Projects = () => {
             return (
               <Paper key={project.name} className="card project-card" tabIndex={0}>
                 <div className="project-image-wrapper">
-                  <img src={project.imageUrl} alt={project.name} className="project-image" />
+                  <img
+                    src={project.imageUrl}
+                    alt={project.name}
+                    className="project-image"
+                    width={320}
+                    height={180}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
 
                 <div className="project-content">
@@ -146,7 +154,7 @@ const Projects = () => {
                       sx={{ justifyContent: "space-between", alignItems: { xs: "flex-start", sm: "center" } }}
                     >
                       <Stack direction="row" spacing={1} sx={{ alignItems: "center", flexWrap: "wrap" }}>
-                        <Typography variant="h6" component="h4">
+                        <Typography variant="h6" component="h3">
                           {project.name}
                         </Typography>
                         <Chip
@@ -209,15 +217,17 @@ const Projects = () => {
           })}
         </div>
 
-        <IconButton
-          className="projects-nav-btn"
-          onClick={() => scrollByAmount("right")}
-          disabled={!canScrollRight}
-          aria-label="Scroll projects right"
-          size="small"
-        >
-          <ArrowForwardIosIcon fontSize="inherit" />
-        </IconButton>
+        {hasOverflow && (
+          <IconButton
+            className="projects-nav-btn"
+            onClick={() => scrollByAmount("right")}
+            disabled={!canScrollRight}
+            aria-label="Scroll projects right"
+            size="small"
+          >
+            <ArrowForwardIosIcon fontSize="inherit" />
+          </IconButton>
+        )}
       </div>
     </div>
   );
