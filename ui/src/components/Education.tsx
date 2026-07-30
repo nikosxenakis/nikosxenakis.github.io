@@ -20,7 +20,7 @@ const Education = () => {
   return (
     <div className="section">
       <div className="section-title">
-        <Typography variant="h3" component="h3">
+        <Typography variant="h3" component="h2">
           Education
         </Typography>
       </div>
@@ -35,11 +35,15 @@ const Education = () => {
                     src={`/assets/images/companies/${item.logo}`}
                     className="education-logo"
                     alt={item.company}
+                    width={48}
+                    height={48}
+                    loading="lazy"
+                    decoding="async"
                   />
                 )}
               </div>
               <div className="header-col-title">
-                <Typography variant="h5" component="h4">
+                <Typography variant="h5" component="h3">
                   {item.role}
                 </Typography>
                 <Typography variant="body2" component="div" className="header-date">

@@ -10,7 +10,12 @@ const Skills = () => {
       <img
         src={`/assets/images/flags/${lang.name.toLowerCase()}.png`}
         alt={lang.name}
-        style={{ width: "32px", height: "32px" }}
+        width={32}
+        height={32}
+        loading="lazy"
+        decoding="async"
+        // Flags are 2:1, so contain keeps them from being squashed into the square box.
+        style={{ width: "32px", height: "32px", objectFit: "contain" }}
       />
     ),
   }));
@@ -23,7 +28,7 @@ const Skills = () => {
   return (
     <div className="section">
       <div className="section-title">
-        <Typography variant="h3" component="h3">
+        <Typography variant="h3" component="h2">
           Skills & Interests
         </Typography>
       </div>
@@ -31,7 +36,7 @@ const Skills = () => {
       <div className="cardContainer">
         <Paper className="card">
           <div className="skills-section">
-            <Typography variant="h5" component="h4" className="skills-subtitle">
+            <Typography variant="h5" component="h3" className="skills-subtitle">
               Languages
             </Typography>
             <div className="skills-list">
@@ -39,10 +44,10 @@ const Skills = () => {
                 <div key={language.name} className="skill-item">
                   <div className="skill-icon">{language.icon}</div>
                   <div className="skill-details">
-                    <Typography variant="body1" component="h4" className="skill-name">
+                    <Typography variant="body1" component="p" className="skill-name">
                       {language.name}
                     </Typography>
-                    <Typography variant="body2" component="h4" className="skill-level">
+                    <Typography variant="body2" component="p" className="skill-level">
                       {language.level}
                     </Typography>
                   </div>
@@ -54,7 +59,7 @@ const Skills = () => {
 
         <Paper className="card">
           <div className="skills-section">
-            <Typography variant="h5" component="h4" className="skills-subtitle">
+            <Typography variant="h5" component="h3" className="skills-subtitle">
               Interests
             </Typography>
             <div className="skills-list">
@@ -62,7 +67,7 @@ const Skills = () => {
                 <div key={interest.name} className="skill-item">
                   <div className="skill-icon">{interest.icon}</div>
                   <div className="skill-details">
-                    <Typography variant="body1" component="h4" className="skill-name">
+                    <Typography variant="body1" component="p" className="skill-name">
                       {interest.name}
                     </Typography>
                   </div>

@@ -44,14 +44,21 @@
   gap: 30px;
 }
 
+.social-link {
+  display: inline-flex;
+  border-radius: 8px;
+}
+
 .icon-social-media {
   width: 42px;
   height: 42px;
   cursor: pointer;
   position: relative;
+  display: block;
 }
 
-.icon-social-media:hover {
+.social-link:hover .icon-social-media,
+.social-link:focus-visible .icon-social-media {
   transform: scale(1.2);
   transition: transform 0.2s cubic-bezier(0.28, 0.84, 0.42, 1);
 }

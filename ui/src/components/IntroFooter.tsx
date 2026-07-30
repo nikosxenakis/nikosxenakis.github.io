@@ -1,10 +1,15 @@
-import React from "react";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import Typography from "@mui/material/Typography";
 import { email, location, gitHub, linkedIn, stackOverflow } from "@/data/data";
 import "@/assets/styles/introFooter.css";
 import Chatbot from "./Chatbot";
+
+const socialLinks = [
+  { label: "GitHub", href: gitHub.link, icon: "github.png" },
+  { label: "LinkedIn", href: linkedIn.link, icon: "linkedin2.png" },
+  { label: "Stack Overflow", href: stackOverflow.link, icon: "stackoverflow.png" },
+];
 
 const IntroFooter = () => {
   return (
@@ -29,21 +34,26 @@ const IntroFooter = () => {
         </a>
       </div>
       <div className="socialMediaIconsRow">
-        <img
-          src="/assets/images/icons/github.png"
-          className="icon-social-media"
-          onClick={() => window.open(gitHub.link, "_blank")}
-        />
-        <img
-          src="/assets/images/icons/linkedin2.png"
-          className="icon-social-media"
-          onClick={() => window.open(linkedIn.link, "_blank")}
-        />
-        <img
-          src="/assets/images/icons/stackoverflow.png"
-          className="icon-social-media"
-          onClick={() => window.open(stackOverflow.link, "_blank")}
-        />
+        {socialLinks.map((social) => (
+          <a
+            key={social.label}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+            aria-label={social.label}
+          >
+            {/* Decorative: the accessible name comes from the link's aria-label. */}
+            <img
+              src={`/assets/images/icons/${social.icon}`}
+              className="icon-social-media"
+              alt=""
+              width={42}
+              height={42}
+              decoding="async"
+            />
+          </a>
+        ))}
         <Chatbot />
       </div>
     </>

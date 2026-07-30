@@ -12,6 +12,10 @@ const Intro = () => {
   const floatingId = React.useRef(0);
 
   const launchEmojis = () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     const greetings = ["👋", "🎈", "🙌", "✨"];
     const burst = Array.from({ length: 1 }).map(() => ({
       id: floatingId.current++,
@@ -34,7 +38,16 @@ const Intro = () => {
 
       <div className="introRow">
         <div onMouseEnter={launchEmojis} onClick={launchEmojis}>
-          <img src="/assets/images/avatar.png" alt={name} className="intro-avatar" />
+          {/* Above the fold, so it stays eagerly loaded and gets fetch priority. */}
+          <img
+            src="/assets/images/avatar.png"
+            alt={name}
+            className="intro-avatar"
+            width={120}
+            height={120}
+            fetchPriority="high"
+            decoding="async"
+          />
           <div className="floating-emoji-container">
             {floatingEmojis.map((item) => (
               <span
@@ -47,10 +60,10 @@ const Intro = () => {
             ))}
           </div>
         </div>
-        <Typography variant="h2" component="h2">
+        <Typography variant="h2" component="h1">
           {name}
         </Typography>
-        <Typography variant="h5" component="h5">
+        <Typography variant="h5" component="p">
           {title}
         </Typography>
         <Typography variant="body1" component="p" className="summary">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
 import { Paper, Chip } from "@mui/material";
-import { work } from "@/data/data";
+import { work, yearsOfExperience } from "@/data/data";
 import "@/assets/styles/workExperience.css";
 
 const Experience = () => {
@@ -21,12 +21,11 @@ const Experience = () => {
   return (
     <div className="section section-top">
       <div className="section-title">
-        <Typography variant="h3" component="h3">
+        <Typography variant="h3" component="h2">
           Work Experience
         </Typography>
         <Typography variant="body1" component="span">
-          Developing meaningful products for the past{" "}
-          {Number(new Date().toISOString().substring(0, 4)) - 2017} years.
+          Developing meaningful products for the past {yearsOfExperience} years.
         </Typography>
       </div>
 
@@ -51,10 +50,14 @@ const Experience = () => {
                   src={`/assets/images/companies/${item.logo}`}
                   className="company-logo"
                   alt={item.company}
+                  width={36}
+                  height={36}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="header-col-title">
-                <Typography variant="h6" component="h4">
+                <Typography variant="h6" component="h3">
                   {isMobile && item.roleShort ? item.roleShort : item.role}
                 </Typography>
                 <Typography variant="caption" component="div" className="header-date">
