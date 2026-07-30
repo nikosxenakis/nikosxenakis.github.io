@@ -54,6 +54,11 @@
   /* `safe` so that once the cards overflow, alignment falls back to start and
      the first card stays reachable instead of being clipped off the left. */
   justify-content: safe center;
+  /* Horizontal pans belong to the carousel, vertical ones to the page. Without
+     this the browser has to guess mid-gesture. pinch-zoom stays allowed. */
+  touch-action: pan-x pinch-zoom;
+  /* Stops a swipe past the last card triggering browser back-navigation. */
+  overscroll-behavior-x: contain;
 }
 
 .projects-scroller::-webkit-scrollbar {

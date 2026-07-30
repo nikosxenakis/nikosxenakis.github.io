@@ -18,14 +18,24 @@ const Projects = () => {
   const [hasOverflow, setHasOverflow] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
 
+  const frameRef = useRef<number | null>(null);
+
+  // Coalesced into one read per frame: scroll, resize and the observer can all
+  // fire in the same frame, and each read of scrollWidth forces layout.
   const updateScrollState = () => {
-    const node = scrollerRef.current;
-    if (!node) return;
-    setCanScrollLeft(node.scrollLeft > 8);
-    setCanScrollRight(node.scrollLeft + node.clientWidth < node.scrollWidth - 8);
-    // When every card already fits there is nothing to page through, so the
-    // arrows are hidden rather than shown permanently disabled.
-    setHasOverflow(node.scrollWidth > node.clientWidth + 1);
+    if (frameRef.current !== null) return;
+
+    frameRef.current = requestAnimationFrame(() => {
+      frameRef.current = null;
+      const node = scrollerRef.current;
+      if (!node) return;
+
+      setCanScrollLeft(node.scrollLeft > 8);
+      setCanScrollRight(node.scrollLeft + node.clientWidth < node.scrollWidth - 8);
+      // Nothing to page through when every card fits, so the arrows are hidden
+      // rather than shown permanently disabled.
+      setHasOverflow(node.scrollWidth > node.clientWidth + 1);
+    });
   };
 
   const scrollByAmount = (direction: "left" | "right") => {
@@ -43,7 +53,10 @@ const Projects = () => {
 
   const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
     const node = scrollerRef.current;
-    if (!node) return;
+    // Touch and pen already get native panning with momentum. Driving
+    // scrollLeft by hand as well makes the two fight, which reads as jitter.
+    if (!node || event.pointerType !== "mouse") return;
+
     dragState.current = {
       isPointerDown: true,
       startX: event.clientX,
@@ -88,6 +101,9 @@ const Projects = () => {
       node.removeEventListener("scroll", updateScrollState);
       window.removeEventListener("resize", handleResize);
       observer?.disconnect();
+      if (frameRef.current !== null) {
+        cancelAnimationFrame(frameRef.current);
+      }
     };
   }, []);
 
