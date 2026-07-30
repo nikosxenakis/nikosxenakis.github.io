@@ -1,16 +1,27 @@
+/*
+ * Centres its content with flexbox rather than `top: 40%` on the row. Now that
+ * .scroll-section is min-height based, the section has no definite height for a
+ * percentage offset to resolve against, and the block was landing off-screen.
+ *
+ * The padding-bottom reserves room for the absolutely positioned contact and
+ * social rows, and lands the text block at roughly the 40% mark it sat at
+ * before: centring inside a box shortened by 20dvh puts its middle at 40dvh.
+ */
 .introSection {
-  height: 100%;
+  min-height: 100dvh;
+  flex: 1;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 20dvh;
+  box-sizing: border-box;
 }
 
 .introRow {
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  position: relative;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding: 0 2rem;
   text-align: center;
 }

@@ -1,0 +1,86 @@
+.section-nav {
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 900;
+}
+
+.section-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* The anchor is a 24px hit target; the visible dot is drawn by ::before. */
+.section-nav-dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.section-nav-dot::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.section-nav-dot:hover::before {
+  background: var(--link-hover-color);
+  transform: scale(1.25);
+}
+
+.section-nav-dot.active::before {
+  background: var(--link-color);
+  border-color: var(--link-hover-color);
+  transform: scale(1.35);
+}
+
+.section-nav-dot:focus-visible {
+  outline: 2px solid var(--link-hover-color);
+  outline-offset: 2px;
+}
+
+/*
+ * Kept in the accessibility tree at all times: this text is the link's
+ * accessible name, and is revealed visually on hover or keyboard focus.
+ */
+.section-nav-label {
+  position: absolute;
+  right: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: 0.78rem;
+  color: var(--text-color);
+  background: rgba(30, 35, 48, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 3px 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.section-nav-dot:hover .section-nav-label,
+.section-nav-dot:focus-visible .section-nav-label {
+  opacity: 1;
+}
+
+/* Too cramped next to the chat launcher on phones, and touch users just scroll. */
+@media (max-width: 700px) {
+  .section-nav {
+    display: none;
+  }
+}

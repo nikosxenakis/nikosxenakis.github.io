@@ -1,10 +1,39 @@
 :root {
   --background-color: #1e2330; /* Dark base */
   --background-light-color: #2a2f3a; /* Slightly lighter for contrast */
+  /* Translucent card fill. Replaces opacity on .card, which used to fade the
+     text along with the background. */
+  --card-background-color: rgba(42, 47, 58, 0.85);
   --box-shadow-color: rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
   --text-color: #ffffff; /* High contrast text */
   --link-color: #9c8ebf; /* Soft lavender for links */
   --link-hover-color: #c1b2df; /* Lighter on hover */
+}
+
+/*
+ * Respect the OS "reduce motion" setting: this page animates a lot (snap
+ * scrolling, the intro drop-in, floating emoji, card transitions).
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* The viewport is the scroll container, so snapping, keyboard paging and
+   anchor links all work natively without a JS wheel handler. */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 body,
@@ -12,9 +41,11 @@ html,
 #root {
   color: var(--text-color);
   font-family: "Inter", sans-serif;
-  height: 100%;
   margin: 0;
-  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100dvh;
 }
 
 .MuiTypography-root,
@@ -30,18 +61,21 @@ a {
 }
 
 .scroll-container {
-  height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
+  position: relative;
 }
 
+/*
+ * min-height rather than a fixed height: on short viewports a section grows
+ * instead of trapping its content behind a nested scrollbar. Sections taller
+ * than the viewport are still reachable, because the snap spec treats a snap
+ * area larger than the snapport as valid at any position covering it.
+ */
 .scroll-section {
-  height: 100vh;
+  min-height: 100dvh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
 }
 
 .section {
@@ -66,11 +100,9 @@ a {
 }
 
 .card {
-  background-color: var(--background-light-color) !important;
-  color: #ffffff !important;
+  background-color: var(--card-background-color) !important;
   border-radius: 16px;
   padding: 0.8rem 1.2rem;
-  opacity: 0.85;
   box-shadow: var(--box-shadow-color) 0px 1px 4px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--text-color) !important;
