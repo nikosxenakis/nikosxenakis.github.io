@@ -32,8 +32,6 @@ export const website: Link = {
   link: "https://nikosxenakis.github.io",
 };
 
-export const locationMaps =
-  "https://www.google.co.uk/maps/place/%CE%96%CF%85%CF%81%CE%AF%CF%87%CE%B7/@47.3774122,8.4543354,12z/data=!4m15!1m8!3m7!1s0x47900b9749bea219:0xe66e8df1e71fdc03!2zzpbPhc-Bzq_Ph863!3b1!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY!3m5!1s0x47900b9749bea219:0xe66e8df1e71fdc03!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY?entry=ttu";
 // Single source of truth for the experience claim, so the summary and the Work
 // Experience subtitle can never drift apart. Matches the figure used in the CV.
 export const careerStartYear = 2016;

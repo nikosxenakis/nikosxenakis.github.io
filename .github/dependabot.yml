@@ -43,19 +43,3 @@ updates:
       actions:
         patterns:
           - "*"
-
-  - package-ecosystem: docker
-    directory: /ui
-    schedule:
-      interval: weekly
-    open-pull-requests-limit: 5
-    commit-message:
-      prefix: "build(deps)"
-
-  - package-ecosystem: docker-compose
-    directory: /
-    schedule:
-      interval: weekly
-    open-pull-requests-limit: 5
-    commit-message:
-      prefix: "build(deps)"

@@ -61,14 +61,8 @@ export const website: Link = {
   link: "https://nikosxenakis.github.io",
 };
 
-/**
- * Mirrors careerStartYear in ui/src/data/data.ts. This file is a standalone
- * copy because the Vercel function cannot resolve the UI's "@/" alias, so the
- * figure is computed rather than hardcoded: a literal "10 years" here would
- * silently disagree with the website every January.
- *
- * ui/src/data/dataSync.test.ts fails if the two copies drift apart.
- */
+// Mirrors ui/src/data/data.ts, which this file cannot import (no "@/" alias in
+// the Vercel function). dataSync.test.ts fails if the two drift apart.
 export const careerStartYear = 2016;
 export const yearsOfExperience = new Date().getFullYear() - careerStartYear;
 

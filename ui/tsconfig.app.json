@@ -17,6 +17,5 @@
             "@/*": ["./src/*"]
         }
     },
-    "include": ["src"],
-    "exclude": ["src/depricated"]
+    "include": ["src"]
 }
