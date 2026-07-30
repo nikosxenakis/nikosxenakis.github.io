@@ -6,11 +6,30 @@
   z-index: 0;
 }
 
+/*
+ * Grows in from small and transparent on load. `forwards` holds the end state,
+ * which is also what makes the reduced-motion rule in index.css behave: it
+ * collapses the duration, so the words simply appear at their final opacity.
+ */
 .introWord {
   position: absolute;
   font-size: clamp(1.4rem, 2.2vw, 2.6rem);
   font-weight: 700;
-  opacity: 0.08;
+  opacity: 0;
   filter: blur(2.5px);
   text-transform: uppercase;
+  transform: rotate(var(--word-rotate, 0deg));
+  animation: introWordIn 900ms cubic-bezier(0.22, 0.61, 0.36, 1) var(--word-delay, 0ms) forwards;
+}
+
+@keyframes introWordIn {
+  from {
+    opacity: 0;
+    transform: rotate(var(--word-rotate, 0deg)) scale(0.4);
+  }
+
+  to {
+    opacity: 0.08;
+    transform: rotate(var(--word-rotate, 0deg)) scale(1);
+  }
 }

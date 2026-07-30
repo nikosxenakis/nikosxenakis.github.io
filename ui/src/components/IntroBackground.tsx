@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import "@/assets/styles/introBackground.css";
 
 const IntroBackground = () => {
@@ -19,11 +20,17 @@ const IntroBackground = () => {
         <span
           key={`${word.text}-${index}`}
           className="introWord"
-          style={{
-            top: word.top,
-            left: word.left,
-            transform: `rotate(${word.rotate}deg)`,
-          }}
+          style={
+            {
+              top: word.top,
+              left: word.left,
+              // Rotation travels as a custom property rather than an inline
+              // transform: the entry animation also drives transform, and a
+              // keyframe would otherwise wipe the rotation out.
+              "--word-rotate": `${word.rotate}deg`,
+              "--word-delay": `${index * 70}ms`,
+            } as CSSProperties
+          }
         >
           {word.text}
         </span>
