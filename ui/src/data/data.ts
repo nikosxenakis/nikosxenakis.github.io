@@ -34,8 +34,12 @@ export const website: Link = {
 
 export const locationMaps =
   "https://www.google.co.uk/maps/place/%CE%96%CF%85%CF%81%CE%AF%CF%87%CE%B7/@47.3774122,8.4543354,12z/data=!4m15!1m8!3m7!1s0x47900b9749bea219:0xe66e8df1e71fdc03!2zzpbPhc-Bzq_Ph863!3b1!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY!3m5!1s0x47900b9749bea219:0xe66e8df1e71fdc03!8m2!3d47.3768866!4d8.541694!16zL20vMDg5NjY?entry=ttu";
-export const summary =
-  "Senior Software Engineer with 10 years of experience building scalable, fault-tolerant full-stack systems using TypeScript, Node.js and Spring Boot. Fast learner with a strong record of leading projects, improving architecture, and delivering high-impact features. Passionate about clean design, automation, and developing future-ready products.";
+// Single source of truth for the experience claim, so the summary and the Work
+// Experience subtitle can never drift apart. Matches the figure used in the CV.
+export const careerStartYear = 2016;
+export const yearsOfExperience = new Date().getFullYear() - careerStartYear;
+
+export const summary = `Senior Software Engineer with ${yearsOfExperience} years of experience building scalable, fault-tolerant full-stack systems using TypeScript, Node.js and Spring Boot. Fast learner with a strong record of leading projects, improving architecture, and delivering high-impact features. Passionate about clean design, automation, and developing future-ready products.`;
 
 export const work: WorkExperience[] = [
   {
@@ -73,7 +77,7 @@ export const work: WorkExperience[] = [
     company: "Sphynx",
     companyUrl: "https://www.sphynx.ch",
     location: "Zürich, CH",
-    date: "Fed 2024 - Sep 2025",
+    date: "Feb 2024 - Sep 2025",
     description: [
       `Architecting and developing an Incident Response Automation Tool using Java, Spring Boot and PostgreSQL, ensuring high availability, scalability, and reliability for cybersecurity critical workflows.`,
       `Managing the SecOPERA EU project representing Sphynx, collaborating with other 10 EU organisations.`,
@@ -121,7 +125,7 @@ export const work: WorkExperience[] = [
     company: "SeeByte",
     companyUrl: "http://www.seebyte.com/",
     location: "Edinburgh, UK",
-    date: "Sept 2019 - Aug 2021",
+    date: "Sep 2019 - Aug 2021",
     description: [
       `Contributed to the development of Mission Planning and Analysis software, supporting 6 Unmanned Underwater Vehicle (UUV) systems from various vendors.`,
       `Demonstrated products in real-world operational scenarios, resulting at 100% contracts extension.`,
@@ -240,7 +244,7 @@ export const projects: Project[] = [
   {
     name: "Home Server",
     date: "2025-2026",
-    imageUrl: "https://www.proxmox.com/images/proxmox/Proxmox_logo_standard_hex_400px.png",
+    imageUrl: "/assets/images/projects/home-server.png",
     description:
       "Low-power HP Elitedesk running Proxmox VE, hosting multiple VMs and LXC containers. Services include Traefik as a reverse proxy, Wireguard VPN for secure remote access, SMB for file sharing, and ZFS for reliable storage.",
     descriptionShort:
@@ -285,7 +289,8 @@ export const projects: Project[] = [
     date: "2024 - Present",
     url: "https://recipes-nikosxenakis.vercel.app/",
     githubUrl: "https://github.com/nikosxenakis/recipes",
-    imageUrl: "https://recipes-nikosxenakis.vercel.app/favicon.ico",
+    isPrivate: true,
+    imageUrl: "/assets/images/projects/recipes.svg",
     description: `A recipe website to manage and view cooking recipes, deployed on Vercel.`,
     descriptionShort: `A recipe website to manage and view cooking recipes.`,
     technologies: "React,TypeScript,Node.js,Vercel",
