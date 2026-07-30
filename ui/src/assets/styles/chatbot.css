@@ -12,6 +12,10 @@
   z-index: 1000;
   transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
   color: #fff;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
 }
 
 .socialMediaIconsRow .chatbot-fab {
@@ -50,13 +54,23 @@
   flex-direction: column;
   transform: translateX(-50%) scale(0);
   transform-origin: bottom center;
-  transition: transform 0.3s ease-in-out;
+  /* Hiding the closed panel keeps its input and buttons out of the tab order. */
+  visibility: hidden;
+  transition: transform 0.3s ease-in-out, visibility 0s linear 0.3s;
   z-index: 1000;
   overflow: hidden;
 }
 
 .chatbot-container.open {
   transform: translateX(-50%) scale(1);
+  visibility: visible;
+  transition: transform 0.3s ease-in-out, visibility 0s linear 0s;
+}
+
+.chatbot-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.83em 0;
 }
 
 .chatbot-header {
@@ -66,7 +80,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -161,6 +174,7 @@
 
 .chatbot-input {
   display: flex;
+  margin: 0;
   padding: 12px 12px 14px 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   gap: 10px;

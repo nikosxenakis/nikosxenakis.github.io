@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "@/assets/styles/chatbot.css";
 import { RiRefreshLine, RiRobot2Line, RiSubtractLine } from "react-icons/ri";
 
 type ChatMessage = { text: string; sender: "user" | "bot" };
 
 const STORAGE_KEY = "nikos-chatbot-messages";
+
+/** Mirrors MAX_QUESTION_LENGTH in api/chat.ts, which rejects anything longer. */
+const MAX_QUESTION_LENGTH = 500;
 
 const SUGGESTIONS = [
   "Where did you study?",
@@ -28,6 +31,12 @@ const Chatbot = () => {
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const messagesRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const fabRef = useRef<HTMLButtonElement>(null);
+  const wasOpenRef = useRef(false);
+  const abortRef = useRef<AbortController | null>(null);
 
   const formatBotMessage = (text: string) => {
     const stripped = text.replace(/\*\*/g, "").replace(/__/g, "");
@@ -57,16 +66,52 @@ const Chatbot = () => {
     }
   }, [messages]);
 
+  // Keep the newest message in view without scrolling any ancestor.
+  useEffect(() => {
+    const node = messagesRef.current;
+    if (node) {
+      node.scrollTop = node.scrollHeight;
+    }
+  }, [messages, isLoading]);
+
+  // Move focus into the panel on open, and back to the launcher on close.
+  useEffect(() => {
+    if (isOpen) {
+      inputRef.current?.focus();
+    } else if (wasOpenRef.current) {
+      fabRef.current?.focus();
+    }
+    wasOpenRef.current = isOpen;
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
+  useEffect(() => {
+    return () => abortRef.current?.abort();
+  }, []);
+
   const toggleChat = () => {
     setIsOpen(!isOpen);
   };
-
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 
   const handleReset = () => {
+    abortRef.current?.abort();
+    abortRef.current = null;
     setMessages([]);
     setError(null);
     setInputValue("");
@@ -76,6 +121,7 @@ const Chatbot = () => {
     } catch {
       // Ignore storage cleanup issues
     }
+    inputRef.current?.focus();
   };
 
   const handleSendMessage = async (override?: string) => {
@@ -92,52 +138,88 @@ const Chatbot = () => {
     setIsLoading(true);
     setError(null);
 
+    const controller = new AbortController();
+    abortRef.current = controller;
+
     try {
       const apiBase = (import.meta.env.VITE_API_URL as string | undefined) ?? "";
       const response = await fetch(`${apiBase}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages, question: userMessage.text }),
+        signal: controller.signal,
       });
 
       if (!response.ok) {
-        throw new Error(`Request failed: ${response.status}`);
+        throw Object.assign(new Error(`Request failed: ${response.status}`), {
+          rateLimited: response.status === 429,
+        });
       }
 
       const data = (await response.json()) as { reply: string };
       const botReply = data.reply || "I had trouble formulating a response. Please try again.";
 
       setMessages([...updatedMessages, { text: botReply, sender: "bot" }]);
-    } catch {
-      setError("Something went wrong reaching the chat service. Please try again in a moment.");
+    } catch (err) {
+      // A cancelled request means the widget was reset or unmounted, so drop it silently.
+      if (controller.signal.aborted) return;
+
+      const rateLimited = Boolean((err as { rateLimited?: boolean })?.rateLimited);
+
+      setError(
+        rateLimited
+          ? "That's a lot of questions in a short time. Please wait a few minutes and try again."
+          : "Something went wrong reaching the chat service. Please try again in a moment."
+      );
       setMessages([
         ...updatedMessages,
-        { text: "Sorry, I couldn't get an answer right now.", sender: "bot" },
+        {
+          text: rateLimited
+            ? "I need a short break. Please try again in a few minutes."
+            : "Sorry, I couldn't get an answer right now.",
+          sender: "bot",
+        },
       ]);
     } finally {
-      setIsLoading(false);
+      if (!controller.signal.aborted) {
+        setIsLoading(false);
+      }
+      if (abortRef.current === controller) {
+        abortRef.current = null;
+      }
     }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    handleSendMessage();
   };
 
   return (
     <div>
       <div className={`chatbot-container ${isOpen ? "open" : ""}`} aria-live="polite">
-        <div className="chatbot-header" onClick={toggleChat}>
-          <h2>Chat with me</h2>
-          <div className="chatbot-actions" onClick={(e) => e.stopPropagation()}>
+        <div className="chatbot-header">
+          <p className="chatbot-title">Chat with me</p>
+          <div className="chatbot-actions">
             <button
+              type="button"
               className="chatbot-icon-btn"
               aria-label="Minimize chat"
               onClick={() => setIsOpen(false)}
             >
               <RiSubtractLine />
             </button>
-            <button className="chatbot-icon-btn" aria-label="Reset chat" onClick={handleReset}>
+            <button
+              type="button"
+              className="chatbot-icon-btn"
+              aria-label="Reset chat"
+              onClick={handleReset}
+            >
               <RiRefreshLine />
             </button>
           </div>
         </div>
-        <div className="chatbot-messages">
+        <div className="chatbot-messages" ref={messagesRef}>
           {messages.length === 0 && !isLoading && (
             <div className="chatbot-empty">Ask me anything about my work and experience.</div>
           )}
@@ -145,6 +227,7 @@ const Chatbot = () => {
             <div className="chatbot-suggestions">
               {SUGGESTIONS.map((suggestion) => (
                 <button
+                  type="button"
                   key={suggestion}
                   className="chip"
                   onClick={() => handleSendMessage(suggestion)}
@@ -165,23 +248,35 @@ const Chatbot = () => {
           {isLoading && <div className="message bot thinking">Thinking...</div>}
         </div>
         {error && <div className="chatbot-status error">{error}</div>}
-        <div className="chatbot-input">
+        <form className="chatbot-input" onSubmit={handleSubmit}>
           <input
+            ref={inputRef}
             type="text"
+            name="question"
+            aria-label="Your message"
+            enterKeyHint="send"
+            autoComplete="off"
+            maxLength={MAX_QUESTION_LENGTH}
             value={inputValue}
             onChange={handleInputChange}
-            onKeyUp={(e) => e.key === "Enter" && handleSendMessage()}
             placeholder="Type a message..."
             disabled={isLoading}
           />
-          <button onClick={() => handleSendMessage()} disabled={isLoading}>
+          <button type="submit" disabled={isLoading || inputValue.trim() === ""}>
             {isLoading ? "..." : "Send"}
           </button>
-        </div>
+        </form>
       </div>
-      <div className="chatbot-fab" onClick={toggleChat} aria-label="Open chat">
+      <button
+        ref={fabRef}
+        type="button"
+        className="chatbot-fab"
+        onClick={toggleChat}
+        aria-label={isOpen ? "Close chat" : "Open chat"}
+        aria-expanded={isOpen}
+      >
         <RiRobot2Line className="chatbot-fab-icon" />
-      </div>
+      </button>
     </div>
   );
 };
