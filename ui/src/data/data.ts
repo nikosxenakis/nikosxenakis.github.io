@@ -255,8 +255,7 @@ export const projects: Project[] = [
     name: "ImagInLexis",
     date: "2016",
     githubUrl: "https://github.com/nikosxenakis/ImagInLexis",
-    imageUrl:
-      "https://github.com/nikosxenakis/ImagInLexis/blob/main/src/main/resources/com/xenakis/images/logo/imagInLexisLogo.png?raw=true",
+    imageUrl: "/assets/images/projects/imaginlexis.png",
     description: `Desktop application for a bachelor's thesis focused on Logotherapy. The application primarily enhances speech therapy intervention plans by incorporating a series of tests for patients to undertake. Designed with a gamified approach, the application caters specifically to children, making the therapeutic process engaging and interactive.`,
     descriptionShort: `Desktop application for a bachelor's thesis focused on Logotherapy.`,
     technologies: "Java,JavaFX",
@@ -266,8 +265,7 @@ export const projects: Project[] = [
     date: "2016",
     url: "https://nikosxenakis.github.io/ICE_Editor/",
     githubUrl: "https://github.com/nikosxenakis/ICE_Editor",
-    imageUrl:
-      "https://raw.githubusercontent.com/nikosxenakis/ICE_Editor/master/thesis%20report/images/index.jpg",
+    imageUrl: "/assets/images/projects/ice-editor.png",
     description: `A web-based platform designed for end-users to craft straightforward applets for IoT (Internet Of Things) devices. This intuitive editor minimizes both compile and runtime errors, offering a drag-and-drop interface alongside value editing capabilities. It features a versatile API, allowing users to swiftly develop programs using Javascript or by defining them in JSON files.`,
     descriptionShort: `A web-based platform for creating IoT applets.`,
     technologies: "HTML/CSS/JS,Canvas.js",
@@ -278,8 +276,7 @@ export const projects: Project[] = [
     url: "https://kavros.github.io/1942-Arcade-Game",
     // videoUrl: "https://www.youtube.com/watch?v=DqQoP_M39lQ",
     githubUrl: "https://github.com/kavros/1942-Arcade-Game",
-    imageUrl:
-      "https://m.media-amazon.com/images/M/MV5BYWZkNTMwM2YtZDBkOS00ZTE2LWFmZjctOGRmZWQxNzYyZGEwXkEyXkFqcGc@._V1_.jpg",
+    imageUrl: "/assets/images/projects/1942.png",
     description: `1942, a beloved retro video game from 1984, has been reimagined in this project. Utilizing the original sprite sheets, the game has been recreated with the C++ programming language, leveraging the SDL cross-platform software development library.`,
     descriptionShort: `A reimagining of the classic 1942 video game.`,
     technologies: "C++,SDL",
