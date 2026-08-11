@@ -18,13 +18,6 @@
   font: inherit;
 }
 
-.socialMediaIconsRow .chatbot-fab {
-  position: static;
-  bottom: auto;
-  right: auto;
-  transform: none;
-}
-
 .chatbot-fab:hover {
   box-shadow: 0 14px 34px #9c8ebf;
   filter: brightness(1.02);
@@ -236,8 +229,13 @@
 .chatbot-suggestions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 0 16px 14px 16px;
+  gap: 12px;
+  padding: 6px 16px 14px 16px;
+}
+
+/* The shared .chip class is tuned for compact tech tags; suggestions need more room to breathe. */
+.chatbot-suggestions .chip {
+  padding: 6px 14px !important;
 }
 
 @media (max-width: 700px) {

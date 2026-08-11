@@ -1,4 +1,5 @@
 import Background from "@/components/Background";
+import Chatbot from "@/components/Chatbot";
 import SectionNav from "@/components/SectionNav";
 import { sections } from "@/sections";
 
@@ -12,6 +13,7 @@ export default function App() {
         </section>
       ))}
       <SectionNav />
+      <Chatbot />
     </div>
   );
 }

@@ -29,7 +29,7 @@ const Skills = () => {
     <div className="section">
       <div className="section-title">
         <Typography variant="h3" component="h2">
-          Skills & Interests
+          Languages & Interests
         </Typography>
       </div>
 

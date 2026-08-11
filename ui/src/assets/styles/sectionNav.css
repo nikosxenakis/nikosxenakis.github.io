@@ -52,10 +52,6 @@
   outline-offset: 2px;
 }
 
-/*
- * Kept in the accessibility tree at all times: this text is the link's
- * accessible name, and is revealed visually on hover or keyboard focus.
- */
 .section-nav-label {
   position: absolute;
   right: calc(100% + 6px);
@@ -68,14 +64,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   padding: 3px 8px;
-  opacity: 0;
   pointer-events: none;
-  transition: opacity 0.15s ease;
-}
-
-.section-nav-dot:hover .section-nav-label,
-.section-nav-dot:focus-visible .section-nav-label {
-  opacity: 1;
 }
 
 /* Too cramped next to the chat launcher on phones, and touch users just scroll. */

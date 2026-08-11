@@ -60,15 +60,15 @@ const Experience = () => {
                 <Typography variant="h6" component="h3">
                   {isMobile && item.roleShort ? item.roleShort : item.role}
                 </Typography>
-                <Typography variant="caption" component="div" className="header-date">
-                  {item.date}
-                </Typography>
-              </div>
-              <div className="header-col-meta">
                 <Typography variant="body2" component="div">
                   <a href={item.companyUrl} target="_blank" rel="noreferrer">
                     {isMobile && item.companyShort ? item.companyShort : item.company}
                   </a>
+                </Typography>
+              </div>
+              <div className="header-col-meta">
+                <Typography variant="caption" component="div" className="header-date">
+                  {item.date}
                 </Typography>
                 {item.location && (
                   <Typography variant="caption" component="div" className="header-location">

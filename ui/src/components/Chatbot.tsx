@@ -239,10 +239,8 @@ const Chatbot = () => {
   };
 
   /*
-   * Portalled to body because the launcher sits inside .socialMediaIconsRow,
-   * which is animated with a transform. A transformed ancestor becomes the
-   * containing block for position:fixed children, so the panel was anchored to
-   * the intro section instead of the viewport.
+   * Portalled to body so the panel's position:fixed stays anchored to the
+   * viewport regardless of where the launcher is mounted.
    */
   const panel = (
     <div
