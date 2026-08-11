@@ -34,9 +34,10 @@
 
 .chatbot-container {
   position: fixed;
-  bottom: 70px;
-  left: 50%;
-  right: auto;
+  /* Sits directly above the launcher: its bottom/right offsets plus its height and a gap. */
+  bottom: 118px;
+  right: 60px;
+  left: auto;
   width: 360px;
   height: 520px;
   background: var(--background-light-color, #2a2f3a);
@@ -45,8 +46,8 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
-  transform: translateX(-50%) scale(0);
-  transform-origin: bottom center;
+  transform: scale(0);
+  transform-origin: bottom right;
   /* Hiding the closed panel keeps its input and buttons out of the tab order. */
   visibility: hidden;
   transition: transform 0.3s ease-in-out, visibility 0s linear 0.3s;
@@ -55,7 +56,7 @@
 }
 
 .chatbot-container.open {
-  transform: translateX(-50%) scale(1);
+  transform: scale(1);
   visibility: visible;
   transition: transform 0.3s ease-in-out, visibility 0s linear 0s;
 }
