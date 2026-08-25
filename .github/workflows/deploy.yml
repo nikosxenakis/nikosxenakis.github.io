@@ -84,8 +84,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v7
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 10.33.2
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 25
+
       - name: Deploy to Vercel
-        run: npx vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
+        run: pnpm dlx vercel@latest --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
