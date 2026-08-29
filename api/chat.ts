@@ -4,7 +4,7 @@ import { checkRateLimit, getClientKey, MAX_REQUESTS_PER_WINDOW } from "./_rateLi
 import { MAX_QUESTION_LENGTH, sanitiseHistory } from "./_validation.js";
 import { extractReply, FALLBACK_REPLY, type GeminiResponse } from "./_reply.js";
 
-const GEMINI_MODEL = "gemini-2.5-flash";
+const GEMINI_MODEL = "gemini-3.6-flash";
 
 /** Room for a few sentences or a short bullet list, with the answer alone. */
 const MAX_OUTPUT_TOKENS = 400;
@@ -80,9 +80,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     ],
     generationConfig: {
       temperature: 0.3,
-      // gemini-2.5-flash thinks by default and charges it to maxOutputTokens,
-      // starving the answer. Thinking buys nothing for prompt lookups.
-      thinkingConfig: { thinkingBudget: 0 },
+      // Thinking is charged to maxOutputTokens and buys nothing for prompt
+      // lookups. This model rejects thinkingBudget: 0; "minimal" is the way off.
+      thinkingConfig: { thinkingLevel: "minimal" },
       maxOutputTokens: MAX_OUTPUT_TOKENS,
     },
   };

@@ -1,6 +1,6 @@
 # PersonalWebsite
 
-A personal website built to showcase projects, experience, and portfolio. The site includes an AI-powered chatbot that uses [Google Gemini](https://ai.google.dev/) as the LLM provider (model: `gemini-2.5-flash`) to answer questions about Nikolaos Xenakis.
+A personal website built to showcase projects, experience, and portfolio. The site includes an AI-powered chatbot that uses [Google Gemini](https://ai.google.dev/) as the LLM provider (model: `gemini-3.6-flash`) to answer questions about Nikolaos Xenakis.
 
 ## Installation
 
