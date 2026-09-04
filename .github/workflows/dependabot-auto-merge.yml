@@ -1,0 +1,80 @@
+# Dependabot — auto-merge non-major updates
+# Squash-merges Dependabot patch and minor pull requests once every other check
+# on the head commit has concluded successfully. Majors are left for review.
+#
+# The dependabot.yml groups batch minor and patch together, and a grouped pull
+# request reports the highest bump it carries, so the filter has to admit minor
+# as well as patch or it would never fire. The same filter holds majors back:
+# an `actions` group that happens to include one reports semver-major.
+#
+# GitHub's native auto-merge needs branch protection, which this repository's
+# plan does not offer, so this workflow polls the check runs itself.
+#
+# Required secrets: none
+
+name: Dependabot Auto-merge
+
+on:
+  pull_request:
+    branches: ['main']
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+
+jobs:
+  auto-merge:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Wait for the other checks to pass
+        if: >-
+          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+          steps.metadata.outputs.update-type == 'version-update:semver-minor'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+          SELF: ${{ github.job }}
+        run: |
+          # Give the CI workflows a moment to register their check runs.
+          sleep 30
+          for _ in $(seq 1 40); do
+            runs=$(gh api "repos/$REPO/commits/$SHA/check-runs" --paginate \
+              --jq ".check_runs[] | select(.name != \"$SELF\") | \"\(.status):\(.conclusion)\"")
+            if [ -z "$runs" ]; then
+              echo "No other checks reported for $SHA; nothing to wait for."
+              exit 0
+            fi
+            if echo "$runs" | grep -qv '^completed:'; then
+              echo "Still in progress:"
+              echo "$runs"
+              sleep 30
+              continue
+            fi
+            if echo "$runs" | grep -qvE '^completed:(success|skipped|neutral)$'; then
+              echo "A check did not pass:"
+              echo "$runs"
+              exit 1
+            fi
+            echo "All checks passed."
+            exit 0
+          done
+          echo "Timed out waiting for checks to conclude."
+          exit 1
+
+      - name: Squash-merge the pull request
+        if: >-
+          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+          steps.metadata.outputs.update-type == 'version-update:semver-minor'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: gh pr merge --squash "$PR_URL"
